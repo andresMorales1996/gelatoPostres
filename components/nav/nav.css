@@ -64,7 +64,7 @@ nav li:hover {
 .sideBar a {
     width: 100%;
     margin-left: 6%;
-    
+
 }
 
 .sideBar a:hover {
@@ -95,7 +95,7 @@ nav li:hover {
 
 svg:hover {
     fill: var(--colorPrimary);
-  }
+}
 
 .menu-boton:hover,
 .close-boton:hover {

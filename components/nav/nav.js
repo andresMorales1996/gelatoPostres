@@ -1,9 +1,9 @@
 function mostrarSideBar() {
-    const sideBar = document.querySelector('.sideBar');
-    sideBar.style.display = 'flex';
+  const sideBar = document.querySelector(".sideBar");
+  sideBar.style.display = "flex";
 }
 
 function esconderSideBar() {
-    const sideBar = document.querySelector('.sideBar');
-    sideBar.style.display = 'none';
+  const sideBar = document.querySelector(".sideBar");
+  sideBar.style.display = "none";
 }
