@@ -22,6 +22,11 @@
     --fontTitle: "Cream Cake", sans-serif;
     --fontSubtitle: "Montserrat", sans-serif;
     --fontBody: "Poppins", sans-serif;
+
+    --xtra-large: 2rem;
+    --large: 1.25rem; 
+    --medium: 1rem;
+    --small: 0.75rem;
 }
 
 /* *FORMATEAR PÁGINA */

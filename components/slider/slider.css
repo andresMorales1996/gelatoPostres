@@ -1,15 +1,13 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@import url("../../css/styles.css"); 
 
-body {
+
+.slider-container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     height: 100vh;
+    font-family: var(--fontBody);
 }
 
 .slider {
@@ -43,6 +41,7 @@ body {
   border-radius: 1rem;
   border: 3px solid #F79AB2;
   box-shadow: 1px 6px 8px rgba(244, 155, 155, 0.7); 
+  font-size: var(--small);
 }
 
 #cont-1{
@@ -81,10 +80,17 @@ body {
 }
 
 
-.slider-item p{
+.slider-item-div {
   margin-top: auto;
-  background-color: rgba(247, 154, 178, 0.7);
+  background-color: rgba(247, 154, 178, 0.5);
   padding: 0 0.5rem 0.5rem 0;
+}
+
+.title {
+  /* font-weight: bold; */
+  font-size: var(--medium);
+  background-color: rgba(247, 154, 178, 0.7);
+  font-family: var(--fontSubtitle);
 }
 
 
