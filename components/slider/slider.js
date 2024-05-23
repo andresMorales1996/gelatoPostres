@@ -1,4 +1,20 @@
-//Mobile
+document.addEventListener("DOMContentLoaded",function(){
+
+  //Despliegue texto Cards
+const titles = document.querySelectorAll('.title');
+
+titles.forEach(title =>
+  title.addEventListener("click", function(){
+    const descText = this.nextElementSibling;
+    if (descText.style.display === "none" || descText.style.display === ""){
+      descText.style.display = "block"
+    } else {
+      descText.style.display = "none"
+    }
+  })
+)
+
+  //Mobile
 const sliderInner = document.querySelector('.slider-inner');
 const sliderItems = document.querySelectorAll('.slider-item');
 const prevButton = document.querySelector('.prev');
@@ -54,5 +70,7 @@ dots.forEach((dot, index) => {
   });
 });
 
-// Initialize the carousel
+// Inicializar carrusel
 updateCarousel();
+
+});

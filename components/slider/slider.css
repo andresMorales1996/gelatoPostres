@@ -81,18 +81,26 @@
 
 
 .slider-item-div {
+  width: 100%;
   margin-top: auto;
   background-color: rgba(247, 154, 178, 0.5);
   padding: 0 0.5rem 0.5rem 0;
+
 }
 
 .title {
   /* font-weight: bold; */
+  width: 100%;
   font-size: var(--medium);
   background-color: rgba(247, 154, 178, 0.7);
   font-family: var(--fontSubtitle);
+  cursor: pointer;
+
 }
 
+.desc-text {
+  display: none;
+}
 
 /*Botones de navegación*/
 .nav-button {
@@ -100,9 +108,8 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
+    color: var(--colorPrimary);
+    border: 1px solid var(--colorPrimary);
     padding: 10px;
     cursor: pointer;
 }
@@ -116,15 +123,13 @@
 }
 
 
+
 /*TABLET*/
 @media (min-width: 768px) {
   .nav-button {
     position: absolute; /* Ajusta la posición absoluta para los botones */
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
     padding: 10px;
     cursor: pointer;
   }
