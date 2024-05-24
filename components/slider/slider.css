@@ -89,9 +89,9 @@
 }
 
 .title {
-  /* font-weight: bold; */
+  font-weight: bold;
   width: 100%;
-  font-size: var(--medium);
+  font-size: var(--small);
   background-color: rgba(247, 154, 178, 0.7);
   font-family: var(--fontSubtitle);
   cursor: pointer;
@@ -179,6 +179,7 @@
     border-radius: 10px;
     opacity: 0.5;
     transform: scale(0.8);
+    cursor: pointer;
   }
 
   .dots {
@@ -191,7 +192,6 @@
     height: 0.8rem;
     width: 0.8rem;
     border-radius: 50%;
-    cursor: pointer;
     background-color: #F79AB2;
     margin-left: 0.5rem;
     transition-duration: 0.2s;

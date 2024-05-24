@@ -63,8 +63,8 @@ const updateCarousel = () => {
   });
 };
 
-dots.forEach((dot, index) => {
-  dot.addEventListener('click', () => {
+items.forEach((item, index) => {
+  item.addEventListener('click', () => {
     currentIndex = index;
     updateCarousel();
   });
