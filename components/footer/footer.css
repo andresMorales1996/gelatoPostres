@@ -1,0 +1,191 @@
+@import url('../../css/styles.css');
+/* *Mobile */
+footer {
+    width: 100%;
+    background: var(--colorTertiary);
+    padding: 20px 30px;
+}
+
+.svgFooter{
+    height: 10px;
+}
+
+.cajaLogo .logo img{
+    width: 120px;
+}
+
+.terminos {
+    width: 100%;
+    padding-top: 10px;
+}
+
+.terminos p {
+    color: #676767;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.container_footer {
+    padding-top: 30px;
+    max-width: 90%;
+}
+
+
+.info_footer {
+   margin-bottom: 40px; 
+}
+
+.info_footer a:hover{
+    color: var(--colorSecondary);
+    opacity: 0.6;
+}
+
+.caja-redes i {
+   color: var(--colorComplementaryPrimary);
+}
+
+.container_info {
+    display: flex;
+    width: 100%;
+    margin-top: 20px;
+ }
+ 
+
+.caja-contacto h3,
+.caja-redes h3{
+    color: var(--colorPrimary);
+    margin-bottom: 10px;
+    line-height: 1.2;
+    padding: 0.2em 0;
+    font-size: 1.1em;
+}
+
+.caja-redes h3,
+.contenedor_redesSociales {
+    text-align: center;
+}
+
+.caja-contacto a {
+    display: block;
+    width: 100%;
+    font-size: 0.92rem; 
+    color: #676767;
+}
+
+.caja-redes i {
+    font-size: 25px;
+    margin: 0 2%;
+    color: var(--colorPrimary);
+}
+
+
+.caja-contacto,
+.caja-redes {
+    flex: 1;
+}
+
+.caja_copy {
+    border-top: 1px solid;
+    color: var(--colorComplementaryPrimary);
+    text-align: center; 
+    padding: 20px; 
+    margin-top: 20px; 
+}
+
+.pie_pagina p {
+    margin: 0;
+    font-size: 14px; 
+    line-height: 1.5; 
+    color: #676767; 
+}
+
+.terms-policy a {
+    text-decoration: none;
+    color: var(--colorPrimary);
+    font-size: 14px; 
+    font-weight: 400;
+}
+
+.terms-policy a:hover{
+    text-decoration: none;
+    color: var(--colorSecondary);
+    border-bottom: 2px solid var(--colorSecondary);
+}
+
+/* *MEDIA QUERY Tablet */
+@media (min-width: 768px) {
+    .cajaLogo .logo img{
+        width: 150px;
+    }
+    
+    .terminos {
+        width: 100%;
+        padding-top: 10px;
+    }
+    
+    .terminos p {
+        color: #676767;
+        font-weight: 400;
+        font-style: italic;
+        margin-bottom: 30px;
+    }
+    
+    .container_footer {
+        padding-top: 30px;
+        max-width: 80%;
+        margin: 0 auto;
+    }
+    
+    .container_info {
+        display: flex;
+        width: 90%;
+        margin: 0 auto;
+     }
+}
+
+/* *MEDIA QUERY DESKTOP */
+@media (min-width: 1024px) {
+    footer {
+        width: 100%;
+        background: var(--colorTertiary);
+        padding: 20px 30px;   
+    }
+    
+    .svgFooter{
+        height: 20px;
+    }
+
+    .cajaLogo {
+        width: 50%;
+    }
+    
+    .logo img{
+        width: 160px;
+    }
+
+    .container_footer {
+        margin: 0 auto;
+        width: 70%;
+    }
+
+    .info_footer{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .terminos {
+        width: 80%;
+        padding-top: 10px;
+    }
+    
+    .container_info {
+        width: 40%;
+    }
+
+    .caja-redes i {
+        font-size: 30px;
+        margin: 0 2%;
+        color: var(--colorPrimary);
+    }
+}

@@ -1,12 +1,32 @@
-//* *IMPORT SCRIPTS DE COMPONENTES *//
-const scripts = ["../components/nav/nav.js"];
+// IMPORT SCRIPTS DE COMPONENTES
+const scripts = [
+  "../components/nav/nav.js",
+  "../components/slider/slider.js",
+  
+];
 
-//* *FUNCIÓN CARGAR SCRIPTS DE COMPONENTES *//
+// *FUNCIÓN CARGAR SCRIPTS DE COMPONENTES
 function cargarScript(url) {
-  let script = document.createElement("script");
-  script.type = "text/javascript";
-  script.src = url;
-  document.getElementsByTagName("head")[0].appendChild(script);
+  return new Promise((resolve, reject) => {
+    let script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = url;
+    script.onload = () => resolve(url);
+    script.onerror = () => reject(new Error(`Error al cargar el script: ${url}`));
+    document.head.appendChild(script);
+  });
 }
 
-cargarScript(scripts);
+async function cargarScripts() {
+  try {
+    for (let url of scripts) {
+      await cargarScript(url);
+      console.log(`Script cargado: ${url}`);
+    }
+    console.log("Todos los scripts han sido cargados.");
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+cargarScripts();

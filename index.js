@@ -12,4 +12,7 @@ function cargarComponente(id, url) {
 document.addEventListener("DOMContentLoaded", () => {
   cargarComponente("nav", "./components/nav/nav.html");
   cargarComponente("navPage", "../components/nav/nav.html");
+  cargarComponente("footer", "./components/footer/footer.html");
+  cargarComponente("footerPage", "../components/footer/footer.html");
+  cargarComponente("sliderPage", "../components/slider/slider.html");
 });
