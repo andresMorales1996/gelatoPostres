@@ -1,4 +1,4 @@
-//Mobile
+  //Mobile
 const sliderInner = document.querySelector('.slider-inner');
 const sliderItems = document.querySelectorAll('.slider-item');
 const prevButton = document.querySelector('.prev');
@@ -66,5 +66,5 @@ items.forEach((item, index) => {
   });
 });
 
-// Initialize the carousel
-updateCarousel();
+// Inicializar carrusel
+updateCarousel();;
