@@ -42,6 +42,7 @@
   border: 3px solid #F79AB2;
   box-shadow: 1px 6px 8px rgba(244, 155, 155, 0.7); 
   font-size: var(--small);
+  cursor: pointer;
 }
 
 #cont-1{
@@ -91,6 +92,10 @@
   font-size: var(--medium);
   background-color: rgba(247, 154, 178, 0.7);
   font-family: var(--fontSubtitle);
+}
+
+.desc-text{
+  display: none;
 }
 
 
@@ -186,7 +191,6 @@
     height: 0.8rem;
     width: 0.8rem;
     border-radius: 50%;
-    cursor: pointer;
     background-color: #F79AB2;
     margin-left: 0.5rem;
     transition-duration: 0.2s;
