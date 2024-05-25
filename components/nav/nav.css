@@ -1,0 +1,196 @@
+/* * INICIAR CON ESTILOS DESDE MOBILE */
+.logo {
+    width: 3rem;
+    margin-left: 28%;
+}
+
+.logo img {
+    width: 12rem;
+    margin-top: 0.3rem;
+}
+
+nav {
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: var(--colorTertiary);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav li {
+    height: 6vh;
+}
+
+nav a {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    color: var(--colorSecondary);
+}
+
+nav li:hover {
+    background-color: var(--colorPrimary);
+}
+
+.sideBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70%;
+    min-height: 100vh;
+    z-index: 999;
+    background-color: var(--colorTertiary);
+    box-shadow: 5px 0px 10px 5px rgba(0, 0, 0, 0.2);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    display: none;
+}
+
+.sideBar li {
+    width: 100%;
+}
+
+.sideBar a {
+    width: 100%;
+    margin-left: 6%;
+
+}
+
+.sideBar a:hover {
+    color: var(--colorTertiary);
+}
+
+.esconderEnMobile {
+    display: none;
+}
+
+.menu-boton {
+    position: absolute;
+    display: block;
+    left: 0;
+    margin-left: 3%;
+}
+
+.close-boton {
+    margin-top: 0.6rem;
+    margin-left: -1%;
+}
+
+.menu-boton svg,
+.close-boton svg {
+    width: 2.5rem;
+    fill: var(--colorSecondary);
+}
+
+svg:hover {
+    fill: var(--colorPrimary);
+}
+
+.menu-boton:hover,
+.close-boton:hover {
+    background-color: transparent;
+}
+
+.nav_iconos {
+    display: flex;
+}
+
+.nav_iconos i {
+    margin-right: 1rem;
+    color: var(--colorSecondary);
+    font-size: 1.25rem;
+}
+
+.nav_iconos i:hover {
+    color: var(--colorPrimary);
+}
+
+/* *MEDIA QUERY TABLET */
+@media screen and (min-width: 768px) {
+    .logo {
+        margin-left: 3%;
+        border-radius: 10rem;
+    }
+
+    .logo img {
+        width: 6rem;
+    }
+
+    .menu-boton {
+        display: none;
+    }
+
+    nav {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    nav ul {
+        width: 60%;
+    }
+
+    nav li {
+        padding: 1rem;
+    }
+
+    nav li:hover {
+        border-radius: 3rem;
+        background-color: var(--colorPrimary);
+    }
+
+    nav a:hover {
+        color: var(--colorTertiary);
+    }
+
+    .esconderEnMobile {
+        display: block;
+        margin: 0 auto;
+        font-size: 12px;
+    }
+
+    .nav_iconos {
+        margin-right: 1%;
+    }
+
+    .nav_iconos i {
+        margin-right: 2rem;
+    }
+}
+
+/* *MEDIA QUERY DESKTOP */
+@media screen and (min-width: 1024px) {
+    .logo {
+        width: 3rem;
+        margin-left: 2%;
+        border-radius: 10rem;
+    }
+
+    .logo img {
+        width: 10rem;
+    }
+
+
+    .esconderEnMobile {
+        font-size: 16px;
+    }
+
+    .nav_iconos {
+        margin-right: 0%;
+    }
+
+    .nav_iconos i {
+        margin-right: 2rem;
+    }
+}
