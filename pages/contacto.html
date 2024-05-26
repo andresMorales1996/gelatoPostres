@@ -3,39 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>formulario de contacto</title>
+    <link rel="stylesheet" href="../css/contacto.css">
+    <title>Contáctanos</title>
 </head>
 <body>
-    <div>
-        <div>
-            
-            <!-- ubicar aqui imagen e iconos -->
-        
-        </div>
+    <div class="container-form">
             <!-- casillas de formulario -->
-        <div>
-
-            <form>
-                <input type="text" id="nombre" name="nombre" placeholder="Nombre" required><br><br>
-                <input type="text" id="apellido" name="apellido" placeholder="Apellido" required><br><br>
-                <input type="email" id="email" name="email" placeholder="Correo electrónico" required><br><br>
-                <input type="tel" id="telefono" name="telefono" placeholder="Teléfono" required><br><br>
-                <textarea type="text" id="asunto" name="asunto" placeholder="Asunto"></textarea><br><br>
-                
-            
-               <!-- boton de enviar   -->
+        <div class="content-datos">
+            <div class="content-foto">
+                <img src="../assets/svg/bannerContacto.svg">
+                <div class="content-redes">
+                    <div class="icon" title="hola"><i class="fa-solid fa-phone"></i></div>
+                    <div class="icon"><i class="fa-solid fa-clock"></i></div>
+                    <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+                </div>
+            </div>
             <div>
 
-                <input type="submit" value="Enviar">
-            
             </div>
+            <form action=""  method="POST">    
+                <div class="inputContainer">
+                    <input type="text" class="input" id="nombre" name="nombre" placeholder="Nombre" required>
+                </div>
+                <div class="inputContainer">
+                    <input type="text" class="input" id="apellido" name="apellido" placeholder="Apellido" required>
+                </div>
+                <div class="inputContainer">
+                    <input type="email" class="input" id="email" name="email" placeholder="Email*" required>
+                </div>
+                <div class="inputContainer">
+                    <input type="tel" class="input" id="telefono" name="telefono" placeholder="Teléfono" required>
+                </div>
+                <div class="inputContainer">
+                    <textarea id="mensaje" name="mensaje" placeholder="Escribe un mensaje aquí" required></textarea>
+                </div>
+                <!-- botón enviar-->
+                <input type="submit" class="submitBtn" value="Enviar">
 
             </form>
         </div>
-            
-        
-
-
     </div>
     
 </body>

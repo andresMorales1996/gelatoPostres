@@ -1,0 +1,102 @@
+@import url('../../css/styles.css');  
+
+/** Mobile **/
+
+form {
+    width: 70%;
+}
+
+.content-datos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.inputContainer {
+    position: relative;
+    height: 45px;
+    width: 100%;
+    margin-bottom: 17px;
+}
+
+.input {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    border: 1px solid var(--colorPrimary);
+    font-size: 16px;
+    padding: 0 20px;
+    outline: none;
+    z-index: 1;
+}
+
+.input::placeholder{
+    color: var(--colorPrimary);
+    font-size: medium;
+    font-family: "Poppins";
+}
+
+textarea{
+    border: 1px solid var(--colorPrimary);
+    width: 100%;
+    height: 80px;
+    resize: none;
+}
+
+textarea::placeholder{
+    color: var(--colorPrimary);
+    padding: 5px 20px;
+    font-size: medium;
+    font-family: "Poppins";
+
+}
+.submitBtn {
+    display: block;
+    padding: 15px 0;
+    width: 50%;
+    background-color: var(--colorPrimary);
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0 auto;
+    margin-top: 50px;
+    
+  }
+  
+.submitBtn:hover {
+    background-color: var(--colorComplementaryPrimary);
+    border: 2px solid var(--colorPrimary);
+    color: var(--colorPrimary);
+    transform: translateY(-2px);
+}
+
+.content-foto{
+    width: 70%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.content-redes{
+    position: absolute;
+    bottom: 30%;
+    left: 1%;
+    display: flex;
+}
+
+.icon{
+    background-color: var(--colorQuinary);
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    margin-left: 10px;
+    font-size: 0.7rem;
+    color: var(--colorComplementaryPrimary);
+}
+
