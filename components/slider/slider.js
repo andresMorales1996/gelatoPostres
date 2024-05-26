@@ -1,9 +1,21 @@
-//Mobile
+  //Mobile
 const sliderInner = document.querySelector('.slider-inner');
 const sliderItems = document.querySelectorAll('.slider-item');
 const prevButton = document.querySelector('.prev');
 const nextButton = document.querySelector('.next');
+const titles = document.querySelectorAll('.title');
 let currentIndex = 0;
+
+titles.forEach(title => {
+  title.addEventListener('click', function(){
+    const descText = this.nextElementSibling;
+  if (descText.style.display === 'none' || descText.style.display === ''){
+    descText.style.display = 'block';
+  } else {
+    descText.style.display = 'none'
+  }
+  })
+})
 
 function updateSliderPosition() {
     const offset = -currentIndex * 100;
@@ -47,12 +59,12 @@ const updateCarousel = () => {
   });
 };
 
-dots.forEach((dot, index) => {
-  dot.addEventListener('click', () => {
+items.forEach((item, index) => {
+  item.addEventListener('click', () => {
     currentIndex = index;
     updateCarousel();
   });
 });
 
-// Initialize the carousel
-updateCarousel();
+// Inicializar carrusel
+updateCarousel();;
