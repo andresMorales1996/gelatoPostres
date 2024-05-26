@@ -83,7 +83,7 @@ textarea::placeholder{
 
 .content-redes{
     position: absolute;
-    bottom: 30%;
+    bottom: 20%;
     left: 1%;
     display: flex;
 }
