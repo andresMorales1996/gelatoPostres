@@ -96,7 +96,7 @@
 .slider-item-div {
   margin-top: auto;
   background-color: rgba(247, 154, 178, 0.5);
-  padding: 0 0.5rem 0.5rem 0;
+  /* padding: 0 0.5rem 0.5rem 0; */
 }
 
 .title {
@@ -108,21 +108,23 @@
 
 .desc-text{
   display: none;
+  padding: 5px;
 }
+
 
 
 /*Botones de navegación*/
 .nav-button {
-    display: block;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: var(--colorComplementaryPrimary);
-    color: var(--colorPrimary);
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 10;
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-90%);
+  background-color: var(--colorComplementaryPrimary);
+  color: var(--colorPrimary);
+  border: 1px solid var(--colorPrimary);
+  padding: 10px;
+  font-size: var(--large);
+  cursor: pointer;
 }
 
 .prev {
