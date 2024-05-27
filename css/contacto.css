@@ -1,102 +1,345 @@
-@import url('../../css/styles.css');  
+@import url('../../css/styles.css');
 
-/** Mobile **/
-
-form {
-    width: 70%;
+/** MOBILE **/
+.container-main {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 }
 
-.content-datos{
+.container-form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    width: 100vw;
+    min-height: 80vh;
+}
+
+.content-titulo {
+    position: absolute;
+    width: 50%;
+    right: 0;
+    margin-top: 2%;
+    margin-right: 5%;
+}
+
+h1 {
+    color: var(--colorPrimary);
+    font-family: var(--fontTitle);
+    font-size: 1.8rem;
+}
+
+.content-foto {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.content-foto img {
+    width: 100%;
+}
+
+.content-redes {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    right: 0;
+    margin: 0 auto;
+    margin-top: -12%;
+}
+
+.icon {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    height: 100vh;
+}
+
+.icon i {
+    width: 2rem;
+    padding: 0.5rem;
+    border-radius: 100%;
+    background-color: var(--colorPrimary);
+    color: var(--colorComplementaryPrimary);
+    font-size: 1rem;
+    text-align: center;
+}
+
+.icon:hover {
+    cursor: pointer;
+    transform: scale(1.15);
+    transition: all 0.3s;
+}
+
+.content-datos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 8%;
+}
+
+form {
+    width: 90%;
 }
 
 .inputContainer {
-    position: relative;
     height: 45px;
     width: 100%;
-    margin-bottom: 17px;
+    margin-bottom: 5%;
 }
 
 .input {
-    position: absolute;
+    width: 100%;
+    height: 100%;
     top: 0px;
     left: 0px;
-    height: 100%;
-    width: 100%;
-    border: 1px solid var(--colorPrimary);
-    font-size: 16px;
     padding: 0 20px;
-    outline: none;
-    z-index: 1;
-}
-
-.input::placeholder{
-    color: var(--colorPrimary);
-    font-size: medium;
-    font-family: "Poppins";
-}
-
-textarea{
     border: 1px solid var(--colorPrimary);
+    z-index: 1;
+    font-size: 16px;
+}
+
+.input::placeholder,
+textarea::placeholder {
+    color: var(--colorPrimary);
+    font-family: var(--fontBody);
+    font-size: medium;
+}
+
+.input:focus::placeholder,
+textarea:focus::placeholder {
+    color: transparent;
+    transition: .6s;
+}
+
+textarea {
     width: 100%;
-    height: 80px;
+    height: 8rem;
+    border: 1px solid var(--colorPrimary);
     resize: none;
 }
 
-textarea::placeholder{
-    color: var(--colorPrimary);
-    padding: 5px 20px;
-    font-size: medium;
-    font-family: "Poppins";
-
+textarea::placeholder {
+    padding: 0px 0px;
 }
+
+#mensaje {
+    line-height: 10px;
+    padding: 20px;
+    font-size: 16px;
+}
+
 .submitBtn {
     display: block;
-    padding: 15px 0;
-    width: 50%;
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 30%;
+    padding: 1rem 0;
+    border-radius: 5px;
+    border: 1px solid var(--colorPrimary);
     background-color: var(--colorPrimary);
-    color: white;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 16px;
-    margin: 0 auto;
-    margin-top: 50px;
-    
-  }
-  
-.submitBtn:hover {
-    background-color: var(--colorComplementaryPrimary);
-    border: 2px solid var(--colorPrimary);
-    color: var(--colorPrimary);
-    transform: translateY(-2px);
-}
-
-.content-foto{
-    width: 70%;
-    margin: 0 auto;
-    position: relative;
-}
-
-.content-redes{
-    position: absolute;
-    bottom: 20%;
-    left: 1%;
-    display: flex;
-}
-
-.icon{
-    background-color: var(--colorQuinary);
-    border-radius: 100%;
-    width: 20px;
-    height: 20px;
-    text-align: center;
-    line-height: 20px;
-    margin-left: 10px;
-    font-size: 0.7rem;
     color: var(--colorComplementaryPrimary);
+    font-size: 16px;
+    cursor: pointer;
 }
 
+.submitBtn:hover {
+    border: 1px solid var(--colorPrimary);
+    background-color: var(--colorComplementaryPrimary);
+    color: var(--colorPrimary);
+}
+
+label {
+    display: none;
+}
+
+/* *TABLET */
+@media screen and (min-width: 767px) {
+    .container-main {
+        width: 100vw;
+        min-height: 90vh;
+    }
+
+    .container-form {
+        align-items: center;
+        width: 85vw;
+        height: 100%;
+        padding: 20% 0 5% 0;
+        border: 1px solid var(--colorPrimary);
+        border-radius: 0.2rem;
+        background-image: url(../assets/img/bannerContacto.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        margin: 0 auto;
+    }
+
+    .content-titulo {
+        width: 70%;
+        top: 0;
+        margin-top: 18%;
+        text-align: center;
+        margin-right: 14%;
+    }
+
+    .content-titulo h1 {
+        font-size: 2.2rem;
+    }
+
+    .content-img {
+        display: none;
+    }
+
+    .icon {
+        width: 2.5rem;
+        height: 2.5rem;
+        line-height: 2.5rem;
+        font-size: 1.2rem;
+    }
+
+    .content-datos {
+        width: 70%;
+        padding-top: 0;
+    }
+
+    .input {
+        background: var(--colorComplementaryPrimary);
+        border-radius: 0.2rem;
+        border: 1px solid var(--colorPrimary);
+        backdrop-filter: blur(15px);
+    }
+
+    textarea {
+        height: 9rem;
+        background: var(--colorComplementaryPrimary);
+        border-radius: 0.2rem;
+        border: 1px solid var(--colorPrimary);
+    }
+
+    .submitBtn {
+        width: 40%;
+        margin-top: 30%;
+        max-width: 10;
+        border-radius: 0.2rem;
+    }
+}
+
+/* *DESKTOP */
+@media screen and (min-width: 1024px) {
+    .container-main {
+        width: 100vw;
+        min-height: 100vh;
+    }
+
+    .container-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90vw;
+        height: 110vh;
+        padding: 5% 0 5% 0;
+        border: 1px solid var(--colorPrimary);
+        margin: 0 auto;
+        background: url(/assets/img/bannerContacto.jpg);
+        background-size: cover;
+        background-position: left;
+    }
+
+    .container-form {
+        display: flex;
+        flex-direction: row;
+        border-radius: 0.2rem;
+    }
+
+    .content-titulo {
+        width: 40%;
+        right: 0;
+        margin-top: 12%;
+        margin-right: 5%;
+        text-align: start;
+    }
+
+    .content-titulo h1 {
+        font-size: 3.8rem;
+    }
+
+    .content-redes .icon {
+        display: flex;
+        flex-direction: row;
+    }
+
+    label {
+        display: block;
+        align-items: center;
+        display: flex;
+        margin-left: 20%;
+        min-width: 16rem !important;
+        font-size: 0.9rem;
+        color: var(--colorComplementaryPrimary);
+    }
+
+    .inputContainer {
+        width: 32vw;
+        margin-bottom: 2rem;
+    }
+
+    .input {
+        background: var(--colorComplementaryPrimary);
+        border-radius: 0;
+        border: 1px solid var(--colorPrimary);
+        margin-top: -6rem !important;
+    }
+
+    textarea {
+        background: var(--colorComplementaryPrimary);
+        border: 1px solid var(--colorPrimary);
+        border-radius: 0.2rem;
+        padding: 20px;
+        margin-top: -1rem;
+    }
+
+    .content-foto {
+        margin: 5%;
+        margin-bottom: 4rem;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+        width: 60vw;
+        height: 80vh;
+    }
+
+    .content-datos {
+        height: 100vh;
+        margin-bottom: 2rem;
+        margin-left: -2.5rem;
+    }
+
+    .content-img img {
+        margin: 0;
+        border-radius: 2rem;
+    }
+
+    .content-redes {
+        margin-left: 12%;
+        margin-top: 105%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .icon i {
+        min-width: 2rem;
+        background-color: var(--colorComplementaryPrimary);
+        color: var(--colorPrimary);
+    }
+
+    .icon {
+        margin-bottom: 0.5rem;
+    }
+
+    .submitBtn {
+        position: absolute;
+        width: 14vw;
+        margin-top: 5rem;
+        margin-left: 18.4%;
+    }
+}

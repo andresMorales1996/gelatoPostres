@@ -17,3 +17,4 @@ document.addEventListener("DOMContentLoaded", () => {
   cargarComponente("footerPage", "../components/footer/footer.html");
   cargarComponente("sliderPage", "../components/slider/slider.html");
 });
+

@@ -8,6 +8,11 @@
 @import url('../components/footer/footer.css');
 @import url('../components/slider/slider.css');
 
+@font-face {
+    font-family: 'Cream Cake';
+    src: url(/assets/fonts/Cream\ Cake.otf);
+}
+
 /* *VARIABLES */
 :root {
     --colorPrimary: #C73753;
