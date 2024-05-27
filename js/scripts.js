@@ -21,9 +21,7 @@ async function cargarScripts() {
   try {
     for (let url of scripts) {
       await cargarScript(url);
-      console.log(`Script cargado: ${url}`);
     }
-    console.log("Todos los scripts han sido cargados.");
   } catch (error) {
     console.error(error);
   }
