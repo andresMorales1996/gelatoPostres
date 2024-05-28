@@ -1,4 +1,6 @@
-/* * INICIAR CON ESTILOS DESDE MOBILE */
+@import url('../../css/styles.css');
+
+/* *MOBILE */
 .logo {
     width: 3rem;
     margin-left: 28%;
@@ -64,7 +66,6 @@ nav li:hover {
 .sideBar a {
     width: 100%;
     margin-left: 6%;
-
 }
 
 .sideBar a:hover {
@@ -116,7 +117,7 @@ svg:hover {
     color: var(--colorPrimary);
 }
 
-/* *MEDIA QUERY TABLET */
+/* *TABLET */
 @media screen and (min-width: 768px) {
     .logo {
         margin-left: 3%;
@@ -169,7 +170,7 @@ svg:hover {
     }
 }
 
-/* *MEDIA QUERY DESKTOP */
+/* *DESKTOP */
 @media screen and (min-width: 1024px) {
     .logo {
         width: 3rem;
@@ -180,7 +181,6 @@ svg:hover {
     .logo img {
         width: 10rem;
     }
-
 
     .esconderEnMobile {
         font-size: 16px;

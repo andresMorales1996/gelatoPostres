@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contáctanos</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/contacto.css">
+    <script src="../index.js"></script>
+    <script src="../js/contacto.js"></script>
+</head>
+
+<body>
+    <div id="navPage"></div>
+
+    <div class="container-main">
+
+        <div class="container-form">
+
+            <div class="content-foto">
+
+                <div class="content-titulo">
+                    <h1>Escríbenos y recibe una atención personalizada.</h1>
+                </div>
+
+                <div class="content-img">
+                    <img src="../assets/img/bannerContacto.jpg">
+                </div>
+
+                <div class="content-redes">
+                    <div class="icon"><i class="fa-solid fa-location-dot"></i><label>Bogotá</label></div>
+                    <div class="icon"><i class="fa-solid fa-phone"></i><label>3002001020</label></div>
+                    <div class="icon"><i class="fa-solid fa-clock"></i><label>Lunes - Viernes 8am - 5pm</label></div>
+                    <div class="icon"><i class="fa-solid fa-envelope"></i><label>gelatoypostres458@gmail.com</label></div>
+                </div>
+
+            </div>
+
+            <div class="content-datos">
+                <form action="https://formspree.io/f/xeqywdnp" method="post">
+                    <div class="inputContainer">
+                        <input type="text" class="input" id="nombre" name="nombre" placeholder="Nombre" required>
+                    </div>
+                    <div class="inputContainer">
+                        <input type="text" class="input" id="apellido" name="apellido" placeholder="Apellido" required>
+                    </div>
+                    <div class="inputContainer">
+                        <input type="email" class="input" id="email" name="email" placeholder="Email" required>
+                    </div>
+                    <div class="inputContainer">
+                        <input type="tel" class="input" id="telefono" name="telefono" placeholder="Teléfono" required>
+                    </div>
+                    <div class="inputContainer">
+                        <textarea id="mensaje" name="mensaje" placeholder="Escribe un mensaje aquí" required></textarea>
+                    </div>
+                    <!-- botón enviar-->
+                    <div>
+                        <button type="submit" class="submitBtn">Enviar</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="footerPage"></div>
+    <div id="toast" class="toast"></div>
+</body>
+
+</html>
