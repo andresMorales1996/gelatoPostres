@@ -5,7 +5,7 @@ async function cargarComponente(id, url) {
     const data = await response.text();
     document.getElementById(id).innerHTML = data;
   } catch (error) {
-    console.error("Error al cargar el componente:", error);
+    //console.error("Error al cargar el componente:", error);
   }
 }
  
@@ -17,4 +17,3 @@ document.addEventListener("DOMContentLoaded", () => {
   cargarComponente("footerPage", "../components/footer/footer.html");
   cargarComponente("sliderPage", "../components/slider/slider.html");
 });
-

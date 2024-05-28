@@ -23,7 +23,7 @@ async function cargarScripts() {
       await cargarScript(url);
     }
   } catch (error) {
-    console.error(error);
+    //console.error(error);
   }
 }
 
