@@ -1,0 +1,141 @@
+[
+
+    {
+         "id": 1,
+         "tipo": "Tortas tradicionales",
+         "nombre": "Torta de chocolate",
+         "descripcion": "Torta de chocolate, rellena con el sabor de tu preferencia y cubierta de butter cream de chocolate",
+         "relleno": "ganache de chocolate, chantilly, dulce de leche, mora, sin relleno",
+         "precio": [45000,75000,110000,185000],
+         "disponibilidad": true,
+         "porciones": [6,12,20,50],
+         "imagen":"no"
+     },
+ 
+     {
+         "id": 2,
+         "tipo": "Tortas tradicionales",
+         "nombre": "Torta de vainilla",
+         "descripcion": "Torta sabor a vainilla",
+         "relleno": "ganache de chocolate, chantilly, dulce de leche, mora, sin relleno",
+         "precio": [38000,65000,95000,150000],
+         "disponibilidad": true,
+         "porciones": [6,12,20,50],
+         "imagen": "no"
+     },
+ 
+     {
+         "id": 3,
+         "tipo": "Tortas tradicionales",
+         "nombre": "Torta de marmoleada",
+         "descripcion": "Torta de vainilla mezclada con torta de chocolate decorada con butter cream",
+         "relleno": "ganache de chocolate, chantilly, dulce de leche, mora, sin relleno",
+         "precio": [38000,65000,95000,150000],
+         "disponibilidad": true,
+         "porciones": [6,12,20,50],
+         "imagen": "no"
+     },
+ 
+     {
+         "id": 4,
+         "tipo": "Tortas tradicionales",
+         "nombre": "Torta de zanahoria",
+         "descripcion": "Torta de zanahoria con una mezcla de nueces, almendras, pasas y especias, decorada con Cheese cream",
+         "relleno": "ganache de chocolate, chantilly, dulce de leche, mora, sin relleno",
+         "precio": [45000,75000,110000,185000],
+         "disponibilidad": true,
+         "porciones": [6,12,20,50],
+         "imagen": "no"
+     },
+ 
+     {
+         "id": 5,
+         "tipo": "Tortas frias",
+         "nombre": "Torta tres leches",
+         "descripcion": "Torta fria de tres leches decorada con chantilly y canela ",
+         "relleno": "ganache de chocolate, chantilly, dulce de leche, mora, sin relleno",
+         "precio": [35000,85000,120000,180000],
+         "disponibilidad": true,
+         "porciones": [6,12,20,50],
+         "imagen": "no"
+     },
+ 
+     {
+         "id": 6,
+         "tipo": "Tortas frias",
+         "nombre": "Torta beso de angel",
+         "descripcion": "Torta tres leches rellena de quesillo (leche asada) decorada con chantilly",
+         "relleno": "ganache de chocolate, chantilly, dulce de leche, mora, sin relleno",
+         "precio": [35000,85000,120000,180000],
+         "disponibilidad": true,
+         "porciones": [6,12,20,50],
+         "imagen": "no"
+     },
+ 
+     {
+         "id": 7,
+         "tipo": "Postres",
+         "nombre": "Cupcakes mini",
+         "descripcion": "Cupcakes decorados con chantilly y chispas",
+         "precio": [21600,43200,64800,86400],
+         "disponibilidad": true,
+         "porciones": [12,24,36,48],
+         "imagen": "no"
+     },
+ 
+     {
+         "id": 8,
+         "tipo": "Postres",
+         "nombre": "Cupcakes tamaño normal",
+         "descripcion": "Cupcakes decorados con chantilly y chispas",
+         "precio": [24000,48000,96000],
+         "disponibilidad": true,
+         "porciones": [6,12,24],
+         "imagen": "no"
+     },
+ 
+     {
+         "id": 9,
+         "tipo": "Postres",
+         "nombre": "Cupcakes tamaño normal",
+         "descripcion": "Cupcakes decorados con chantilly y chispas",
+         "precio": [24000,48000,96000],
+         "disponibilidad": true,
+         "porciones": [6,12,24],
+         "imagen": "no"
+     },
+ 
+     {
+         "id": 10,
+         "tipo": "Postres",
+         "nombre": "Chescacke de maracuya",
+         "descripcion": " Chescake cremoso decorado con mermelada de maracuya",
+         "precio": [50000,75000,130000,185000],
+         "disponibilidad": true,
+         "porciones": [6,12,20,50],
+         "imagen": "no"
+     },
+ 
+     {
+         "id": 11,
+         "tipo": "Postres",
+         "nombre": "Chescacke de frutos rojos",
+         "descripcion": " Chescake cremoso decorado con mermelada de frutos rojos (fresa y mora)",
+         "precio": [50000,75000,130000,185000],
+         "disponibilidad": true,
+         "porciones": [6,12,20,50],
+         "imagen": "no"
+     },
+ 
+     {
+         "id": 12,
+         "tipo": "Postres",
+         "nombre": "Marquesa",
+         "descripcion": "Pudin de chocolate intercalado con galletas de vainilla pulverizadas y leche condensada",
+         "precio": [50000,75000,130000,185000],
+         "disponibilidad": true,
+         "porciones": [6,12,20,50],
+         "imagen": "no"
+     }
+ 
+ ]
