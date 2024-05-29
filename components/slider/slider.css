@@ -94,16 +94,20 @@
 
 
 .slider-item-div {
+  width: 100%;
   margin-top: auto;
   background-color: rgba(247, 154, 178, 0.5);
-  /* padding: 0 0.5rem 0.5rem 0; */
+  padding: 0 0.5rem 0.5rem 0;
 }
 
 .title {
-  /* font-weight: bold; */
-  font-size: var(--medium);
+  font-weight: bold;
+  width: 100%;
+  font-size: var(--small);
   background-color: rgba(247, 154, 178, 0.7);
   font-family: var(--fontSubtitle);
+  cursor: pointer;
+
 }
 
 .desc-text{
@@ -134,6 +138,7 @@
 .next {
     right: 0rem;
 }
+
 
 
 /*TABLET*/
@@ -184,6 +189,7 @@
     border-radius: 10px;
     opacity: 0.5;
     transform: scale(0.8);
+    cursor: pointer;
   }
 
   .dots {
