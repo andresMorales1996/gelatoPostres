@@ -67,4 +67,4 @@ items.forEach((item, index) => {
 });
 
 // Inicializar carrusel
-updateCarousel();;
+updateCarousel();
