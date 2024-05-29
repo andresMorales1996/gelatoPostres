@@ -1,12 +1,12 @@
 @import url('../../css/styles.css');
 
 /* *MOBILE */
-.logo {
+.logo-nav {
     width: 3rem;
-    margin-left: 28%;
+    margin-left: 25%;
 }
 
-.logo img {
+.logo-nav img {
     width: 12rem;
     margin-top: 0.3rem;
 }
@@ -104,11 +104,12 @@ svg:hover {
 }
 
 .nav_iconos {
+    margin-right: 2%;
     display: flex;
 }
 
 .nav_iconos i {
-    margin-right: 1rem;
+    margin-right: 0.5rem;
     color: var(--colorSecondary);
     font-size: 1.25rem;
 }
@@ -117,19 +118,101 @@ svg:hover {
     color: var(--colorPrimary);
 }
 
+.expandirInput:hover input {
+    width: 60%;
+}
+
+.inputBuscar {
+    position: absolute;
+    width: 0;
+    height: 2rem;
+    margin-top: 0.3rem;
+    border-radius: 2rem;
+    margin-right: -0.8rem;
+    right: 22%;
+    padding: 0 0rem 0rem 1.2rem;
+    transition: all .7s ease;
+}
+
+.inputBuscar::placeholder {
+    padding-left: -0.1rem;
+    color: var(--colorPrimary);
+    font-family: var(--fontBody);
+    font-size: 16px;
+}
+
+.inputBuscar {
+    color: var(--colorComplementarySecondary);
+    font-family: var(--fontBody);
+    font-weight: 300;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+.fa-search {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-top: 0.1rem;
+    line-height: 37px;
+    border-radius: 2rem;
+    font-size: 1.25rem;
+    text-align: center;
+    border: 1px solid var(--colorTertiary);
+    background-color: var(--colorTertiary);
+    z-index: 1;
+}
+
+.fa-search:hover {
+    color: var(--colorPrimary);
+}
+
+.hidden {
+    display: none;
+}
+
+
 /* *TABLET */
 @media screen and (min-width: 768px) {
-    .logo {
-        margin-left: 3%;
+
+    .logo-nav {
+        margin-left: 40%;
+    }
+
+    .sideBar {
+        width: 50%;
+    }
+
+    .expandirInput:hover input {
+        width: 40%;
+    }
+
+
+    .inputBuscar {
+        margin-right: -5rem;
+    }
+
+}
+
+/* *DESKTOP 1024*/
+@media screen and (min-width: 1024px) {
+    .logo-nav {
+        width: 3rem;
+        margin-left: 2%;
         border-radius: 10rem;
     }
 
-    .logo img {
-        width: 6rem;
+    .logo-nav img {
+        width: 10rem;
     }
 
     .menu-boton {
         display: none;
+    }
+
+    .esconderEnMobile {
+        display: block;
+        margin: 0 auto;
+        font-size: 16px;
     }
 
     nav {
@@ -140,13 +223,16 @@ svg:hover {
 
     nav ul {
         width: 60%;
+        margin-left: 8.5%;
+
     }
 
     nav li {
-        padding: 1rem;
+        padding: 0.8rem;
     }
 
     nav li:hover {
+        height: 0.8rem;
         border-radius: 3rem;
         background-color: var(--colorPrimary);
     }
@@ -155,42 +241,57 @@ svg:hover {
         color: var(--colorTertiary);
     }
 
-    .esconderEnMobile {
-        display: block;
-        margin: 0 auto;
-        font-size: 12px;
-    }
-
-    .nav_iconos {
-        margin-right: 1%;
-    }
-
-    .nav_iconos i {
-        margin-right: 2rem;
-    }
-}
-
-/* *DESKTOP */
-@media screen and (min-width: 1024px) {
-    .logo {
-        width: 3rem;
-        margin-left: 2%;
-        border-radius: 10rem;
-    }
-
-    .logo img {
-        width: 10rem;
-    }
-
-    .esconderEnMobile {
-        font-size: 16px;
-    }
-
     .nav_iconos {
         margin-right: 0%;
     }
 
     .nav_iconos i {
-        margin-right: 2rem;
+        margin-right: 0.8rem;
+    }
+
+    .fa-search {
+        position: absolute;
+        margin-left: 2%;
+    }
+
+    .expandirInput:hover input {
+        width: 20%;
+    }
+
+    .inputBuscar {
+        margin-top: -1.7%;
+        margin-right: -9rem;
+    }
+}
+
+/* *DESKTOP 1280*/
+@media screen and (min-width: 1280px) {
+    .nav_iconos i {
+        margin-right: 1.8rem;
+    }
+
+    .fa-search {
+        text-align: center;
+    }
+
+    .expandirInput:hover input {
+        width: 20%;
+    }
+
+    .inputBuscar {
+        margin-top: -1.2%;
+        margin-right: -12.5%;
+    }
+}
+
+/* *DESKTOP 1280*/
+@media screen and (min-width: 1920px) {
+    .nav_iconos i {
+        margin-right: 3.5rem;
+    }
+
+    .inputBuscar {
+        margin-top: -0.8%;
+        margin-right: -11.5%;
     }
 }

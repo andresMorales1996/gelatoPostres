@@ -37,9 +37,9 @@ h1 {
 }
 
 .content-redes {
-    width: 60%;
     display: flex;
     justify-content: space-between;
+    width: 60%;
     right: 0;
     margin: 0 auto;
     margin-top: -12%;
@@ -102,7 +102,15 @@ form {
 textarea::placeholder {
     color: var(--colorPrimary);
     font-family: var(--fontBody);
-    font-size: medium;
+    font-size: 16px;
+}
+
+.input,
+textarea {
+    color: var(--colorComplementarySecondary);
+    font-family: var(--fontBody);
+    font-weight: 300;
+    font-size: 16px;
 }
 
 .input:focus::placeholder,
@@ -177,13 +185,27 @@ label {
 }
 
 @keyframes fadein {
-    from { bottom: 0; opacity: 0; }
-    to { bottom: 30px; opacity: 1; }
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
 }
 
 @keyframes fadeout {
-    from { bottom: 30px; opacity: 1; }
-    to { bottom: 0; opacity: 0; }
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
 }
 
 /* *TABLET */
@@ -270,24 +292,38 @@ label {
         transform: translateX(-50%);
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     }
-    
+
     .toast.show {
         visibility: visible;
         animation: fadein 0.5s, fadeout 0.5s 2.5s;
     }
-    
+
     @keyframes fadein {
-        from { bottom: 0; opacity: 0; }
-        to { bottom: 30px; opacity: 1; }
+        from {
+            bottom: 0;
+            opacity: 0;
+        }
+
+        to {
+            bottom: 30px;
+            opacity: 1;
+        }
     }
-    
+
     @keyframes fadeout {
-        from { bottom: 30px; opacity: 1; }
-        to { bottom: 0; opacity: 0; }
+        from {
+            bottom: 30px;
+            opacity: 1;
+        }
+
+        to {
+            bottom: 0;
+            opacity: 0;
+        }
     }
 }
 
-/* *DESKTOP */
+/* *DESKTOP 1024 */
 @media screen and (min-width: 1024px) {
     .container-main {
         width: 100vw;
@@ -295,6 +331,7 @@ label {
     }
 
     .container-form {
+        position: relative;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -317,18 +354,14 @@ label {
     .content-titulo {
         width: 40%;
         right: 0;
-        margin-top: 12%;
+        top: 0;
+        margin-top: 5%;
         margin-right: 5%;
         text-align: start;
     }
 
     .content-titulo h1 {
-        font-size: 3.8rem;
-    }
-
-    .content-redes .icon {
-        display: flex;
-        flex-direction: row;
+        font-size: 3.5rem;
     }
 
     label {
@@ -382,14 +415,22 @@ label {
     }
 
     .content-redes {
-        margin-left: 12%;
-        margin-top: 80%;
-        display: flex;
+        position: absolute;
         flex-direction: column;
+        bottom: 0;
+        left: 0;
+        margin-bottom: 6%;
+        margin-left: 12%;
+
+    }
+
+    .content-redes .icon {
+        display: flex;
+        flex-direction: row;
     }
 
     .icon i {
-         min-width: 2rem;
+        min-width: 2rem;
         background-color: var(--colorComplementaryPrimary);
         color: var(--colorPrimary);
     }
@@ -422,20 +463,34 @@ label {
         transform: translateX(-50%);
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     }
-    
+
     .toast.show {
         visibility: visible;
         animation: fadein 0.5s, fadeout 0.5s 2.5s;
     }
-    
+
     @keyframes fadein {
-        from { bottom: 0; opacity: 0; }
-        to { bottom: 30px; opacity: 1; }
+        from {
+            bottom: 0;
+            opacity: 0;
+        }
+
+        to {
+            bottom: 30px;
+            opacity: 1;
+        }
     }
-    
+
     @keyframes fadeout {
-        from { bottom: 30px; opacity: 1; }
-        to { bottom: 0; opacity: 0; }
+        from {
+            bottom: 30px;
+            opacity: 1;
+        }
+
+        to {
+            bottom: 0;
+            opacity: 0;
+        }
     }
-    
+
 }
