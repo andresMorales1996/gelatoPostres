@@ -11,7 +11,7 @@ async function cargarComponente(id, url) {
  
 //* *IMPORT COMPONENTES *//
 document.addEventListener("DOMContentLoaded", () => {
-  // cargarComponente("nav", "./components/nav/nav.html");
+  //cargarComponente("nav", "./components/nav/nav.html");
   // cargarComponente("footer", "./components/footer/footer.html");
   cargarComponente("navPage", "../components/nav/nav.html");
   cargarComponente("footerPage", "../components/footer/footer.html");
