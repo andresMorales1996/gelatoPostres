@@ -10,6 +10,9 @@ const scripts = {
   "contacto": [
     "../components/nav/nav.js"
   ],
+  "productos": [
+    "../components/nav/nav.js"
+  ],
 };
 
 // *FUNCIÓN CARGAR SCRIPTS DE COMPONENTES

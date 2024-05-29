@@ -21,7 +21,7 @@
     margin-right: 5%;
 }
 
-h1 {
+.content-titulo  h1 {
     color: var(--colorPrimary);
     font-family: var(--fontTitle);
     font-size: 1.8rem;
