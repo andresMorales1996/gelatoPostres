@@ -3,7 +3,7 @@
 /** MOBILE **/
 .container-main {
     padding-top: 1rem;
-    padding-bottom: 2rem;
+    padding-bottom: 3rem;
 }
 
 .contenedor-filtros {
@@ -72,7 +72,7 @@
 .circulo {
     width: 170px; 
     height: 170px; 
-    background-color: var(--colorSecondary);
+    background: linear-gradient(135deg, var(--colorTertiary) 10%, var(--colorPrimary) 75%);
     border-radius: 50%;
     position: relative; 
     z-index: 1; 
@@ -116,6 +116,109 @@
     background-color: var(--colorSecondary);
     border-radius: 50%;
 }
+
+/* *TABLET */
+@media screen and (min-width: 767px) {
+    .contenedor-filtros {
+        gap: 4rem;
+        height: 60px;
+    }
+    
+    .contenedor-filtros a { 
+        padding: 0.4rem;
+        font-size: 1.2rem;
+    }
+
+    .contenedor-productos {
+        padding-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        gap: 2rem; 
+    }
+    
+    .contenedor-productos h1 {
+        font-size: 3.7rem;
+    }
+
+    .productos-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+    }
+    
+    .producto {
+        flex: 1 1 calc(50% - 2rem);
+        max-width: calc(50% - 2rem);
+    }
+
+    .content-productos h2 {
+        font-size: 2.9rem;
+    }
+
+    .producto img {
+        top: 25%;
+        left: 27%; 
+        z-index: 3; /* Asegura que la imagen esté por encima del círculo */
+        width: 170px;
+    }
+
+    .descripcion-producto {
+        font-size: 1.2rem;
+    }
+    
+    .precio-producto {
+        font-size: 1.2rem;
+    }
+
+    .boton-modulo {
+        width: 40px; 
+        height: 40px; 
+        font-size: 1.2rem;
+    }
+}
+
+/* *DESKTOP 1024 */
+@media screen and (min-width: 1024px) {
+    .container-main {
+        width: 100vw;
+        min-height: 100vh;
+    }
+
+    .contenedor-filtros a { 
+        padding: 1rem;
+        font-size: 1rem;
+    }
+
+    .productos-grid {
+        gap: 3rem;
+    }
+    
+    .producto {
+        flex: 1 1 calc(33.33% - 2rem);
+        max-width: calc(33.33% - 2rem);
+    }
+
+    .content-productos h2 {
+        font-size: 2.6rem;
+    }
+
+    .producto img {
+        top: 25%;
+        left: 29%;
+        width: 170px;
+    }
+
+    .descripcion-producto {
+        font-size: 1rem;
+    }
+    
+    .precio-producto {
+        font-size: 1rem;
+    }
+}
+
 
 
 
