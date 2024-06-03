@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos</title>
     <link rel="stylesheet" href="../css/styles.css" />
-    <link rel="stylesheet" href="../css/contacto.css">
+    <link rel="stylesheet" href="../css/demo-productos.css" />
     <script src="../index.js"></script>
     <script src="../js/scripts.js"></script>
     <script src="../js/contacto.js"></script>
@@ -29,6 +29,18 @@
         <!--Productos-->
         <div class="contenedor-productos">
             <h1>Categoría</h1>
+
+            <div id="modal" class="hidden">
+                <div id="content_modal">
+                    <div id="informacion_modal">
+                        aca va el modal
+                    </div>
+                </div>
+            </div>
+
+            <div id="productos_demo">
+
+            </div>
 
             <div id="tortasTradicionales" class="content-productos">
                 <h2>Tortas tradicionales</h2>
@@ -87,6 +99,8 @@
     <script>
         cargarScripts("productos");
     </script>
+
+    <script src="../js/demo.js"></script>
 
 </body>
 

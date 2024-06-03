@@ -25,7 +25,7 @@
             "porcion": 50
             }
          ],
-         "imagen":"no"
+         "imagen": "http://127.0.0.1:5501/assets/img/torta1.png"
      },
  
      {
@@ -52,8 +52,7 @@
             "precio":150000,
             "porcion": 50
             }
-         ],
-         "imagen": "no"
+         ]
      },
  
      {
@@ -80,8 +79,7 @@
             "precio":150000,
             "porcion": 50
             }
-         ],
-         "imagen": "no"
+         ]
      },
  
      {
@@ -108,8 +106,7 @@
             "precio":185000,
             "porcion": 50
             }
-         ],
-         "imagen": "no"
+         ]
      },
  
      {
@@ -136,8 +133,7 @@
             "precio":180000,
             "porcion": 50
             }
-         ],
-         "imagen": "no"
+         ]
      },
  
      {
@@ -156,7 +152,7 @@
             "precio":85000,
             "porcion": 12
             },
-         {
+            {
             "precio":120000,
             "porcion": 20
             },
@@ -164,8 +160,7 @@
             "precio":180000,
             "porcion": 50
             }
-         ],
-         "imagen": "no"
+         ]
      },
  
      {
@@ -191,8 +186,7 @@
             "precio":86400,
             "porcion": 50
             }
-         ],
-         "imagen": "no"
+         ]
      },
  
      {
@@ -214,8 +208,7 @@
             "precio":96000,
             "porcion": 24
             }
-         ],
-         "imagen": "no"
+         ]
      },
  
      {
@@ -237,8 +230,7 @@
             "precio":96000,
             "porcion": 24
             }
-         ],
-         "imagen": "no"
+         ]
      },
  
      {
@@ -264,8 +256,7 @@
             "precio":185000,
             "porcion": 50
             }
-         ],
-         "imagen": "no"
+         ]
      },
  
      {
@@ -291,8 +282,7 @@
             "precio":185000,
             "porcion": 50
             }
-         ],
-         "imagen": "no"
+         ]
      },
  
      {
@@ -318,8 +308,7 @@
             "precio":185000,
             "porcion": 50
             }
-         ],
-         "imagen": "no"
+         ]
      }
  
  ]
