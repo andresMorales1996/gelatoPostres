@@ -23,11 +23,11 @@ function updateSliderPosition() {
 }
 
 prevButton.addEventListener('click', () => {
-    if (currentIndex > 0) {
-        currentIndex--;
-        updateSliderPosition();
-    }
-});
+     if (currentIndex > 0) {
+         currentIndex--;
+         updateSliderPosition();
+     }
+ });
 
 nextButton.addEventListener('click', () => {
     if (currentIndex < sliderItems.length - 1) {
@@ -67,4 +67,4 @@ items.forEach((item, index) => {
 });
 
 // Inicializar carrusel
-updateCarousel();;
+updateCarousel();

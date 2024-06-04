@@ -12,7 +12,7 @@
 
         <nav class="header_nav">
 
-            <a href="#" class="logo"><img src="../../assets/img/logoMobile.png" alt="Logo"></a>
+            <a href="../../index.html" class="logo-nav"><img src="../../assets/img/logoMobile.png" alt="Logo"></a>
 
             <ul class="sideBar">
                 <li class="close-boton" onclick=esconderSideBar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg"
@@ -21,31 +21,45 @@
                                 d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
                         </svg></a>
                 </li>
-                <li><a href="#">Inicio</a></li>
+                <li><a href="../../index.html">Inicio</a></li>
                 <li><a href="../../pages/sobreNosotros.html">Nosotros</a></li>
-                <li><a href="#">Productos</a></li>
-                <li><a href="#">Personalizar torta</a></li>
-                <li><a href="#">Contacto</a></li>
+                <li><a href="../../pages/productos.html">Productos</a></li>
+                <li><a href="../../index.html">Personalizar torta</a></li>
+                <li><a href="../../pages/contacto.html">Contacto</a></li>
             </ul>
 
             <ul>
-                <li class="esconderEnMobile"><a href="#">Inicio</a></li>
+                <li class="esconderEnMobile"><a href="../../index.html">Inicio</a></li>
                 <li class="esconderEnMobile"><a href="../../pages/sobreNosotros.html">Nosotros</a></li>
-                <li class="esconderEnMobile"><a href="#">Productos</a></li>
-                <li class="esconderEnMobile"><a href="#">Personalizar torta</a></li>
-                <li class="esconderEnMobile"><a href="#">Contacto</a></li>
+                <li class="esconderEnMobile"><a href="../../pages/productos.html">Productos</a></li>
+                <li class="esconderEnMobile"><a href="../../index.html">Personalizar torta</a></li>
+                <li class="esconderEnMobile"><a href="../../pages/contacto.html">Contacto</a></li>
                 <li class="menu-boton" onclick=mostrarSideBar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 -960 960 960">
                             <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
                         </svg></a></li>
             </ul>
 
+            <div class="expandirInput">
+                <input type="search" class="inputBuscar" placeholder="Buscar" />
+                <a href="#" id="searchIcon" onclick="ocultarLogo(event)"><i class="fa fa-search"></i></a>
+            </div>
+
             <div class="nav_iconos">
-                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                <a href="#"><i class="fa fa-user"></i></a>
+
+                <div class="nav-icon">
+                    <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                </div>
+                <div class="nav-icon">
+                    <a href="#"><i class="fa fa-user"></i></a>
+                </div>
             </div>
 
         </nav>
+        
+        <section class="container-banner">
+            <div class="banner"></div>
+        </section>
 
     </header>
 

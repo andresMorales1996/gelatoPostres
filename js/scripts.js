@@ -1,9 +1,19 @@
 // IMPORT SCRIPTS DE COMPONENTES
-const scripts = [
-  "../components/nav/nav.js",
-  "../components/slider/slider.js",
-  
-];
+const scripts = {
+  "inicio": [
+    "../components/nav/nav.js"    
+  ],
+  "nosotros": [
+    "../components/nav/nav.js",
+    "../components/slider/slider.js"
+  ],
+  "contacto": [
+    "../components/nav/nav.js"
+  ],
+  "productos": [
+    "../components/nav/nav.js"
+  ],
+};
 
 // *FUNCIÓN CARGAR SCRIPTS DE COMPONENTES
 function cargarScript(url) {
@@ -17,10 +27,15 @@ function cargarScript(url) {
   });
 }
 
-async function cargarScripts() {
+async function cargarScripts(page) {
   try {
-    for (let url of scripts) {
-      await cargarScript(url);
+    const pageScripts = scripts[page];
+    if (pageScripts) {
+      for (let url of pageScripts) {
+        await cargarScript(url);
+      }
+    } else {
+      // console.error(`${page}`);
     }
   } catch (error) {
     console.error(error);

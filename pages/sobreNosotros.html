@@ -1,53 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="../css/styles.css" />
-    <link rel="stylesheet" href="../css/sobreNosotros.css">
-    <script src="../js/scripts.js"></script>
-    <script src="../index.js"></script>
-  </head>
-  <body>
-    <div id="navPage"></div>
-    <section>
-        <div class="banner"></div>
-      <!--Banner-->
-    </section>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sobre nosotros</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/sobreNosotros.css">
+  <script src="../index.js"></script>
+  <script src="../js/scripts.js"></script>
+</head>
+
+<body>
+  <div id="nav"></div>
+
+  <div class="container-main">
+
     <!--Descripcion-->
     <section class="container-descripcion">
-        <section class="content-descripcion">
-          <div class="content-info">
-            <h1>Descripción</h1>
-            <p>
-              El proyecto "Gelato y Postres" es una plataforma de e-commerce diseñada
-              para ofrecer a los clientes una experiencia óptima y cómoda al explorar
-              un catálogo variado de productos y personalizar sus pedidos. Nacido de
-              la necesidad de mejorar el proceso de compra que previamente se
-              realizaba a través de Instagram, este e-commerce busca resolver las
-              limitaciones de la red social y proporcionar una interfaz amigable y
-              funcional para los usuarios.
-            </p>
+      <section class="content-descripcion">
+        <div class="content-info">
+          <h1>Descripción</h1>
+          <p>
+            El proyecto "Gelato y Postres" es una plataforma de e-commerce diseñada
+            para ofrecer a los clientes una experiencia óptima y cómoda al explorar
+            un catálogo variado de productos y personalizar sus pedidos. Nacido de
+            la necesidad de mejorar el proceso de compra que previamente se
+            realizaba a través de Instagram, este e-commerce busca resolver las
+            limitaciones de la red social y proporcionar una interfaz amigable y
+            funcional para los usuarios.
+          </p>
+        </div>
+        <div class="content-img">
+          <div class="img-torta">
+            <img src="../assets/img/torta1.png" alt="Torta 1">
           </div>
-          <div class="content-img">
-            <div class="img-torta">
-              <img src="../assets/img/torta1.png" alt="Torta 1">
-            </div>
-            <div class="img-torta">
-              <img src="../assets/img/torta2.png" alt="Torta 2">
-            </div>
-            <div class="img-torta">
-              <img src="../assets/img/torta3.png" alt="Torta 3">
-            </div>
-            <div class="img-torta">
-              <img src="../assets/img/torta4.png" alt="Torta 4">
-            </div>
+          <div class="img-torta">
+            <img src="../assets/img/torta2.png" alt="Torta 2">
           </div>
-        </section>
+          <div class="img-torta">
+            <img src="../assets/img/torta3.png" alt="Torta 3">
+          </div>
+          <div class="img-torta">
+            <img src="../assets/img/torta4.png" alt="Torta 4">
+          </div>
+        </div>
+      </section>
     </section>
-    <div id="sliderPage"></div>
-    <div id="footerPage"></div>
-  </body>
-</html>
 
+    <!--Equipo-->
+    <div id="slider"></div>
+
+  </div>
+
+  <div id="footer"></div>
+
+  <script>
+    cargarScripts("nosotros");
+  </script>
+
+</body>
+
+</html>
