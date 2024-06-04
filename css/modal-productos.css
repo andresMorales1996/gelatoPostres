@@ -1,7 +1,14 @@
 @import url('../../css/styles.css');
 
-#productos_demo {
-    background-color: red;
+/*Mobile*/
+#informacion_modal{
+    display: flex;
+    flex-direction: column;
+}
+
+#informacion_modal > div {
+    width: 100%;
+    background-color: var(--colorComplementaryPrimary);
 }
 
 #modal {
@@ -15,8 +22,7 @@
     top: 0;
     bottom: 0;
     z-index: 9999;
-    overflow: hidden;
-    border-radius: 10px;
+    overflow: auto;
 }
 
 .visible {
@@ -29,7 +35,7 @@
 
 #content_modal {
     position: relative;
-    width: 60%;
+    width: 85%;
 }
 
 .cerrar-modal {
@@ -44,9 +50,10 @@
     font-weight: 700;
     background-color: var(--colorQuaternary);
     padding:  0 !important;
-    border-radius: 0 10px 0 10px;
+    /* border-radius: 0 10px 0 10px; */
     color: #ffffff;
 }
+
 
 #mostrar-precio::before{
     content: "$";
@@ -60,19 +67,9 @@
     display: flex;
 }
 
-#informacion_modal > div {
-    width: 50%;
-    background-color: #ffffff;
-}
-
 #informacion_modal > div:nth-child(1){
-    border-radius: 10px 0 0 10px;
     display: flex;
     overflow: hidden;
-}
-
-#informacion_modal > div:nth-child(2){
-    border-radius: 0 10px 10px 0;
 }
 
 .image_modal{
@@ -133,9 +130,10 @@
 }
 
 .footer-modal div {
-width: 30%;
-display: flex;
-align-items: center;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
 }
 
 .footer-modal div button:nth-child(1){
@@ -172,4 +170,65 @@ align-items: center;
     text-align: center;
     font-family: "Poppins";
     color: #ffffff;
+}
+
+
+/** Tablet **/
+@media (min-width: 768px){
+    #content_modal {
+    position: relative;
+    width: 70%;
+    }
+
+    #informacion_modal > div:nth-child(1){
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    overflow: hidden;
+    } 
+
+    #informacion_modal > div:nth-child(2){
+    border-radius: 0 10px 10px 10px;
+    }
+
+    .footer-modal > p{
+        border-radius: 0 0 10px 0;
+    }
+    
+}
+
+/** Desktop **/
+@media (min-width: 1024px) {
+
+    #informacion_modal{
+        display: flex;
+        flex-direction: row;
+    }
+
+    #informacion_modal > div {
+        width: 50%;
+        background-color: var(--colorComplementaryPrimary);
+    }
+
+     #informacion_modal > div:nth-child(2){
+    border-radius: 0 10px 10px 0;
+    }
+
+    #content_modal {
+        position: relative;
+        width: 80%;
+    }
+
+    #informacion_modal > div {
+        width: 50%;
+        background-color: var(--colorComplementaryPrimary);
+    }
+
+    #informacion_modal > div:nth-child(1){
+        border-radius: 10px 0 0 10px;
+        display: flex;
+        overflow: hidden;
+    }
+    .cerrar-modal{
+        border-radius: 0 10px 0 10px;
+    }
 }
