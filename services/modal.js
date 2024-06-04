@@ -1,76 +1,76 @@
-let carrito = []
+// let carrito = []
 
-function addCarrito(producto){
-    carrito.push(producto)
-}
+// function addCarrito(producto){
+//     carrito.push(producto)
+// }
 
-function getCarrito(){
-    return carrito
-}
+// function getCarrito(){
+//     return carrito
+// }
 
-console.log(getCarrito())
-addCarrito({
-    id: "1",
-    relleno: "ganache de chocolate",
-    precio: 45000,
-    porcion: 6 
-})
-console.log(getCarrito())
-
-
-function cargarProductos() {
-    return fetch("../services/data.json")
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Error al cargar los datos")
-            }
-
-            return response.json();
-        })
-}
-
-async function obtenerProductos() {
-    try {
-        const productos = await cargarProductos();
-        console.log("productos ", productos)
-        const container_productos = document.getElementById("productos_demo");
-
-        productos.forEach(producto => {
-
-            const div = document.createElement("div");
-            const h2 = document.createElement("h2");
-            const p = document.createElement("p")
-            const button = document.createElement("button")
-
-            //Escribir la informacion
-            h2.textContent = producto.nombre;
-
-            if (producto.opciones) {
-                p.textContent = producto.opciones.length > 1 ? "Escoger opciones" : producto.opciones[0].precio;
-            } else {
-                p.textContent = producto.precio[0];
-            }
-
-            button.innerHTML = "Ver producto";
-
-            button.addEventListener("click", () => {
-                productoModal(producto)
-            })
-
-            div.appendChild(h2);
-            div.appendChild(p);
-            div.appendChild(button);
-
-            container_productos.appendChild(div);
-
-        });
+// console.log(getCarrito())
+// addCarrito({
+//     id: "1",
+//     relleno: "ganache de chocolate",
+//     precio: 45000,
+//     porcion: 6 
+// })
+// console.log(getCarrito())
 
 
-    } catch (error) {
-        console.log("error ", error);
+// function cargarProductos() {
+//     return fetch("../services/data.json")
+//         .then(response => {
+//             if (!response.ok) {
+//                 throw new Error("Error al cargar los datos")
+//             }
 
-    }
-}
+//             return response.json();
+//         })
+// }
+
+// async function obtenerProductos() {
+//     try {
+//         const productos = await cargarProductos();
+//         console.log("productos ", productos)
+//         const container_productos = document.getElementById("productos_demo");
+
+//         productos.forEach(producto => {
+
+//             const div = document.createElement("div");
+//             const h2 = document.createElement("h2");
+//             const p = document.createElement("p")
+//             const button = document.createElement("button")
+
+//             //Escribir la informacion
+//             h2.textContent = producto.nombre;
+
+//             if (producto.opciones) {
+//                 p.textContent = producto.opciones.length > 1 ? "Escoger opciones" : producto.opciones[0].precio;
+//             } else {
+//                 p.textContent = producto.precio[0];
+//             }
+
+//             button.innerHTML = "Ver producto";
+
+//             button.addEventListener("click", () => {
+//                 productoModal(producto)
+//             })
+
+//             div.appendChild(h2);
+//             div.appendChild(p);
+//             div.appendChild(button);
+
+//             container_productos.appendChild(div);
+
+//         });
+
+
+//     } catch (error) {
+//         console.log("error ", error);
+
+//     }
+// }
 
 function productoModal(producto) {
     const informacion_modal = document.getElementById("informacion_modal");
@@ -91,12 +91,14 @@ function productoModal(producto) {
     const image = document.createElement("img");
     const div_info = document.createElement("div");
     const titulo = document.createElement("h2");
-    const descripcion = document.createElement("p")
-    const cerrar = document.createElement("p")
+    const descripcion = document.createElement("p");
+    const cerrar = document.createElement("p");
     cerrar.addEventListener("click", cerrarModal)
     cerrar.id = "icon-cerrar"
     const formulario = crearFormulario(producto)
 
+    // const mensaje = document.createElement("p");
+    // mensaje.id = "mensaje"
 
     titulo.textContent = producto.nombre;
     descripcion.textContent = producto.descripcion;
@@ -106,6 +108,7 @@ function productoModal(producto) {
     image.title = producto.nombre
     image.classList.add("image_modal")
     div_info.classList.add("info_modal")
+    // mensaje.innerHTML = 'Si deseas personalizar tu torta da clic <a href="#" >aquí</a>.';
 
     cerrar.classList.add("cerrar-modal")
 
@@ -114,6 +117,7 @@ function productoModal(producto) {
     div_info.appendChild(descripcion)
     div_info.appendChild(cerrar)
     div_info.appendChild(formulario)
+    // div_info.appendChild(mensaje)
 
     informacion_modal.appendChild(div_image)
     informacion_modal.appendChild(div_info)
