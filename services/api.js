@@ -1,8 +1,13 @@
+document.addEventListener('DOMContentLoaded', () => {
+    iniciarMenu();
+});
+
 const productos = [];
+
 
 async function cargarProductos() {
     try {
-        const response = await fetch('../services/data.json');
+        const response = await fetch('../services/data.json ');
         if (!response.ok) {
             throw new Error(`${response.status}`);
         }
@@ -13,10 +18,18 @@ async function cargarProductos() {
     }
 }
 
+console.log('¡Bienvenid@ a Gelato & Postres!');
+
 function verProductos() {
     console.log('\nProductos disponibles:');
     productos.forEach(producto => {
-        console.log(`Producto: ${producto.nombre}\nPrecios: $${producto.precio}\nPorciones: ${producto.porciones}\nDescripción: ${producto.descripcion}`);
+        console.log(`Producto: ${producto.nombre}`);
+        console.log(`Descripción: ${producto.descripcion}`);
+        console.log('Opciones:');
+        producto.opciones.forEach(opcion => {
+            console.log(`- Porciones: ${opcion.porcion}, Precio: $${opcion.precio}`);
+        });
+        console.log('\n');
     });
 }
 
@@ -29,10 +42,10 @@ function verCategorias() {
 }
 
 function mostrarMenu() {
-    console.log('\n¡Bienvenid@ a Gelato & Postres!\nPor favor elija una de las siguientes opciones:\n');
+    console.log('Por favor elija una de las siguientes opciones:\n');
     console.log('1- Ver productos disponibles.\n2- Ver categorías.\n3- Salir del menú.');
 
-    let opcion = parseInt(prompt("Ingrese la opción deseada: "));
+    let opcion = parseInt(prompt("Ingrese la opción deseada: \n1- Ver productos disponibles \n2- Ver categorías.\n3- Salir del menú."));
 
     switch (opcion) {
         case 1:
@@ -43,12 +56,10 @@ function mostrarMenu() {
             break;
         case 3:
             console.log('Gracias por visitar Gelato & Postres. ¡Hasta luego!');
-            return;
+            break;
         default:
             console.log('Opción no válida. Por favor, intente de nuevo.');
     }
-
-    mostrarMenu();
 }
 
 async function iniciarMenu() {
@@ -56,4 +67,3 @@ async function iniciarMenu() {
     mostrarMenu();
 }
 
-iniciarMenu();
