@@ -1,0 +1,234 @@
+@import url('../../css/styles.css');
+
+/*Mobile*/
+#informacion_modal{
+    display: flex;
+    flex-direction: column;
+}
+
+#informacion_modal > div {
+    width: 100%;
+    background-color: var(--colorComplementaryPrimary);
+}
+
+#modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 9999;
+    overflow: auto;
+}
+
+.visible {
+    visibility: visible;
+}
+
+.hidden {
+   visibility: hidden; 
+}
+
+#content_modal {
+    position: relative;
+    width: 85%;
+}
+
+.cerrar-modal {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    background-color: var(--colorQuaternary);
+    padding:  0 !important;
+    /* border-radius: 0 10px 0 10px; */
+    color: #ffffff;
+}
+
+
+#mostrar-precio::before{
+    content: "$";
+}
+
+#icon-cerrar{
+    cursor: pointer;
+}
+
+#informacion_modal{
+    display: flex;
+}
+
+#informacion_modal > div:nth-child(1){
+    display: flex;
+    overflow: hidden;
+}
+
+.image_modal{
+    width: 100%;
+    height: auto;
+}
+
+.info_modal {
+    position: relative;
+}
+
+.info_modal h2{
+    margin-bottom: 10px;
+    color: var(--colorSecondary);
+    font-size: 1.5em;
+    letter-spacing: 1px;
+}
+
+.info_modal h2,
+.info_modal p{
+   padding: 10px ; 
+}
+
+.descripcion-modal {
+    padding: 10px 0;
+    width: 90%;
+}
+
+.info_modal form {
+    padding-top: 10px;
+}
+
+.opciones-relleno{
+    width: 100%;
+    padding: 2px 10px;
+}
+
+.opciones-relleno label {
+   margin: 8px; 
+}
+
+#precios-productos {
+    width: 95%;
+    display: block;
+    margin: auto;
+    padding: 10px;
+    margin-top: 10px; 
+    margin-bottom: 60px;
+    border: 1px solid var(--colorPrimary);
+}
+
+.footer-modal {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+}
+
+.footer-modal div {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+}
+
+.footer-modal div button:nth-child(1){
+   margin-left: 10px; 
+}
+
+.footer-modal div button{
+   cursor: pointer;
+   background-color: var(--colorQuaternary); 
+   font-weight: 500;
+   font-size: 1.2em;
+   border-radius: 50%;
+   width: 30px;
+   height: 30px;
+}
+
+.footer-modal div p {
+   width: 40%;
+   text-align: center;
+   font-size: 1em;
+}
+
+.footer-modal  > button{
+    width: 50%;
+    background-color: var(--colorPrimary);
+    font-family: "Poppins";
+    color: #ffffff;
+    font-size: 1.1em;
+}
+
+.footer-modal > p{
+    width: 25%;
+    background-color: var(--colorPrimary);
+    text-align: center;
+    font-family: "Poppins";
+    color: #ffffff;
+}
+
+
+/** Tablet **/
+@media (min-width: 768px){
+    #content_modal {
+    position: relative;
+    width: 70%;
+    }
+
+    #informacion_modal > div:nth-child(1){
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    overflow: hidden;
+    } 
+
+    #informacion_modal > div:nth-child(2){
+    border-radius: 0 10px 10px 10px;
+    }
+
+    .footer-modal > p{
+        border-radius: 0 0 10px 0;
+    }
+    
+}
+
+/** Desktop **/
+@media (min-width: 1024px) {
+
+    #informacion_modal{
+        display: flex;
+        flex-direction: row;
+    }
+
+    #informacion_modal > div {
+        width: 50%;
+        background-color: var(--colorComplementaryPrimary);
+    }
+
+     #informacion_modal > div:nth-child(2){
+    border-radius: 0 10px 10px 0;
+    }
+
+    #content_modal {
+        position: relative;
+        width: 80%;
+    }
+
+    #informacion_modal > div {
+        width: 50%;
+        background-color: var(--colorComplementaryPrimary);
+    }
+
+    #informacion_modal > div:nth-child(1){
+        border-radius: 10px 0 0 10px;
+        display: flex;
+        overflow: hidden;
+    }
+    .cerrar-modal{
+        border-radius: 0 10px 0 10px;
+    }
+}
