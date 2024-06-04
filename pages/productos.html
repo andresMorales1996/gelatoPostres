@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos</title>
     <link rel="stylesheet" href="../css/styles.css" />
-    <link rel="stylesheet" href="../css/contacto.css">
+    <link rel="stylesheet" href="../css/modal-productos.css" />
+    <link rel="stylesheet" href="../css/productos.css">
     <script src="../index.js"></script>
     <script src="../js/scripts.js"></script>
-    <script src="../js/contacto.js"></script>
+    <script src="../services/api.js"></script>
 </head>
 
 <body>
@@ -30,53 +31,257 @@
         <div class="contenedor-productos">
             <h1>Categoría</h1>
 
+            <div id="modal" class="hidden">
+                <div id="content_modal">
+                    <div id="informacion_modal">
+                        aca va el modal
+                    </div>
+                </div>
+            </div>
+
+            <div id="productos_demo">
+
+            </div>
+
             <div id="tortasTradicionales" class="content-productos">
                 <h2>Tortas tradicionales</h2>
-                <div class="producto">
-                    <img src="../assets/img/torta1.png">
-                    <div class="descripcion-producto"></div>
-                </div>
-                <div class="producto">
-                    <img src="../assets/img/torta1.png">
-                    <div class="descripcion-producto"></div>
+                <div class="productos-grid">
+                    <div class="producto">
+                        <div class="circulo"></div>
+                        <img src="../assets/img/torta1-no-fondo.png">
+                        <div class="descripcion-producto">Torta de red velvet</div>
+                        <div class="precio-producto">35.000</div>
+                        <div class="content-modulo">
+                            <button class="boton-modulo">+</button>
+                        </div>
+                    </div>
+                    <div class="producto">
+                        <div class="circulo"></div>
+                        <img src="../assets/img/torta1-no-fondo.png">
+                        <div class="descripcion-producto">Torta de red velvet</div>
+                        <div class="precio-producto">35.000</div>
+                        <div class="content-modulo">
+                            <button class="boton-modulo">+</button>
+                        </div>
+                    </div>
+                    <div class="producto">
+                        <div class="circulo"></div>
+                        <img src="../assets/img/torta1-no-fondo.png">
+                        <div class="descripcion-producto">Torta de red velvet</div>
+                        <div class="precio-producto">35.000</div>
+                        <div class="content-modulo">
+                            <button class="boton-modulo">+</button>
+                        </div>
+                    </div>
+                    <div class="producto">
+                        <div class="circulo"></div>
+                        <img src="../assets/img/torta1-no-fondo.png">
+                        <div class="descripcion-producto">Torta de red velvet</div>
+                        <div class="precio-producto">35.000</div>
+                        <div class="content-modulo">
+                            <button class="boton-modulo">+</button>
+                        </div>
+                    </div>
+                    <div class="producto">
+                        <div class="circulo"></div>
+                        <img src="../assets/img/torta1-no-fondo.png">
+                        <div class="descripcion-producto">Torta de red velvet</div>
+                        <div class="precio-producto">35.000</div>
+                        <div class="content-modulo">
+                            <button class="boton-modulo">+</button>
+                        </div>
+                    </div>
+                    <div class="producto">
+                        <div class="circulo"></div>
+                        <img src="../assets/img/torta1-no-fondo.png">
+                        <div class="descripcion-producto">Torta de red velvet</div>
+                        <div class="precio-producto">35.000</div>
+                        <div class="content-modulo">
+                            <button class="boton-modulo">+</button>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <div id="tortasFrias" class="content-productos">
                 <h2>Tortas frías</h2>
-                <div class="producto">
-                    <img src="../assets/img/torta2.png">
-                    <div class="descripcion-producto"></div>
-                </div>
-                <div class="producto">
-                    <img src="../assets/img/torta2.png">
-                    <div class="descripcion-producto"></div>
+                <div class="productos-grid">
+                    <div class="producto">
+                        <div class="circulo"></div>
+                        <img src="../assets/img/torta2-no-fondo.png">
+                        <div class="descripcion-producto">Torta de red velvet</div>
+                        <div class="precio-producto">35.000</div>
+                        <div class="content-modulo">
+                            <button class="boton-modulo">+</button>
+                        </div>
+                    </div>
+                    <div class="producto">
+                        <div class="circulo"></div>
+                        <img src="../assets/img/torta2-no-fondo.png">
+                        <div class="descripcion-producto">Torta de red velvet</div>
+                        <div class="precio-producto">35.000</div>
+                        <div class="content-modulo">
+                            <button class="boton-modulo">+</button>
+                        </div>
+                    </div>
+                    <div class="producto">
+                        <div class="circulo"></div>
+                        <img src="../assets/img/torta2-no-fondo.png">
+                        <div class="descripcion-producto">Torta de red velvet</div>
+                        <div class="precio-producto">35.000</div>
+                        <div class="content-modulo">
+                            <button class="boton-modulo">+</button>
+                        </div>
+                    </div>
+                    <div class="producto">
+                        <div class="circulo"></div>
+                        <img src="../assets/img/torta2-no-fondo.png">
+                        <div class="descripcion-producto">Torta de red velvet</div>
+                        <div class="precio-producto">35.000</div>
+                        <div class="content-modulo">
+                            <button class="boton-modulo">+</button>
+                        </div>
+                    </div>
+                    <div class="producto">
+                        <div class="circulo"></div>
+                        <img src="../assets/img/torta2-no-fondo.png">
+                        <div class="descripcion-producto">Torta de red velvet</div>
+                        <div class="precio-producto">35.000</div>
+                        <div class="content-modulo">
+                            <button class="boton-modulo">+</button>
+                        </div>
+                    </div>
+                    <div class="producto">
+                        <div class="circulo"></div>
+                        <img src="../assets/img/torta2-no-fondo.png">
+                        <div class="descripcion-producto">Torta de red velvet</div>
+                        <div class="precio-producto">35.000</div>
+                        <div class="content-modulo">
+                            <button class="boton-modulo">+</button>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <div id="postres" class="content-productos">
                 <h2>Postres</h2>
-                <div class="producto">
-                    <img src="../assets/img/torta3.png">
-                    <div class="descripcion-producto"></div>
-                </div>
-                <div class="producto">
-                    <img src="../assets/img/torta3.png">
-                    <div class="descripcion-producto"></div>
+                <div class="productos-grid">
+                    <div class="producto">
+                        <div class="circulo"></div>
+                        <img src="../assets/img/torta3-no-fondo.png">
+                        <div class="descripcion-producto">Torta de red velvet</div>
+                        <div class="precio-producto">35.000</div>
+                        <div class="content-modulo">
+                            <button class="boton-modulo">+</button>
+                        </div>
+                    </div>
+                    <div class="producto">
+                        <div class="circulo"></div>
+                        <img src="../assets/img/torta3-no-fondo.png">
+                        <div class="descripcion-producto">Torta de red velvet</div>
+                        <div class="precio-producto">35.000</div>
+                        <div class="content-modulo">
+                            <button class="boton-modulo">+</button>
+                        </div>
+                    </div>
+                    <div class="producto">
+                        <div class="circulo"></div>
+                        <img src="../assets/img/torta3-no-fondo.png">
+                        <div class="descripcion-producto">Torta de red velvet</div>
+                        <div class="precio-producto">35.000</div>
+                        <div class="content-modulo">
+                            <button class="boton-modulo">+</button>
+                        </div>
+                    </div>
+                    <div class="producto">
+                        <div class="circulo"></div>
+                        <img src="../assets/img/torta3-no-fondo.png">
+                        <div class="descripcion-producto">Torta de red velvet</div>
+                        <div class="precio-producto">35.000</div>
+                        <div class="content-modulo">
+                            <button class="boton-modulo">+</button>
+                        </div>
+                    </div>
+                    <div class="producto">
+                        <div class="circulo"></div>
+                        <img src="../assets/img/torta3-no-fondo.png">
+                        <div class="descripcion-producto">Torta de red velvet</div>
+                        <div class="precio-producto">35.000</div>
+                        <div class="content-modulo">
+                            <button class="boton-modulo">+</button>
+                        </div>
+                    </div>
+                    <div class="producto">
+                        <div class="circulo"></div>
+                        <img src="../assets/img/torta3-no-fondo.png">
+                        <div class="descripcion-producto">Torta de red velvet</div>
+                        <div class="precio-producto">35.000</div>
+                        <div class="content-modulo">
+                            <button class="boton-modulo">+</button>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <div id="desayunos" class="content-productos">
                 <h2>Desayunos</h2>
-                <div class="producto">
-                    <img src="../assets/img/torta4.png">
-                    <div class="descripcion-producto"></div>
+                <div class="productos-grid">
+                    <div class="producto">
+                        <div class="circulo"></div>
+                        <img src="../assets/img/torta4-no-fondo.png">
+                        <div class="descripcion-producto">Torta de red velvet</div>
+                        <div class="precio-producto">35.000</div>
+                        <div class="content-modulo">
+                            <button class="boton-modulo">+</button>
+                        </div>
+                    </div>
+                    <div class="producto">
+                        <div class="circulo"></div>
+                        <img src="../assets/img/torta4-no-fondo.png">
+                        <div class="descripcion-producto">Torta de red velvet</div>
+                        <div class="precio-producto">35.000</div>
+                        <div class="content-modulo">
+                            <button class="boton-modulo">+</button>
+                        </div>
+                    </div>
+                    <div class="producto">
+                        <div class="circulo"></div>
+                        <img src="../assets/img/torta4-no-fondo.png">
+                        <div class="descripcion-producto">Torta de red velvet</div>
+                        <div class="precio-producto">35.000</div>
+                        <div class="content-modulo">
+                            <button class="boton-modulo">+</button>
+                        </div>
+                    </div>
+                    <div class="producto">
+                        <div class="circulo"></div>
+                        <img src="../assets/img/torta4-no-fondo.png">
+                        <div class="descripcion-producto">Torta de red velvet</div>
+                        <div class="precio-producto">35.000</div>
+                        <div class="content-modulo">
+                            <button class="boton-modulo">+</button>
+                        </div>
+                    </div>
+                    <div class="producto">
+                        <div class="circulo"></div>
+                        <img src="../assets/img/torta4-no-fondo.png">
+                        <div class="descripcion-producto">Torta de red velvet</div>
+                        <div class="precio-producto">35.000</div>
+                        <div class="content-modulo">
+                            <button class="boton-modulo">+</button>
+                        </div>
+                    </div>
+                    <div class="producto">
+                        <div class="circulo"></div>
+                        <img src="../assets/img/torta4-no-fondo.png">
+                        <div class="descripcion-producto">Torta de red velvet</div>
+                        <div class="precio-producto">35.000</div>
+                        <div class="content-modulo">
+                            <button class="boton-modulo">+</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="producto">
-                    <img src="../assets/img/torta4.png">
-                    <div class="descripcion-producto"></div>
-                </div>
-            </div>
+            </div>   
 
         </div>
 
@@ -87,6 +292,8 @@
     <script>
         cargarScripts("productos");
     </script>
+
+    <!-- <script src="../services/modal.js"></script> -->
 
 </body>
 
