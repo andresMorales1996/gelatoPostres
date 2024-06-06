@@ -13,6 +13,9 @@ const scripts = {
   "productos": [
     "../components/nav/nav.js"
   ],
+  "registro": [
+    "../components/nav/nav.js"
+  ],
 };
 
 // *FUNCIÓN CARGAR SCRIPTS DE COMPONENTES
