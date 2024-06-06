@@ -1,5 +1,4 @@
 [
-
     {
          "id": 1,
          "tipo": "Tortas tradicionales",
@@ -25,7 +24,7 @@
             "porcion": 50
             }
          ],
-         "imagen": "http://127.0.0.1:5501/assets/img/torta1.png"
+         "imagen": "../assets/img/torta1.png"
      },
  
      {
@@ -310,5 +309,4 @@
             }
          ]
      }
- 
  ]

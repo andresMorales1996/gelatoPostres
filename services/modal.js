@@ -1,76 +1,36 @@
-// let carrito = []
+const productos = [];
 
-// function addCarrito(producto){
-//     carrito.push(producto)
-// }
+async function obtenerProductos() {
+    try {
+        const response = await fetch('../services/data.json');
+        if (!response.ok) {
+            throw new Error(`${response.status}`);
+        }
+        const data = await response.json();
+        productos.push(...data);
+        console.log(productos);
+        agregarEventosBotones();
+    } catch (error) {
+        console.error('Error al cargar los productos:', error);
+    }
+}
 
-// function getCarrito(){
-//     return carrito
-// }
+function agregarEventosBotones() {
+    const botones = document.querySelectorAll('.boton-modulo');
 
-// console.log(getCarrito())
-// addCarrito({
-//     id: "1",
-//     relleno: "ganache de chocolate",
-//     precio: 45000,
-//     porcion: 6 
-// })
-// console.log(getCarrito())
+    if (botones.length > 0) {
+        botones.forEach(boton => {
+            boton.addEventListener('click', () => {
+                const productoIndex = Array.from(botones).indexOf(boton);
+                productoModal(productos[productoIndex]);
+            });
+        });
+    }
+}
 
-
-// function cargarProductos() {
-//     return fetch("../services/data.json")
-//         .then(response => {
-//             if (!response.ok) {
-//                 throw new Error("Error al cargar los datos")
-//             }
-
-//             return response.json();
-//         })
-// }
-
-// async function obtenerProductos() {
-//     try {
-//         const productos = await cargarProductos();
-//         console.log("productos ", productos)
-//         const container_productos = document.getElementById("productos_demo");
-
-//         productos.forEach(producto => {
-
-//             const div = document.createElement("div");
-//             const h2 = document.createElement("h2");
-//             const p = document.createElement("p")
-//             const button = document.createElement("button")
-
-//             //Escribir la informacion
-//             h2.textContent = producto.nombre;
-
-//             if (producto.opciones) {
-//                 p.textContent = producto.opciones.length > 1 ? "Escoger opciones" : producto.opciones[0].precio;
-//             } else {
-//                 p.textContent = producto.precio[0];
-//             }
-
-//             button.innerHTML = "Ver producto";
-
-//             button.addEventListener("click", () => {
-//                 productoModal(producto)
-//             })
-
-//             div.appendChild(h2);
-//             div.appendChild(p);
-//             div.appendChild(button);
-
-//             container_productos.appendChild(div);
-
-//         });
-
-
-//     } catch (error) {
-//         console.log("error ", error);
-
-//     }
-// }
+document.addEventListener('DOMContentLoaded', (event) => {
+    obtenerProductos();
+});
 
 function productoModal(producto) {
     const informacion_modal = document.getElementById("informacion_modal");
@@ -82,7 +42,7 @@ function productoModal(producto) {
         event.stopPropagation(); // Detiene la propagación del evento
     })
 
-    //Resetear toda la estructura del modal
+    // Resetear toda la estructura del modal
     modal.classList.remove("hidden");
     modal.classList.add("visible");
     informacion_modal.innerHTML = "";
@@ -97,18 +57,14 @@ function productoModal(producto) {
     cerrar.id = "icon-cerrar"
     const formulario = crearFormulario(producto)
 
-    // const mensaje = document.createElement("p");
-    // mensaje.id = "mensaje"
-
     titulo.textContent = producto.nombre;
     descripcion.textContent = producto.descripcion;
     descripcion.classList.add("descripcion-modal")
     cerrar.textContent = "X"
-    image.src = producto.imagen || "http://127.0.0.1:5501/assets/img/img-modal.jpg"
+    image.src = producto.imagen || "http://127.0.0.1:5500/assets/img/img-modal.jpg" // cambiar esta parte !!IMPORTANT
     image.title = producto.nombre
     image.classList.add("image_modal")
     div_info.classList.add("info_modal")
-    // mensaje.innerHTML = 'Si deseas personalizar tu torta da clic <a href="#" >aquí</a>.';
 
     cerrar.classList.add("cerrar-modal")
 
@@ -117,21 +73,16 @@ function productoModal(producto) {
     div_info.appendChild(descripcion)
     div_info.appendChild(cerrar)
     div_info.appendChild(formulario)
-    // div_info.appendChild(mensaje)
 
     informacion_modal.appendChild(div_image)
     informacion_modal.appendChild(div_info)
 
     console.log("productoModal ", producto)
-    console.log("hola me dizque click")
 }
-
-obtenerProductos();
 
 function crearFormulario(producto) {
     const formulario = document.createElement("form");
 
-    //Crear opciones de relleno
     if(producto.relleno){
         producto.relleno.forEach( relleno => {
             const div = document.createElement("div")
@@ -147,7 +98,7 @@ function crearFormulario(producto) {
             formulario.appendChild(div)
         })
     }
-    //Crear opciones de precios y porciones
+
     const precios = document.createElement("select");
 
     precios.addEventListener("change", () => {
@@ -156,7 +107,6 @@ function crearFormulario(producto) {
 
     precios.id = "precios-productos"
 
-    //Opcion base 
     const option = document.createElement('option');
     option.value = 0;
     option.textContent = "Seleccione una opción";
@@ -170,17 +120,13 @@ function crearFormulario(producto) {
     })
 
     formulario.appendChild(precios)
-
     formulario.append(footerFormulario(producto))
-
-    
 
     return formulario
 }
 
 function footerFormulario(producto){
 
-    //Boton que envia toda la informacion al carrito
     const div_container = document.createElement("div")
     const div = document.createElement("div")
     const p = document.createElement("p")
@@ -188,7 +134,6 @@ function footerFormulario(producto){
     const boton = document.createElement("button")
     boton.textContent = "Agregar"
 
-   //Crear los botones para sumar o restar cantidad de un producto
    const opcionRestar = document.createElement("button")
    const opcionSumar =  document.createElement("button")
    const p_cantidad = document.createElement("p")
@@ -206,8 +151,6 @@ function footerFormulario(producto){
    div.appendChild(p_cantidad)
    div.appendChild(opcionSumar)
 
-
-   //Generar evento
    opcionRestar.addEventListener("click", (event) => {
         event.preventDefault();
         restarCantidad()
@@ -218,7 +161,6 @@ function footerFormulario(producto){
         sumarCantidad()
     })
 
-    //Añadir al div principal
     div_container.appendChild(div)
     div_container.appendChild(boton)
     div_container.appendChild(p)
@@ -275,12 +217,10 @@ function AgregarProductoCarrito(id) {
         console.log("-----------" , relleno)
     }
 
-    //Caputar el valor del producto
     const informacionProducto = document.getElementById("precios-productos").value.split("x");
     const precio = informacionProducto[0];
     const porcion = informacionProducto[1];
 }
-
 
 function cerrarModal() {
     const modal = document.getElementById("modal");
