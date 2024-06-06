@@ -1,5 +1,4 @@
 [
-
     {
          "id": 1,
          "tipo": "Tortas tradicionales",
@@ -24,8 +23,7 @@
             "precio":185000,
             "porcion": 50
             }
-         ],
-         "imagen": "http://127.0.0.1:5501/assets/img/torta1.png"
+         ]
      },
  
      {
