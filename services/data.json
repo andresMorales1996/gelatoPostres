@@ -23,7 +23,8 @@
             "precio":185000,
             "porcion": 50
             }
-         ]
+         ],
+         "imagen": "../assets/img/torta1.png"
      },
  
      {
@@ -308,5 +309,4 @@
             }
          ]
      }
- 
  ]
