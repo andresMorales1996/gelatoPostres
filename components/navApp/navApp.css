@@ -1,0 +1,413 @@
+@import url('../../css/stylesApp.css');
+
+/* *MOBILE */
+
+/* *TEMA OSCURO */
+body.tema-oscuro {
+    --colorPrimary: #1D0038;
+    --colorSecondary: #604D9E;
+    --colorTertiary: #A17EB8;
+    --colorQuaternary: #ABA2D9;
+    --colorQuinary: #082E28;
+    --colorSextary: #092D4F;
+    --colorSextenary: #E4D6F9;
+
+    --colorComplementaryPrimary: #FFFFFF;
+    --colorComplementarySecondary: #000000;
+}
+
+body.tema-oscuro {
+    background-color: var(--colorSecondary);
+}
+
+body.tema-oscuro .onda::before {
+    background-image: url('data:image/svg+xml;charset=utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2.17 35.28" preserveAspectRatio="none"><path d="M1.16 0c-.8 3.17.4 7.29.56 10.04C1.89 12.8.25 19.3.42 22.71c.16 3.43.84 4.65.86 7.05.03 2.4-.88 5.52-.88 5.52h1.77V0z" fill="%23604d9e"/></svg>');
+}
+
+body.tema-oscuro .sidebar-panel {
+    background-color: var(--colorPrimary);
+    transition: width 0.7s !important;
+    transition: background-color 0.5s;
+
+}
+
+body.tema-oscuro .cerrar-panel i {
+    border: 1px solid var(--colorSecondary);
+    background-color: var(--colorTertiary);
+    color: var(--colorPrimary);
+}
+
+body.tema-oscuro .abrir-panel i {
+    color: var(--colorPrimary);
+}
+
+body.tema-oscuro .fa-solid {
+    color: var(--colorQuaternary);
+}
+
+body.tema-oscuro .switch-tema::before {
+    background-color: var(--colorPrimary);
+}
+
+body.tema-oscuro span {
+    color: var(--colorQuaternary);
+}
+
+body.tema-oscuro span::before {
+    background-color: var(--colorSecondary);
+}
+
+body.tema-oscuro .switch-tema::before {
+    left: 24px;
+}
+
+body.tema-oscuro .iconoBuscar {
+    color: var(--colorTertiary);
+}
+
+body.tema-oscuro .inputBuscar {
+    box-shadow: 1px 1px 1px 1px var(--colorTertiary);
+}
+
+body.tema-oscuro .iconos-tema .fa-sun {
+    display: none;
+}
+
+body.tema-oscuro .iconos-tema .fa-moon {
+    display: inline;
+}
+
+/* *TEMA CLARO */
+.onda::before {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    background-repeat: no-repeat;
+    height: 100%;
+    top: -0.1vw;
+    right: -0.1vw;
+    bottom: -0.1vw;
+    left: -0.1vw;
+    z-index: 2;
+    background-size: 3rem 100%;
+    background-position: 100% 100%;
+    background-image: url('data:image/svg+xml;charset=utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2.17 35.28" preserveAspectRatio="none"><path d="M1.16 0c-.8 3.17.4 7.29.56 10.04C1.89 12.8.25 19.3.42 22.71c.16 3.43.84 4.65.86 7.05.03 2.4-.88 5.52-.88 5.52h1.77V0z" fill="white"/></svg>');
+    outline: 0.1vw solid var(--colorComplementaryPrimary);
+}
+
+.abrir-panel i,
+.cerrar-panel i {
+    position: absolute;
+    width: 2.5rem;
+    height: 2.5rem;
+    line-height: 35px;
+    top: 0.5%;
+    right: 2%;
+    z-index: 3;
+    border-radius: 50%;
+    font-size: 24px;
+    text-align: center;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.abrir-panel i {
+    border: 2px solid var(--colorPrimary);
+    background-color: var(--colorComplementaryPrimary);
+    color: var(--colorPrimary);
+    display: block;
+}
+
+.abrir-panel i:hover {
+    color: var(--colorSecondary);
+}
+
+.cerrar-panel i {
+    border: 2px solid var(--colorComplementaryPrimary);
+    background-color: var(--colorPrimary);
+    color: var(--colorComplementaryPrimary);
+    display: none;
+}
+
+.cerrar-panel i:hover {
+    color: var(--colorComplementaryPrimary);
+}
+
+.cerrar-panel.active i {
+    display: block;
+}
+
+.sidebar-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 6.5rem;
+    min-height: 100%;
+    padding: 10px 14px;
+    z-index: 1;
+    background-color: var(--colorTertiary);
+    transition: background-color 0.5s;
+    transition: width 0.7s;
+    overflow: hidden;
+}
+
+.sidebar-panel span, .foto-panel a {
+    opacity: 0;
+    transition: opacity 0.1s;
+}
+
+.menu-panel {
+    display: flex;
+    flex-direction: column;
+    margin-top: 4rem;
+}
+
+.foto-panel {
+    margin-top: -1rem;
+}
+
+.foto-panel img {
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-left: -2rem;
+    z-index: 1;
+    border-radius: 2rem;
+    border: 2px solid var(--colorSecondary);
+}
+
+.foto-panel a {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--colorSecondary);
+    margin-top: 0.5rem;
+    margin-left: 3rem;
+    z-index: 1;
+}
+
+.menu-panel span {
+    display: flex;
+    position: relative;
+    width: 20rem;
+    top: -1.5rem;
+    margin-left: 3rem;
+    font-size: 1rem;
+    color: var(--colorPrimary);
+}
+
+.item-panel span:hover {
+    cursor: pointer;
+}
+
+.item-panel span::before,
+.item-panel span:hover::before {
+    width: 75%;
+    color: var(--colorComplementaryPrimary);
+}
+
+.item-panel span::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 4rem;
+    top: -1rem;
+    left: -7rem;
+    z-index: -1;
+    border-radius: 0 3rem 3rem 0;
+    background-color: var(--colorSecondary);
+    transition: all 0.7s ease;
+}
+
+.submenu-panel {
+    margin-left: -2rem;
+}
+
+.icono-panel {
+    justify-content: flex-start;
+    color: var(--colorPrimary);
+    border-radius: 2rem;
+    font-size: 1.5rem;
+    margin-left: -1.5rem;
+    margin-top: 1.7rem;
+}
+
+.tema-panel .switch-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    cursor: pointer;
+}
+
+.switch-panel .switch-tema {
+    position: relative;
+    height: 1.5rem;
+    width: 3rem;
+    top: 4rem;
+    border-radius: 5rem;
+    background-color: var(--colorSecondary);
+}
+
+.switch-tema::before {
+    content: '';
+    position: absolute;
+    height: 1rem;
+    width: 1rem;
+    top: 50%;
+    left: 10%;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    background-color: var(--colorPrimary);
+    transition: all .5s ease;
+}
+
+.iconos-tema {
+    height: 50px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.iconos-tema .fa-moon {
+    display: none;
+    margin-top: 13rem;
+}
+
+.iconos-tema .fa-sun {
+    display: inline;
+    margin-top: 13rem;
+}
+
+.container-header {
+    height: 0.5rem;
+}
+
+.logo-panel img {
+    position: absolute;
+    width: 10rem;
+    top: -2.5rem;
+    right: 7rem;
+}
+
+.buscar-panel {
+    margin-top: -34%;
+}
+
+.buscar-panel input {
+    position: absolute;
+    width: 0;
+    height: 2rem;
+    border-radius: 1rem;
+    top: 0.9rem;
+    right: 3%;
+    border: 1px solid var(--colorPrimary);
+    transition: all .7s ease;
+    padding: 0 1rem;
+}
+
+.buscar-panel:hover input {
+    width: 65%;
+}
+
+.iconoBuscar {
+    position: absolute;
+    margin-top: 37%;
+    right: 2%;
+    line-height: 50px;
+    width: 3rem;
+    height: 3rem;
+    text-align: center;
+    background-color: var(--colorComplementaryPrimary);
+    border: 1px solid var(--colorPrimary);
+    z-index: 1;
+}
+
+.iconoBuscar:hover {
+    transform: rotate(-360deg);
+}
+
+.sidebar-panel.expandirMenu {
+    width: 70%;
+}
+
+.sidebar-panel.expandirMenu .abrir-panel i {
+    display: none;
+}
+
+.sidebar-panel.expandirMenu .cerrar-panel i {
+    display: block;
+}
+
+.sidebar-panel.expandirMenu span, .foto-panel
+a {
+    opacity: 1;
+}
+
+
+/* *TABLET */
+@media screen and (min-width: 768px) {
+    .sidebar-panel.expandirMenu {
+        width: 50%;
+    }
+
+    .logo-panel img {
+        width: 25%;  
+        right: 30%;     
+    }
+
+    .buscar-panel input {
+        margin-top: 2%;
+    }
+
+    .buscar-panel:hover input {
+        width: 50%;
+    }
+
+}
+
+/* *DESKTOP 1024 */
+@media screen and (min-width: 1024px) {
+
+    .container-header {
+        height: 5vh;
+    }
+
+    .logo-panel img {
+        top: -4%;
+        width: 15%;
+        right: 40%;
+    }
+
+    .sidebar-panel.expandirMenu {
+        width: 25%;
+    }
+
+    .buscar-panel {
+        position: absolute;
+        right: 5%;
+        margin-top: 0.6%;
+    }
+
+    .buscar-panel input {
+        margin-right: 0.8rem;
+        border: 1px solid var(--colorPrimary);
+    }
+
+    .buscar-panel:hover input {
+        width: 20rem;
+    }
+
+    .iconoBuscar {
+        margin-top: 0.6rem;
+    }
+
+    .iconoBuscar:hover {
+        background-color: var(--colorPrimary);
+        color: var(--colorComplementaryPrimary);
+        transition: all .7s ease;
+        cursor: pointer;
+    }
+}
