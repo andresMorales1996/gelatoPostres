@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos App</title>
+    <link rel="stylesheet" href="../css/stylesApp.css" />
+    <script src="../index.js"></script>
+    <script src="../js/scriptsApp.js"></script>
+</head>
+
+<body>
+
+    <div id="navApp"></div>
+
+    <div class="container-main d-flex justify-content-center flex-column col-md-7">
+
+        <!-- *FORMULARIO PRODUCTOS -->
+        <div>
+
+            <div class="row">
+                <h3>Agregar producto</h3>
+            </div>
+
+            <div class="row">
+
+                <div class="form-group col-md-6 mb-3">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre producto">
+                </div>
+
+                <div class="form-group col-md-6 mb-3">
+                    <label for="tipo">Tipo</label>
+                    <select name="tipo" id="tipo" class="form-control" placeholder="Tipo">
+                        <option value="" disabled selected>Seleccionar</option>
+                        <option value="Tortas tradicionales">Tortas tradicionales</option>
+                        <option value="Tortas frias">Tortas frias</option>
+                        <option value="Postres">Postres</option>
+                        <option value="Desayunos">Desayunos</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-md-6 mb-3">
+                    <label for="relleno">Relleno</label>
+                    <select name="relleno" id="relleno" class="form-control" placeholder="Relleno">
+                        <option value="" disabled selected>Seleccionar</option>
+                        <option value="Ganache de chocolate">Ganache de chocolate</option>
+                        <option value="Chantilly">Chantilly</option>
+                        <option value="Dulce de leche">Dulce de leche</option>
+                        <option value="Mora">Mora</option>
+                        <option value="Sin relleno">Sin relleno</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-md-6 mb-3">
+                    <label for="porciones">Porciones</label>
+                    <select name="porciones" id="porciones" class="form-control" placeholder="Porciones">
+                        <option value="" disabled selected>Seleccionar</option>
+                        <option value="6">6 porciones</option>
+                        <option value="12">12 porciones</option>
+                        <option value="20">20 porciones</option>
+                        <option value="24">24 porciones</option>
+                        <option value="50">50 porciones</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-md-6 mb-3">
+                    <label for="precio">Precio</label>
+                    <input type="number" name="precio" id="precio" class="form-control" placeholder="Precio">
+                </div>
+
+                <div class="form-group col-md-6 mb-3">
+                    <label for="disponibilidad">Disponibilidad</label>
+                    <select name="disponibilidad" id="disponibilidad" class="form-control" placeholder="Disponibilidad">
+                        <option value="" disabled selected>Seleccionar</option>
+                        <option value="Disponible">Disponible</option>
+                        <option value="Agotado">Agotado</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-md-12 mb-3">
+                    <label for="descripcion">Descripción</label>
+                    <textarea type="text" name="descripcion" id="descripcion" class="form-control" placeholder="Descripción del producto" rows="5"></textarea>
+                </div>
+
+                <div class="col-lg-12 mt-5">
+                    <button class="btn btn-success" id="botonAgregar" onclick="agregarDatos()">Agregar</button>
+                    <button class="btn btn-primary" id="botonModificar">Actualizar</button>
+                </div>
+
+            </div>
+
+        </div>
+        
+        <!-- *TABLA PRODUCTOS -->
+        <div class="table-responsive">
+            <table class="table table-light table-striped text-center" id="crudTable">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Tipo</th>
+                        <th>Relleno</th>
+                        <th>Porciones</th>
+                        <th>Precio</th>
+                        <th>Disponibilidad</th>
+                        <th>Descripción</th>
+                        <th>Opciones</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <script>
+        cargarScripts("librerias", "productosApp");
+    </script>
+
+</body>
+
+</html>
