@@ -19,4 +19,5 @@ document.addEventListener("DOMContentLoaded", () => {
   cargarComponente("nav", "../components/nav/nav.html");
   cargarComponente("footer", "../components/footer/footer.html");
   cargarComponente("slider", "../components/slider/slider.html");
+  cargarComponente("navApp", "../components/navApp/navApp.html");
 });
