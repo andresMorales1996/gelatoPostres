@@ -1,0 +1,125 @@
+@import url("../../css/stylesApp.css");
+
+/** MOBILE **/
+
+.container-main {
+  width: 55%;
+  margin-top: 55%;
+  margin-left: 28%;
+  z-index: -2;
+}
+
+.container-main h3 {
+  color: var(--colorPrimary);
+}
+
+.container-main,
+input,
+select,
+textarea {
+  border-radius: 1rem !important;
+}
+
+label,
+input,
+select,
+textarea {
+  margin-top: 0.3rem;
+}
+
+.form-group label {
+  margin-bottom: 2%;
+  margin-left: 2%;
+}
+
+.form-group input,
+select,
+textarea {
+  border: 1px solid var(--colorPrimary) !important;
+}
+
+.btn-success {
+  width: 14.3rem !important;
+  margin-top: -4rem !important;
+  border: 1px solid var(--colorPrimary) !important;
+  border-radius: 1rem !important;
+  background-color: var(--colorPrimary) !important;
+  color: var(--colorComplementaryPrimary) !important;
+  font-weight: 500 !important;
+}
+
+.btn-success:hover {
+  border: 1px solid var(--colorPrimary) !important;
+  background-color: var(--colorTertiary) !important;
+  color: var(--colorPrimary) !important;
+  transform: scale(1.02);
+}
+
+.btn-primary {
+  width: 33%;
+  margin-top: -2.5rem;
+  border: 3px solid var(--colorQuinary) !important;
+  background-color: var(--colorQuinary) !important;
+  border-radius: 2rem !important;
+  margin-bottom: 1.5rem;
+}
+
+.btn-primary:hover {
+  background-color: var(--colorComplementaryPrimary) !important;
+  color: var(--colorQuinary) !important;
+  border-radius: 2rem !important;
+}
+
+.btn-warning {
+  border: none !important;
+  background: none !important;
+}
+
+.btn-warning i {
+  margin-top: -2rem !important;
+  border: none !important;
+  background: none !important;
+  color: var(--colorQuinary) !important;
+  font-size: 1.5rem;
+}
+
+.btn-danger {
+  border: none !important;
+  background: none !important;  
+}
+
+.btn-danger i {
+  margin-top: -2rem;
+  border: none !important;
+  background: none !important;
+  color: var(--colorSextary) !important;
+  font-size: 1.5rem;
+}
+
+.table-responsive {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+#botonModificar {
+  display: none;
+}
+
+input:focus,
+input[type]:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--colorPrimary) !important;
+  box-shadow: none !important;
+  outline: 0 none !important;
+}
+
+/* *DESKTOP 1024*/
+@media screen and (min-width: 1024px) {
+
+  .container-main {
+    margin-top: 4rem !important;
+    margin-left: 27%;
+  }
+
+}
