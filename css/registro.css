@@ -7,7 +7,6 @@
 }
 
 .container-form {
-    background-color: aqua;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -17,9 +16,282 @@
 .content-foto {
     width: 170px; 
     height: 170px; 
-    background-color: blue;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.container-titulo {
+    text-align: center;
+    font-family: var(--fontTitle);
+    font-size: 25px;
+    color: var(--colorSextary);
+}
+
+.form-file-action input {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    display: none;
+}
+
+.form-file-result {
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    width: 170px; 
+    height: 170px;
+    background-color: var(--colorComplementaryPrimary);
+    border-radius: 50%;
+    border: 2px dashed var(--colorSextenary);
+    transition: backgroundColor 0.3s linear;
+    z-index: 10;
+    border-color: var(--colorPrimary);
+    font-size: 15px;
+    margin-top: 20px;
+}
+
+.form-file-result::after {
+    content: 'Click o arrastra para elegir imagen';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    color: var(--colorPrimary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    text-align: center;
+}
+
+.form-file-result img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 500;
+}
+
+.form-file-result--active {
+    background-color: var(--colorSecondary);
+}
+
+.content-datos-usuario {
+    margin-top: 20px;
+    width: 310px;
+    height: 430px;
+    padding: 10px;
+}
+
+.content-datos-usuario .input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 10px 0;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: var(--colorTertiary);
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    font-size: 17px;
+    color: var(--colorPrimary);
+    padding: 20px 70px 20px 20px;
+}
+
+.input-box input::placeholder {
+    color: var(--colorPrimary);
+}
+
+.input-box i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    color: var(--colorPrimary);
+}
+
+.input-gender {
+    width: 100%;
+    height: 50px;
+    background: var(--colorTertiary);
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    font-size: 17px;
+    color: var(--colorPrimary);
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#radio-mujer, #radio-hombre {
+    margin-left: 5px;
+    margin-right: 40px ;
+}
+
+.content-mujer {
+    margin-left: 40px;
+}
+
+.content-boton .btn {
+    width: 200px;
+    height: 40px;
+    margin-top: -80px;
+    background: var(--colorPrimary);
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .2);
+    cursor: pointer;
+    font-size: 17px;
+    color: var(--colorComplementarySecondary);
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .8);
+}
+
+.content-boton .btn:hover {
+    background: var(--colorSecondary);
+    color: var(--colorComplementarySecondary);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .8);
+}
+
+.content-boton .btn:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .2);
+}
+
+/* Añadir efectos de onda en el botón */
+.content-boton .btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.15);
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+    transition: transform 0.5s ease;
+}
+
+.content-boton .btn:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.container-figuras {
+    display: none;
+}
+
+/** TABLET **/
+@media screen and (min-width: 767px) { 
+    .content-datos-usuario {
+        width: 410px;
+        height: 430px;
+    }
+    
+    .input-box input {
+        font-size: 20px;
+    }
+
+    .input-gender {
+        font-size: 20px;
+    }
+
+    #radio-mujer, #radio-hombre {
+        margin-top: 3px;
+    }
+
+    .content-boton .btn {
+        height: 50px;
+        font-size: 20px;
+    }
+}
+
+/* *DESKTOP 1024 */
+@media screen and (min-width: 1024px) {
+    .contenedor-contenido {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        padding: 0 15% ;
+    }
+
+    .container-figuras {
+        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .content-datos-usuario {
+        width: 370px;
+        height: 430px;
+    }
+    
+    .input-box input {
+        font-size: 17px;
+    }
+
+    .input-gender {
+        font-size: 17px;
+    }
+
+    #radio-mujer, #radio-hombre {
+        margin-top: 3px;
+    }
+
+    .content-boton .btn {
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .principal-img {
+        width: 400px;
+        height: 600px;
+        position: relative;
+        border-radius: 40% 40% 0 0;
+        box-shadow: 0 20px 1020px rgba(245, 91, 217, 0.7);
+
+    }
+
+    .principal-img img {
+        width: 400px;
+        height: 600px;
+        object-fit: cover;
+        border-radius: 40% 40% 0 0;
+
+    }
+
+    .img-pequeña {
+        width: 250px;
+        height: 250px;
+        position: absolute;
+        top: 380px;
+        right: 240px;       
+    }
+
+    .img-pequeña img {
+        width: 250px;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 50%;
+
+    }
+    
 }
