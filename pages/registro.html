@@ -50,11 +50,11 @@
                     </div>
                     <div class="input-box">
                         <input type="password" class="input" id="contrasena" name="contrasena" placeholder="Ingresa tu contraseña" required>
-                        <i class='bx bxs-lock-alt'></i>
+                        <i class='bx bx-hide'></i>
                     </div>
                     <div class="input-box">
                         <input type="password" class="input" id="confirma-contrasena" name="confirma-contrasena" placeholder="Confirma tu contraseña" required>
-                        <i class='bx bxs-lock-open'></i>
+                        <i class='bx bx-hide'></i>
                     </div>
                     <div class="input-gender">
                         <label class="content-mujer" for="mujer">Mujer</label>
@@ -65,16 +65,16 @@
                 </div>
 
                 <div class="content-boton">
-                    <button type="submit" class="btn">Registrate</button>
+                    <button type="button" class="btn" onclick="validarFormulario()">Registrate</button>
                 </div>
             </div>
 
             <!-- contenedor derecha -->
             <div class="container-figuras">
                 <div class="principal-img">
-                    <img src="/assets/img/torta-registro.jpg" alt="">
+                    <img src="/assets/img/torta-registro.jpg" alt="imagen-torta-grande">
                     <div class="img-pequeña">
-                        <img src="/assets/img/torta-registro-circulo.jpg" alt="">
+                        <img src="/assets/img/torta-registro-circulo.jpg" alt="imagen-torta-circulo">
                     </div>
                 </div>
             </div>
@@ -82,6 +82,8 @@
         </div>
 
     </div>
+
+    <div id="alert-container" class="alert-container"></div>
 
     <div id="footer"></div>
 
