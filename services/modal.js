@@ -8,7 +8,6 @@ async function obtenerProductos() {
         }
         const data = await response.json();
         productos.push(...data);
-        console.log(productos);
         agregarEventosBotones();
     } catch (error) {
         console.error('Error al cargar los productos:', error);

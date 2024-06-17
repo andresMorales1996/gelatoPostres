@@ -101,13 +101,6 @@
     flex-direction: column;
     align-items: center;
     padding-top: 4rem;
-
-}
-
-.precio-producto {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .boton-modulo {
@@ -130,11 +123,9 @@
     }
 
     .contenedor-productos {
-        padding-top: 2rem;
         display: flex;
         flex-direction: column;
-        align-items: center; 
-        gap: 2rem; 
+        align-items: center;  
     }
     
     .contenedor-productos h1 {
@@ -145,12 +136,13 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 2rem;
+        background-color: blue;
     }
     
     .producto {
         flex: 1 1 calc(50% - 2rem);
         max-width: calc(50% - 2rem);
+        background-color: aqua;
     }
 
     .content-productos h2 {
@@ -189,10 +181,6 @@
     .contenedor-filtros a { 
         padding: 1rem;
         font-size: 1rem;
-    }
-
-    .productos-grid {
-        gap: 3rem;
     }
     
     .producto {

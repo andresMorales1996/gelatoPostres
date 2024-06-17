@@ -110,7 +110,7 @@
  
      {
          "id": 5,
-         "tipo": "Tortas frias",
+         "tipo": "Tortas frías",
          "nombre": "Torta tres leches",
          "descripcion": "Torta fria de tres leches decorada con chantilly y canela ",
          "relleno": ["Ganache de chocolate","Chantilly", "Dulce de leche", "Mora", "Sin relleno"],
@@ -137,7 +137,7 @@
  
      {
          "id": 6,
-         "tipo": "Tortas frias",
+         "tipo": "Tortas frías",
          "nombre": "Torta beso de angel",
          "descripcion": "Torta tres leches rellena de quesillo (leche asada) decorada con chantilly",
          "relleno": ["Ganache de chocolate","Chantilly", "Dulce de leche", "Mora", "Sin relleno"],
