@@ -45,3 +45,215 @@ fileInput.addEventListener('change', (e) => {
     const file = e.target.files[0];
     uploadImage(file);
 });
+
+// ------------------------------------------------------------------------------------------
+// VALIDACIONES DE FORMULARIO
+// Mostrar / ocultar contraseñas
+const passwords = document.querySelectorAll(".input[type='password']");
+const icons = document.querySelectorAll(".bx-hide");
+
+icons.forEach((icon, index) => {
+    icon.addEventListener("click", () => {
+        const pass = passwords[index];
+        if (pass.type === "text") {
+            pass.type = "password";
+            icon.classList.remove("bx-show");
+            icon.classList.add("bx-hide");
+        } else {
+            pass.type = "text";
+            icon.classList.remove("bx-hide");
+            icon.classList.add("bx-show");
+        }
+    });
+});
+
+function validarFormulario() {
+    try {
+        // Obtener los valores de los radio buttons para género
+        let hombreChecked = document.getElementById('radio-hombre').checked;
+        let mujerChecked = document.getElementById('radio-mujer').checked;
+
+        // URLs de las imágenes en Google Drive (reemplaza FILE_ID_HOMBRE y FILE_ID_MUJER con los IDs correctos)
+        const urlHombre = 'https://drive.google.com/file/d/1jIC-ti9Awyy59it9b-5xRRIY8_I_mtyj/view?usp=sharing';
+        const urlMujer = 'https://drive.google.com/file/d/1biWexmUOZY94IZtE3MzfRTqnapMNlpUn/view?usp=sharing';
+
+        // Obtener la imagen predeterminada según el género seleccionado
+        let imagen;
+
+        if (!img.getAttribute('src')) {
+            if (mujerChecked) {
+                imagen = urlMujer;
+            } else if (hombreChecked) {
+                imagen = urlHombre;
+            }
+            img.setAttribute('src', imagen); // Establecer la imagen predeterminada en el elemento img
+        } else {
+            imagen = img.getAttribute('src');
+        }
+
+        let nombre = document.getElementById('nombre').value;
+        let telefono = document.getElementById('telefono').value;
+        let correo = document.getElementById('correo').value;
+        let contrasena = document.getElementById('contrasena').value;
+        let confirmaContrasena = document.getElementById('confirma-contrasena').value;
+
+        // Expresiones regulares para validar los campos
+        let nombreRegExp = /^[A-Za-zÁÉÍÓÚáéíóúñÑ\s]+$/;
+        let telefonoRegExp = /^[0-9]+$/;
+        let correoRegExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        let contrasenaRegExp = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[^\s]{8,}$/;
+
+        // Validación del nombre
+        if (!nombreRegExp.test(nombre)) {
+            throw new Error("Nombre no válido. Debe contener solo letras.");
+        }
+
+        // Validación del teléfono
+        if (!telefonoRegExp.test(telefono)) {
+            throw new Error("Teléfono no válido. Debe contener solo números.");
+        }
+
+        // Validación del correo
+        if (!correoRegExp.test(correo)) {
+            throw new Error("Correo no válido. Debe tener un formato válido, un ejemplo: correo@...");
+        }
+
+        // Validación de la contraseña
+        if (!contrasenaRegExp.test(contrasena)) {
+            throw new Error("Contraseña no válida. Debe contener al menos 8 caracteres, una letra mayúscula, una letra minúscula, un número y un carácter especial.");
+        }
+
+        // Validación de la confirmación de contraseña
+        if (contrasena !== confirmaContrasena) {
+            throw new Error("Las contraseñas no coinciden.");
+        }
+
+        // Validación de si se seleccionó el género
+        if (!hombreChecked && !mujerChecked) {
+            throw new Error("Debe seleccionar su género.");
+        }
+
+        // Obtener el último ID asignado
+        let lastUserId = parseInt(localStorage.getItem('lastUserId')) || 0;
+
+        // Incrementar el ID para el nuevo usuario
+        let newUserId = lastUserId + 1;
+
+        // Crear objeto JSON con los campos del usuario
+        let usuario = {
+            id: newUserId,
+            nombre: nombre,
+            telefono: telefono,
+            correo: correo,
+            contrasena: contrasena,
+            genero: hombreChecked ? 'Hombre' : 'Mujer',
+            imagen: imagen
+        };
+
+        // Guardar datos del usuario en el localStorage
+        localStorage.setItem('usuario_' + newUserId, JSON.stringify(usuario));
+
+        // Actualizar el último ID asignado en el localStorage
+        localStorage.setItem('lastUserId', newUserId);
+
+        showAlert("Formulario enviado correctamente. Datos del usuario guardados localmente.");
+    
+        // Limpiar los inputs después de enviar el formulario
+        resetForm();    
+    } catch (error) {
+        showAlert(error.message, 'error');
+    }
+}
+
+// ------------------------------------------------------------------------------------------
+// Función para limpiar los inputs
+function resetForm() {
+    document.getElementById('nombre').value = '';
+    document.getElementById('telefono').value = '';
+    document.getElementById('correo').value = '';
+    document.getElementById('contrasena').value = '';
+    document.getElementById('confirma-contrasena').value = '';
+    document.getElementById('radio-hombre').checked = false;
+    document.getElementById('radio-mujer').checked = false;
+    img.setAttribute('src', ''); // Resetear la imagen
+    fileInput.value = ''; // Resetear el input de archivo
+}
+
+// ------------------------------------------------------------------------------------------
+// Obtener todos los usuarios del localStorage DESCARGANDO UN ARCHIVO LLAMADO data-user.json
+const usuarios = [];
+for (let i = 1; i <= localStorage.getItem('lastUserId'); i++) {
+    const usuarioString = localStorage.getItem('usuario_' + i);
+    if (usuarioString) {
+        const usuario = JSON.parse(usuarioString);
+        usuarios.push(usuario);
+    }
+}
+
+// Convertir los usuarios a formato JSON
+const usuariosJSON = JSON.stringify(usuarios, null, 2); // El segundo argumento es para la indentación (2 espacios en este caso)
+
+// Crear un enlace para descargar el archivo
+const downloadLink = document.createElement('a');
+downloadLink.href = 'data:text/json;charset=utf-8,' + encodeURIComponent(usuariosJSON);
+downloadLink.download = 'data-user.json';
+
+// Agregar el enlace al documento y simular el clic
+document.body.appendChild(downloadLink);
+downloadLink.click();
+document.body.removeChild(downloadLink);
+
+console.log('Datos de usuarios descargados como data-user.json');
+
+// ------------------------------------------------------------------------------------------
+// ALERT CON ESTILOS
+function showAlert(message, type = 'info') {
+    const alertContainer = document.getElementById('alert-container');
+
+    if (!alertContainer) {
+        console.error('No se encontró el contenedor de alertas');
+        return;
+    }
+    
+    // Crear el elemento de alerta
+    const alertDiv = document.createElement('div');
+    alertDiv.classList.add('alert');
+    
+    // Añadir clase de tipo de alerta y el icono correspondiente
+    switch (type) {
+        case 'success':
+            alertDiv.classList.add('alert-success');
+            alertDiv.innerHTML = `<i class="bx bx-check-circle"></i>${message}`;
+            break;
+        case 'error':
+            alertDiv.classList.add('alert-error');
+            alertDiv.innerHTML = `<i class="bx bx-error-circle"></i>${message}`;
+            break;
+        case 'info':
+            alertDiv.classList.add('alert-info');
+            alertDiv.innerHTML = `<i class="bx bx-info-circle"></i>${message}`;
+            break;
+        case 'warning':
+            alertDiv.classList.add('alert-warning');
+            alertDiv.innerHTML = `<i class="bx bx-error"></i>${message}`;
+            break;
+        default:
+            alertDiv.classList.add('alert-info');
+            alertDiv.innerHTML = `<i class="bx bx-info-circle"></i>${message}`;
+    }
+
+    // Añadir la alerta al contenedor
+    alertContainer.appendChild(alertDiv);
+
+    // Eliminar la alerta después de 6 segundos
+    setTimeout(() => {
+        if (alertDiv.parentElement === alertContainer) {
+            alertContainer.removeChild(alertDiv);
+        }
+    }, 6000);
+}
+
+
+
+
+
