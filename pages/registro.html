@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrate</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/registro.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="../index.js"></script>
+    <script src="../js/scripts.js"></script>
+</head>
+
+<body>
+
+    <div id="nav"></div>
+
+    <div class="container-main">
+
+        <div class="container-titulo">
+            <h1>Registrate</h1>
+        </div>
+
+        <div class="contenedor-contenido">
+                    <!-- contenedor izquierda -->
+            <div class="container-form">
+
+                <!-- contenedor imagen -->
+                <div class="content-foto">
+                    <div class="form-file-action">
+                        <input type="file" name="image" id="image">
+                    </div>
+                    <div class="form-file-result" id="result-image">
+                        <img id="img-result" alt="">
+                    </div>
+                </div>
+
+                <div class="content-datos-usuario">
+                    <div class="input-box">
+                        <input type="text" class="input" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required>
+                        <i class='bx bxs-user'></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="tel" class="input" id="telefono" name="telefono" placeholder="Ingresa tu teléfono" required>
+                        <i class='bx bxs-phone'></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="email" class="input" id="correo" name="correo" placeholder="Ingresa tu email" required>
+                        <i class='bx bxs-envelope'></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" class="input" id="contrasena" name="contrasena" placeholder="Ingresa tu contraseña" required>
+                        <i class='bx bx-hide'></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" class="input" id="confirma-contrasena" name="confirma-contrasena" placeholder="Confirma tu contraseña" required>
+                        <i class='bx bx-hide'></i>
+                    </div>
+                    <div class="input-gender">
+                        <label class="content-mujer" for="mujer">Mujer</label>
+                        <input type="radio" class="input" id="radio-mujer" name="radio-mujer">
+                        <label for="hombre">Hombre</label>
+                        <input type="radio" class="input" id="radio-hombre" name="radio-hombre">
+                    </div>
+                </div>
+
+                <div class="content-boton">
+                    <button type="button" class="btn" onclick="validarFormulario()">Registrate</button>
+                </div>
+            </div>
+
+            <!-- contenedor derecha -->
+            <div class="container-figuras">
+                <div class="principal-img">
+                    <img src="/assets/img/torta-registro.jpg" alt="imagen-torta-grande">
+                    <div class="img-pequeña">
+                        <img src="/assets/img/torta-registro-circulo.jpg" alt="imagen-torta-circulo">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="alert-container" class="alert-container"></div>
+
+    <div id="footer"></div>
+
+    <script>
+        cargarScripts("registro");
+    </script>
+
+    <script src="/js/registro.js"></script>
+
+</body>
+
+</html>
