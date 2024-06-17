@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/pagos.css" />
+    <script src="../index.js"></script>
+    <script src="../js/scripts.js"></script>
+    <title>Pagos</title>
+  </head>
+  <body>
+    <div id="nav"></div>
+    <section class="pago_section">
+      <div class="container">
+        <div class="pago-wrapper">
+          <div class="resumen-compra">
+            <div class="nav-resumen">
+              <h3>Resumen compra</h3>
+              <a href="#" class="editar">Editar carrito</a>
+            </div>
+            <div class="item">
+              <p class="nombre">Lorem ipsum</p>
+              <p class="descripcion">Lorem ipsum Lorem</p>
+              <div class="detalles">
+                <p class="cantidad">1 x</p>
+                <p class="precio">$ 0.00</p>
+              </div>
+            </div>
+            <div class="item">
+              <p class="nombre">Lorem ipsum</p>
+              <p class="descripcion">Lorem ipsum Lorem</p>
+              <div class="detalles">
+                <p class="cantidad">1 x</p>
+                <p class="precio">$ 0.00</p>
+              </div>
+            </div>
+            <div class="totales">
+              <p class="subtotal">Artículos <span>$ 0.00</span></p>
+              <p class="envio">Envío <span>$ 0.00</span></p>
+              <p class="total">Total <span>$ 0.00</span></p>
+            </div>
+            <!-- <button class="cancelar">Cancelar</button> -->
+          </div>
+          <div class="metodo-pago">
+            <h3>Seleccione un método de pago</h3>
+            <div class="metodos">
+              <label>
+                <input type="radio" name="metodo" value="payu" checked />
+                <img src="../assets/img/payu.png" alt="Método 1" />
+              </label>
+              <label>
+                <input type="radio" name="metodo" value="paypal" />
+                <img src="../assets/img/paypal.png" alt="PayPal" />
+              </label>
+              <label>
+                <input type="radio" name="metodo" value="efectivo" />
+                <img src="../assets/img/efectivo2.png" alt="Otro" />
+              </label>
+            </div>
+            <form>
+              <div class="campo">
+                <label for="email">Correo Electrónico</label>
+                <input type="email" id="email" required />
+              </div>
+              <div class="campo">
+                <label for="tarjeta">Número de tarjeta</label>
+                <input type="text" id="tarjeta" name="tarjeta" required />
+              </div>
+              <div class="campo-doble">
+                <div class="campo">
+                  <label for="fecha">Fecha de expiración</label>
+                  <input type="date" id="fecha" name="fecha" required />
+                </div>
+                <div class="campo">
+                  <label for="clave">CVV</label>
+                  <input type="password" id="clave" name="clave" required />
+                </div>
+              </div>
+              <div class="campo-check">
+                <input
+                  type="checkbox"
+                  id="guardar-datos"
+                  name="guardar-datos"
+                />
+                <label for="guardar-datos"
+                  >Guardar datos para futuras compras</label
+                >
+              </div>
+              <button type="submit" class="confirmar">Confirmar</button>
+              <button type="submit" class="cancelar">Cancelar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div id="footer"></div>
+    <!--Script pagos-->
+    <script src="../js/pagos.js"></script>
+  </body>
+</html>

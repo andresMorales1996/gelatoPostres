@@ -15,6 +15,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+
 .contenedor-filtros a {
     text-align: center;
     color: var(--colorComplementarySecondary); 
@@ -43,24 +44,44 @@
     transform: scaleX(1); 
 }
 
-.contenedor-productos {
+.productos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
     padding-top: 2rem;
+}
+
+.producto {
+    position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center; 
-    gap: 2rem; 
+    align-items: center;
+    margin-bottom: 1rem;
+    z-index: 2; 
+    padding-top: 2rem;
+}
+
+.producto img {
+    position: absolute; 
+    top: 25%;
+    left: 5%; 
+    z-index: 3; /* Asegura que la imagen esté por encima del círculo */
+    width: 170px;
+}
+
+.contenedor-productos{
+    text-align: center;
+}
+
+.content-productos {
+    text-align: center;
 }
 
 .contenedor-productos h1 {
     color: var(--colorPrimary);
     font-family: var(--fontTitle);
     font-size: 3.8rem;
-}
-
-.content-productos {
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
 }
 
 .content-productos h2 {
@@ -76,24 +97,6 @@
     border-radius: 50%;
     position: relative; 
     z-index: 1; 
-}
-
-.producto {
-    position: relative; 
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    margin-bottom: 1rem;  
-    z-index: 2; /* Hace que este div esté por encima del div circulo */
-    padding-top: 2rem;
-}
-
-.producto img {
-    position: absolute; 
-    top: 25%;
-    left: 5%; 
-    z-index: 3; /* Asegura que la imagen esté por encima del círculo */
-    width: 170px;
 }
 
 .descripcion-producto {
@@ -115,67 +118,112 @@
     height: 30px; 
     background-color: var(--colorSecondary);
     border-radius: 50%;
+    cursor: pointer;
+}
+
+.boton-modulo:hover {
+    background-color: var(--colorPrimary);
 }
 
 /* *TABLET */
 @media screen and (min-width: 767px) {
+    .container-main {
+        padding-top: 1rem;
+        padding-bottom: 3rem;
+    }
+    
     .contenedor-filtros {
-        gap: 4rem;
-        height: 60px;
-    }
-    
-    .contenedor-filtros a { 
-        padding: 0.4rem;
-        font-size: 1.2rem;
-    }
-
-    .contenedor-productos {
-        padding-top: 2rem;
         display: flex;
-        flex-direction: column;
-        align-items: center; 
-        gap: 2rem; 
+        justify-content: center;
+        align-items: center;
+        background-color: var(--colorQuaternary);
+        gap: 1rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
     
-    .contenedor-productos h1 {
-        font-size: 3.7rem;
+    
+    .contenedor-filtros a {
+        text-align: center;
+        color: var(--colorComplementarySecondary); 
+        padding: 0.5rem;
+        position: relative;
+        transition: color 0.2s ease; 
     }
-
+    
+    .contenedor-filtros a:hover {
+        color: var(--colorPrimary); 
+    }
+    
+    .contenedor-filtros a::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 2px;
+        background-color: var(--colorPrimary); 
+        transform: scaleX(0); 
+        transition: transform 0.2s ease; 
+    }
+    
+    .contenedor-filtros a:hover::after {
+        transform: scaleX(1); 
+    }
+    
     .productos-grid {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         gap: 2rem;
+        padding-top: 2rem;
     }
     
     .producto {
-        flex: 1 1 calc(50% - 2rem);
-        max-width: calc(50% - 2rem);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 1rem;
+        z-index: 2; 
+        padding-top: 2rem;
     }
-
-    .content-productos h2 {
-        font-size: 2.9rem;
-    }
-
+    
     .producto img {
+        position: absolute; 
         top: 25%;
-        left: 27%; 
+        left: 5%; 
         z-index: 3; /* Asegura que la imagen esté por encima del círculo */
         width: 170px;
     }
-
+    
+    .circulo {
+        width: 170px; 
+        height: 170px; 
+        background: linear-gradient(135deg, var(--colorTertiary) 10%, var(--colorPrimary) 75%);
+        border-radius: 50%;
+        position: relative; 
+        z-index: 1; 
+    }
+    
     .descripcion-producto {
-        font-size: 1.2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 4rem;
+    
     }
     
     .precio-producto {
-        font-size: 1.2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
-
+    
     .boton-modulo {
-        width: 40px; 
-        height: 40px; 
-        font-size: 1.2rem;
+        width: 30px; 
+        height: 30px; 
+        background-color: var(--colorSecondary);
+        border-radius: 50%;
     }
 }
 
