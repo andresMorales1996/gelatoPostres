@@ -150,6 +150,8 @@ function validarFormulario() {
             imagen: imagen
         };
 
+        console.log(usuario)
+
         // Guardar datos del usuario en el localStorage
         localStorage.setItem('usuario_' + newUserId, JSON.stringify(usuario));
 
