@@ -24,22 +24,32 @@ icons.forEach((icon, index) => {
 // let user = JSON.parse('userData')
 
 
-function boton(){
-let inicioDeSesion = document.querySelector('#inicioDeSesion')
-inicioDeSesion.addEventListener('submit', (e)=>{
-    e.preventDefault()
-    const correo = document.querySelector('#correo').value
-    const password = document.querySelector('#confirma-contrasena').value
+const loginForm = document.querySelector('#inicioDeSesion');
+loginForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = document.querySelector('#correo').value;
+    const password = document.querySelector('#confirma-contrasena').value;
 
-    const Users = JSON.parse(localStorage.getItem('usuario_')) || []
-    const isUserRegistered = Users.find(user => user.correo === correo)
-    if(isUserRegistered){
-        return alert('El usuario ya esta registado!')
+    const lastUserId = parseInt(localStorage.getItem('lastUserId')) || 0;
+    let validUser = null;
+
+    for (let i = 1; i <= lastUserId; i++) {
+        const userString = localStorage.getItem('usuario_' + i);
+        if (userString) {
+            const user = JSON.parse(userString);
+            if (user.correo === email && user.contrasena === password) {
+                validUser = user;
+                break;
+            }
+        }
     }
 
-    Users.push({name: correo, password: password})
-    localStorage.setItem('usuario_', JSON.stringify(usuario))
-    alert('Registro Exitoso!')
-    window.location.href = 'registro.html'
-})
-}
+    if (!validUser) {
+        return alert('Usuario y/o contraseña incorrectos!');
+    }
+
+    const mensajeBienvenida = validUser.genero === 'Hombre' ? 'Bienvenido' : 'Bienvenida';
+    alert(`${mensajeBienvenida} ${validUser.nombre}`);
+    localStorage.setItem('login_success', JSON.stringify(validUser));
+    window.location.href = '../index.html';
+});
