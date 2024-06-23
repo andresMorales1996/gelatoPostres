@@ -25,7 +25,7 @@ dragZone.addEventListener('dragleave', (e) => {
 const uploadImage = (file) => {
     const fileReader = new FileReader();//lee archivos localmente
     fileReader.readAsDataURL(file);//lee la url del archivo
-    
+
     fileReader.addEventListener('load', (e) => {
         img.setAttribute('src', e.target.result);
     });
@@ -159,9 +159,9 @@ function validarFormulario() {
         localStorage.setItem('lastUserId', newUserId);
 
         showAlert("Formulario enviado correctamente. Datos del usuario guardados localmente.");
-    
+
         // Limpiar los inputs después de enviar el formulario
-        resetForm();    
+        resetForm();
     } catch (error) {
         showAlert(error.message, 'error');
     }
@@ -216,11 +216,11 @@ function showAlert(message, type = 'info') {
         console.error('No se encontró el contenedor de alertas');
         return;
     }
-    
+
     // Crear el elemento de alerta
     const alertDiv = document.createElement('div');
     alertDiv.classList.add('alert');
-    
+
     // Añadir clase de tipo de alerta y el icono correspondiente
     switch (type) {
         case 'success':
