@@ -196,9 +196,9 @@ for (let i = 1; i <= localStorage.getItem('lastUserId'); i++) {
 const usuariosJSON = JSON.stringify(usuarios, null, 2); // El segundo argumento es para la indentación (2 espacios en este caso)
 
 // Crear un enlace para descargar el archivo
-const downloadLink = document.createElement('a');
-downloadLink.href = 'data:text/json;charset=utf-8,' + encodeURIComponent(usuariosJSON);
-downloadLink.download = 'data-user.json';
+// const downloadLink = document.createElement('a');
+// downloadLink.href = 'data:text/json;charset=utf-8,' + encodeURIComponent(usuariosJSON);
+// downloadLink.download = 'data-user.json';
 
 // Agregar el enlace al documento y simular el clic
 document.body.appendChild(downloadLink);
