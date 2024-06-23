@@ -20,8 +20,7 @@ icons.forEach((icon, index) => {
 });
 
 
-// let userData = localStorage.getItem('usuario_')
-// let user = JSON.parse('userData')
+//  VALIDADCION DE INICIO DE SECION
 
 
 const loginForm = document.querySelector('#inicioDeSesion');
