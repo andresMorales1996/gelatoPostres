@@ -1,0 +1,241 @@
+@import url('../../css/styles.css');
+
+
+/* MOVIL */
+
+/* Contenedor principal */
+
+.contenerdorPrincipalS {
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+
+}
+
+/* Titulo */
+.titulo-inicioS {
+    text-align: center;
+    font-family: var(--fontTitle);
+    font-size: 25px;
+    color: var(--colorSextary);
+}
+
+
+/*  Formulario de incicio  */
+
+/* contenedor padre del formulario */
+.formulario-inicioS {
+    margin: 10px;
+    margin-top: 90px;
+    padding: 20px 70px;
+    align-content: center;
+    text-align: center;
+}
+
+/* tamaño y estilo de las celdas de escritura */
+
+.input input {
+    width: 100%;
+    height: 100%;
+    background: var(--colorTertiary);
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    font-size: 17px;
+    color: var(--colorPrimary);
+    padding: 20px 70px 20px 10px;
+}
+
+
+.datos-usuario .input {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 10px 0;
+
+}
+
+/*  color de las letras e iconos */
+.input::placeholder {
+    color: var(--colorPrimary);
+}
+
+/*  posicion de los iconos dentreo de las celdas */
+.input i {
+    position: absolute;
+    right: 15px;
+    top: 70%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    color: var(--colorPrimary);
+}
+
+/* Link para ir al registro de usuario */
+.link-S {
+    margin: 10px;
+    text-align: center;
+}
+
+/* Boton de inicio de sesion */
+
+/* contenedor padre del boton */
+.boton-inicioS {
+    text-align: center;
+    padding-bottom: 40px;
+    padding-top: 15px;
+
+}
+
+/* estilos propios del boton */
+.btns {
+
+    width: 200px;
+    height: 40px;
+    background: var(--colorPrimary);
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .2);
+    cursor: pointer;
+    font-size: 17px;
+    color: rgba(250, 243, 243, 0.836);
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .8);
+
+}
+
+.boton-inicioS .btns:hover {
+    background: var(--colorSecondary);
+    color: var(--fontTitle);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .8);
+}
+
+.boton-inicioS.btns:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .2);
+}
+
+/* Añadir efectos de onda en el botón */
+.boton-inicioS .btns::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 250%;
+    height: 250%;
+    background: rgba(255, 255, 255, 0.15);
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+
+}
+
+.boton-inicioS .btns:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* contenedor padre de juego de dos images */
+.img-inicioS {
+    display: none;
+}
+
+/* TABLET */
+
+@media screen and (min-width: 767px) {
+    .formulario-inicioS .datos-usuario {
+
+        width: 410px;
+        padding: 10px;
+        display: inline-flex;
+        flex-direction: column;
+
+    }
+
+    .input input {
+        font-size: 20px;
+    }
+
+    .btn {
+        font-size: 20px;
+    }
+}
+
+/* DESKTOP */
+
+@media screen and (min-width: 1024px) {
+
+    /* contenedor general de fotos y formulario */
+    .contenedor-general {
+        max-width: 1400px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        padding: 0 10%;
+        gap: 50px;
+    }
+
+
+    .img-inicioS {
+        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contenedor-izq {
+        width: 370px;
+        margin-top: 60px;
+        align-items: center;
+    }
+
+    .datos-usuario {
+        width: 370px;
+        padding: 10px;
+        position: relative;
+        right: 50%;
+    }
+
+    .input input {
+        font-size: 17px;
+    }
+
+    .btn {
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .img-grande {
+        width: 400px;
+        height: 600px;
+        position: relative;
+        border-radius: 40% 40% 0 0;
+        box-shadow: 0 20px 1020px rgba(245, 91, 217, 0.7);
+
+    }
+
+    .img-grande img {
+        width: 400px;
+        height: 600px;
+        object-fit: cover;
+        border-radius: 40% 40% 0 0;
+
+    }
+
+    .img-circular {
+        position: absolute;
+        top: 380px;
+        right: 290px;
+    }
+
+    .img-circular img {
+        width: 250px;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 50%;
+
+    }
+
+
+
+}
