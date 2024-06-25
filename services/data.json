@@ -36,19 +36,19 @@
          "disponibilidad": true,
          "opciones": [ 
             {
-            "precio":38000,
+            "precio":38.000,
             "porcion": 6
             },
              {
-            "precio":65000,
+            "precio":65.000,
             "porcion": 12
             },
          {
-            "precio":950000,
+            "precio":95.000,
             "porcion": 20
             },
              {
-            "precio":150000,
+            "precio":150.000,
             "porcion": 50
             }
          ]
@@ -63,19 +63,19 @@
          "disponibilidad": true,
          "opciones": [ 
             {
-            "precio":38000,
+            "precio":38.000,
             "porcion": 6
             },
              {
-            "precio":65000,
+            "precio":65.000,
             "porcion": 12
             },
          {
-            "precio":95000,
+            "precio":95.000,
             "porcion": 20
             },
              {
-            "precio":150000,
+            "precio":150.000,
             "porcion": 50
             }
          ]
@@ -90,19 +90,19 @@
          "disponibilidad": true,
          "opciones": [ 
             {
-            "precio":45000,
+            "precio":45.000,
             "porcion": 6
             },
              {
-            "precio":75000,
+            "precio":75.000,
             "porcion": 12
             },
          {
-            "precio":110000,
+            "precio":110.000,
             "porcion": 20
             },
              {
-            "precio":185000,
+            "precio":185.000,
             "porcion": 50
             }
          ]
@@ -117,19 +117,19 @@
          "disponibilidad": true,
          "opciones": [ 
             {
-            "precio":35000,
+            "precio":35.000,
             "porcion": 6
             },
              {
-            "precio":85000,
+            "precio":85.000,
             "porcion": 12
             },
          {
-            "precio":120000,
+            "precio":120.000,
             "porcion": 20
             },
              {
-            "precio":180000,
+            "precio":180.000,
             "porcion": 50
             }
          ]
@@ -144,19 +144,19 @@
          "disponibilidad": true,
          "opciones": [ 
             {
-            "precio":35000,
+            "precio":35.000,
             "porcion": 6
             },
              {
-            "precio":85000,
+            "precio":85.000,
             "porcion": 12
             },
             {
-            "precio":120000,
+            "precio":120.000,
             "porcion": 20
             },
              {
-            "precio":180000,
+            "precio":180.000,
             "porcion": 50
             }
          ]
@@ -170,19 +170,19 @@
          "disponibilidad": true,
          "opciones": [ 
             {
-            "precio":21000,
+            "precio":21.000,
             "porcion": 6
             },
              {
-            "precio":43200,
+            "precio":43.200,
             "porcion": 12
             },
          {
-            "precio":64800,
+            "precio":64.800,
             "porcion": 20
             },
              {
-            "precio":86400,
+            "precio":86.400,
             "porcion": 50
             }
          ]
@@ -196,15 +196,15 @@
          "disponibilidad": true,
          "opciones": [ 
             {
-            "precio":24000,
+            "precio":24.000,
             "porcion": 6
             },
              {
-            "precio":48000,
+            "precio":48.000,
             "porcion": 12
             },
          {
-            "precio":96000,
+            "precio":96.000,
             "porcion": 24
             }
          ]
@@ -218,15 +218,15 @@
          "disponibilidad": true,
          "opciones": [ 
             {
-            "precio":24000,
+            "precio":24.000,
             "porcion": 6
             },
              {
-            "precio":48000,
+            "precio":48.000,
             "porcion": 12
             },
          {
-            "precio":96000,
+            "precio":96.000,
             "porcion": 24
             }
          ]
@@ -240,19 +240,19 @@
          "disponibilidad": true,
          "opciones": [ 
             {
-            "precio":50000,
+            "precio":50.000,
             "porcion": 6
             },
              {
-            "precio":75000,
+            "precio":75.000,
             "porcion": 12
             },
          {
-            "precio":130000,
+            "precio":130.000,
             "porcion": 20
             },
              {
-            "precio":185000,
+            "precio":185.000,
             "porcion": 50
             }
          ]
@@ -266,19 +266,19 @@
          "disponibilidad": true,
          "opciones": [ 
             {
-            "precio":50000,
+            "precio":50.000,
             "porcion": 6
             },
              {
-            "precio":75000,
+            "precio":75.000,
             "porcion": 12
             },
          {
-            "precio":130000,
+            "precio":130.000,
             "porcion": 20
             },
              {
-            "precio":185000,
+            "precio":185.000,
             "porcion": 50
             }
          ]
@@ -292,19 +292,19 @@
          "disponibilidad": true,
          "opciones": [ 
             {
-            "precio":50000,
+            "precio":50.000,
             "porcion": 6
             },
              {
-            "precio":75000,
+            "precio":75.000,
             "porcion": 12
             },
          {
-            "precio":130000,
+            "precio":130.000,
             "porcion": 20
             },
              {
-            "precio":185000,
+            "precio":185.000,
             "porcion": 50
             }
          ]
