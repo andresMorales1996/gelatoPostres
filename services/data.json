@@ -112,7 +112,7 @@
          "id": 5,
          "tipo": "Tortas frías",
          "nombre": "Torta tres leches",
-         "descripcion": "Torta fria de tres leches decorada con chantilly y canela ",
+         "descripcion": "Torta fria de tres leches decorada con chantilly y canela",
          "relleno": ["Ganache de chocolate","Chantilly", "Dulce de leche", "Mora", "Sin relleno"],
          "disponibilidad": true,
          "opciones": [ 
