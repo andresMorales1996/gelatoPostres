@@ -230,7 +230,6 @@
 /* *DESKTOP 1024 */
 @media screen and (min-width: 1024px) {
     .container-main {
-        width: 100vw;
         min-height: 100vh;
     }
 

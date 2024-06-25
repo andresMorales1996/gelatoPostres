@@ -42,11 +42,11 @@
     position: absolute;
     right: 0;
     top: 0;
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
     text-align: center;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 700;
     background-color: var(--colorQuaternary);
     padding:  0 !important;
@@ -54,9 +54,13 @@
     color: #ffffff;
 }
 
-
-#mostrar-precio::before{
+.simbolo-peso::before{
     content: "$";
+    color: var(--colorPrimary)
+}
+
+#mostrar-precio {
+    color: var(--colorPrimary);
 }
 
 #icon-cerrar{
@@ -150,6 +154,21 @@
    height: 30px;
 }
 
+.btn-disable {
+    background-color: var(--colorSecondary) !important;
+}
+
+#alerta-producto-agregado {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--colorQuaternary); 
+    padding: 1em 0;
+    text-align: center;
+}
+
+
 .footer-modal div p {
    width: 40%;
    text-align: center;
@@ -161,12 +180,14 @@
     background-color: var(--colorPrimary);
     font-family: "Poppins";
     color: #ffffff;
+    cursor: pointer;
     font-size: 1.1em;
+    border-radius: 10px 10px 0 0;
 }
 
 .footer-modal > p{
     width: 25%;
-    background-color: var(--colorPrimary);
+    background-color:#ffffff;
     text-align: center;
     font-family: "Poppins";
     color: #ffffff;
@@ -230,5 +251,12 @@
     }
     .cerrar-modal{
         border-radius: 0 10px 0 10px;
+    }
+}
+
+@media (min-width: 1620px) {
+    #content_modal {
+        position: relative;
+        width: 55%;
     }
 }

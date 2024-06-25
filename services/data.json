@@ -8,19 +8,19 @@
          "disponibilidad": true,
          "opciones": [ 
             {
-            "precio":45000,
+            "precio":45.000,
             "porcion": 6
             },
              {
-            "precio":75000,
+            "precio":75.000,
             "porcion": 12
             },
          {
-            "precio":110000,
+            "precio":110.000,
             "porcion": 20
             },
              {
-            "precio":185000,
+            "precio":185.000,
             "porcion": 50
             }
          ],
