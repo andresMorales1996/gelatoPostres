@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./css/productos.css">
     <script src="./js/scripts.js"></script>
     <script src="./index.js"></script>
+    <script src="https://player.vimeo.com/api/player.js"></script>
 </head>
 
 <body>
@@ -18,27 +19,48 @@
     <div class="banner-principal">
         <img class="banner-mobile hide-desktop img-pos-top-right" src="assets/img/Recurso 2.png" alt="">
         <img class="banner-mobile hide-desktop img-pos-bottom-left" src="assets/img/Recurso 3.png" alt="">
-        <div class="banner-content">
-            <h1>Tortas Deliciosas</h1>
-            <p>Las mejores tortas hechas con amor y los ingredientes más frescos.</p>
-            <a href="" class="banner-button">Ordenar Ahora</a>
-        </div>
-        <div class="content-img">
-            <img class="img-pos-top" src="assets/img/Recurso 2.png" alt="">
-            <img class="img-pos-mid" src="assets/img/Recurso 3.png" alt="mano con fresa">
-            <img class="img-pos-bottom" src="assets/img/Recurso 4.png" alt="torta">
-        </div>  
-    </div>
-    <!--Productos-->
-    <h1>Productos Destacados</h1>
-    <div id="tortasTradicionales" class="content-productos">
-        <div id="tTradicionales" class="productos-grid">
+        <div class="contenedor-banner">
+            <div class="banner-content">
+                <h1>Tortas Deliciosas</h1>
+                <p>Las mejores tortas hechas con amor y los ingredientes más frescos.</p>
+                <a href="" class="banner-button">Ordenar Ahora</a>
+            </div>
+            <div class="content-img">
+                <img class="img-pos-top" src="assets/img/Recurso 2.png" alt="">
+                <img class="img-pos-mid" src="assets/img/Recurso 3.png" alt="mano con fresa">
+                <img class="img-pos-bottom" src="assets/img/Recurso 4.png" alt="torta">
+            </div>  
         </div>
     </div>
+    <!--Productos SE DEBE DE MEJORAR-->
+    <section class="productos">
+        <h1>Productos Destacados</h1>
+        <div id="tortasTradicionales" class="content-productos">
+            <div id="tTradicionales" class="productos-grid">
+            </div>
+        </div>
+        <div id="postres" class="content-productos">
+            <div id="postres-container" class="productos-grid"></div>
+        </div>
+    </section>
 
-    <div id="tortasFrias" class="content-productos">
-        <div id="tFrias" class="productos-grid"></div>
-    </div>
+    <section class="section-image">
+        <div class="info">
+            <h2>Dulces sensaciones, detalles inolvidables</h2>
+            <hr>
+            <span>Endulza tus momentos con el delicioso sabor de Gelato y Postres</span>
+            <p>Creamos cada bocado como una experiencia maravillosa que te invita a repetir.
+               <strong>Gelato y Postres</strong> es un emprendimiento que trabaja para demostrar nuestra dedicación a la calidad y la creatividad en cada detalle
+            </p>
+            <a href="/pages/productos.html">Saber más</a>
+        </div>
+        <img src="assets/img/torta-inicio.jpg">
+    </section>
+
+    <section class="testimonios">
+        
+    </section>
+    
     <!--Footer-->
     <div id="footer"></div>
     
