@@ -14,8 +14,12 @@ async function obtenerDatos() {
 async function mostrarProductos() {
     try {
         const productos = await obtenerDatos();
+
         
         productos.forEach(producto => {
+
+            let pPrecio = producto.opciones[0].precio;
+
             switch (producto.tipo){
                 case "Tortas tradicionales":
                     const tTradicionales = document.getElementById("tTradicionales");
@@ -39,6 +43,7 @@ async function mostrarProductos() {
 
                     const precio = document.createElement('div');
                     precio.classList.add("precio-producto");
+                    precio.textContent = `Desde: ${pPrecio}`;
                     tTradicionalesDiv.appendChild(precio);
 
                     const moduloDiv = document.createElement('div');
@@ -73,6 +78,7 @@ async function mostrarProductos() {
 
                     const precioTFrias = document.createElement('div');
                     precioTFrias.classList.add("precio-producto");
+                    precioTFrias.textContent = `Desde: ${pPrecio}`
                     tFriasDiv.appendChild(precioTFrias);
 
                     const moduloDivTFrias = document.createElement('div');
@@ -109,6 +115,7 @@ async function mostrarProductos() {
 
                     const precioPostres = document.createElement('div');
                     precioPostres.classList.add("precio-producto");
+                    precioPostres.textContent = `Desde: ${pPrecio}`
                     postresDiv.appendChild(precioPostres);
 
                     const moduloDivPostres = document.createElement('div');
