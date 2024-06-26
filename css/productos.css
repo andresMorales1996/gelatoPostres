@@ -1,6 +1,11 @@
 @import url('../../css/styles.css');
 
 /** MOBILE **/
+
+html{
+    scroll-behavior: smooth;
+}
+
 .container-main {
     padding-top: 1rem;
     padding-bottom: 3rem;
