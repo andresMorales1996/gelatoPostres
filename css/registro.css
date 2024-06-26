@@ -203,53 +203,6 @@
     cursor: pointer;
 }
 
-.alert-container {
-    position: fixed;
-    top: 860px;
-    right: 2px;
-    z-index: 1000;
-    width: auto;
-}
-
-.alert {
-    padding: 15px;
-    border-radius: 4px;
-    margin-bottom: 10px;
-    color: var(--colorComplementaryPrimary);
-    font-family: var(--fontBody);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
-    display: flex;
-    align-items: center;
-    font-size: 15px;
-    background-color: var(--colorPrimary);
-}
-
-.alert-success {
-    background-color: #28a745;
-    border: 1px solid #28a745;
-}
-
-.alert-error {
-    background-color: #dc3545;
-    border: 1px solid #dc3545;
-}
-
-.alert-info {
-    background-color: #17a2b8;
-    border: 1px solid #17a2b8;
-}
-
-.alert-warning {
-    background-color: #ffc107;
-    border: 1px solid #ffc107;
-    color: #212529;
-}
-
-.alert .bx {
-    margin-right: 10px;
-    font-size: 20px;
-}
-
 
 /** TABLET **/
 @media screen and (min-width: 767px) {
@@ -274,11 +227,6 @@
     .content-boton .btn {
         height: 50px;
         font-size: 20px;
-    }
-
-    .alert-container {
-        top: 900px;
-        right: 60px;
     }
 }
 
@@ -355,13 +303,4 @@
         border-radius: 50%;
 
     }
-
-    .alert-container {
-        position: fixed;
-        top: 860px;
-        right: 40px;
-        z-index: 1000;
-        width: auto;
-    }
-
 }

@@ -24,7 +24,7 @@
             "porcion": 50
             }
          ],
-         "imagen": "../assets/img/torta1.png"
+         "imagen": "../assets/img/torta-chocolate.png"
      },
  
      {
@@ -51,7 +51,8 @@
             "precio":150.000,
             "porcion": 50
             }
-         ]
+         ],
+         "imagen": "../assets/img/torta-vainilla.png"
      },
  
      {
@@ -78,7 +79,8 @@
             "precio":150.000,
             "porcion": 50
             }
-         ]
+         ],
+         "imagen": "../assets/img/torta-marmolada.png"
      },
  
      {
@@ -105,14 +107,15 @@
             "precio":185.000,
             "porcion": 50
             }
-         ]
+         ],
+         "imagen": "../assets/img/torta-zanahoria.png"
      },
  
      {
          "id": 5,
-         "tipo": "Tortas frias",
+         "tipo": "Tortas frías",
          "nombre": "Torta tres leches",
-         "descripcion": "Torta fria de tres leches decorada con chantilly y canela ",
+         "descripcion": "Torta fria de tres leches decorada con chantilly y canela",
          "relleno": ["Ganache de chocolate","Chantilly", "Dulce de leche", "Mora", "Sin relleno"],
          "disponibilidad": true,
          "opciones": [ 
@@ -132,12 +135,13 @@
             "precio":180.000,
             "porcion": 50
             }
-         ]
+         ],
+         "imagen": "../assets/img/torta-tres-leches.png"
      },
  
      {
          "id": 6,
-         "tipo": "Tortas frias",
+         "tipo": "Tortas frías",
          "nombre": "Torta beso de angel",
          "descripcion": "Torta tres leches rellena de quesillo (leche asada) decorada con chantilly",
          "relleno": ["Ganache de chocolate","Chantilly", "Dulce de leche", "Mora", "Sin relleno"],
@@ -159,7 +163,8 @@
             "precio":180.000,
             "porcion": 50
             }
-         ]
+         ],
+         "imagen": "../assets/img/torta-beso-angel.png"
      },
 
      {
@@ -185,7 +190,8 @@
             "precio":86.400,
             "porcion": 50
             }
-         ]
+         ],
+         "imagen": "../assets/img/mini-cupcakes.jpg"
      },
  
      {
@@ -207,33 +213,12 @@
             "precio":96.000,
             "porcion": 24
             }
-         ]
+         ],
+         "imagen": "../assets/img/cupcake-normal.png"
      },
- 
+
      {
          "id": 9,
-         "tipo": "Postres",
-         "nombre": "Cupcakes tamaño normal",
-         "descripcion": "Cupcakes decorados con chantilly y chispas",
-         "disponibilidad": true,
-         "opciones": [ 
-            {
-            "precio":24.000,
-            "porcion": 6
-            },
-             {
-            "precio":48.000,
-            "porcion": 12
-            },
-         {
-            "precio":96.000,
-            "porcion": 24
-            }
-         ]
-     },
- 
-     {
-         "id": 10,
          "tipo": "Postres",
          "nombre": "Chescacke de maracuya",
          "descripcion": "Chescake cremoso decorado con mermelada de maracuya",
@@ -255,11 +240,12 @@
             "precio":185.000,
             "porcion": 50
             }
-         ]
+         ],
+         "imagen": "../assets/img/torta-maracuya.png"
      },
  
      {
-         "id": 11,
+         "id": 10,
          "tipo": "Postres",
          "nombre": "Chescacke de frutos rojos",
          "descripcion": "Chescake cremoso decorado con mermelada de frutos rojos (fresa y mora)",
@@ -281,11 +267,12 @@
             "precio":185.000,
             "porcion": 50
             }
-         ]
+         ],
+         "imagen": "../assets/img/torta-frutos-rojos.png"
      },
  
      {
-         "id": 12,
+         "id": 11,
          "tipo": "Postres",
          "nombre": "Marquesa",
          "descripcion": "Pudin de chocolate intercalado con galletas de vainilla y leche condensada",
@@ -307,6 +294,7 @@
             "precio":185.000,
             "porcion": 50
             }
-         ]
+         ],
+         "imagen": "../assets/img/torta-marquesa.png"
      }
  ]
