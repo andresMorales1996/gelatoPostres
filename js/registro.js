@@ -25,7 +25,7 @@ dragZone.addEventListener('dragleave', (e) => {
 const uploadImage = (file) => {
     const fileReader = new FileReader();//lee archivos localmente
     fileReader.readAsDataURL(file);//lee la url del archivo
-    
+
     fileReader.addEventListener('load', (e) => {
         img.setAttribute('src', e.target.result);
     });
@@ -150,6 +150,8 @@ function validarFormulario() {
             imagen: imagen
         };
 
+        console.log(usuario)
+
         // Guardar datos del usuario en el localStorage
         localStorage.setItem('usuario_' + newUserId, JSON.stringify(usuario));
 
@@ -157,9 +159,9 @@ function validarFormulario() {
         localStorage.setItem('lastUserId', newUserId);
 
         showAlert("Formulario enviado correctamente. Datos del usuario guardados localmente.");
-    
+
         // Limpiar los inputs después de enviar el formulario
-        resetForm();    
+        resetForm();
     } catch (error) {
         showAlert(error.message, 'error');
     }
@@ -194,9 +196,9 @@ for (let i = 1; i <= localStorage.getItem('lastUserId'); i++) {
 const usuariosJSON = JSON.stringify(usuarios, null, 2); // El segundo argumento es para la indentación (2 espacios en este caso)
 
 // Crear un enlace para descargar el archivo
-const downloadLink = document.createElement('a');
-downloadLink.href = 'data:text/json;charset=utf-8,' + encodeURIComponent(usuariosJSON);
-downloadLink.download = 'data-user.json';
+// const downloadLink = document.createElement('a');
+// downloadLink.href = 'data:text/json;charset=utf-8,' + encodeURIComponent(usuariosJSON);
+// downloadLink.download = 'data-user.json';
 
 // Agregar el enlace al documento y simular el clic
 document.body.appendChild(downloadLink);
@@ -206,52 +208,34 @@ document.body.removeChild(downloadLink);
 console.log('Datos de usuarios descargados como data-user.json');
 
 // ------------------------------------------------------------------------------------------
-// ALERT CON ESTILOS
+// SWEET ALERT
 function showAlert(message, type = 'info') {
-    const alertContainer = document.getElementById('alert-container');
-
-    if (!alertContainer) {
-        console.error('No se encontró el contenedor de alertas');
-        return;
-    }
-    
-    // Crear el elemento de alerta
-    const alertDiv = document.createElement('div');
-    alertDiv.classList.add('alert');
-    
-    // Añadir clase de tipo de alerta y el icono correspondiente
+    let icon;
     switch (type) {
         case 'success':
-            alertDiv.classList.add('alert-success');
-            alertDiv.innerHTML = `<i class="bx bx-check-circle"></i>${message}`;
+            icon = 'success';
             break;
         case 'error':
-            alertDiv.classList.add('alert-error');
-            alertDiv.innerHTML = `<i class="bx bx-error-circle"></i>${message}`;
+            icon = 'error';
             break;
         case 'info':
-            alertDiv.classList.add('alert-info');
-            alertDiv.innerHTML = `<i class="bx bx-info-circle"></i>${message}`;
+            icon = 'info';
             break;
         case 'warning':
-            alertDiv.classList.add('alert-warning');
-            alertDiv.innerHTML = `<i class="bx bx-error"></i>${message}`;
+            icon = 'warning';
             break;
         default:
-            alertDiv.classList.add('alert-info');
-            alertDiv.innerHTML = `<i class="bx bx-info-circle"></i>${message}`;
+            icon = 'info';
     }
 
-    // Añadir la alerta al contenedor
-    alertContainer.appendChild(alertDiv);
-
-    // Eliminar la alerta después de 6 segundos
-    setTimeout(() => {
-        if (alertDiv.parentElement === alertContainer) {
-            alertContainer.removeChild(alertDiv);
-        }
-    }, 6000);
+    Swal.fire({
+        icon: icon,
+        title: message,
+        showConfirmButton: true,
+        timer: 6000
+    });
 }
+
 
 
 
