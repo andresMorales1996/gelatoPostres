@@ -19,7 +19,6 @@ html {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-
 .contenedor-filtros a {
     text-align: center;
     color: var(--colorComplementarySecondary); 
@@ -90,11 +89,29 @@ html {
     font-size: 3.8rem;
 }
 
+.svgFooter{
+    height: 5px;
+    margin-top: 50px;
+}
+
 .content-productos h2 {
-    color: var(--colorSextary);
+    color: var(--colorPrimary);
+    height: 90px;
     font-family: var(--fontTitle);
     font-size: 2.4rem;
     margin-top: 20px;
+    background-color: var(--colorTertiary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner{
+    width: 100%;
+    height: 3rem;
+    background-image: url(../../assets/svg/banner.svg);
+    background-size: contain;
+    background-repeat: repeat-x;
 }
 
 .circulo {
@@ -174,6 +191,10 @@ html {
     
     .contenedor-filtros a:hover::after {
         transform: scaleX(1); 
+    }
+
+    .banner{
+        height: 3rem;
     }
     
     .productos-grid {
@@ -258,6 +279,17 @@ html {
     .precio-producto {
         font-size: 1rem;
     }
+
+    .banner{
+        width: 100%;
+        height: 3rem;
+    }
+
+    .svgFooter{
+        height: 10px;
+        margin-top: 50px;
+    }
+    
 }
 
 
