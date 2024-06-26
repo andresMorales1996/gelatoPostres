@@ -6,7 +6,6 @@ html {
 }
 
 .container-main {
-    padding-top: 1rem;
     padding-bottom: 3rem;
 }
 
@@ -14,21 +13,22 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--colorQuaternary);
+    margin-bottom: 20px;
+    /* background-color: var(--colorQuaternary); */
     gap: 1rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
 }
 
 .contenedor-filtros a {
     text-align: center;
-    color: var(--colorComplementarySecondary); 
+    color: var(--colorComplementarySecondary);
     padding: 0.5rem;
     position: relative;
-    transition: color 0.2s ease; 
+    transition: color 0.2s ease;
 }
 
 .contenedor-filtros a:hover {
-    color: var(--colorPrimary); 
+    color: var(--colorPrimary);
 }
 
 .contenedor-filtros a::after {
@@ -38,13 +38,13 @@ html {
     right: 0;
     bottom: 0;
     height: 2px;
-    background-color: var(--colorPrimary); 
-    transform: scaleX(0); 
-    transition: transform 0.2s ease; 
+    background-color: var(--colorPrimary);
+    transform: scaleX(0);
+    transition: transform 0.2s ease;
 }
 
 .contenedor-filtros a:hover::after {
-    transform: scaleX(1); 
+    transform: scaleX(1);
 }
 
 .productos-grid {
@@ -52,7 +52,6 @@ html {
     flex-wrap: wrap;
     justify-content: center;
     gap: 2rem;
-    padding-top: 2rem;
 }
 
 .producto {
@@ -61,14 +60,14 @@ html {
     flex-direction: column;
     align-items: center;
     margin-bottom: 1rem;
-    z-index: 2; 
+    z-index: 2;
     padding-top: 2rem;
 }
 
 .producto img {
-    position: absolute; 
+    position: absolute;
     top: 25%;
-    left: 5%; 
+    left: 5%;
     z-index: 3; /* Asegura que la imagen esté por encima del círculo */
     width: 170px;
 }
@@ -91,15 +90,14 @@ html {
 
 .svgFooter{
     height: 5px;
-    margin-top: 50px;
+    margin-top: 10px;
 }
 
 .content-productos h2 {
     color: var(--colorPrimary);
-    height: 90px;
+    height: 100px;
     font-family: var(--fontTitle);
     font-size: 2.4rem;
-    margin-top: 20px;
     background-color: var(--colorTertiary);
     display: flex;
     justify-content: center;
@@ -109,18 +107,18 @@ html {
 .banner{
     width: 100%;
     height: 3rem;
-    background-image: url(../../assets/svg/banner.svg);
+    background-image: url(../assets/svg/banner.svg);
     background-size: contain;
     background-repeat: repeat-x;
 }
 
 .circulo {
-    width: 170px; 
-    height: 170px; 
+    width: 170px;
+    height: 170px;
     background: linear-gradient(135deg, var(--colorTertiary) 10%, var(--colorPrimary) 75%);
     border-radius: 50%;
-    position: relative; 
-    z-index: 1; 
+    position: relative;
+    z-index: 1;
 }
 
 .descripcion-producto {
@@ -131,8 +129,8 @@ html {
 }
 
 .boton-modulo {
-    width: 90px; 
-    height: 40px; 
+    width: 90px;
+    height: 40px;
     background-color: var(--colorSecondary);
     border-radius: 20px;
     padding: 10px;
@@ -154,29 +152,29 @@ html {
         padding-top: 1rem;
         padding-bottom: 3rem;
     }
-    
+
     .contenedor-filtros {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: var(--colorQuaternary);
+        /* background-color: var(--colorQuaternary); */
         gap: 1rem;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
     }
-    
-    
+
+
     .contenedor-filtros a {
         text-align: center;
-        color: var(--colorComplementarySecondary); 
+        color: var(--colorComplementarySecondary);
         padding: 0.5rem;
         position: relative;
-        transition: color 0.2s ease; 
+        transition: color 0.2s ease;
     }
-    
+
     .contenedor-filtros a:hover {
-        color: var(--colorPrimary); 
+        color: var(--colorPrimary);
     }
-    
+
     .contenedor-filtros a::after {
         content: '';
         position: absolute;
@@ -184,66 +182,70 @@ html {
         right: 0;
         bottom: 0;
         height: 2px;
-        background-color: var(--colorPrimary); 
-        transform: scaleX(0); 
-        transition: transform 0.2s ease; 
+        background-color: var(--colorPrimary);
+        transform: scaleX(0);
+        transition: transform 0.2s ease;
     }
-    
+
     .contenedor-filtros a:hover::after {
-        transform: scaleX(1); 
+        transform: scaleX(1);
     }
 
     .banner{
         height: 3rem;
     }
-    
+
+    .content-productos h2 {
+        height: 90px;
+        margin-top: 40px;
+    }
+
     .productos-grid {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         gap: 2rem;
-        padding-top: 2rem;
     }
-    
+
     .producto {
         position: relative;
         display: flex;
         flex-direction: column;
         align-items: center;
         margin-bottom: 1rem;
-        z-index: 2; 
+        z-index: 2;
         padding-top: 2rem;
     }
-    
+
     .producto img {
-        position: absolute; 
+        position: absolute;
         top: 25%;
-        left: 5%; 
+        left: 5%;
         z-index: 3; /* Asegura que la imagen esté por encima del círculo */
         width: 170px;
     }
-    
+
     .circulo {
-        width: 170px; 
-        height: 170px; 
+        width: 170px;
+        height: 170px;
         background: linear-gradient(135deg, var(--colorTertiary) 10%, var(--colorPrimary) 75%);
         border-radius: 50%;
-        position: relative; 
-        z-index: 1; 
+        position: relative;
+        z-index: 1;
     }
-    
+
     .descripcion-producto {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    
+
     .precio-producto {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    
+
 }
 
 /* *DESKTOP 1024 */
@@ -252,11 +254,11 @@ html {
         min-height: 100vh;
     }
 
-    .contenedor-filtros a { 
+    .contenedor-filtros a {
         padding: 1rem;
         font-size: 1rem;
     }
-    
+
     .producto {
         flex: 1 1 calc(33.33% - 2rem);
         max-width: calc(33.33% - 2rem);
@@ -275,7 +277,7 @@ html {
     .descripcion-producto {
         font-size: 1rem;
     }
-    
+
     .precio-producto {
         font-size: 1rem;
     }
@@ -286,10 +288,10 @@ html {
     }
 
     .svgFooter{
+        background-repeat: repeat-x;
         height: 10px;
         margin-top: 50px;
     }
-    
 }
 
 
