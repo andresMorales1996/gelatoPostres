@@ -240,10 +240,10 @@ function AgregarProductoCarrito(id, nombre, imagen) {
     const relleno = opcionRelleno ? opcionRelleno.value : "";
 
     const informacionProducto = document.getElementById("precios-productos").value.split("x");
-    const precio = informacionProducto[0];
+    const precio = parseFloat(informacionProducto[0]);
     const porcion = informacionProducto[1] ? informacionProducto[1].trim() : "";
 
-    const cantidad = document.getElementById("cant-producto").textContent;
+    const cantidad = parseInt(document.getElementById("cant-producto").textContent);
 
     // Guardar los datos en localStorage
     const productoCarrito = {
@@ -259,8 +259,14 @@ function AgregarProductoCarrito(id, nombre, imagen) {
     // Verificar si el objeto productoCarrito se está creando correctamente
     console.log("Producto Carrito: ", productoCarrito);
 
-    // Almacenar en localStorage
-    localStorage.setItem("productoCarrito", JSON.stringify(productoCarrito));
+    // Recuperar el carrito actual de localStorage
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+    // Agregar el nuevo producto al carrito
+    carrito.push(productoCarrito);
+
+    // Almacenar el carrito actualizado en localStorage
+    localStorage.setItem("carrito", JSON.stringify(carrito));
 
     // Redirigir a la otra página
     if (productoCarrito.precio > 0) {
