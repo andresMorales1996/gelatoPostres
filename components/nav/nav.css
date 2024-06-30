@@ -11,7 +11,7 @@
 
 .logo-nav {
     width: 3rem;
-    margin-left: 25%;
+    margin-left: 24%;
 }
 
 .logo-nav img {
@@ -45,11 +45,11 @@ nav a {
     height: 100%;
     display: flex;
     align-items: center;
-    color: var(--colorSecondary);
+    color: var(--colorPrimary);
 }
 
 nav li:hover {
-    background-color: var(--colorPrimary);
+    background-color: #C77337;
 }
 
 .sideBar {
@@ -99,7 +99,7 @@ nav li:hover {
 .menu-boton svg,
 .close-boton svg {
     width: 2.5rem;
-    fill: var(--colorSecondary);
+    fill: var(--colorPrimary);
 }
 
 svg:hover {
@@ -118,13 +118,16 @@ svg:hover {
 
 .nav_iconos i {
     margin-right: 0.5rem;
-    color: var(--colorSecondary);
+    color: var(--colorPrimary);
     font-size: 1.25rem;
 }
 
 .nav_iconos i:hover {
-    color: var(--colorPrimary);
+    color: #C77337;
+    transform: scale(1.4); /* Agrandar el icono al 120% de su tamaño original */
+    transition: transform 0.3s ease-in-out; /* Animación suave */
 }
+
 
 .expandirInput:hover input {
     width: 60%;
@@ -325,12 +328,6 @@ svg:hover {
 
     nav li {
         padding: 0.8rem;
-    }
-
-    nav li:hover {
-        height: 0.8rem;
-        border-radius: 3rem;
-        background-color: var(--colorPrimary);
     }
 
     nav a:hover {
