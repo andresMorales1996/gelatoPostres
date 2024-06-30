@@ -7,7 +7,6 @@ const img = document.getElementById('img-result');
 dragZone.addEventListener('click', () => fileInput.click());
 
 // cada vez que hacemos el drag and drop a la zona drag cambie su color de fondo
-
 dragZone.addEventListener('dragover', (e) => {
     //  prevenir el funcionamiento por defecto, no se quiere que 
     //se habra en otra pestaña
@@ -67,6 +66,26 @@ icons.forEach((icon, index) => {
     });
 });
 
+// Función para manejar la selección del género
+function seleccionarGenero() {
+    const hombre = document.getElementById('radio-hombre');
+    const mujer = document.getElementById('radio-mujer');
+
+    hombre.addEventListener('change', () => {
+        if (hombre.checked) {
+            mujer.checked = false;
+        }
+    });
+
+    mujer.addEventListener('change', () => {
+        if (mujer.checked) {
+            hombre.checked = false;
+        }
+    });
+}
+
+seleccionarGenero();
+
 function validarFormulario() {
     try {
         // Obtener los valores de los radio buttons para género
@@ -102,6 +121,11 @@ function validarFormulario() {
         let telefonoRegExp = /^[0-9]+$/;
         let correoRegExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         let contrasenaRegExp = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[^\s]{8,}$/;
+
+        // Verificar si todos los campos están llenos
+        if (!nombre || !telefono || !correo || !contrasena || !confirmaContrasena || (!hombreChecked && !mujerChecked)) {
+            throw new Error("Todos los campos deben estar llenos.");
+        }
 
         // Validación del nombre
         if (!nombreRegExp.test(nombre)) {
@@ -158,7 +182,7 @@ function validarFormulario() {
         // Actualizar el último ID asignado en el localStorage
         localStorage.setItem('lastUserId', newUserId);
 
-        showAlert("Formulario enviado correctamente. Datos del usuario guardados localmente.");
+        showAlert("Formulario enviado correctamente. Datos del usuario guardados localmente.", 'success');
 
         // Limpiar los inputs después de enviar el formulario
         resetForm();
@@ -235,9 +259,3 @@ function showAlert(message, type = 'info') {
         timer: 6000
     });
 }
-
-
-
-
-
-
