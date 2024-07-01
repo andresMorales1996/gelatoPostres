@@ -149,27 +149,24 @@
 }
 
 .content-boton .btn {
+    font-weight: bold;
     width: 200px;
     height: 40px;
-    margin-top: -80px;
     background: var(--colorPrimary);
-    border: none;
+    border: 1px solid var(--colorPrimary);
     outline: none;
     border-radius: 40px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, .1);
     cursor: pointer;
     font-size: 17px;
     color: var(--colorComplementaryPrimary);
     transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
-    overflow: hidden;
 }
 
 .content-boton .btn:hover {
-    background: var(--colorSecondary);
-    color: var(--colorComplementarySecondary);
+    background: var(--colorTertiary);
+    color: var(--colorPrimary);
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, .5);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .8);
 }
 
 .content-boton .btn:active {
@@ -183,8 +180,8 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 300%;
-    height: 300%;
+    width: 250%;
+    height: 250%;
     background: rgba(255, 255, 255, 0.15);
     transform: translate(-50%, -50%) scale(0);
     border-radius: 50%;

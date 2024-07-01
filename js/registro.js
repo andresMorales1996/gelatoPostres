@@ -182,10 +182,15 @@ function validarFormulario() {
         // Actualizar el último ID asignado en el localStorage
         localStorage.setItem('lastUserId', newUserId);
 
-        showAlert("Formulario enviado correctamente. Datos del usuario guardados localmente.", 'success');
+        showAlert("Formulario enviado correctamente", 'success');
 
         // Limpiar los inputs después de enviar el formulario
         resetForm();
+
+        setTimeout(() => {
+            window.location.href = '/index.html';
+        }, 4000);
+
     } catch (error) {
         showAlert(error.message, 'error');
     }
