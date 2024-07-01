@@ -6,7 +6,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 100vh;
+    height: 80vh;
     font-family: var(--fontBody);
 }
 
@@ -35,9 +35,10 @@
   justify-content: center;
   width: 100%;
   height: 4rem;
-  background-color: var(--colorPrimary);
-  color: var(--colorComplementaryPrimary);
-  font-size: var(--large);
+  background-color: var(--colorTertiary);
+  font-family: var(--fontTitle);
+  color: var(--colorPrimary);
+  font-size: 2.3rem;
 }
 
 .slider-item {
@@ -107,12 +108,16 @@
   background-color: rgba(247, 154, 178, 0.7);
   font-family: var(--fontSubtitle);
   cursor: pointer;
+  color: azure;
 
 }
 
 .desc-text{
   display: none;
   padding: 5px;
+  backdrop-filter: blur(10px);
+  color: azure;
+  /* filter: drop-shadow(2px 4px 6px var(--colorPrimary)*/
 }
 
 

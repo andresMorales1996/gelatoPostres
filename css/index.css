@@ -5,8 +5,8 @@
 .banner-principal {
   display: flex;
   /* background-color: var(--colorTertiary); */
-  background: rgb(255,216,227);
-  background: radial-gradient(circle, rgba(255,216,227,1) 60%, rgba(247,154,178,1) 70%);
+  background: rgb(247,154,178);
+  background: linear-gradient(0deg, rgba(247,154,178,1) 10%, rgba(255,216,227,1) 100%);
   position: relative;
   height: 400px;
   bottom: 50px;
@@ -71,7 +71,7 @@
 .banner-content p {
   line-height: 1.8rem;
   font-size: 1.2rem;
-  color: var(--colorSecondary);
+  color: #534D4D;
 }
 
 .banner-button {
