@@ -30,6 +30,7 @@ async function mostrarProductos() {
             }
 
             if (contenedor) {
+                let pPrecio = parseFloat(producto.opciones[0].precio).toFixed(3);
                 const productoDiv = document.createElement('div');
                 productoDiv.classList.add('producto');
                 contenedor.appendChild(productoDiv);
@@ -49,6 +50,7 @@ async function mostrarProductos() {
 
                 const precio = document.createElement('div');
                 precio.classList.add("precio-producto");
+                precio.textContent = `Desde $${pPrecio}`;
                 productoDiv.appendChild(precio);
 
                 const moduloDiv = document.createElement('div');
