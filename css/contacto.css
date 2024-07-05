@@ -2,8 +2,8 @@
 
 /** MOBILE **/
 .container-main {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
 }
 
 .container-form {
@@ -11,6 +11,7 @@
     flex-direction: column;
     width: 100vw;
     min-height: 80vh;
+    overflow: hidden;
 }
 
 .content-titulo {
@@ -21,10 +22,10 @@
     margin-right: 5%;
 }
 
-.content-titulo  h1 {
+.content-titulo h1 {
     color: var(--colorPrimary);
     font-family: var(--fontSubtitle);
-    font-size: 1.5rem;
+    font-size: 1.4rem;
 }
 
 .content-foto {
@@ -93,7 +94,6 @@ form {
     top: 0px;
     left: 0px;
     padding: 0 20px;
-    border: 1px solid var(--colorPrimary);
     border-radius: 2rem;
     z-index: 1;
     font-size: 16px;
@@ -123,7 +123,6 @@ textarea:focus::placeholder {
 textarea {
     width: 100%;
     height: 8rem;
-    border: 1px solid var(--colorPrimary);
     border-radius: 2rem;
     resize: none;
 }
@@ -210,7 +209,7 @@ label {
 }
 
 /* *TABLET */
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
     .container-main {
         width: 100vw;
         min-height: 90vh;
@@ -221,7 +220,8 @@ label {
         width: 85vw;
         height: 100%;
         padding: 20% 0 5% 0;
-        border: 1px solid var(--colorPrimary);
+        /* border: 1px solid var(--colorPrimary); */
+        box-shadow: 1px 1px 15px 1px var(--colorSecondary);
         border-radius: 2rem;
         background-image: url(../assets/img/bannerContacto.jpg);
         background-repeat: no-repeat;
@@ -242,7 +242,7 @@ label {
     }
 
     .content-titulo h1 {
-        font-size: 1.3rem;        
+        font-size: 1.5rem;
     }
 
     .content-img {
@@ -268,14 +268,12 @@ label {
 
     .input {
         background: var(--colorComplementaryPrimary);
-        border: 1px solid var(--colorPrimary);
         backdrop-filter: blur(15px);
     }
 
     textarea {
-        height: 9rem;
+        height: 7rem;
         background: var(--colorComplementaryPrimary);
-        border: 1px solid var(--colorPrimary);
     }
 
     .submitBtn {
@@ -336,7 +334,7 @@ label {
 @media screen and (min-width: 1024px) {
     .container-main {
         width: 100%;
-        min-height: 100vh;
+        min-height: 40vh;
     }
 
     .container-form {
@@ -345,10 +343,10 @@ label {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 90vw;
-        height: 110vh;
-        padding: 5% 0 0 0; 
-        border: 1px solid var(--colorPrimary);
+        width: 80vw;
+        height: 50vh;
+        min-height: 73vh;
+        padding: 5% 0 0 0;
         margin: 0 auto;
         background: url(/assets/img/bannerContacto.jpg);
         background-size: cover;
@@ -372,7 +370,7 @@ label {
 
     .content-titulo h1 {
         width: 100%;
-        font-size: 1.5rem;
+        font-size: 1.8rem;
     }
 
     label {
@@ -386,21 +384,19 @@ label {
     }
 
     .inputContainer {
+        height: 2rem;
         width: 32vw;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
     }
 
     .input {
         background: var(--colorComplementaryPrimary);
-        border: 1px solid var(--colorPrimary);
         margin-top: -6rem !important;
     }
 
     textarea {
         background: var(--colorComplementaryPrimary);
-        border: 1px solid var(--colorPrimary);
         padding: 20px;
-        margin-top: -1rem;
     }
 
     .content-foto {
@@ -415,9 +411,8 @@ label {
     }
 
     .content-datos {
-        height: 100vh;
-        margin-top: -10rem;
-        margin-left: -2.5rem;
+        width: 100%;
+        height: 50vh;
     }
 
     .content-img img {
@@ -503,10 +498,46 @@ label {
         }
     }
 
+    @media screen and (min-width: 1280px) {
+
+        .container-form {
+            min-height: 76vh;
+        }
+
+
+
+        .content-titulo h1 {
+            width: 100%;
+            font-size: 2.1rem;
+        }
+
+
+
+    }
+
+    @media screen and (min-width: 1366px) {
+        .content-titulo h1 {
+            width: 100%;
+            font-size: 2.4rem;
+        }
+    }
+
+
+    @media screen and (min-width: 1440px) {
+        .container-form {
+            min-height: 79vh;
+        }
+
+        .content-titulo h1 {
+            width: 100%;
+            font-size: 2.7rem;
+        }
+    }
+
     @media screen and (min-width: 1920px) {
         .content-titulo h1 {
             width: 100%;
-            font-size: 2.5rem;
+            font-size: 3rem;
         }
     }
 
