@@ -8,7 +8,6 @@ async function obtenerProductos() {
         }
         const data = await response.json();
         productos.push(...data);
-        console.log(productos);
         agregarEventosBotones();
     } catch (error) {
         console.error('Error al cargar los productos:', error);
@@ -102,7 +101,7 @@ function crearFormulario(producto) {
     const precios = document.createElement("select");
 
     precios.addEventListener("change", () => {
-        mostrarPrecio();
+        mostrarPrecioAPagar();
     })
 
     precios.id = "precios-productos"
@@ -114,8 +113,9 @@ function crearFormulario(producto) {
 
     producto.opciones.forEach( opcion => {
         const option = document.createElement('option');
-        option.value = opcion.precio + "x" + opcion.porcion + " porciones";
-        option.textContent = opcion.precio + " x " + opcion.porcion + " porciones";
+        const numeroADecimal = parseFloat(opcion.precio).toFixed(3) 
+        option.value = numeroADecimal + "x" + opcion.porcion + " porciones";
+        option.textContent = numeroADecimal + " x " + opcion.porcion + " porciones";
         precios.appendChild(option);
     })
 
@@ -132,7 +132,10 @@ function footerFormulario(producto){
     const p = document.createElement("p")
     p.id = "mostrar-precio"
     const boton = document.createElement("button")
+    boton.id ="agregar-producto-carrito"
     boton.textContent = "Agregar"
+    boton.disabled = true
+    boton.classList.add("btn-disable")
 
    const opcionRestar = document.createElement("button")
    const opcionSumar =  document.createElement("button")
@@ -167,8 +170,8 @@ function footerFormulario(producto){
 
     boton.addEventListener("click", (event) => {
         event.preventDefault();
-        console.log("producto.id " , producto.id)
         AgregarProductoCarrito(producto.id);
+        quitarAlerta();
     })
 
     return div_container
@@ -190,7 +193,21 @@ function mostrarPrecioAPagar(){
     const p_cantidad = document.getElementById("cant-producto")
     const mostrarPrecio = document.getElementById("mostrar-precio")
     const selecionarPrecio = document.getElementById("precios-productos").value.split("x")[0]
-    mostrarPrecio.textContent = parseInt(selecionarPrecio) * parseInt(p_cantidad.textContent)
+    const $btn_agregar_carrito = document.getElementById("agregar-producto-carrito");
+
+    if(selecionarPrecio == 0) {
+        mostrarPrecio.textContent = "0"
+        $btn_agregar_carrito.disabled = true
+        $btn_agregar_carrito.classList.add("btn-disable")
+        
+        return
+    }
+    $btn_agregar_carrito.disabled = false
+    $btn_agregar_carrito.classList.remove("btn-disable")
+
+    //Mostrar simbolo peso cuando se selecciona una opcion en la lista
+    mostrarPrecio.classList.add("simbolo-peso")
+    mostrarPrecio.textContent = parseFloat(selecionarPrecio * parseInt(p_cantidad.textContent)).toFixed(3)
 }
 
 function sumarCantidad(){
@@ -200,16 +217,27 @@ function sumarCantidad(){
     mostrarPrecioAPagar()
 }
 
-function mostrarPrecio(){
-    const informacionProducto = document.getElementById("precios-productos").value.split("x");
-    const precio = document.getElementById("mostrar-precio")
-    precio.textContent = informacionProducto[0]
-    console.log("Se ha seleccionado: " + informacionProducto);
-    mostrarPrecioAPagar()
+function quitarAlerta(){
+    const alerta = document.getElementById("alerta-producto-agregado")
+    setTimeout(() => {
+        alerta.remove()
+        console.log("Se quito la alerta")
+    }, 3000);
 }
 
-function AgregarProductoCarrito(id) {
-    console.log("di click")
+function AgregarProductoCarrito(id) {   
+    console.log("se dio click al boton par agregar un producto")
+    const alerta = document.getElementById("alerta-producto-agregado")
+    if(alerta) {
+        return
+    }
+
+    const modal = document.getElementById("modal");
+    const create_alerta = document.createElement("p")
+    create_alerta.id = "alerta-producto-agregado"
+    create_alerta.textContent = "Se agrego un producto"
+
+    modal.appendChild(create_alerta)
     const opcionRelleno = document.querySelector(`input[name="${id}"]:checked`)
 
     if(opcionRelleno){
