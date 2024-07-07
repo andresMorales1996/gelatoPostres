@@ -16,6 +16,9 @@ const scripts = {
   "registro": [
     "../components/nav/nav.js"
   ],
+  "personalizar": [
+    "../components/nav/nav.js"
+  ],
 };
 
 // *FUNCIÓN CARGAR SCRIPTS DE COMPONENTES
