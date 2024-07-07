@@ -1,17 +1,14 @@
 @import url("../css/styles.css");
 
 /** Mobile **/
-
 .banner-principal {
   display: flex;
   /* background-color: var(--colorTertiary); */
   background: rgb(247,154,178);
   background: linear-gradient(0deg, rgba(247,154,178,1) 10%, rgba(255,216,227,1) 100%);
-  position: relative;
-  height: 400px;
-  bottom: 50px;
   justify-content: space-around;
   flex-direction: column;
+  height: inherit;
 }
 
 .banner-mobile {
@@ -208,6 +205,7 @@
 @media screen and (min-width: 1024px) {
   .contenedor-banner {
     max-width: 1400px;
+    margin: auto;
     display: flex;
     justify-content: space-around;
   }
@@ -304,4 +302,5 @@
   .section-image img {
     max-width: 50%; 
   }
+  
 }
