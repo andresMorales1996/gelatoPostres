@@ -1,0 +1,12 @@
+.swiper {
+    position: relative;
+    height: 420px;
+    bottom: 50px;
+}
+
+.swiper-pagination-bullet {
+    border: 2px solid #ffffff;
+    background: transparent !important;
+    width: 10px !important;
+    height: 10px !important;
+}
