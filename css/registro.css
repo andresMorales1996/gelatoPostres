@@ -23,6 +23,7 @@
 }
 
 .container-titulo {
+    max-width: 1400px;
     text-align: center;
     font-family: var(--fontTitle);
     font-size: 25px;
@@ -296,6 +297,5 @@
         height: 250px;
         object-fit: cover;
         border-radius: 50%;
-
     }
 }
