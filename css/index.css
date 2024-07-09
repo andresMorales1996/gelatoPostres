@@ -92,11 +92,78 @@
   color: var(--colorPrimary);
 }
 
-.productos h1 {
+.productos h2 {
   text-align: center;
-  color: var(--colorSextary);
-  font-size: 1.5rem;
-  text-decoration: underline wavy;
+  font-size: 3.5rem;
+  font-family: 'Cream Cake';
+  color: var(--colorPrimary);
+  margin: 20px;
+}
+
+.titulos_seccion{
+  text-align: center;
+  font-size: 3.5rem;
+  font-family: 'Cream Cake';
+  color: var(--colorPrimary);
+  margin-bottom: 40px;
+
+}
+
+/**galeria**/
+.galeria{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  width:90%;
+  margin: auto;
+  grid-gap: 40px;
+  padding: 40px 0;
+  overflow: hidden;
+}
+
+.galeria > a{
+  display: block;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 6px rgba(0,0,0, .5);
+  border-radius: 30px;
+}
+
+.galeria i{
+  color: #ffffff;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+.galeria img{
+  width: 100%;
+  vertical-align: top;
+  object-fit: cover;
+}
+
+.galeria a:hover i{
+  opacity: 1;
+}
+
+.light-box{
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0, .5);
+  width: 100%;
+  height: 100vh;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /**FUNCIONALIDAD A QUITAR**/
@@ -107,7 +174,7 @@
 .section-image {
   display: flex;
   flex-direction: column-reverse;
-  margin: 80px 0;
+  margin: 70px 0;
   padding: 0 20px;
   text-align: center;
   background-color: var(--colorSextenary);
@@ -155,6 +222,32 @@
   bottom: 0;
 }
 
+.testimonios  {
+  position: relative;
+  margin-bottom: 70px;
+}
+
+.testimonios-content{
+  text-align: center;
+}
+
+.testimonios-content img{
+  width: 50%;
+  padding: 10px;
+}
+
+.testimonios-content p{
+  padding: 0 3em;
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  font-size: 25px !important;
+}
+
+.swiper-wrapper{
+  overflow: hidden;
+}
 /** Tablet **/
 
 @media screen and (min-width: 767px) {
@@ -255,14 +348,14 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0 40px;
+    padding: 0 20px;
   }
 
   .info {
     flex: 1;
-    max-width: 45%;
+    max-width: 50%;
     text-align: left;
-    align-items: left;
+    padding: 0 40px;
   }
 
   .info a{
@@ -275,6 +368,13 @@
   }
   .section-image img {
     max-width: 50%; 
+    top: -50px;
+  }
+}
+
+@media screen and (min-width: 1560px) {
+  .galeria{
+    width:60%;
   }
 }
 
@@ -288,7 +388,7 @@
   }
 
   .section-image{
-    justify-content: space-around;
+    justify-content: space-evenly;
   }
   
   .info hr {
@@ -299,8 +399,8 @@
     max-width: 35%;
   }
 
-  .section-image img {
-    max-width: 50%; 
-  }
+  /* .section-image img {
+    max-width: 10%;
+  } */
   
 }
