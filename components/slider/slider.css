@@ -114,6 +114,25 @@
   padding: 3px;
 }
 
+.desp-btn img{
+  padding: 0;
+  width: 10px;
+  height: 10px;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.desp-btn {
+  background-color: rgba(241, 58, 104, 0.8);
+  border-radius: 50px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.desp-btn:hover {
+  background-color: var(--colorSextary);
+}
+
 .desc-text {
   display: none;
   color: var(--colorComplementaryPrimary)
