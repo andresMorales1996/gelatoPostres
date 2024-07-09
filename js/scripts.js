@@ -11,7 +11,8 @@ const scripts = {
     "../components/nav/nav.js"
   ],
   "productos": [
-    "../components/nav/nav.js"
+    "../components/nav/nav.js",
+    "../components/producto/producto.js"
   ],
   "registro": [
     "../components/nav/nav.js"

@@ -1,132 +1,104 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Productos</title>
-    <link rel="stylesheet" href="../css/styles.css" />
-    <link rel="stylesheet" href="../css/modal-productos.css" />
-    <link rel="stylesheet" href="../css/productos.css" />
-    <script src="../index.js"></script>
-    <script src="../js/scripts.js"></script>
-    <script src="../components/producto/producto.js"></script>
-    <!-- <script src="../services/api.js"></script> -->
-  </head>
 
-  <body>
-    <div id="nav"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Productos</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/modal-productos.css" />
+  <link rel="stylesheet" href="../css/productos.css" />
+  <script src="../index.js"></script>
+  <script src="../js/scripts.js"></script>
+</head>
 
-    <div class="container-main">
-      <h2 class="titulo-web">Categoría</h2>
+<body>
+  <div id="nav"></div>
 
-      <diV class="contenedor_categoria">
-        <div class="contenedor_radio">
-            <input type="radio" name="slider" id="item-1" checked>
-            <input type="radio" name="slider" id="item-2" >
-            <input type="radio" name="slider" id="item-3" >
-            <div class="cards">
-                <label class="card" for="item-1" id="selector-1">
-                    <img src="../assets/img/torta-vainilla.png" >
-                    <a href="#tortasTradicionales" >Tortas tradicionales</a>
-                </label>
-                <label class="card segunda" for="item-2" id="selector-2">
-                    <img src="../assets/img/torta-beso-angel.png">
-                    <a href="#tortasFrias">Tortas frias</a>
-                </label>
-                <label class="card" for="item-3" id="selector-3">
-                    <img src="../assets/img/mini-cupcakes.png">
-                    <a href="#postres">Postres</a>
-                </label>
-            </div>
+  <div class="container-main">
+    <h2 class="titulo-web">Categoría</h2>
+
+    <!--Menú de productos-->
+    <diV class="contenedor_categoria">
+      <div class="contenedor_radio">
+        <input type="radio" name="slider" id="item-1" checked>
+        <input type="radio" name="slider" id="item-2">
+        <input type="radio" name="slider" id="item-3">
+        <div class="cards">
+          <label class="card" for="item-1" id="selector-1">
+            <img src="../assets/img/torta-vainilla.png">
+            <a href="#tortasTradicionales">Tortas tradicionales</a>
+          </label>
+          <label class="card segunda" for="item-2" id="selector-2">
+            <img src="../assets/img/torta-beso-angel.png">
+            <a href="#tortasFrias">Tortas frias</a>
+          </label>
+          <label class="card" for="item-3" id="selector-3">
+            <img src="../assets/img/mini-cupcakes.png">
+            <a href="#postres">Postres</a>
+          </label>
         </div>
-        <span class="fondo_torta"></span>
+      </div>
+      <span class="fondo_torta"></span>
     </diV>
 
-      <!--Filtros-->
-      <div class="contenedor-filtros">
-        <!-- <a href="#desayunos">Desayunos</a> -->
+    <!--Filtros-->
+    <!-- <div class="contenedor-filtros">
+    </div> -->
+
+    <!--Productos-->
+    <div class="contenedor-productos">
+      <div id="modal" class="hidden">
+        <div id="content_modal">
+          <div id="informacion_modal">aca va el modal</div>
+        </div>
       </div>
 
-      <!--Productos-->
-      <div class="contenedor-productos">
-        <!-- <h1>Categoría</h1> -->
+      <div id="tortasTradicionales" class="content-productos">
+        <div id="tTradicionales" class="productos-grid"></div>
+      </div>
 
-        <div id="modal" class="hidden">
-          <div id="content_modal">
-            <div id="informacion_modal">aca va el modal</div>
-          </div>
-        </div>
+      <div id="tortasFrias" class="content-productos">
+        <div id="tFrias" class="productos-grid"></div>
+      </div>
 
-        <div id="productos_demo"></div>
-
-        <div id="tortasTradicionales" class="content-productos">
-          <section class="container-banner">
-            <div class="banner-top"></div>
-            <!-- <h2>Tortas tradicionales</h2> -->
-            <div class="banner-bottom"></div>
-          </section>
-          <div id="tTradicionales" class="productos-grid"></div>
-        </div>
-
-        <div id="tortasFrias" class="content-productos">
-          <div class="svgFooter"></div>
-          <!-- <h2>Tortas frías</h2> -->
-          <!-- <section class="container-banner">
-                    <div class="banner"></div>
-                </section> -->
-          <div id="tFrias" class="productos-grid"></div>
-        </div>
-
-        <div id="postres" class="content-productos">
-          <div class="svgFooter"></div>
-          <!-- <h2>Postres</h2> -->
-          <!-- <section class="container-banner">
-                    <div class="banner"></div>
-                </section> -->
-          <div id="postres-container" class="productos-grid"></div>
-        </div>
-
-        <!-- <div id="desayunos" class="content-productos">
-                <h2>Desayunos</h2>
-                <div class="productos-grid"></div>
-            </div>    -->
+      <div id="postres" class="content-productos">
+        <div id="postres-container" class="productos-grid"></div>
       </div>
     </div>
 
-    <div class="flechaArriba">
-      <a href="#"
-        ><svg
-          class="flecha"
-          viewBox="0 0 32 32"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <defs>
-            <style>
-              .cls-1 {
-                fill: none;
-              }
-            </style>
-          </defs>
-          <title />
-          <g data-name="Layer 2" id="Layer_2">
-            <path
-              d="M25,14a1,1,0,0,1-.71-.29L16,5.41l-8.29,8.3a1,1,0,0,1-1.42-1.42l9-9a1,1,0,0,1,1.42,0l9,9a1,1,0,0,1,0,1.42A1,1,0,0,1,25,14Z"
-            />
-            <path
-              d="M16,29a1,1,0,0,1-1-1V4a1,1,0,0,1,2,0V28A1,1,0,0,1,16,29Z"
-            />
-          </g>
-          <g id="frame"><rect class="cls-1" height="32" width="32" /></g></svg
-      ></a>
-    </div>
+  </div>
 
-    <div id="footer"></div>
+  <!--Flecha-->
+  <div class="flechaArriba">
+    <a href="#"><svg class="flecha" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <style>
+            .cls-1 {
+              fill: none;
+            }
+          </style>
+        </defs>
+        <title />
+        <g data-name="Layer 2" id="Layer_2">
+          <path
+            d="M25,14a1,1,0,0,1-.71-.29L16,5.41l-8.29,8.3a1,1,0,0,1-1.42-1.42l9-9a1,1,0,0,1,1.42,0l9,9a1,1,0,0,1,0,1.42A1,1,0,0,1,25,14Z" />
+          <path d="M16,29a1,1,0,0,1-1-1V4a1,1,0,0,1,2,0V28A1,1,0,0,1,16,29Z" />
+        </g>
+        <g id="frame">
+          <rect class="cls-1" height="32" width="32" />
+        </g>
+      </svg></a>
+  </div>
 
-    <script>
-      cargarScripts("productos");
-    </script>
+  <div id="footer"></div>
 
-    <script src="../services/modal.js"></script>
-    <script src="../services/productos.js"></script>
-  </body>
+  <script>
+    cargarScripts("productos");
+  </script>
+
+  <script src="../services/modal.js"></script>
+  <script src="../services/productos.js"></script>
+</body>
+
 </html>
