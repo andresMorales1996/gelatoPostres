@@ -14,7 +14,6 @@ async function obtenerDatos() {
 async function mostrarProductos() {
     try {
         const productos = await obtenerDatos();
-
         
         productos.forEach(producto => {
             let contenedor;
@@ -43,12 +42,10 @@ async function mostrarProductos() {
                 imagen.src = producto.imagen; // Usar la ruta de la imagen del JSON
                 imagenDiv.appendChild(imagen);
 
-
                 const descripcion = document.createElement('div');
                 descripcion.classList.add('descripcion-producto');
                 descripcion.textContent = producto.nombre;
                 productoDiv.appendChild(descripcion);
-
 
                 const precio = document.createElement('div');
                 precio.classList.add("precio-producto");
