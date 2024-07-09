@@ -64,6 +64,7 @@ function productoModal(producto) {
     image.title = producto.nombre
     image.classList.add("image_modal")
     div_info.classList.add("info_modal")
+    // mensaje.innerHTML = 'Si deseas personalizar tu torta da clic <a href="#" >aquí</a>.';
 
     cerrar.classList.add("cerrar-modal")
 
@@ -72,6 +73,7 @@ function productoModal(producto) {
     div_info.appendChild(descripcion)
     div_info.appendChild(cerrar)
     div_info.appendChild(formulario)
+    // div_info.appendChild(mensaje)
 
     informacion_modal.appendChild(div_image)
     informacion_modal.appendChild(div_info)
