@@ -2,8 +2,8 @@
 
 .contenedorAll {
     width: 100%;
-    height: 85vh;
     padding: 2%;
+    height: 100vh;
     display: grid;
     grid-template-columns: 50% 50%;
 }
@@ -12,12 +12,13 @@
     width: 100%;
     height: auto;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .contenedorimage img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 75%;
 }
 
 .contenedor__formulario {
@@ -211,5 +212,41 @@
 .agregar-pedido p:hover::before {
     transform: translate(-50%, -50%) scale(1);
 }
+
+
+@media (max-width: 767px) {
+    .contenedorAll {
+        grid-template-columns: 100%; 
+    }
+
+    .contenedorimage img {
+        display: none;
+    }
+
+    .contenedor__formulario {
+        padding: 5%; 
+    }
+    
+    .info__text__area textarea {
+        height: 200px; 
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1920px) {
+    .contenedorAll {
+        grid-template-columns: 50% 50%; 
+    }
+    
+    .contenedor__formulario {
+        height: 723px; 
+    }
+    
+    .info__text__area textarea {
+        height: 300px; 
+    }
+
+}
+
+
 
 
