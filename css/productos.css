@@ -9,6 +9,104 @@ html {
     padding-bottom: 3rem;
 }
 
+.contenedor_categoria {
+    max-width: 100%;
+    min-height: 10vh;
+    margin-left: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 10px;
+    margin-bottom: 40%;
+    margin-top: -2rem;
+}
+
+input[type=radio] {
+    display: none;
+}
+
+.contenedor_radio {
+    width: 100%;
+    max-width: 800px;
+    height: 100%;
+    max-height: 600px;
+    transform-style: preserve-3d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.card {
+    position: absolute;
+    width: 60%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    cursor: pointer;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.card a {
+    display: flex;
+    width: 60%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin-left: -0.5rem;
+    font-family: var(--fontTitle);
+    color: var(--colorPrimary);
+}
+
+.card img {
+    display: flex;
+    width: 60%;
+    margin-left: -0.5rem;
+    margin-top: -1rem;
+}
+
+#item-2:checked ~ .cards #selector-1,
+#item-1:checked ~ .cards #selector-3,
+#item-3:checked ~ .cards #selector-2 {
+    transform: translateX(-70%) scale(0.6);
+    opacity: 0.5;
+    z-index: 0;
+}
+
+#item-3:checked ~ .cards #selector-1,
+#item-1:checked ~ .cards #selector-2,
+#item-2:checked ~ .cards #selector-3 {
+    transform: translateX(50%) scale(0.6);
+    opacity: 0.5;
+    z-index: 0;
+}
+
+#item-1:checked ~ .cards #selector-1,
+#item-2:checked ~ .cards #selector-2,
+#item-3:checked ~ .cards #selector-3 {
+    transform: translateX(0) scale(1);
+    z-index: 3;
+}
+
+.fondo_torta {
+    position: absolute;
+    width: 7rem;
+    height: 7rem;
+    border-radius: 1rem;
+    background-color: var(--colorTertiary);
+    transform: rotate(-50deg) skew(170deg) translate(-6%);
+    z-index: -1;
+    margin-top: 10rem;
+    margin-left: -5rem;
+}
+
 .contenedor-filtros {
     display: flex;
     justify-content: center;
@@ -68,11 +166,17 @@ html {
     position: absolute;
     top: 25%;
     left: 5%;
-    z-index: 3; /* Asegura que la imagen esté por encima del círculo */
+    z-index: 3;
+    /* Asegura que la imagen esté por encima del círculo */
     width: 170px;
 }
 
-.contenedor-productos h1{
+.contenedor-productos {
+    margin-top: -4rem;
+    margin-bottom: 2rem;
+}
+
+.contenedor-productos h1 {
     text-align: center;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -88,7 +192,7 @@ html {
     font-size: 3.8rem;
 }
 
-.svgFooter{
+.svgFooter {
     height: 5px;
     margin-top: 10px;
 }
@@ -98,13 +202,14 @@ html {
     height: 100px;
     font-family: var(--fontTitle);
     font-size: 2.4rem;
-    background-color: var(--colorTertiary);
+    margin-top: 8rem;
+    /* background-color: var(--colorTertiary); */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.banner{
+.banner {
     width: 100%;
     height: 3rem;
     background-image: url(../../assets/svg/banner.svg);
@@ -126,31 +231,92 @@ html {
     flex-direction: column;
     align-items: center;
     padding-top: 38px;
+    color: var(--colorSecondary);
 }
 
 .boton-modulo {
-    width: 90px;
-    height: 40px;
-    background-color: var(--colorSecondary);
-    border-radius: 20px;
-    padding: 10px;
+    width: 6rem;
+    height: 2rem;
+    background: var(--colorPrimary);
+    border: 1px solid var(--colorPrimary);
+    outline: none;
+    border-radius: 40px;
     cursor: pointer;
-    margin-top: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    color: var(--colorComplementaryPrimary);
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .boton-modulo:hover {
-    background-color: var(--colorQuaternary);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.7);
+    background: var(--colorTertiary);
+    color: var(--colorPrimary);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .8);
 }
 
+.boton-modulo:active {    
+    transform: translateY(0);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .2);
+}
+
+.boton-modulo::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 250%;
+    height: 250%;
+    background: rgba(255, 255, 255, 0.15);
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+
+}
+.boton-modulo:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.flechaArriba {
+    position: fixed;
+    width: 35px;
+    height: 35px;
+    top: 93%;
+    z-index: 2;
+    background-color: var(--colorPrimary);
+    right: 2%;
+    border-radius: 3rem;
+}
+
+.flechaArriba svg {
+    width: 1.2rem;
+    margin-left: 0.5rem;
+    margin-top: 0.5rem;
+    fill: var(--colorTertiary);
+}
+
+.flechaArriba:hover {
+    scale: 1.1;
+    transition: 0.3s;
+}
 
 /* *TABLET */
 @media screen and (min-width: 767px) {
     .container-main {
         padding-top: 1rem;
         padding-bottom: 3rem;
+    }
+
+    .contenedor_categoria {
+        margin-bottom: 40%;    
+    }
+
+    .card a {
+        font-size: 2.5rem;
+    }
+
+    .fondo_torta {
+        width: 12rem;
+        height: 12rem;
+        margin-top: 40%;
+        margin-left: -18%;
     }
 
     .contenedor-filtros {
@@ -191,7 +357,7 @@ html {
         transform: scaleX(1);
     }
 
-    .banner{
+    .banner {
         height: 3rem;
     }
 
@@ -221,7 +387,8 @@ html {
         position: absolute;
         top: 25%;
         left: 5%;
-        z-index: 3; /* Asegura que la imagen esté por encima del círculo */
+        z-index: 3;
+        /* Asegura que la imagen esté por encima del círculo */
         width: 170px;
     }
 
@@ -254,6 +421,21 @@ html {
         min-height: 100vh;
     }
 
+    .contenedor_categoria {
+        margin-bottom: 38%;
+        margin-top: -3rem; 
+    }
+
+    .card a {
+        font-size: 3rem;
+    }
+
+    .card img {
+        margin-left: 6%;
+        margin-top: 2.5rem;
+        width: 45%;
+    }
+
     .contenedor-filtros a {
         padding: 1rem;
         font-size: 1rem;
@@ -282,41 +464,108 @@ html {
         font-size: 1rem;
     }
 
-    .banner{
+    .banner {
         /* width: 100%; */
         height: 3rem;
     }
 
-    .svgFooter{
+    .svgFooter {
         height: 10px;
         margin-top: 50px;
     }
+}
 
-    @media screen and (min-width: 1920px){
-        .banner{
-            /* width: 100%; */
-            height: 3rem;
-        }
-
-        .svgFooter{
-            height: 10px;
-            margin-top: 50px;
-        }
+/* *DESKTOP 1280 */
+@media screen and (min-width: 1280px) {
     
+    .contenedor_categoria {
+        margin-bottom: 28%;    
+    }
+
+    .card a {
+        margin-left: -2rem;
+        font-size: 3.2rem;
+    }
+
+    .card img {
+        margin-left: 2.5%;
+        margin-top: 2.5rem;
+        width: 40%;
+    }
+
+    .fondo_torta {
+        margin-left: -20%;
+        margin-top: 30%;
+    }
+}
+
+/* *DESKTOP 1366*/
+@media screen and (min-width: 1366px) {
+
+    .card a {
+        margin-left: -3rem;
+    }
+
+    .card img {
+        margin-left: 0.5%;
+    }
+
+    .fondo_torta {
+        margin-top: 32%;
     }
 
 }
 
+/* *DESKTOP 1440 */
+@media screen and (min-width: 1440px) {
 
+    .contenedor_categoria {
+        margin-top: -5rem;
+    }
 
+    .card a {
+        margin-left: -3rem;
+    }
 
+    .card img {
+        margin-left: -1%;
+        margin-top: 4rem;
+    }
 
+    .fondo_torta {
+        margin-left: -20%;
+        margin-top: 33%;
+    }
 
+}
 
+/* *DESKTOP 1920 */
+@media screen and (min-width: 1920px) {
+    .banner {
+        height: 3rem;
+    }
 
+    .contenedor_categoria {
+        margin-bottom: 25%;    
+    }
 
+    .card a {
+        margin-left: -6rem;
+    }
 
+    .card img {
+        width: 50%;
+        margin-left: -16%;
+        margin-top: 6rem;
+    }
 
+    .fondo_torta {
+        margin-left: -20%;
+    }
 
+    .svgFooter {
+        height: 10px;
+        margin-top: 50px;
+    }
 
-
+}

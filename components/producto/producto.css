@@ -1,0 +1,51 @@
+@import url('../../css/styles.css');
+
+.fondo_t {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40vh;
+    flex-direction: column;
+}
+
+.categorias {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    min-width: 100%;
+    position: relative;
+}
+
+.categorias img {
+    width: 10rem;
+    height: 10rem;
+    cursor: pointer;
+    transition: transform 0.7s ease, opacity 0.7s ease;
+}
+
+.categorias img.active {
+    width: 8rem;
+    position: absolute;
+    transform: scale(1.5);
+    opacity: 1;
+}
+
+.categorias img:not(.active) {
+    width: 6.5rem;
+    height: 6.5rem;
+    opacity: 0.5;
+    transform: none;
+}
+
+.fondo_torta {
+    position: absolute;
+    width: 10%;
+    height: 45%;
+    left: 45%;
+    margin-top: 12rem;
+    border-radius: 1rem;
+    background-color: var(--colorTertiary);
+    transform: rotate(-25deg) skew(210deg);
+    z-index: -1;
+}

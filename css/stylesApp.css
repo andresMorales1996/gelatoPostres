@@ -61,3 +61,21 @@ html body {
 a {
   text-decoration: none !important;
 }
+
+/* *TABLET */
+@media screen and (min-width: 768px) {}
+
+/* *DESKTOP 1024*/
+@media screen and (min-width: 1024px) {}
+
+/* *DESKTOP 1280*/
+@media screen and (min-width: 1280px) {}
+
+/* *DESKTOP 1366*/
+@media screen and (min-width: 1366px) {}
+
+/* *DESKTOP 1440*/
+@media screen and (min-width: 1440px) {}
+
+/* *DESKTOP 1920*/
+@media screen and (min-width: 1920px) {}

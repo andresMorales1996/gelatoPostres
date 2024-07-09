@@ -1,7 +1,34 @@
 @import url('../../css/styles.css');
 
-/** MOBILE **/
+/* *MOBILE */
+
+/* *TEMA OSCURO */
+.contactOscuro {
+    display: none;
+}
+
+.oscuro .content-img img {
+    opacity: 0;
+}
+
+.oscuro .content-img {
+    width: 100%;
+    height: 23vh;
+    background-image: url(../assets/img/bannerContactoOscuro.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 1;
+}
+
+.oscuro label {
+    color: var(--colorPrimary);
+}
+
+/* *TEMA CLARO */
 .container-main {
+    display: flex;
+    align-items: center;
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
 }
@@ -19,13 +46,15 @@
     width: 50%;
     right: 0;
     margin-top: 2%;
-    margin-right: 5%;
+    margin-right: 10%;
 }
 
-.content-titulo h1 {
+.titulo-contacto {
+    text-align: center;
+    font-family: var(--fontTitle);
+    font-size: 4rem;
+    margin: 20px;
     color: var(--colorPrimary);
-    font-family: var(--fontSubtitle);
-    font-size: 1.4rem;
 }
 
 .content-foto {
@@ -37,6 +66,7 @@
 .content-foto img {
     width: 100%;
 }
+
 
 .content-redes {
     display: flex;
@@ -76,6 +106,7 @@
     justify-content: space-around;
     align-items: center;
     padding-top: 8%;
+    padding-bottom: 2rem;
 }
 
 form {
@@ -97,6 +128,7 @@ form {
     border-radius: 2rem;
     z-index: 1;
     font-size: 16px;
+    padding: 20px 70px 20px 10px;
 }
 
 .input::placeholder,
@@ -108,6 +140,7 @@ textarea::placeholder {
 
 .input,
 textarea {
+    background-color: var(--colorTertiary);
     color: var(--colorComplementarySecondary);
     font-family: var(--fontBody);
     font-weight: 300;
@@ -138,23 +171,48 @@ textarea::placeholder {
 }
 
 .submitBtn {
-    display: block;
-    width: 60%;
-    margin: 0 auto;
-    margin-top: 25%;
-    padding: 1rem 0;
-    border-radius: 2rem;
+    font-weight: bold;
+    width: 200px;
+    height: 40px;
+    background: var(--colorPrimary);
     border: 1px solid var(--colorPrimary);
-    background-color: var(--colorPrimary);
-    color: var(--colorComplementaryPrimary);
-    font-size: 16px;
+    outline: none;
+    border-radius: 40px;
     cursor: pointer;
+    font-size: 17px;
+    margin-top: 8rem;
+    margin-left: 25%;
+    color: var(--colorComplementaryPrimary);
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .submitBtn:hover {
-    border: 1px solid var(--colorPrimary);
-    background-color: var(--colorComplementaryPrimary);
+    background: var(--colorTertiary);
     color: var(--colorPrimary);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .8);
+}
+
+.submitBtn:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .2);
+}
+
+.submitBtn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 250%;
+    height: 250%;
+    background: rgba(255, 255, 255, 0.15);
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+
+}
+
+.submitBtn:hover::before {
+    transform: translate(-50%, -50%) scale(1);
 }
 
 label {
@@ -210,6 +268,15 @@ label {
 
 /* *TABLET */
 @media screen and (min-width: 768px) {
+
+    /* *TEMA OSCURO TABLET */
+    .oscuro .container-form {
+        width: 85vw;
+        height: 100%;
+        background-image: url(../assets/img/bannerContactoOscuro.jpg);
+        opacity: 1;
+    }
+
     .container-main {
         width: 100vw;
         min-height: 90vh;
@@ -241,8 +308,8 @@ label {
         margin-right: 13%;
     }
 
-    .content-titulo h1 {
-        font-size: 1.5rem;
+    .titulo-contacto {
+        margin-top: -1.5rem;
     }
 
     .content-img {
@@ -332,15 +399,13 @@ label {
 
 /* *DESKTOP 1024 */
 @media screen and (min-width: 1024px) {
-    .container-main {
-        width: 100%;
-        min-height: 40vh;
-    }
 
-    .container-form {
+    /* *TEMA OSCURO DESKTOP */
+    .container-form,
+    .oscuro .container-form {
         position: relative;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: center;
         align-items: center;
         width: 80vw;
@@ -353,9 +418,14 @@ label {
         background-position: left;
     }
 
-    .container-form {
-        display: flex;
-        flex-direction: row;
+    .oscuro .container-form {
+        background-image: url(../assets/img/bannerContactoOscuro.jpg);
+        opacity: 1;
+    }
+
+    /* *TEMA CLARO DESKTOP */
+    .container-main {
+        min-height: 80vh;
     }
 
     .content-titulo {
@@ -363,14 +433,13 @@ label {
         min-height: 10rem;
         right: 0;
         top: 0;
-        margin-top: 5%;
+        margin-top: 3%;
         margin-right: 5%;
         text-align: start;
     }
 
-    .content-titulo h1 {
-        width: 100%;
-        font-size: 1.8rem;
+    .titulo-contacto {
+        margin-left: -2rem;
     }
 
     label {
@@ -379,19 +448,20 @@ label {
         display: flex;
         margin-left: 20%;
         min-width: 16rem !important;
-        font-size: 0.9rem;
+        font-size: 0.6rem;
+        font-weight: 300;
         color: var(--colorComplementaryPrimary);
     }
 
     .inputContainer {
-        height: 2rem;
+        height: 1.5rem;
         width: 32vw;
-        margin-bottom: 1rem;
+        margin-bottom: 1.4rem;
     }
 
     .input {
         background: var(--colorComplementaryPrimary);
-        margin-top: -6rem !important;
+        top: -5rem;
     }
 
     textarea {
@@ -413,6 +483,7 @@ label {
     .content-datos {
         width: 100%;
         height: 50vh;
+        margin-top: -6rem;
     }
 
     .content-img img {
@@ -421,34 +492,37 @@ label {
     }
 
     .content-redes {
+        width: 40%;
+        height: 18vh;
         position: absolute;
         flex-direction: column;
         bottom: 0;
         left: 0;
-        margin-bottom: 4.5%;
-        margin-left: -16%;
+        margin-bottom: 4%;
+        margin-left: 5%;
+        /* background-color: rgba(255, 255, 255, 0.589); */
+        border-radius: 0.5rem;
     }
 
     .content-redes .icon {
         display: flex;
         flex-direction: row;
+        margin-left: -16rem;
     }
 
     .icon i {
         min-width: 2rem;
-        background-color: var(--colorComplementaryPrimary);
-        color: var(--colorPrimary);
     }
 
     .icon {
-        margin-bottom: 0.5rem;
+        margin-bottom: -0.5rem;
     }
 
     .submitBtn {
         position: absolute;
         width: 20%;
         margin-top: 5rem;
-        margin-left: 8%;
+        margin-left: 10%;
     }
 
     .toast {
@@ -497,48 +571,115 @@ label {
             opacity: 0;
         }
     }
+}
 
-    @media screen and (min-width: 1280px) {
-
-        .container-form {
-            min-height: 76vh;
-        }
-
-
-
-        .content-titulo h1 {
-            width: 100%;
-            font-size: 2.1rem;
-        }
-
-
-
+@media screen and (min-width: 1280px) {
+    .container-main {
+        min-height: 90vh;
     }
 
-    @media screen and (min-width: 1366px) {
-        .content-titulo h1 {
-            width: 100%;
-            font-size: 2.4rem;
-        }
+    .container-form {
+        min-height: 76vh;
+    }
+
+    .content-redes {
+        width: 40%;
+        height: 22%;
+        margin-bottom: 5%;
+        margin-left: 2%;
+    }
+
+    label {
+        font-size: 0.8rem;
     }
 
 
-    @media screen and (min-width: 1440px) {
-        .container-form {
-            min-height: 79vh;
-        }
-
-        .content-titulo h1 {
-            width: 100%;
-            font-size: 2.7rem;
-        }
+    .inputContainer {
+        margin-bottom: 2.5rem;
     }
 
-    @media screen and (min-width: 1920px) {
-        .content-titulo h1 {
-            width: 100%;
-            font-size: 3rem;
-        }
+    .titulo-contacto {
+        font-size: 6rem;
     }
 
+    .submitBtn {
+        font-size: 20px;
+    }
+
+}
+
+@media screen and (min-width: 1366px) {
+    .content-redes {
+        width: 40%;
+        height: 24%;
+        margin-bottom: 2%;
+        margin-left: 1%;
+    }
+
+    label {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .container-main {
+        min-height: 100vh;
+    }
+
+    .container-form {
+        min-height: 79vh;
+    }
+
+    .content-redes {
+        width: 40%;
+        height: 22%;
+        margin-bottom: 4%;
+        margin-left: 1%;
+    }
+
+    .input {
+        height: 3rem;
+    }
+
+    .inputContainer {
+        margin-bottom: 3rem;
+    }
+
+    .titulo-contacto {
+        font-size: 8rem;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+
+    .content-redes {
+        width: 40%;
+        height: 22%;
+        margin-bottom: 3%;
+        margin-left: -3%;
+    }
+
+    label {
+        font-size: 1rem;
+    }
+
+    .inputContainer {
+        margin-bottom: 4rem;
+        margin-top: -1rem;
+    }
+
+    .input {
+        height: 3.5rem;
+    }
+
+    textarea {
+        height: 9rem;
+    }
+
+    .titulo-contacto {}
+
+    .submitBtn {
+        height: 4rem;
+        margin-top: 7rem;
+    }
 }
