@@ -1,19 +1,36 @@
-console.log("hola")
-const swiper = new Swiper('.swiper', {
-    // Optional parameters
-    direction: 'horizontal',
-    loop: true,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },  
-    // autoplay: {
-    //   delay: 10000,
-    //   disableOnInteraction: false,
-    // },
-    scrollbar: {
-      el: '.swiper-scrollbar',
+const swiper_banners = new Swiper('.swiper-banners', {
+  direction: 'horizontal',
+  loop: true,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },  
+  // autoplay: {
+  //   delay: 10000,
+  //   disableOnInteraction: false,
+  // },
+  speed: 1000
+});
+
+const swiper_testimonio = new Swiper('.swiper-testimonio', {
+  direction: 'horizontal',
+  loop: true,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 10,
     },
-    speed: 1000
-    
-  });
+    767: {
+      slidesPerView: 2,
+      spaceBetween: 10,
+    },
+    1023: {
+      slidesPerView: 3,
+      spaceBetween: 10,
+    }
+  },
+});
