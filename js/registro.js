@@ -25,6 +25,7 @@ dragZone.addEventListener('dragleave', (e) => {
 const uploadImage = (file) => {
     const fileReader = new FileReader();//lee archivos localmente
     fileReader.readAsDataURL(file);//lee la url del archivo
+
     fileReader.addEventListener('load', (e) => {
         img.setAttribute('src', e.target.result);
     });
@@ -206,6 +207,7 @@ document.body.removeChild(downloadLink);
 
 console.log('Datos de usuarios descargados como data-user.json');
 
+// ------------------------------------------------------------------------------------------
 // SWEET ALERT
 function showAlert(message, type = 'info') {
     let icon;
@@ -233,5 +235,9 @@ function showAlert(message, type = 'info') {
         timer: 6000
     });
 }
+
+
+
+
 
 
