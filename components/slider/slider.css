@@ -236,6 +236,7 @@
     display: flex;
     justify-content: center;
     margin-top: 0;
+    margin-bottom: 100px;
   }
 
   .dots span {
