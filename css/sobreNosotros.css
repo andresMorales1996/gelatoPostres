@@ -27,7 +27,7 @@
     font-family: var(--fontSubtitle);
     font-weight: 750;
     font-size: x-large;
-    color: var(--colorPrimary);
+    /* color: var(--colorPrimary); */
 }
 
 .content-descripcion p {

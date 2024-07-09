@@ -49,20 +49,32 @@
 
                 <div class="nav-icon">
                     <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <div class="counter">
+                        <p class="cart-counter">0</p>
+                    </div>
                 </div>
                 <div class="nav-icon">
                     <a href="../../pages/inicioDeSesion.html"><i class="fa fa-user"></i></a>
                 </div>
+                <div class="tema" onclick="mostrarOpciones()">
+                    <i class="fa-solid fa-ellipsis-vertical menuTema"></i>
+                    <div class="cuadro-pequeno">
+                        <a href="#"><i class="fa-solid fa-sun sol"></i></a>
+                        <i class="fa-solid fa-moon luna"></i>
+                        <div class="toggle-switch" onclick="toggleModoOscuro()">
+                            <span class="switch"></span>
+                        </div>
+                    </div>
+                </div>
             </div>
-
+            <div class="onda-top"></div>
         </nav>
-        
-        <section class="container-banner">
-            <div class="banner"></div>
+
+        <section class="container-onda">
+            <div class="onda"></div>
         </section>
 
     </header>
-
 </body>
 
 </html>

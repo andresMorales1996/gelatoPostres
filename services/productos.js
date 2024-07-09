@@ -50,7 +50,7 @@ async function mostrarProductos() {
 
                 const precio = document.createElement('div');
                 precio.classList.add("precio-producto");
-                precio.textContent = `Desde $${pPrecio}`;
+                precio.textContent = `Desde ${pPrecio}`;
                 productoDiv.appendChild(precio);
 
                 const moduloDiv = document.createElement('div');
