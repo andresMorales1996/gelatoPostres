@@ -11,8 +11,7 @@
     font-family: var(--fontTitle);
     font-size: 4rem;
     margin: 20px;
-    /* color: var(--colorPrimary); */
-    color: var(--ColorComplementarySextary);
+    color: var(--colorPrimary);
 }
 
 .content-info {
@@ -50,9 +49,7 @@
     cursor: pointer;
     overflow: hidden;
     padding: 5px;
-    margin-bottom: 10px;
     transition: transform 0.5s;
-    margin-top: 50px;
 }
 
 .img-torta:hover img {
