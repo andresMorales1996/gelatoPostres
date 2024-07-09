@@ -37,28 +37,28 @@ function verCategorias() {
     });
 }
 
-function mostrarMenu() {
-    console.log('Por favor elija una de las siguientes opciones:\n');
-    console.log('1- Ver productos disponibles.\n2- Ver categorías.\n3- Salir del menú.');
+// function mostrarMenu() {
+//     console.log('Por favor elija una de las siguientes opciones:\n');
+//     console.log('1- Ver productos disponibles.\n2- Ver categorías.\n3- Salir del menú.');
 
-    let opcion = parseInt(prompt("Ingrese la opción deseada: "));
+//     let opcion = parseInt(prompt("Ingrese la opción deseada: "));
 
-    switch (opcion) {
-        case 1:
-            verProductos();
-            break;
-        case 2:
-            verCategorias();
-            break;
-        case 3:
-            console.log('Gracias por visitar Gelato & Postres. ¡Hasta luego!');
-            return;
-        default:
-            console.log('Opción no válida. Por favor, intente de nuevo.');
-    }
+//     switch (opcion) {
+//         case 1:
+//             verProductos();
+//             break;
+//         case 2:
+//             verCategorias();
+//             break;
+//         case 3:
+//             console.log('Gracias por visitar Gelato & Postres. ¡Hasta luego!');
+//             return;
+//         default:
+//             console.log('Opción no válida. Por favor, intente de nuevo.');
+//     }
 
-    mostrarMenu();
-}
+//     mostrarMenu();
+// }
 
 async function iniciarMenu() {
     await cargarProductos();
