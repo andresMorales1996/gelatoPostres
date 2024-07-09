@@ -88,6 +88,8 @@ nav li:hover {
     border-radius: 40px;
 }
 
+
+
 .sideBar {
     position: fixed;
     top: 0;
@@ -168,7 +170,24 @@ svg:hover {
     /* Animación suave */
 }
 
+.counter {
+    background-color: var(--colorComplementaryPrimary);
+    border-radius: 50%;
+    width: 40%;
+    height: 40%;
+    position: relative;
+    top: -18px;
+    right: 0;
+    left: 15px;
+    text-align: center;
+}
 
+
+.cart-counter{
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--colorPrimary);
+}
 
 .expandirInput:hover input {
     width: 60%;
@@ -301,9 +320,18 @@ svg:hover {
 
 
 /* *TABLET */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 767px) {
     .logo-nav {
         margin-left: 40%;
+    }
+
+    .counter {
+        width: 40%;
+        height: 40%;
+        position: relative;
+        top: -18px;
+        right: 0;
+        left: 15px;
     }
 
     .sideBar {
@@ -322,11 +350,6 @@ svg:hover {
 
 /* *DESKTOP 1024*/
 @media screen and (min-width: 1024px) {
-    /* .onda-top::before {
-        top: 4vw;
-        background-size: 100% 8%;
-    } */
-
     .logo-nav {
         width: 3rem;
         margin-left: 2%;
@@ -335,6 +358,24 @@ svg:hover {
 
     .logo-nav img {
         width: 10rem;
+    }
+
+    .counter {
+        background-color: var(--colorComplementaryPrimary);
+        border-radius: 50%;
+        width: 50%;
+        height: 50%;
+        position: relative;
+        top: -18px;
+        right: 0;
+        left: 0;
+        text-align: center;
+    }
+    
+    .cart-counter{
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--colorPrimary);
     }
 
     .menu-boton {
@@ -381,8 +422,21 @@ svg:hover {
     }
 
     .counter {
-        top: -8px;
-        right: 3px;
+        background-color: var(--colorComplementaryPrimary);
+        border-radius: 50%;
+        width: 40%;
+        height: 50%;
+        position: relative;
+        top: -18px;
+        right: 0;
+        left: 15px;
+        text-align: center;
+    }
+
+    .cart-counter{
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--colorPrimary);
     }
 
     .fa-search {
@@ -402,8 +456,21 @@ svg:hover {
 
 /* *DESKTOP 1280*/
 @media screen and (min-width: 1280px) {
+    
     .nav_iconos i {
         margin-right: 1.8rem;
+    }
+
+    .counter {
+        background-color: var(--colorComplementaryPrimary);
+        border-radius: 50%;
+        width: 40%;
+        height: 50%;
+        position: relative;
+        top: -18px;
+        right: 0;
+        left: 15px;
+        text-align: center;
     }
 
     .fa-search {
@@ -426,11 +493,6 @@ svg:hover {
     .logo-nav img {
         width: 12rem;
     }
-}
-
-/* *DESKTOP 1440*/
-@media screen and (min-width: 1440px) {
-
 }
 
 /* *DESKTOP 1920*/
