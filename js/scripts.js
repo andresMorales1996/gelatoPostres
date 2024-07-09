@@ -20,6 +20,9 @@ const scripts = {
   "personalizar": [
     "../components/nav/nav.js"
   ],
+  "carrito": [
+    "../components/nav/nav.js"
+  ],
 };
 
 // *FUNCIÓN CARGAR SCRIPTS DE COMPONENTES

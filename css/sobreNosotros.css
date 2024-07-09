@@ -2,6 +2,7 @@
 
 /** Mobile **/
 .container-descripcion {
+.container-descripcion {
     padding: 0 30px;
 }
 
@@ -23,13 +24,33 @@
 }
 
 .content-descripcion h1 {
+
+.titulo_nosotros {
+    text-align: center;
+    font-family: var(--fontTitle);
+    font-size: 4rem;
+    margin: 20px;
+    /* color: var(--colorPrimary); */
+    color: var(--ColorComplementarySextary);
+}
+
+.content-info {
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+    gap: 30px;
+}
+
+.content-descripcion h1 {
     text-align: center;
     font-family: var(--fontSubtitle);
+    font-weight: 750;
     font-weight: 750;
     font-size: x-large;
     /* color: var(--colorPrimary); */
 }
 
+.content-descripcion p {
 .content-descripcion p {
     text-align: justify;
     font-family: var(--fontBody);
@@ -38,6 +59,7 @@
     color: var(--colorComplementarySecondary);
 }
 
+.content-img {
 .content-img {
     display: flex;
     justify-content: center;
@@ -53,12 +75,15 @@
     margin-bottom: 10px;
     transition: transform 0.5s;
     margin-top: 50px;
+    margin-top: 50px;
 }
 
+.img-torta:hover img {
 .img-torta:hover img {
     transform: scale(1.1);
 }
 
+.img-torta>img {
 .img-torta>img {
     height: 145px;
     width: 100%;
@@ -66,11 +91,13 @@
     border-radius: 15px;
     /* box-shadow: 0 1px 5px 0 rgba(243, 65, 148, 0.5); */
     box-shadow: 3px 5px 0 var(--colorSecondary);
+    box-shadow: 3px 5px 0 var(--colorSecondary);
 }
 
 /** Tablet **/
 
 @media (min-width: 768px) {
+    .content-descripcion h1 {
     .content-descripcion h1 {
         padding: 10px;
         text-align: start;
@@ -79,7 +106,10 @@
         font-size: x-large;
         color: var(--colorPrimary);
         margin: 0 10px;
+        margin: 0 10px;
     }
+
+    .content-descripcion p {
 
     .content-descripcion p {
         width: 95%;
@@ -90,7 +120,9 @@
         font-size: large;
         color: var(--colorComplementarySecondary);
         margin: 0 10px;
+        margin: 0 10px;
     }
+
 
     .content-descripcion {
         display: flex;
@@ -101,13 +133,16 @@
     }
 
     .content-img {
+    .content-img {
         margin-top: 50px;
     }
 
     .img-torta:hover img {
+    .img-torta:hover img {
         transform: scale(1.1);
     }
 }
+
 
 /** Deskptop **/
 @media (min-width: 1024px) {
@@ -132,8 +167,30 @@
     }
 
     .container-descripcion {
+    .info-superior {
+        max-width: 1400px;
+        margin: auto;
+        display: grid;
+    }
+
+    .titulo_nosotros {
+        font-size: 6.4rem;
+    }
+
+    .content-info {
+        padding-top: 25px;
+        padding-right: 40px;
+    }
+
+    .content-img{
+        gap: 20px;
+    }
+
+    .container-descripcion {
         margin: 0 40px;
     }
+
+    .content-descripcion p {
 
     .content-descripcion p {
         width: 95%;
@@ -145,8 +202,11 @@
     }
 
     .img-torta:hover img {
+    .img-torta:hover img {
         transform: scale(1.1);
     }
+
+    .content-info {
 
     .content-info {
         margin-top: 70px;
