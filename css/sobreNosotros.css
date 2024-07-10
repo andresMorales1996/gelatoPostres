@@ -15,11 +15,18 @@
     color: var(--colorPrimary);
 }
 
+
+@keyframes slide-right{
+    0%{transform: translate3d(-100%, 0, 0);}
+    100%{transform: none;}
+}
+
 .content-info {
     display: flex;
     flex-direction: column;
     padding-top: 30px;
     gap: 30px;
+    animation:slide-right 0.4s linear both;
 }
 
 .content-descripcion h1 {
