@@ -14,10 +14,10 @@ buttons.forEach(button => {
     
     if (descText.style.display === 'none' || descText.style.display === '') {
       descText.style.display = 'block';
-      img.src = '/assets/svg/down-ico.png'; // Cambiar a up-ico.png
+      img.src = '/assets/svg/down-ico.png'; 
     } else {
       descText.style.display = 'none';
-      img.src = '/assets/svg/up-ico.png'; // Cambiar de vuelta a down-ico.png
+      img.src = '/assets/svg/up-ico.png'; 
     }
   });
 });
