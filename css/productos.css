@@ -184,7 +184,6 @@
     transform: translate(-50%, -50%) scale(1);
 }
 
-
 .flechaArriba {
     position: fixed;
     width: 35px;
@@ -194,13 +193,13 @@
     background-color: var(--colorPrimary);
     right: 2%;
     border-radius: 3rem;
+    overflow: hidden;
 }
 
 .flechaArriba svg {
-    width: 1.2rem;
-    margin-left: 0.5rem;
-    margin-top: 0.5rem;
-    fill: var(--colorTertiary);
+    width: 2rem;
+    margin-left: 0.1rem;
+    margin-top: 0.1rem;
 }
 
 .flechaArriba:hover {
