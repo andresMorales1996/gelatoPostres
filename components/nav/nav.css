@@ -88,7 +88,36 @@ nav li:hover {
     border-radius: 40px;
 }
 
+.nav-icon {
+    position: relative;
+    /* margin: 0 10px; */
+}
 
+.counter {
+    position: absolute;
+    top: -8px;
+    right: -2px;
+    background-color: var(--colorSextary);
+    color: white;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.counter p {
+    margin: 0;
+    font-size: 8px;
+}
+
+
+.counter {
+    top: -8px;
+    right: -2px;
+}
 
 .sideBar {
     position: fixed;
@@ -170,7 +199,7 @@ svg:hover {
     /* Animación suave */
 }
 
-.counter {
+/* .counter {
     background-color: var(--colorComplementaryPrimary);
     border-radius: 50%;
     width: 40%;
@@ -187,7 +216,7 @@ svg:hover {
     font-size: 0.8rem;
     font-weight: 600;
     color: var(--colorPrimary);
-}
+} */
 
 .expandirInput:hover input {
     width: 60%;
@@ -360,7 +389,7 @@ svg:hover {
         width: 10rem;
     }
 
-    .counter {
+    /* .counter {
         background-color: var(--colorComplementaryPrimary);
         border-radius: 50%;
         width: 50%;
@@ -376,7 +405,7 @@ svg:hover {
         font-size: 0.8rem;
         font-weight: 600;
         color: var(--colorPrimary);
-    }
+    } */
 
     .menu-boton {
         display: none;
@@ -422,21 +451,19 @@ svg:hover {
     }
 
     .counter {
-        background-color: var(--colorComplementaryPrimary);
-        border-radius: 50%;
-        width: 40%;
-        height: 50%;
-        position: relative;
-        top: -18px;
-        right: 0;
-        left: 15px;
-        text-align: center;
+        top: -8px;
+        right: 3px;
     }
 
-    .cart-counter{
-        font-size: 0.8rem;
-        font-weight: 600;
-        color: var(--colorPrimary);
+    .counter {
+        top: -8px;
+        right: 16px;
+    }
+
+    .counter p {
+        padding: 1px;
+        margin: 0;
+        font-size: 12px;
     }
 
     .fa-search {
@@ -461,18 +488,6 @@ svg:hover {
         margin-right: 1.8rem;
     }
 
-    .counter {
-        background-color: var(--colorComplementaryPrimary);
-        border-radius: 50%;
-        width: 40%;
-        height: 50%;
-        position: relative;
-        top: -18px;
-        right: 0;
-        left: 15px;
-        text-align: center;
-    }
-
     .fa-search {
         text-align: center;
     }
@@ -493,6 +508,7 @@ svg:hover {
     .logo-nav img {
         width: 12rem;
     }
+    
 }
 
 /* *DESKTOP 1920*/
@@ -510,4 +526,24 @@ svg:hover {
         margin-top: -0.8%;
         right: 15%;
     }
+
+    .counter {
+        top: -8px;
+        right: 3px;
+    }
+
+    .counter {
+        top: -8px;
+        right: 16px;
+        width: 20px;
+        height: 20px;
+    }
+
+    .counter p {
+        padding: 1px;
+        margin: 0;
+        font-size: 0.8rem;
+    }
+
+    
 }
