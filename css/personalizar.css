@@ -1,5 +1,29 @@
 @import url('../../css/styles.css');
 
+/**Modo oscuro**/
+
+.personalizarOscuro{
+    display: none;
+}
+
+.oscuro .contenedorimage img {
+    opacity: 0;
+    
+}
+
+.oscuro .contenedorimage {
+     width: 100%;
+    height: auto;
+    overflow: hidden;
+    background-image: url(../assets/img/tortaPersonalizadaOscuro.png);
+    background-repeat: no-repeat;
+    background-size: 75%;
+    background-position: center;
+    opacity: 1;
+}
+
+/*************/
+
 .contenedorAll {
     width: 100%;
     padding: 4% 3%;
