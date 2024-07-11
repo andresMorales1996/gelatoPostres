@@ -1,5 +1,30 @@
 @import url("../css/styles.css");
 
+
+/** Modo oscuro **/
+.oscuro .banner-principal {
+  background: linear-gradient(0deg, var(--colorSecondary) 10%, var(--colorTertiary) 100%);
+}
+
+.oscuro .banner-content p{
+  color: aliceblue;
+}
+
+.oscuro .tm-card{
+  background: var(--colorSextenary) !important;
+}
+
+.oscuro .tm-bottom-person b{
+  color: var(--colorPrimary) !important;
+}
+
+.oscuro .tm-stars-active {
+  filter: brightness(0.6);
+}
+
+
+
+
 /** Mobile **/
 .banner-principal {
   display: flex;
@@ -109,15 +134,19 @@
 
 }
 
+.tm-widget{
+  padding: 0 0 50px 0 !important;
+}
+
 /**galeria**/
 .galeria{
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  width:90%;
+  width: 80%;
+  /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
   margin: auto;
   grid-gap: 40px;
-  padding: 40px 0;
   overflow: hidden;
+  padding-bottom: 10rem;
 }
 
 .galeria > a{
@@ -151,19 +180,6 @@
 
 .galeria a:hover i{
   opacity: 1;
-}
-
-.light-box{
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: rgba(0,0,0, .5);
-  width: 100%;
-  height: 100vh;
-  z-index: 1000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 /**FUNCIONALIDAD A QUITAR**/
@@ -214,6 +230,12 @@
   color: var(--colorComplementaryPrimary);
   font-size: 1rem;
   cursor: pointer;
+}
+
+.info a:hover{
+  border: 1px solid var(--colorPrimary);
+  background-color: var(--colorComplementaryPrimary);
+  color: var(--colorPrimary);
 }
 
 .section-image img {
@@ -292,6 +314,14 @@
       transform: translateX(-10px);
     }
   }
+  .galeria{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin: auto;
+    grid-gap: 40px;
+    overflow: hidden;
+    padding-bottom: 10rem;
+  }
 }
 
 /* *DESKTOP 1024 */
@@ -300,7 +330,7 @@
     max-width: 1400px;
     margin: auto;
     display: flex;
-    justify-content: space-around;
+    gap: 100px;
   }
 
   .hide-desktop {
@@ -312,7 +342,7 @@
   }
 
   .banner-content {
-    width: 60%;
+    width: 100%;
   }
 
   .banner-content h1 {
@@ -370,6 +400,11 @@
     max-width: 50%; 
     top: -50px;
   }
+
+  .galeria{
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
 }
 
 @media screen and (min-width: 1560px) {
@@ -398,9 +433,5 @@
   .info{
     max-width: 35%;
   }
-
-  /* .section-image img {
-    max-width: 10%;
-  } */
   
 }
