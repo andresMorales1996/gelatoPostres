@@ -97,10 +97,11 @@ html {
     height: 7rem;
     border-radius: 1rem;
     background-color: var(--colorTertiary);
-    transform: rotate(-50deg) skew(170deg) translate(-6%);
+    transform: rotate(-40deg) skew(10deg) translate(-6%);
     z-index: -1;
     margin-top: 10rem;
     margin-left: -5rem;
+    margin-bottom: 2rem;
 }
 
 /* *TABLET */
