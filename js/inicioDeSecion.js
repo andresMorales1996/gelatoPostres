@@ -43,8 +43,8 @@ loginForm.addEventListener('submit', (e) => {
         }
     }
 
-    if (!validUser) {
-        return alert('Usuario y/o contraseña incorrectos!');
+    if (!validUser.test) {
+        throw new Error("¡Usuario y/o contraseña incorrectos!");
     }
 
     const mensajeBienvenida = validUser.genero === 'Hombre' ? 'Bienvenido' : 'Bienvenida';
@@ -52,3 +52,32 @@ loginForm.addEventListener('submit', (e) => {
     localStorage.setItem('login_success', JSON.stringify(validUser));
     window.location.href = '../index.html';
 });
+
+// SWEET ALERT
+
+function showAlert(message, type = 'info') {
+    let icon;
+    switch (type) {
+        case 'success':
+            icon = 'success';
+            break;
+        case 'error':
+            icon = 'error';
+            break;
+        case 'info':
+            icon = 'info';
+            break;
+        case 'warning':
+            icon = 'warning';
+            break;
+        default:
+            icon = 'info';
+    }
+
+    Swal.fire({
+        icon: icon,
+        title: message,
+        showConfirmButton: true,
+        timer: 6000
+    });
+}

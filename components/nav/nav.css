@@ -11,7 +11,7 @@
 
 .logo-nav {
     width: 3rem;
-    margin-left: 25%;
+    margin-left: 24%;
 }
 
 .logo-nav img {
@@ -45,11 +45,37 @@ nav a {
     height: 100%;
     display: flex;
     align-items: center;
-    color: var(--colorSecondary);
+    color: var(--colorPrimary);
 }
 
 nav li:hover {
     background-color: var(--colorPrimary);
+    border-radius: 40px;
+}
+
+.nav-icon {
+    position: relative;
+    /* margin: 0 10px; */
+}
+
+.counter {
+    position: absolute;
+    top: -8px;
+    right: -2px;
+    background-color: var(--colorSextary);
+    color: white;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.counter p {
+    margin: 0;
+    font-size: 8px;
 }
 
 .sideBar {
@@ -99,7 +125,7 @@ nav li:hover {
 .menu-boton svg,
 .close-boton svg {
     width: 2.5rem;
-    fill: var(--colorSecondary);
+    fill: var(--colorPrimary);
 }
 
 svg:hover {
@@ -118,13 +144,15 @@ svg:hover {
 
 .nav_iconos i {
     margin-right: 0.5rem;
-    color: var(--colorSecondary);
+    color: var(--colorPrimary);
     font-size: 1.25rem;
 }
 
 .nav_iconos i:hover {
-    color: var(--colorPrimary);
+    transform: scale(1.4); /* Agrandar el icono al 120% de su tamaño original */
+    transition: transform 0.3s ease-in-out; /* Animación suave */
 }
+
 
 .expandirInput:hover input {
     width: 60%;
@@ -137,7 +165,7 @@ svg:hover {
     margin-top: 0.3rem;
     border-radius: 2rem;
     margin-right: -0.8rem;
-    right: 22%;
+    right: 5.5rem;
     padding: 0 0rem 0rem 1.2rem;
     transition: all .7s ease;
 }
@@ -178,6 +206,99 @@ svg:hover {
     display: none;
 }
 
+.tema {
+    position: relative;
+    display: inline-block;
+}
+
+.tema:hover {
+    cursor: pointer;
+}
+
+.tema .sol {
+    color: var(--colorPrimary);
+    transition: .7s;
+    position: absolute;
+    margin-top: -1.5rem;
+    margin-left: 0.2rem;
+}
+
+.tema .luna{
+    position: absolute;
+    margin-top: -3.3rem;
+    margin-left: 0.2rem;
+    color: var(--colorPrimary);
+    opacity: 0;
+}
+
+.tema .toggle-switch {
+    cursor: pointer;
+}
+
+.toggle-switch {
+    position: absolute;
+    width: 2rem;
+    height: 1rem;
+    right: 1rem;
+    top: 3rem;
+    border-radius: 1rem;
+    background-color: var(--colorPrimary);
+}
+
+.switch {
+    position: absolute;
+    content: '';
+    width: 0.8rem;
+    height: 0.8rem;
+    left: 0.1rem;
+    top: 0.5rem;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    background-color: var(--colorComplementaryPrimary);
+    transition: left .5s ease;
+}
+
+.oscuro .sol {
+    opacity: 0;
+}
+
+.oscuro .luna {
+    opacity: 1;
+    transition: .7s;
+    color: var(--colorSecondary);
+}
+
+.oscuro .switch {
+    left: calc(100% - 0.9rem);
+}
+
+.oscuro nav {
+    background-color: var(--colorTertiary);
+}
+
+.oscuro .sideBar {
+    background-color: var(--colorPrimary);
+}
+
+.oscuro .toggle-switch {
+    background-color: var(--colorPrimary);
+}
+
+.cuadro-pequeno {
+    display: none;
+    position: absolute;
+    background-color: var(--colorTertiary);
+    min-width: 60px;
+    height: 5rem;
+    margin-left: -4rem;
+    border-radius: 1rem;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+  }
+  .tema.seleccionado .cuadro-pequeno {
+    display: block;
+}
 
 /* *TABLET */
 @media screen and (min-width: 768px) {
@@ -194,10 +315,12 @@ svg:hover {
         width: 40%;
     }
 
-
-    .inputBuscar {
-        margin-right: -5rem;
+    
+    .counter {
+        top: -8px;
+        right: -2px;
     }
+    
 
 }
 
@@ -239,12 +362,6 @@ svg:hover {
         padding: 0.8rem;
     }
 
-    nav li:hover {
-        height: 0.8rem;
-        border-radius: 3rem;
-        background-color: var(--colorPrimary);
-    }
-
     nav a:hover {
         color: var(--colorTertiary);
     }
@@ -257,6 +374,11 @@ svg:hover {
         margin-right: 0.8rem;
     }
 
+    .counter {
+        top: -8px;
+        right: 3px;
+    }
+
     .fa-search {
         position: absolute;
         margin-left: 2%;
@@ -267,8 +389,8 @@ svg:hover {
     }
 
     .inputBuscar {
-        margin-top: -1.7%;
-        margin-right: -9rem;
+        margin-top: -0.8rem;
+        right: 9%;
     }
 }
 
@@ -288,11 +410,22 @@ svg:hover {
 
     .inputBuscar {
         margin-top: -1.2%;
-        margin-right: -12.5%;
+        right: 10%;
+    }
+
+    .counter {
+        top: -8px;
+        right: 16px;
+    }
+
+    .counter p {
+        padding: 1px;
+        margin: 0;
+        font-size: 12px;
     }
 }
 
-/* *DESKTOP 1280*/
+/* *DESKTOP 1920*/
 @media screen and (min-width: 1920px) {
     .nav_iconos i {
         margin-right: 3.5rem;
@@ -300,6 +433,6 @@ svg:hover {
 
     .inputBuscar {
         margin-top: -0.8%;
-        margin-right: -11.5%;
+        right: 13.3rem;
     }
 }

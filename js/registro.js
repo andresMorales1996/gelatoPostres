@@ -7,7 +7,6 @@ const img = document.getElementById('img-result');
 dragZone.addEventListener('click', () => fileInput.click());
 
 // cada vez que hacemos el drag and drop a la zona drag cambie su color de fondo
-
 dragZone.addEventListener('dragover', (e) => {
     //  prevenir el funcionamiento por defecto, no se quiere que 
     //se habra en otra pestaña
@@ -25,7 +24,7 @@ dragZone.addEventListener('dragleave', (e) => {
 const uploadImage = (file) => {
     const fileReader = new FileReader();//lee archivos localmente
     fileReader.readAsDataURL(file);//lee la url del archivo
-    
+
     fileReader.addEventListener('load', (e) => {
         img.setAttribute('src', e.target.result);
     });
@@ -67,6 +66,26 @@ icons.forEach((icon, index) => {
     });
 });
 
+// Función para manejar la selección del género
+function seleccionarGenero() {
+    const hombre = document.getElementById('radio-hombre');
+    const mujer = document.getElementById('radio-mujer');
+
+    hombre.addEventListener('change', () => {
+        if (hombre.checked) {
+            mujer.checked = false;
+        }
+    });
+
+    mujer.addEventListener('change', () => {
+        if (mujer.checked) {
+            hombre.checked = false;
+        }
+    });
+}
+
+seleccionarGenero();
+
 function validarFormulario() {
     try {
         // Obtener los valores de los radio buttons para género
@@ -102,6 +121,11 @@ function validarFormulario() {
         let telefonoRegExp = /^[0-9]+$/;
         let correoRegExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         let contrasenaRegExp = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[^\s]{8,}$/;
+
+        // Verificar si todos los campos están llenos
+        if (!nombre || !telefono || !correo || !contrasena || !confirmaContrasena || (!hombreChecked && !mujerChecked)) {
+            throw new Error("Todos los campos deben estar llenos.");
+        }
 
         // Validación del nombre
         if (!nombreRegExp.test(nombre)) {
@@ -158,10 +182,15 @@ function validarFormulario() {
         // Actualizar el último ID asignado en el localStorage
         localStorage.setItem('lastUserId', newUserId);
 
-        showAlert("Formulario enviado correctamente. Datos del usuario guardados localmente.");
-    
+        showAlert("Formulario enviado correctamente", 'success');
+
         // Limpiar los inputs después de enviar el formulario
-        resetForm();    
+        resetForm();
+
+        setTimeout(() => {
+            window.location.href = '/index.html';
+        }, 4000);
+
     } catch (error) {
         showAlert(error.message, 'error');
     }
@@ -208,54 +237,30 @@ document.body.removeChild(downloadLink);
 console.log('Datos de usuarios descargados como data-user.json');
 
 // ------------------------------------------------------------------------------------------
-// ALERT CON ESTILOS
+// SWEET ALERT
 function showAlert(message, type = 'info') {
-    const alertContainer = document.getElementById('alert-container');
-
-    if (!alertContainer) {
-        console.error('No se encontró el contenedor de alertas');
-        return;
-    }
-    
-    // Crear el elemento de alerta
-    const alertDiv = document.createElement('div');
-    alertDiv.classList.add('alert');
-    
-    // Añadir clase de tipo de alerta y el icono correspondiente
+    let icon;
     switch (type) {
         case 'success':
-            alertDiv.classList.add('alert-success');
-            alertDiv.innerHTML = `<i class="bx bx-check-circle"></i>${message}`;
+            icon = 'success';
             break;
         case 'error':
-            alertDiv.classList.add('alert-error');
-            alertDiv.innerHTML = `<i class="bx bx-error-circle"></i>${message}`;
+            icon = 'error';
             break;
         case 'info':
-            alertDiv.classList.add('alert-info');
-            alertDiv.innerHTML = `<i class="bx bx-info-circle"></i>${message}`;
+            icon = 'info';
             break;
         case 'warning':
-            alertDiv.classList.add('alert-warning');
-            alertDiv.innerHTML = `<i class="bx bx-error"></i>${message}`;
+            icon = 'warning';
             break;
         default:
-            alertDiv.classList.add('alert-info');
-            alertDiv.innerHTML = `<i class="bx bx-info-circle"></i>${message}`;
+            icon = 'info';
     }
 
-    // Añadir la alerta al contenedor
-    alertContainer.appendChild(alertDiv);
-
-    // Eliminar la alerta después de 6 segundos
-    setTimeout(() => {
-        if (alertDiv.parentElement === alertContainer) {
-            alertContainer.removeChild(alertDiv);
-        }
-    }, 6000);
+    Swal.fire({
+        icon: icon,
+        title: message,
+        showConfirmButton: true,
+        timer: 6000
+    });
 }
-
-
-
-
-
