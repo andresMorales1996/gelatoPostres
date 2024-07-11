@@ -11,10 +11,8 @@
       const descText = this.nextElementSibling;
     if (descText.style.display === 'none' || descText.style.display === ''){
       descText.style.display = 'block';
-      img.src = '/assets/svg/down-ico.png'; 
     } else {
-      descText.style.display = 'none';
-      img.src = '/assets/svg/up-ico.png'; 
+      descText.style.display = 'none'
     }
     })
   })
