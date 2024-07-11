@@ -3,19 +3,25 @@
   const sliderItems = document.querySelectorAll('.slider-item');
   const prevButton = document.querySelector('.prev');
   const nextButton = document.querySelector('.next');
-  const titles = document.querySelectorAll('.title');
+  const buttons = document.querySelectorAll('.desp-btn');
   let currentIndex = 0;
   
-  titles.forEach(title => {
-    title.addEventListener('click', function(){
-      const descText = this.nextElementSibling;
-    if (descText.style.display === 'none' || descText.style.display === ''){
-      descText.style.display = 'block';
-    } else {
-      descText.style.display = 'none'
-    }
-    })
-  })
+  
+  buttons.forEach(button => {
+    button.addEventListener('click', function() {
+      const descText = this.parentElement.nextElementSibling;
+      const img = this.querySelector('img');
+      
+      if (descText.style.display === 'none' || descText.style.display === '') {
+        descText.style.display = 'block';
+        img.src = '/assets/svg/down-ico.png'; // Cambiar a up-ico.png
+      } else {
+        descText.style.display = 'none';
+        img.src = '/assets/svg/up-ico.png'; // Cambiar de vuelta a down-ico.png
+      }
+    });
+  });
+  
   
   function updateSliderPosition() {
       const offset = -currentIndex * 100;
@@ -68,4 +74,3 @@
   
   // Inicializar carrusel
   updateCarousel();
-  
