@@ -3,7 +3,7 @@
 .contenedorAll {
     width: 100%;
     padding: 4% 3%;
-    height: 100vh;
+    /* height: 100vh; */
     display: grid;
     grid-template-columns: 50% 50%;
 }
@@ -228,9 +228,9 @@
     .contenedorAll {
         grid-template-columns: 100%; 
     }
-    
+
     .contenedor__formulario {
-        padding: 5%; 
+        padding: 5%;
     }
     
     .info__text__area textarea {
