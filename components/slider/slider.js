@@ -7,9 +7,6 @@ const buttons = document.querySelectorAll('.desp-btn');
 let currentIndex = 0;
 
 
-
-
-
 buttons.forEach(button => {
   button.addEventListener('click', function() {
     const descText = this.parentElement.nextElementSibling;
