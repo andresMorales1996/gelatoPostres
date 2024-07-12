@@ -25,7 +25,7 @@
 .container-titulo {
     text-align: center;
     font-family: var(--fontTitle);
-    font-size: 25px;
+    font-size: 2.75rem;
     color: var(--colorPrimary);
 }
 
@@ -237,6 +237,11 @@
 
     }
 
+    .container-titulo {
+        font-size: 3rem;
+    }
+    
+
     .container-figuras {
         display: block;
         display: flex;
@@ -272,7 +277,7 @@
         height: 600px;
         position: relative;
         border-radius: 150% 150%;
-        box-shadow: 0px 5px 70px 0px rgba(245, 91, 217, 1.2);
+        box-shadow: 0px 5px 70px 0px var(--colorAccentPrimary);
 
     }
 

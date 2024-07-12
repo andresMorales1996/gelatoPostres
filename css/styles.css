@@ -44,26 +44,6 @@
     --small: 0.75rem;
 }
 
-/* .oscuro {
-    --colorPrimary: #34106e;
-    --colorSecondary: #51408a;
-    --colorTertiary: #8e7fb9;
-    --colorQuaternary: #ABA2D9;
-    --colorQuinary: #082E28;
-    --colorSextary: #092D4F;
-    --colorSextenary: #E4D6F9;
-
-    --colorComplementaryPrimary: #bca8e2;
-    --colorComplementarySecondary: #000000;
-    --colorComplementaryTertiary: #ffffff;
-
-    --colorAccentPrimary: #321c96d7;
-    --colorAccentSecondary: #7056b6;
-
-    --colorPrimaryRGB: #543594;
-    --colorSecondaryRGB: #7e7492;
-} */
-
 .oscuro {
     --colorPrimary: #34106e;
     --colorSecondary: #51408a;
@@ -77,7 +57,7 @@
     --colorComplementarySecondary: #000000;
     --colorComplementaryTertiary: #ffffff;
 
-    --colorAccentPrimary: #321c96d7;
+    --colorAccentPrimary: #34106eb3;
     --colorAccentSecondary: #7056b6;
 
     --colorPrimaryRGB: #543594;
