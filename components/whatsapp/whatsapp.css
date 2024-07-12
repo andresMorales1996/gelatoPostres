@@ -259,7 +259,7 @@
 }
 
 .whatsapp-boton {
-    animation: salto 0.5s ease-in-out infinite alternate;
+    animation: salto 0.9s ease-in-out infinite alternate;
 }
 
 @keyframes salto {
