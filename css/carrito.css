@@ -29,8 +29,38 @@ section {
 
 .main-container {
     display: flex;
+    align-self: flex-start;
+    justify-content: center;
     flex-direction: column;
-    max-width: 550px;
+    max-width: 700px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+/* Estilos para el scroll */
+.main-container::-webkit-scrollbar {
+    width: 70px; 
+}
+
+.main-container::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 10px;
+}
+
+.main-container::-webkit-scrollbar-thumb {
+    background-color: var(--colorPrimary); 
+    border-radius: 10px;
+    border: 7px solid #f1f1f1; 
+}
+
+.main-container::-webkit-scrollbar-thumb:hover {
+    background-color: var(--colorSecondary); 
+}
+
+/* Para Firefox */
+.main-container {
+    scrollbar-width: auto; 
+    scrollbar-color: var(--colorPrimary) #f1f1f1; 
 }
 
 .inner-container {
@@ -134,6 +164,7 @@ section {
     height: 400px;
     margin: 1rem;
     padding: 2rem;
+    align-self: flex-start;
     background-color: #f0f0f0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10%;
