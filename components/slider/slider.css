@@ -1,6 +1,38 @@
 @import url("../../css/styles.css");
 
 
+/* modo oscuro */
+
+.left_dark{
+  display: none;
+}
+
+.oscuro .izquierda {
+  display: none;
+} 
+
+.oscuro .left_dark{
+  width: 25px;
+  height: 25px;
+  display: flex;
+}
+
+.right_dark{
+  display: none;
+}
+
+.oscuro .derecha {
+  display: none;
+}  
+
+.oscuro .right_dark{
+
+  width: 22px;
+  height: 22px;
+  display: flex;
+}
+
+/* MODO CLARO */
 .slider-container {
   display: flex;
   justify-content: center;
@@ -139,7 +171,6 @@
   color: var(--colorComplementaryPrimary)
 }
 
-/*Botones de navegación*/
 .nav-button {
   display: block;
   position: absolute;
@@ -152,6 +183,7 @@
   cursor: pointer;
 }
 
+/*Botones de navegación*/
 .nav-button img {
   width: 15px;
   height: 15px;
