@@ -2,7 +2,7 @@
 
 .swiper-banners {
   position: relative;
-  height: 420px;
+  height: 50vh;
   bottom: 50px;
   overflow: hidden;
 }
@@ -42,17 +42,45 @@
 /** Mobile **/
 .banner-principal {
   display: flex;
-  /* background-color: var(--colorTertiary); */
-  background: rgb(247, 154, 178);
+  justify-content: space-around;
+  flex-direction: column;
+  height: inherit;
+}
+
+.bg-banners{
   background: linear-gradient(
     0deg,
     rgba(247, 154, 178, 1) 10%,
     rgba(255, 216, 227, 1) 100%
   );
-  justify-content: space-around;
-  flex-direction: column;
+}
+
+.banner-second{
+  position: relative;
   height: inherit;
 }
+
+.banner-second img{
+  display: block;
+  width: 100%;
+  position: absolute;
+  bottom: 30px;
+  right: 0;
+  margin: auto;
+}
+
+.banner-second p{
+  display: flex;
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 50px;
+  font-size: 2.5rem;
+  margin-top: 30p;
+  width: 55%;
+  color: brown;
+  font-family: 'Cream Cake';
+}
+
 
 .banner-mobile {
   position: absolute;
@@ -135,9 +163,6 @@
   color: var(--colorPrimary);
 }
 
-.banner-second {
-  background-color: red;
-}
 
 @media screen and (min-width: 767px) {
   .contenedor-banner {
@@ -239,5 +264,13 @@
     display: flex;
     justify-content: space-between;
     gap: 10rem;
+  }
+
+  .banner-content h1{
+    font-size: 7rem;
+  }
+
+  .content-img{
+    width: 200px;
   }
 }
