@@ -7,13 +7,20 @@
     justify-content: center;
     align-items: center;
     padding: 100px 0;
-    width: 100%;;
+    width: 100%;
+}
+
+.titulo-pagos{
+    text-align: center;
+    font-family: var(--fontTitle);
+    font-size: 4rem;
+    color: var(--colorPrimary);
 }
 
 .resumen-compra {
-    padding: 20px;
+    padding: 40px;
     background-color: #f0f0f0;
-    border-radius: 10px;
+    border-radius: 10%;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
@@ -28,7 +35,7 @@
 }
 
 h3 {
-    font-size: 1em;
+    font-size: 1.2em;
     margin-bottom: 20px;
 }
 
@@ -79,9 +86,9 @@ h3 {
 }
 
 .metodo-pago {
-    padding: 20px;
+    padding: 40px;
     background-color: var(--colorComplementaryPrimary);
-    border-radius: 10px;
+    border-radius: 10%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -111,6 +118,7 @@ h3 {
 
 .metodos input[type="radio"]:checked + img {
     border: 1px solid var(--colorPrimary);
+    border-radius: 10%;
 }
 
 .campo, .campo-doble {
@@ -124,13 +132,32 @@ h3 {
     color: #666;
 }
 
-.campo input, .campo-doble input {
+/* .campo input, .campo-doble input {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 1em;
+    font-size: 1rem;
+} */
+
+.campo input, .campo-doble input{
+width: 100%;
+height: 100%;
+background: var(--colorTertiary);
+border: none;
+outline: none;
+border: 2px solid rgba(255, 255, 255, .2);
+border-radius: 40px;
+font-size: 1rem;
+color: var(--colorPrimary);
+padding:15px 10px;
 }
+
+.campo-doble input{
+    padding: 2px 10px; 
+}
+
+
 
 .campo-doble {
     display: flex;
@@ -159,20 +186,51 @@ h3 {
 .confirmar {
     width: 100%;
     padding: 15px;
+    margin-top: 20px;
     background-color: var(--colorPrimary);
     border: 1px solid var(--colorPrimary);
-    border-radius: 5px;
     color: #fff;
-    font-size: 1em;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-weight: bold;
+    outline: none;
+    border-radius: 40px;
+    font-size: 1rem;
+    color: var(--colorComplementaryPrimary);
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+
 }
 
 .confirmar:hover {
-    border: 1px solid var(--colorPrimary);
-    background-color: var(--colorComplementaryPrimary);
+    background: var(--colorTertiary);
     color: var(--colorPrimary);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .8);
 }
+
+
+.confirmar:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .2);
+}
+
+/* Añadir efectos de onda en el botón */
+.confirmar::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.15);
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+}
+
+.confirmar:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
 
 .cancelar {
     width: 100%;
@@ -180,15 +238,49 @@ h3 {
     background-color: #ccc;
     font-weight: 500;
     border: none;
-    border-radius: 5px;
     font-size: 1em;
     cursor: pointer;
     margin-top: 20px;
+    border: 1px solid #ccc;
+    color: #fff;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+    outline: none;
+    border-radius: 40px;
+    color: rgb(36, 36, 36);
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+
 }
 
 .cancelar:hover {
     background-color: #666;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .8);
 }
+
+.cancelar:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .2);
+}
+
+/* Añadir efectos de onda en el botón */
+.cancelar::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.15);
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+}
+
+.cancelar:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
 
 /* *TABLET */
 @media screen and (min-width: 767px){
@@ -213,6 +305,20 @@ h3 {
 
 /** DESKTOP **/
 @media screen and (min-width: 1024px){
+
+    .container{
+       max-width: 1400px;
+    }
+
+    .titulo-pagos {
+        font-size: 6rem;
+    }
+
+    .resumen-compra {
+      padding-right: 10%;
+    }
+    
+    
     .pago-wrapper{
         width: 90%;
     }

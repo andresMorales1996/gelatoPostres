@@ -113,8 +113,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
     totalDiv.appendChild(createElement('p', '', `Total: $${calcularTotalCarrito()}`));
     aside.appendChild(totalDiv);
 
-    const pagarBtn = createElement('button', 'pagar-btn', 'Pagar');
+    const pagarBtn = createElement('button', 'pagar-btn', 'Ir a Pagar');
     aside.appendChild(pagarBtn);
+   
 
     const payMetodsDiv = createElement('div', 'pay-metods-div');
     payMetodsDiv.appendChild(createElement('p', '', 'Pagar con:'));

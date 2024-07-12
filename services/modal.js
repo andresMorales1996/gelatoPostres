@@ -233,7 +233,7 @@ function AgregarProductoCarrito(id, nombre, imagen) {
 
     const create_alerta = document.createElement("p");
     create_alerta.id = "alerta-producto-agregado";
-    create_alerta.textContent = "Se agregó un producto";
+    create_alerta.textContent = "Se agregó un producto al carrito";
 
     modal.appendChild(create_alerta);
     const opcionRelleno = document.querySelector(`input[name="${id}"]:checked`);
@@ -269,11 +269,11 @@ function AgregarProductoCarrito(id, nombre, imagen) {
     localStorage.setItem("carrito", JSON.stringify(carrito));
 
     // Redirigir a la otra página
-    if (productoCarrito.precio > 0) {
-        window.location.href = "carrito.html";
-    } else {
-        alert("Por favor especifique los detalles de su pedido");
-    }
+    // if (productoCarrito.precio > 0) {
+    //     window.location.href = "carrito.html";
+    // } else {
+    //     alert("Por favor especifique los detalles de su pedido");
+    // }
 }
 
 function cerrarModal() {

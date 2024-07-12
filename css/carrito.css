@@ -12,10 +12,10 @@ body {
 }
 
 .title-shop {
+    text-align: center;
     font-family: var(--fontTitle);
-    color: var(--colorSextary);
-    align-self: center;
-    margin-top: 1rem;
+    font-size: 4rem;
+    color: var(--colorPrimary);
 }
 
 /** MOBILE **/
@@ -29,8 +29,39 @@ section {
 
 .main-container {
     display: flex;
+    align-self: flex-start;
+    justify-content: center;
     flex-direction: column;
-    max-width: 550px;
+    max-width: 700px;
+    max-height: 400px;
+    overflow-y: auto;
+    margin: 20px;
+}
+
+/* Estilos para el scroll */
+.main-container::-webkit-scrollbar {
+    width: 70px; 
+}
+
+.main-container::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 10px;
+}
+
+.main-container::-webkit-scrollbar-thumb {
+    background-color: var(--colorPrimary); 
+    border-radius: 10px;
+    border: 7px solid #f1f1f1; 
+}
+
+.main-container::-webkit-scrollbar-thumb:hover {
+    background-color: var(--colorSecondary); 
+}
+
+/* Para Firefox */
+.main-container {
+    scrollbar-width: auto; 
+    scrollbar-color: var(--colorPrimary) #f1f1f1; 
 }
 
 .inner-container {
@@ -134,6 +165,7 @@ section {
     height: 400px;
     margin: 1rem;
     padding: 2rem;
+    align-self: flex-start;
     background-color: #f0f0f0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10%;
@@ -142,17 +174,42 @@ section {
 
 .pagar-btn {
     align-self: center;
-    width: 50%;
-    padding: 0.5rem;
-    border-radius: 2rem;
-    margin: 0.5rem;
-    background-color: var(--colorPrimary);
-    color: white;
+    font-weight: bold;
+    width: 200px;
+    height: 35px;
+    background: var(--colorPrimary);
+    border: 1px solid var(--colorPrimary);
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 15px;
+    color: var(--colorComplementaryPrimary);
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .pagar-btn:hover {
-    background-color: var(--colorQuinary);
-    cursor: pointer;
+    background: var(--colorTertiary);
+    color: var(--colorPrimary);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .8);
+}
+
+
+.pagar-btn:active{
+    transform: translateY(0);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .2);
+}
+
+.pagar-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 250%;
+    height: 250%;
+    background: rgba(255, 255, 255, 0.15);
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
 }
 
 .pay-metods-div {
@@ -253,11 +310,6 @@ section {
         color: white;
     }
 
-    .pagar-btn:hover {
-        background-color: var(--colorQuinary);
-        cursor: pointer;
-    }
-
     .pay-metods-div {
         display: flex;
         flex-direction: column;
@@ -302,6 +354,10 @@ section {
     .details-div {
         width: 13rem;
         padding: 2rem;
+    }
+
+    .title-shop {
+        font-size: 6rem;
     }
 
     .nomProd {
