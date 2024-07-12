@@ -47,7 +47,7 @@
   height: inherit;
 }
 
-.bg-banners{
+.bg-banners {
   background: linear-gradient(
     0deg,
     rgba(247, 154, 178, 1) 10%,
@@ -55,32 +55,52 @@
   );
 }
 
-.banner-second{
+.banner-second {
   position: relative;
+  text-align: center;
+  display: flex;
   height: inherit;
 }
 
-.banner-second img{
-  display: block;
+.banner-img {
   width: 100%;
+  height: auto;
   position: absolute;
-  bottom: 30px;
+  bottom: 0;
+}
+
+.banner-text {
+  position: absolute;
+  width: 80%;
+  top: 30px;
+  font-family: var(--fontTitle);
+  left: 0;
   right: 0;
+  margin: 0;
   margin: auto;
+  padding: 0 20px;
+  font-size: 3rem;
+  color: var(--colorPrimary);
+  z-index: 1;
 }
 
-.banner-second p{
-  display: flex;
+.discount-badge {
+  position: absolute;
+  width: 120px;
+  height: 100px;
+  left: 100px;
+  bottom: 160px;
+  background-color: #ec4e4e;
+  color: #fff;
+  padding: 20px;
+  border-radius: 50%;
+  border: dashed;
+  font-size: 0.8rem;
+  font-family: var(--fontBody);
   text-align: center;
-  margin: 0 auto;
-  padding-top: 50px;
-  font-size: 2.5rem;
-  margin-top: 30p;
-  width: 55%;
-  color: brown;
-  font-family: 'Cream Cake';
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 2;
 }
-
 
 .banner-mobile {
   position: absolute;
@@ -163,7 +183,6 @@
   color: var(--colorPrimary);
 }
 
-
 @media screen and (min-width: 767px) {
   .contenedor-banner {
     display: flex;
@@ -178,6 +197,28 @@
     margin-top: 100px;
     text-align: center;
     width: 60%;
+  }
+
+  .banner-img {
+    width: 80%;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+  }
+  
+  .banner-text {
+    width: 90%;
+    top: 30px;
+    margin: auto;
+    font-size: 4rem;
+  }
+  
+  .discount-badge {
+    width: 120px;
+    height: 120px;
+    left: 150px;
+    bottom: 200px;
+    padding: 25px 0;
   }
 
   .content-img {
@@ -232,8 +273,25 @@
     font-size: 6rem;
   }
 
-  .content-img {
-    width: 180px;
+  
+  .banner-img {
+    width: 60%;
+    right: 0;
+  }
+  
+  .banner-text {
+    width: 60%;
+    right: 400px;
+    top: 100px;
+    font-size: 4.5rem;
+  }
+  
+  .discount-badge {
+    width: 120px;
+    height: 120px;
+    left: 600px;
+    bottom: 250px;
+    padding: 30px 0;
   }
 
   .img-pos-top {
@@ -258,6 +316,24 @@
   }
 }
 
+@media screen and (min-width: 1366px){
+ .banner-img {
+    width: 46%;
+    right: 0;
+  }
+  
+  .banner-text {
+    width: 60%;
+    font-size: 5rem;
+  }
+  
+  .discount-badge {
+    left: 920px;
+    bottom: 240px;
+    padding: 30px 0;
+  }
+}
+
 /** Desktop de 1920px **/
 @media screen and (min-width: 1920px) {
   .contenedor-banner {
@@ -266,11 +342,32 @@
     gap: 10rem;
   }
 
-  .banner-content h1{
+  .banner-content h1 {
     font-size: 7rem;
   }
 
-  .content-img{
+  .content-img {
     width: 200px;
+  }
+
+  .banner-img {
+    top: -40px;
+    width: 45%;
+    right: 0;
+  }
+  
+  .banner-text {
+    right: 30%;
+    width: 60%;
+    font-size: 6.5rem;
+  }
+  
+  .discount-badge {
+    width: 150px;
+    height: 150px;
+    left: 68%;
+    bottom: 50%;
+    padding: 30px 0;
+    font-size: 1.2rem;
   }
 }
