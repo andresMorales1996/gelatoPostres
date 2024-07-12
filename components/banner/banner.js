@@ -5,10 +5,10 @@ const swiper_banners = new Swiper('.swiper-banners', {
     el: '.swiper-pagination',
     clickable: true,
   },  
-  autoplay: {
-    delay: 8000,
-    disableOnInteraction: false,
-  },
+  // autoplay: {
+  //   delay: 8000,
+  //   disableOnInteraction: false,
+  // },
   speed: 1000
 });
 
