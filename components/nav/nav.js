@@ -88,4 +88,4 @@ function cargarModoOscuro() {
   ajustarInterruptor();
 }
 
-// cargarModoOscuro();
+cargarModoOscuro();
