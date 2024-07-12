@@ -151,6 +151,7 @@
   grid-gap: 40px;
   overflow: hidden;
   padding-bottom: 10rem;
+  margin-top: 50px;
 }
 
 .galeria > a{
@@ -344,6 +345,7 @@
 
   .banner-principal {
     flex-direction: row;
+    margin-top: 10px;
   }
 
   .banner-content {
