@@ -33,6 +33,18 @@
     background-image: url(../../assets/svg/bannerOscuro.svg);
 }
 
+.oscuro .logo_claro{
+    display: none;
+}
+
+.oscuro .logo_oscuro{
+    display: flex;
+    width: 13.5rem;
+    margin-top: -0.3rem;
+    margin-left: -30%;
+}
+
+
 /* *TEMA CLARO */
 .onda{
     content: '';    
@@ -43,9 +55,16 @@
     background-repeat: repeat-x;
 }
 
+.logo_oscuro{
+    display: none;
+}
+
+.logo_claro{
+    display: flex;
+}
+
 .logo-nav {
     width: 3rem;
-    margin-left: 24%;
     margin-left: 24%;
 }
 
