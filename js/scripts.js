@@ -1,27 +1,35 @@
 // IMPORT SCRIPTS DE COMPONENTES
 const scripts = {
   "inicio": [
-    "../components/nav/nav.js"    
+    "../components/nav/nav.js",
+    "../components/banner/banner.js",
+    "../components/whatsapp/whatsapp.js",  
   ],
   "nosotros": [
     "../components/nav/nav.js",
-    "../components/slider/slider.js"
+    "../components/slider/slider.js",
+    "../components/whatsapp/whatsapp.js",
   ],
   "contacto": [
-    "../components/nav/nav.js"
+    "../components/nav/nav.js",
+    "../components/whatsapp/whatsapp.js",
   ],
   "productos": [
     "../components/nav/nav.js",
-    "../components/producto/producto.js"
+    "../components/producto/producto.js",
+    "../components/whatsapp/whatsapp.js",
   ],
   "registro": [
-    "../components/nav/nav.js"
+    "../components/nav/nav.js",
+    "../components/whatsapp/whatsapp.js",
   ],
   "personalizar": [
-    "../components/nav/nav.js"
+    "../components/nav/nav.js",
+    "../components/whatsapp/whatsapp.js",
   ],
   "carrito": [
-    "../components/nav/nav.js"
+    "../components/nav/nav.js",
+    "../components/whatsapp/whatsapp.js",
   ],
 };
 

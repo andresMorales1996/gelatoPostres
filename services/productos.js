@@ -14,6 +14,7 @@ async function obtenerDatos() {
 async function mostrarProductos() {
     try {
         const productos = await obtenerDatos();
+
         
         productos.forEach(producto => {
             let contenedor;

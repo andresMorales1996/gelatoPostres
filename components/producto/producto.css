@@ -17,7 +17,7 @@ html {
     margin-top: -2rem;
 }
 
-input[type=radio] {
+.product-radio {
     display: none;
 }
 
@@ -92,15 +92,17 @@ input[type=radio] {
 }
 
 .fondo_torta {
+    max-width: 1400px;
     position: absolute;
     width: 7rem;
     height: 7rem;
     border-radius: 1rem;
     background-color: var(--colorTertiary);
-    transform: rotate(-50deg) skew(170deg) translate(-6%);
+    transform: rotate(-40deg) skew(10deg) translate(-6%);
     z-index: -1;
     margin-top: 10rem;
     margin-left: -5rem;
+    margin-bottom: 2rem;
 }
 
 /* *TABLET */
@@ -157,6 +159,7 @@ input[type=radio] {
     }
 
     .fondo_torta {
+        max-width: 1400px;
         margin-left: -20%;
         margin-top: 30%;
     }
@@ -173,6 +176,7 @@ input[type=radio] {
     }
 
     .fondo_torta {
+        max-width: 1400px;
         margin-top: 32%;
     }
 }

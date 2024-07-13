@@ -33,6 +33,18 @@
     background-image: url(../../assets/svg/bannerOscuro.svg);
 }
 
+.oscuro .logo_claro{
+    display: none;
+}
+
+.oscuro .logo_oscuro{
+    display: flex;
+    width: 13.5rem;
+    margin-top: -0.3rem;
+    margin-left: -30%;
+}
+
+
 /* *TEMA CLARO */
 .onda{
     content: '';    
@@ -43,9 +55,16 @@
     background-repeat: repeat-x;
 }
 
+.logo_oscuro{
+    display: none;
+}
+
+.logo_claro{
+    display: flex;
+}
+
 .logo-nav {
     width: 3rem;
-    margin-left: 24%;
     margin-left: 24%;
 }
 
@@ -86,6 +105,37 @@ nav a {
 nav li:hover {
     background-color: var(--colorPrimary);
     border-radius: 40px;
+}
+
+.nav-icon {
+    position: relative;
+    /* margin: 0 10px; */
+}
+
+.counter {
+    position: absolute;
+    top: -8px;
+    right: -2px;
+    background-color: var(--colorSextary);
+    color: white;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.counter p {
+    margin: 0;
+    font-size: 8px;
+}
+
+
+.counter {
+    top: -8px;
+    right: -2px;
 }
 
 .sideBar {
@@ -168,7 +218,24 @@ svg:hover {
     /* Animación suave */
 }
 
+/* .counter {
+    background-color: var(--colorComplementaryPrimary);
+    border-radius: 50%;
+    width: 40%;
+    height: 40%;
+    position: relative;
+    top: -18px;
+    right: 0;
+    left: 15px;
+    text-align: center;
+}
 
+
+.cart-counter{
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--colorPrimary);
+} */
 
 .expandirInput:hover input {
     width: 60%;
@@ -301,9 +368,18 @@ svg:hover {
 
 
 /* *TABLET */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 767px) {
     .logo-nav {
         margin-left: 40%;
+    }
+
+    .counter {
+        width: 40%;
+        height: 40%;
+        position: relative;
+        top: -18px;
+        right: 0;
+        left: 15px;
     }
 
     .sideBar {
@@ -322,11 +398,6 @@ svg:hover {
 
 /* *DESKTOP 1024*/
 @media screen and (min-width: 1024px) {
-    /* .onda-top::before {
-        top: 4vw;
-        background-size: 100% 8%;
-    } */
-
     .logo-nav {
         width: 3rem;
         margin-left: 2%;
@@ -336,6 +407,24 @@ svg:hover {
     .logo-nav img {
         width: 10rem;
     }
+
+    /* .counter {
+        background-color: var(--colorComplementaryPrimary);
+        border-radius: 50%;
+        width: 50%;
+        height: 50%;
+        position: relative;
+        top: -18px;
+        right: 0;
+        left: 0;
+        text-align: center;
+    }
+    
+    .cart-counter{
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--colorPrimary);
+    } */
 
     .menu-boton {
         display: none;
@@ -385,6 +474,17 @@ svg:hover {
         right: 3px;
     }
 
+    .counter {
+        top: -8px;
+        right: 16px;
+    }
+
+    .counter p {
+        padding: 1px;
+        margin: 0;
+        font-size: 12px;
+    }
+
     .fa-search {
         position: absolute;
         margin-left: 1%;
@@ -402,6 +502,7 @@ svg:hover {
 
 /* *DESKTOP 1280*/
 @media screen and (min-width: 1280px) {
+    
     .nav_iconos i {
         margin-right: 1.8rem;
     }
@@ -426,11 +527,7 @@ svg:hover {
     .logo-nav img {
         width: 12rem;
     }
-}
-
-/* *DESKTOP 1440*/
-@media screen and (min-width: 1440px) {
-
+    
 }
 
 /* *DESKTOP 1920*/
@@ -448,4 +545,24 @@ svg:hover {
         margin-top: -0.8%;
         right: 15%;
     }
+
+    .counter {
+        top: -8px;
+        right: 3px;
+    }
+
+    .counter {
+        top: -8px;
+        right: 16px;
+        width: 20px;
+        height: 20px;
+    }
+
+    .counter p {
+        padding: 1px;
+        margin: 0;
+        font-size: 0.8rem;
+    }
+
+    
 }
