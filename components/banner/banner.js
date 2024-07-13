@@ -6,7 +6,7 @@ const swiper_banners = new Swiper('.swiper-banners', {
     clickable: true,
   },  
   autoplay: {
-    delay: 8000,
+    delay: 9000,
     disableOnInteraction: false,
   },
   speed: 2000
