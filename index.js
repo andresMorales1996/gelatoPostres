@@ -22,4 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
   cargarComponente("navApp", "../components/navApp/navApp.html");
   cargarComponente("banner", "../components/banner/banner.html");
   cargarComponente("whatsapp", "../components/whatsapp/whatsapp.html");
+  cargarComponente("modal-page", "../components/modal/modal.html");
+
 });
