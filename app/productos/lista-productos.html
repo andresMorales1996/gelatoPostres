@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - Lista</title>
+    <link rel="stylesheet" href="../../css/stylesApp.css" />
+    <script src="../../index.js"></script>
+    <script src="../../js/scriptsApp.js"></script>
+</head>
+
+<body>
+
+    <div id="navApp"></div>
+
+    <main class="container-modulos">
+
+        <div class="buscar-panel">
+            <input type="search" class="inputBuscar" id="inputBuscar" placeholder="Buscar" />
+            <i class="fa-solid fa-magnifying-glass iconoBuscar icono-panel"></i>
+        </div>   
+
+        <div class="modulos-titulo">
+            <h2>Productos</h2>
+        </div>
+
+        <div class="botonesApp">
+            <a href="../../pages/productos.html" target="_blank"><button class="boton-web">Sitio web</button></a>
+            <a href="../panel.html"><button class="boton-modulos">Módulos</button></a>
+            <a href="./registro-productos.html"><button class="boton-agregar">Agregar</button></a>
+        </div>
+
+        <div class="tabla-productos">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nombre producto</th>
+                        <th>Descripcion producto</th>
+                        <th>Disponibilidad</th>
+                        <th>Imagen producto</th>
+                        <th>Categoria</th>
+                        <th>Relleno</th>
+                        <th>Porciones</th>
+                        <th>Opciones</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+    </main>
+
+    <script>
+        cargarScripts("listaApp");
+    </script>
+
+</body>
+
+</html>

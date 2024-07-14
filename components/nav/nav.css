@@ -283,7 +283,6 @@ svg:hover {
     color: var(--colorPrimary);
     transition: .7s;
     position: absolute;
-    margin-top: 1.5rem;
     margin-left: 0.2rem;
 }
 

@@ -6,22 +6,23 @@
 body.tema-oscuro {
     --colorPrimary: #1D0038;
     --colorSecondary: #604D9E;
-    --colorTertiary: #A17EB8;
+    --colorTertiary: #8e7fb9;
     --colorQuaternary: #ABA2D9;
     --colorQuinary: #082E28;
     --colorSextary: #092D4F;
     --colorSextenary: #E4D6F9;
+
 
     --colorComplementaryPrimary: #FFFFFF;
     --colorComplementarySecondary: #000000;
 }
 
 body.tema-oscuro {
-    background-color: var(--colorSecondary);
+    background-color: var(--colorTertiary);
 }
 
 body.tema-oscuro .onda::before {
-    background-image: url('data:image/svg+xml;charset=utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2.17 35.28" preserveAspectRatio="none"><path d="M1.16 0c-.8 3.17.4 7.29.56 10.04C1.89 12.8.25 19.3.42 22.71c.16 3.43.84 4.65.86 7.05.03 2.4-.88 5.52-.88 5.52h1.77V0z" fill="%23604d9e"/></svg>');
+    background-image: url('data:image/svg+xml;charset=utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2.17 35.28" preserveAspectRatio="none"><path d="M1.16 0c-.8 3.17.4 7.29.56 10.04C1.89 12.8.25 19.3.42 22.71c.16 3.43.84 4.65.86 7.05.03 2.4-.88 5.52-.88 5.52h1.77V0z" fill="%238e7fb9"/></svg>');
 }
 
 body.tema-oscuro .sidebar-panel {
@@ -57,16 +58,12 @@ body.tema-oscuro span::before {
     background-color: var(--colorSecondary);
 }
 
+body.tema-oscuro .foto-panel a {
+    color: var(--colorComplementaryPrimary);
+}
+
 body.tema-oscuro .switch-tema::before {
     left: 24px;
-}
-
-body.tema-oscuro .iconoBuscar {
-    color: var(--colorTertiary);
-}
-
-body.tema-oscuro .inputBuscar {
-    box-shadow: 1px 1px 1px 1px var(--colorTertiary);
 }
 
 body.tema-oscuro .iconos-tema .fa-sun {
@@ -76,6 +73,7 @@ body.tema-oscuro .iconos-tema .fa-sun {
 body.tema-oscuro .iconos-tema .fa-moon {
     display: inline;
 }
+
 
 /* *TEMA CLARO */
 .onda::before {
@@ -102,7 +100,7 @@ body.tema-oscuro .iconos-tema .fa-moon {
     height: 2.5rem;
     line-height: 35px;
     top: 0.5%;
-    right: 2%;
+    right: 5%;
     z-index: 3;
     border-radius: 50%;
     font-size: 24px;
@@ -120,6 +118,7 @@ body.tema-oscuro .iconos-tema .fa-moon {
 
 .abrir-panel i:hover {
     color: var(--colorSecondary);
+    scale: 1;
 }
 
 .cerrar-panel i {
@@ -131,6 +130,7 @@ body.tema-oscuro .iconos-tema .fa-moon {
 
 .cerrar-panel i:hover {
     color: var(--colorComplementaryPrimary);
+    scale: 1;
 }
 
 .cerrar-panel.active i {
@@ -141,7 +141,7 @@ body.tema-oscuro .iconos-tema .fa-moon {
     position: fixed;
     top: 0;
     left: 0;
-    width: 6.5rem;
+    width: 5.5rem;
     min-height: 100%;
     padding: 10px 14px;
     z-index: 1;
@@ -167,9 +167,9 @@ body.tema-oscuro .iconos-tema .fa-moon {
 }
 
 .foto-panel img {
-    width: 3.5rem;
-    height: 3.5rem;
-    margin-left: -2rem;
+    width: 3rem;
+    height: 3rem;
+    margin-left: -2.3rem;
     z-index: 1;
     border-radius: 2rem;
     border: 2px solid var(--colorSecondary);
@@ -230,8 +230,14 @@ body.tema-oscuro .iconos-tema .fa-moon {
     color: var(--colorPrimary);
     border-radius: 2rem;
     font-size: 1.5rem;
-    margin-left: -1.5rem;
+    margin-left: -1.6rem;
     margin-top: 1.7rem;
+}
+
+.icono-panel:hover {
+    scale: 1.2;
+    transition: 0.4s;
+    color: var(--colorSextary);
 }
 
 .tema-panel .switch-panel {
@@ -269,6 +275,7 @@ body.tema-oscuro .iconos-tema .fa-moon {
     width: 60px;
     display: flex;
     align-items: center;
+    margin-top: -3rem;
 }
 
 .iconos-tema .fa-moon {
@@ -281,6 +288,16 @@ body.tema-oscuro .iconos-tema .fa-moon {
     margin-top: 13rem;
 }
 
+.iconos-tema .fa-moon:hover {
+    color: var(--colorTertiary);
+    scale: 1;
+}
+
+.iconos-tema .fa-sun:hover {
+    scale: 1;
+    color: var(--colorPrimary);
+}
+
 .container-header {
     height: 0.5rem;
 }
@@ -290,43 +307,6 @@ body.tema-oscuro .iconos-tema .fa-moon {
     width: 10rem;
     top: -2.5rem;
     right: 7rem;
-}
-
-.buscar-panel {
-    margin-top: -34%;
-}
-
-.buscar-panel input {
-    position: absolute;
-    width: 0;
-    height: 2rem;
-    border-radius: 1rem;
-    top: 0.9rem;
-    right: 3%;
-    border: 1px solid var(--colorPrimary);
-    transition: all .7s ease;
-    padding: 0 1rem;
-}
-
-.buscar-panel:hover input {
-    width: 65%;
-}
-
-.iconoBuscar {
-    position: absolute;
-    margin-top: 37%;
-    right: 2%;
-    line-height: 50px;
-    width: 3rem;
-    height: 3rem;
-    text-align: center;
-    background-color: var(--colorComplementaryPrimary);
-    border: 1px solid var(--colorPrimary);
-    z-index: 1;
-}
-
-.iconoBuscar:hover {
-    transform: rotate(-360deg);
 }
 
 .sidebar-panel.expandirMenu {
@@ -353,18 +333,7 @@ a {
         width: 50%;
     }
 
-    .logo-panel img {
-        width: 25%;  
-        right: 30%;     
-    }
-
-    .buscar-panel input {
-        margin-top: 2%;
-    }
-
-    .buscar-panel:hover input {
-        width: 50%;
-    }
+    
 
 }
 
@@ -384,30 +353,10 @@ a {
     .sidebar-panel.expandirMenu {
         width: 25%;
     }
+}
 
-    .buscar-panel {
-        position: absolute;
-        right: 5%;
-        margin-top: 0.6%;
-    }
-
-    .buscar-panel input {
-        margin-right: 0.8rem;
-        border: 1px solid var(--colorPrimary);
-    }
-
-    .buscar-panel:hover input {
-        width: 20rem;
-    }
-
-    .iconoBuscar {
-        margin-top: 0.6rem;
-    }
-
-    .iconoBuscar:hover {
-        background-color: var(--colorPrimary);
-        color: var(--colorComplementaryPrimary);
-        transition: all .7s ease;
-        cursor: pointer;
+@media screen and (min-width: 1920px) { 
+    .sidebar-panel.expandirMenu {
+        width: 18%;
     }
 }
