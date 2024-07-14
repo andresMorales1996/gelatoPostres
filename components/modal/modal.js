@@ -222,7 +222,6 @@ function quitarAlerta() {
 }
 
 function AgregarProductoCarrito(id, nombre, imagen) {
-    console.log("se dio click al botón para agregar un producto");
     const alerta = document.getElementById("alerta-producto-agregado");
     if (alerta) {
         return;

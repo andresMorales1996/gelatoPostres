@@ -13,14 +13,13 @@
     <div id="nav"></div>
 
     <h1 class="titulo-pagos">Pasarela de pagos</h1>
-
     <section class="pago_section">
       <div class="container">
         <div class="pago-wrapper">
           <div class="resumen-compra">
             <div class="nav-resumen">
               <h3>Resumen compra</h3>
-              <a href="#" class="editar">Editar carrito</a>
+              <a href="../pages/carrito.html" class="editar">Editar carrito</a>
             </div>
             <div class="item">
               <p class="nombre">Lorem ipsum</p>
@@ -48,37 +47,32 @@
           <div class="metodo-pago">
             <h3>Seleccione un método de pago</h3>
             <div class="metodos">
-              <label>
-                <input type="radio" name="metodo" value="payu" checked />
-                <img src="../assets/img/payu.png" alt="Método 1" />
-              </label>
-              <label>
-                <input type="radio" name="metodo" value="paypal" />
-                <img src="../assets/img/paypal.png" alt="PayPal" />
-              </label>
-              <label>
-                <input type="radio" name="metodo" value="efectivo" />
-                <img src="../assets/img/efectivo2.png" alt="Otro" />
-              </label>
+                <img src="../assets/svg/bank.svg" alt="Banco" />
+                <img src="../assets/svg/cc-mastercard.svg" alt="PayPal" />
+                <img src="../assets/svg/paypal.svg" alt="paypal" />
+                <img src="../assets/svg/apple-pay.svg" alt="apple-pay" />
+                <img src="../assets/svg/mercado-pago.svg" alt="mercado-pago" />
             </div>
             <form>
               <div class="campo">
-                <label for="email">Correo Electrónico</label>
+                <label for="email">Correo Electrónico<span>*</span</label>
                 <input type="email" id="email" required />
               </div>
               <div class="campo">
-                <label for="tarjeta">Número de tarjeta</label>
-                <input type="text" id="tarjeta" name="tarjeta" required />
+                <label for="cc">Identificación<span>*</span></label>
+                <input type="text" id="cc" name="cc" required />
               </div>
-              <div class="campo-doble">
-                <div class="campo">
-                  <label for="fecha">Fecha de expiración</label>
-                  <input type="date" id="fecha" name="fecha" required />
-                </div>
-                <div class="campo">
-                  <label for="clave">CVV</label>
-                  <input type="password" id="clave" name="clave" required />
-                </div>
+              <div class="campo">
+                  <label for="nombre">Nombre<span>*</span </label>
+                  <input type="text" id="nombre" name="nombre" required />
+              </div>
+              <div class="campo">
+                <label for="apellido">Apellido<span>*</span</label>
+                <input type="text" id="apellido" name="apellido" required />
+              </div>
+              <div class="campo">
+                <label for="telefono">Teléfono<span>*</span</label>
+                <input type="number" id="telefono" name="telefono" required />
               </div>
               <div class="campo-check">
                 <input
@@ -101,7 +95,9 @@
     <div id="whatsapp"></div>
 
     <div id="footer"></div>
-    
+    <script>
+      cargarScripts("pagos");
+    </script>
     <!--Script pagos-->
     <script src="../js/pagos.js"></script>
   </body>
