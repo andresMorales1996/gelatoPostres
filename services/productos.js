@@ -14,7 +14,7 @@ async function obtenerDatos() {
 async function mostrarProductos() {
     try {
         const productos = await obtenerDatos();
-        
+
         productos.forEach(producto => {
             let contenedor;
             switch (producto.tipo){
@@ -30,6 +30,7 @@ async function mostrarProductos() {
             }
 
             if (contenedor) {
+                let pPrecio = parseFloat(producto.opciones[0].precio).toFixed(3);
                 const productoDiv = document.createElement('div');
                 productoDiv.classList.add('producto');
                 contenedor.appendChild(productoDiv);
@@ -49,6 +50,7 @@ async function mostrarProductos() {
 
                 const precio = document.createElement('div');
                 precio.classList.add("precio-producto");
+                precio.textContent = `Desde ${pPrecio}`;
                 productoDiv.appendChild(precio);
 
                 const moduloDiv = document.createElement('div');
@@ -57,7 +59,19 @@ async function mostrarProductos() {
 
                 const botonModulo = document.createElement('button');
                 botonModulo.classList.add('boton-modulo');
-                botonModulo.textContent = "Ver más";
+                
+                if (window.location.pathname.includes('index.html')) {
+                    botonModulo.textContent = "Ver más";
+                    botonModulo.addEventListener('click', () => {
+                        window.location.href = "../../pages/productos.html";
+                    });
+                } else if (window.location.pathname.includes('productos.html')) {
+                    botonModulo.textContent = "Ver más";
+                    botonModulo.addEventListener('click', () => {
+                        console.log(`Mostrar más detalles del producto: ${producto.nombre}`);
+                    });
+                }
+
                 moduloDiv.appendChild(botonModulo);
             }
         });
@@ -67,3 +81,4 @@ async function mostrarProductos() {
 }
 
 mostrarProductos();
+

@@ -35,7 +35,19 @@
 
 #content_modal {
     position: relative;
-    width: 85%;
+    width: 80%;
+}
+
+#informacion_modal > div:nth-child(1){
+    border-radius: 10px 10px 0 0;
+}
+
+#informacion_modal > div:nth-child(2){
+    border-radius: 0 0 10px 10px;
+}
+
+.footer-modal > p {
+    border-radius: 0 0 10px 0;
 }
 
 .cerrar-modal {
@@ -79,6 +91,7 @@
 .image_modal{
     width: 100%;
     height: auto;
+    margin: 0 auto;
 }
 
 .info_modal {
@@ -88,7 +101,7 @@
 .info_modal h2{
     margin-bottom: 10px;
     color: var(--colorSecondary);
-    font-size: 1.5em;
+    font-size: 1.3em;
     letter-spacing: 1px;
 }
 
@@ -230,7 +243,7 @@
         background-color: var(--colorComplementaryPrimary);
     }
 
-     #informacion_modal > div:nth-child(2){
+    #informacion_modal > div:nth-child(2){
     border-radius: 0 10px 10px 0;
     }
 
@@ -251,6 +264,10 @@
     }
     .cerrar-modal{
         border-radius: 0 10px 0 10px;
+    }
+
+    .info_modal h2{
+        font-size: 1.5rem;
     }
 }
 

@@ -2,99 +2,85 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Productos</title>
-    <link rel="stylesheet" href="../css/styles.css" />
-    <link rel="stylesheet" href="../css/modal-productos.css" />
-    <link rel="stylesheet" href="../css/productos.css">
-    <script src="../index.js"></script>
-    <script src="../js/scripts.js"></script>
-    <!-- <script src="../services/api.js"></script> -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Productos</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/productos.css" />
+  <script src="../index.js"></script>
+  <script src="../js/scripts.js"></script>
 </head>
 
 <body>
+  <div id="nav"></div>
 
-    <div id="nav"></div>
+  <div class="container-main">
+    <h2 class="titulo-web">Categoría</h2>
 
-    <div class="container-main">
-
-        <!--Filtros-->
-        <div class="contenedor-filtros">
+    <!--Menú de productos-->
+    <div class="contenedor_categoria">
+      <div class="contenedor_radio">
+        <input class="product-radio" type="radio" name="slider" id="item-1" checked>
+        <input class="product-radio" type="radio" name="slider" id="item-2">
+        <input class="product-radio" type="radio" name="slider" id="item-3">
+        <div class="cards">
+          <label class="card" for="item-1" id="selector-1">
+            <img src="../assets/img/torta-vainilla.png">
             <a href="#tortasTradicionales">Tortas tradicionales</a>
-            <a href="#tortasFrias">Tortas frías</a>
+          </label>
+          <label class="card segunda" for="item-2" id="selector-2">
+            <img src="../assets/img/torta-beso-angel.png">
+            <a href="#tortasFrias">Tortas frias</a>
+          </label>
+          <label class="card" for="item-3" id="selector-3">
+            <img src="../assets/img/mini-cupcakes.png">
             <a href="#postres">Postres</a>
-            <!-- <a href="#desayunos">Desayunos</a> -->
+          </label>
         </div>
+      </div>
+      <span class="fondo_torta"></span>
+    </diV>
 
-        <!--Productos-->
-        <div class="contenedor-productos">
-            <!-- <h1>Categoría</h1> -->
+    <!--Filtros-->
+    <!-- <div class="contenedor-filtros">
+    </div> -->
 
-            <div id="modal" class="hidden">
-                <div id="content_modal">
-                    <div id="informacion_modal">
-                        aca va el modal
-                    </div>
-                </div>
-            </div>
+    <!--Productos-->
+    <div id="modal-page"></div>
 
-            <div id="productos_demo">
+      <div id="tortasTradicionales" class="content-productos">
+        <div id="tTradicionales" class="productos-grid"></div>
+      </div>
 
-            </div>
+      <div id="tortasFrias" class="content-productos">
+        <div id="tFrias" class="productos-grid"></div>
+      </div>
 
-            <div id="tortasTradicionales" class="content-productos">
-                <div class="svgFooter">
-                    <img src="../../assets/svg/footerBackground.svg" />
-                </div>
-                <h2>Tortas tradicionales</h2>
-                <section class="container-banner">
-                    <div class="banner"></div>
-                </section>
-                <div id="tTradicionales" class="productos-grid">
-                </div>
-            </div>
-
-            <div id="tortasFrias" class="content-productos">
-                <div class="svgFooter">
-                    <img src="../../assets/svg/footerBackground.svg" />
-                </div>
-                <h2>Tortas frías</h2>
-                <section class="container-banner">
-                    <div class="banner"></div>
-                </section>
-                <div id="tFrias" class="productos-grid"></div>
-            </div>
-
-            <div id="postres" class="content-productos">
-                <div class="svgFooter">
-                    <img src="../../assets/svg/footerBackground.svg" />
-                </div>
-                <h2>Postres</h2>
-                <section class="container-banner">
-                    <div class="banner"></div>
-                </section>
-                <div id="postres-container" class="productos-grid"></div>
-            </div>
-
-            <!-- <div id="desayunos" class="content-productos">
-                <h2>Desayunos</h2>
-                <div class="productos-grid"></div>
-            </div>    -->
-
-        </div>
-        
+      <div id="postres" class="content-productos">
+        <div id="postres-container" class="productos-grid"></div>
+      </div>
     </div>
 
-    <div id="footer"></div>
+  </div>
 
-    <script>
-        cargarScripts("productos");
-    </script>
+  <!--Flecha-->
+  <div class="flechaArriba">
+    <a href="#"><svg class="flecha" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><title />
+        <path fill="#F4F4F4" fill-rule="evenodd" d="M15.192 8.906a1.143 1.143 0 0 1 1.616 0l5.143 5.143a1.143 1.143 0 0 1-1.616 1.616l-3.192-3.192v9.813a1.143 1.143 0 0 1-2.286 0v-9.813l-3.192 3.192a1.143 1.143 0 1 1-1.616-1.616z" clip-rule="evenodd" stroke-width="1.5px"></path>
+      </svg></a>
+  </div>
 
-    <script src="../services/modal.js"></script>
-    <script src="../services/productos.js"></script>
+  <div id="whatsapp"></div>
 
+  <div id="footer"></div>
+
+  <script>
+    cargarScripts("productos");
+  </script>
+
+
+  <script src="../services/productos.js"></script>
+  <script src="../components/modal/modal.js"></script>
 </body>
 
 </html>

@@ -7,6 +7,10 @@
 @import url('../components/nav/nav.css');
 @import url('../components/footer/footer.css');
 @import url('../components/slider/slider.css');
+@import url('../components/banner/banner.css');
+@import url('../components/producto/producto.css');
+@import url('../components/whatsapp/whatsapp.css');
+@import url('../components/modal/modal.css');
 
 @font-face {
     font-family: 'Cream Cake';
@@ -25,16 +29,42 @@
 
     --colorComplementaryPrimary: #FFFFFF;
     --colorComplementarySecondary: #000000;
+    --colorComplementaryTertiary: #534D4D;
+
+    --colorAccentPrimary: #f13a68cc;
+    --colorAccentSecondary: #f79cb3b3;
+
 
     --fontTitle: "Cream Cake", sans-serif;
     --fontSubtitle: "Montserrat", sans-serif;
     --fontBody: "Poppins", sans-serif;
 
     --xtra-large: 2rem;
-    --large: 1.25rem; 
+    --large: 1.25rem;
     --medium: 1rem;
     --small: 0.75rem;
 }
+
+.oscuro {
+    --colorPrimary: #34106e;
+    --colorSecondary: #51408a;
+    --colorTertiary: #8e7fb9;
+    --colorQuaternary: #ABA2D9;
+    --colorQuinary: #082E28;
+    --colorSextary: #1d5181;
+    --colorSextenary: #E4D6F9;
+
+    --colorComplementaryPrimary: #bca8e2;
+    --colorComplementarySecondary: #000000;
+    --colorComplementaryTertiary: #ffffff;
+
+    --colorAccentPrimary: #34106eb3;
+    --colorAccentSecondary: #7056b6;
+
+    --colorPrimaryRGB: #543594;
+    --colorSecondaryRGB: #7e7492;
+}
+
 
 /* *FORMATEAR PÁGINA */
 * {
@@ -55,3 +85,34 @@ html body {
     font-style: normal;
     font-weight: 400;
 }
+
+/* *TÍTULO */
+.titulo-web {
+    text-align: center;
+    font-family: var(--fontTitle);
+    font-size: 4rem;
+    margin: 20px;
+    color: var(--colorPrimary);
+}
+
+/* *TABLET */
+@media screen and (min-width: 768px) {}
+
+/* *DESKTOP 1024*/
+@media screen and (min-width: 1024px) {
+    .titulo-web {
+        font-size: 6.4rem;
+    }
+}
+
+/* *DESKTOP 1280*/
+@media screen and (min-width: 1280px) {}
+
+/* *DESKTOP 1366*/
+@media screen and (min-width: 1366px) {}
+
+/* *DESKTOP 1440*/
+@media screen and (min-width: 1440px) {}
+
+/* *DESKTOP 1920*/
+@media screen and (min-width: 1920px) {}

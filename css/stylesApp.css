@@ -9,6 +9,8 @@
 
 /* *IMPORT ESTILOS DE PÁGINAS */
 @import url("../css/productosApp.css");
+@import url("../components/modulosApp/modulosApp.css");
+@import url("./tablaApp.css");
 
 @font-face {
   font-family: "Cream Cake";
@@ -56,8 +58,64 @@ html body {
   font-family: var(--fontBody);
   font-style: normal;
   font-weight: 400;
+  background-image: url("../assets/img/patron_claro.png");
+  background-color: rgba(255, 255, 255, 0.7);
+  background-blend-mode: overlay; 
+}
+
+body.tema-oscuro {
+  background-image: url('../assets/img/patron-ocsuro.png');
 }
 
 a {
   text-decoration: none !important;
+}
+
+.container-modulos {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  min-height: auto;
+  padding-bottom: 2rem;
+}
+
+
+.modulos-titulo h2 {
+  margin-top: 1rem;
+  margin-left: 10%;
+  color: var(--colorPrimary);
+  font-family: var(--fontTitle);
+  font-size: 4rem;
+  text-align: center;
+}
+
+
+/* *TABLET */
+@media screen and (min-width: 768px) {
+}
+
+/* *DESKTOP 1024*/
+@media screen and (min-width: 1024px) {
+  .modulos-titulo h2 {
+    margin-left: 8%;
+    font-size: 5rem;
+  }
+}
+
+/* *DESKTOP 1280*/
+@media screen and (min-width: 1280px) {}
+
+/* *DESKTOP 1366*/
+@media screen and (min-width: 1366px) {}
+
+/* *DESKTOP 1440*/
+@media screen and (min-width: 1440px) {}
+
+/* *DESKTOP 1920*/
+@media screen and (min-width: 1920px) {
+  .modulos-titulo h2 {
+    font-size: 6rem;
+  }
 }

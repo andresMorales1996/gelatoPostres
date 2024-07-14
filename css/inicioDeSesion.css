@@ -15,8 +15,8 @@
 .titulo-inicioS {
     text-align: center;
     font-family: var(--fontTitle);
-    font-size: 25px;
-    color: var(--colorSextary);
+    font-size: 2.75rem;
+    color: var(--colorPrimary);
 }
 
 
@@ -25,7 +25,7 @@
 /* contenedor padre del formulario */
 .formulario-inicioS {
     margin: 10px;
-    margin-top: 90px;
+    margin-top: 10px;
     padding: 20px 70px;
     align-content: center;
     text-align: center;
@@ -76,6 +76,11 @@
     text-align: center;
 }
 
+.registrate_inicio{
+    color: var(--colorPrimary);
+}
+
+
 /* Boton de inicio de sesion */
 
 /* contenedor padre del boton */
@@ -88,31 +93,30 @@
 
 /* estilos propios del boton */
 .btns {
-
+    font-weight: bold;
     width: 200px;
     height: 40px;
     background: var(--colorPrimary);
-    border: none;
+    border: 1px solid var(--colorPrimary);
     outline: none;
     border-radius: 40px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, .2);
     cursor: pointer;
     font-size: 17px;
-    color: rgba(250, 243, 243, 0.836);
+    color: var(--colorComplementaryPrimary);
     transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, .8);
 
 }
 
+
 .boton-inicioS .btns:hover {
-    background: var(--colorSecondary);
-    color: var(--fontTitle);
+    background: var(--colorTertiary);
+    color: var(--colorPrimary);
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, .8);
 }
 
 .boton-inicioS.btns:active {
+    
     transform: translateY(0);
     box-shadow: 0 4px 15px rgba(0, 0, 0, .2);
 }
@@ -144,7 +148,6 @@
 
 @media screen and (min-width: 767px) {
     .formulario-inicioS .datos-usuario {
-
         width: 410px;
         padding: 10px;
         display: inline-flex;
@@ -171,8 +174,16 @@
         margin: auto;
         display: grid;
         grid-template-columns: 50% 50%;
-        padding: 0 10%;
+        padding: 0 15%;
         gap: 50px;
+    }
+
+    .titulo-inicioS {
+        font-size: 3rem;
+    }
+
+    .formulario-inicioS {
+        margin-top: 90px;
     }
 
 
@@ -181,6 +192,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        margin-top: 40px;
+        
     }
 
     .contenedor-izq {
@@ -205,20 +218,21 @@
         font-size: 18px;
     }
 
+
     .img-grande {
         width: 400px;
         height: 600px;
         position: relative;
-        border-radius: 40% 40% 0 0;
-        box-shadow: 0 20px 1020px rgba(245, 91, 217, 0.7);
-
+        border-radius: 150% 150%;
+        box-shadow: 0px 0px 40px 0px var(--colorAccentPrimary);
+ 
     }
 
     .img-grande img {
         width: 400px;
         height: 600px;
         object-fit: cover;
-        border-radius: 40% 40% 0 0;
+        border-radius: 150% 150%;
 
     }
 

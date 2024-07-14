@@ -21,7 +21,7 @@ function ocultarLogo(event) {
   const input = document.querySelector(".expandirInput .inputBuscar");
 
   let inputWidth;
-  if (window.innerWidth >= 1200) {
+  if (window.innerWidth >= 1024) {
     inputWidth = "20%";
   } else if (window.innerWidth >= 768) {
     inputWidth = "40%";
@@ -43,3 +43,49 @@ function ocultarLogo(event) {
     }
   }
 }
+
+function mostrarOpciones() {
+  var tema = document.querySelector(".tema");
+  // var cuadroPequeno = tema.querySelector(".cuadro-pequeno");
+
+  if (tema.classList.contains("seleccionado")) {
+    tema.classList.remove("seleccionado");
+  } else {
+    tema.classList.add("seleccionado");
+  }
+}
+
+function toggleModoOscuro() {
+  var tema = document.querySelector(".tema");
+  tema.classList.remove("seleccionado");
+
+  const body = document.body;
+  body.classList.toggle("oscuro");
+  ajustarInterruptor();
+
+  localStorage.setItem("modoOscuro", body.classList.contains("oscuro"));
+}
+
+function ajustarInterruptor() {
+  const body = document.body;
+  const modoOscuro = body.classList.contains("oscuro");
+  const switchElement = document.querySelector(".toggle-switch .switch");
+
+  if (modoOscuro) {
+    switchElement.style.left = "calc(100% - 0.9rem)";
+  } else {
+    switchElement.style.left = "0.1rem";
+  }
+}
+
+function cargarModoOscuro() {
+  const modoOscuro = localStorage.getItem("modoOscuro") === "true";
+  const body = document.body;
+
+  if (modoOscuro) {
+    body.classList.add("oscuro");
+  }
+  ajustarInterruptor();
+}
+
+cargarModoOscuro();

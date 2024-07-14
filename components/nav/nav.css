@@ -1,7 +1,53 @@
 @import url('../../css/styles.css');
 
 /* *MOBILE */
-.banner{
+
+/* *TEMA OSCURO */
+.oscuro .sol {
+    opacity: 0;
+}
+
+.oscuro .luna {
+    opacity: 1;
+    transition: .7s;
+    color: var(--colorSecondary);
+}
+
+.oscuro .switch {
+    left: calc(100% - 0.9rem);
+}
+
+.oscuro nav {
+    background-color: var(--colorTertiary);
+}
+
+.oscuro .sideBar {
+    background-color: var(--colorTertiary);
+}
+
+.oscuro .toggle-switch {
+    background-color: var(--colorPrimary);
+}
+
+.oscuro .onda{
+    background-image: url(../../assets/svg/bannerOscuro.svg);
+}
+
+.oscuro .logo_claro{
+    display: none;
+}
+
+.oscuro .logo_oscuro{
+    display: flex;
+    width: 13.5rem;
+    margin-top: -0.3rem;
+    margin-left: -30%;
+}
+
+
+/* *TEMA CLARO */
+.onda{
+    content: '';    
     width: 100%;
     height: 3rem;
     background-image: url(../../assets/svg/banner.svg);
@@ -9,9 +55,17 @@
     background-repeat: repeat-x;
 }
 
+.logo_oscuro{
+    display: none;
+}
+
+.logo_claro{
+    display: flex;
+}
+
 .logo-nav {
     width: 3rem;
-    margin-left: 25%;
+    margin-left: 24%;
 }
 
 .logo-nav img {
@@ -27,7 +81,6 @@ nav {
     justify-content: space-evenly;
     align-items: center;
     background-color: var(--colorTertiary);
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
 }
 
 nav ul {
@@ -38,18 +91,51 @@ nav ul {
 }
 
 nav li {
-    height: 6vh;
+    height: 4vh;
 }
 
 nav a {
     height: 100%;
     display: flex;
     align-items: center;
-    color: var(--colorSecondary);
+    color: var(--colorPrimary);
+    
 }
 
 nav li:hover {
     background-color: var(--colorPrimary);
+    border-radius: 40px;
+}
+
+.nav-icon {
+    position: relative;
+    /* margin: 0 10px; */
+}
+
+.counter {
+    position: absolute;
+    top: -8px;
+    right: -2px;
+    background-color: var(--colorSextary);
+    color: white;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.counter p {
+    margin: 0;
+    font-size: 8px;
+}
+
+
+.counter {
+    top: -8px;
+    right: -2px;
 }
 
 .sideBar {
@@ -69,6 +155,7 @@ nav li:hover {
 
 .sideBar li {
     width: 100%;
+    margin-bottom: 2rem;
 }
 
 .sideBar a {
@@ -92,14 +179,15 @@ nav li:hover {
 }
 
 .close-boton {
-    margin-top: 0.6rem;
+    margin-top: 1.2rem;
     margin-left: -1%;
 }
 
 .menu-boton svg,
 .close-boton svg {
     width: 2.5rem;
-    fill: var(--colorSecondary);
+    fill: var(--colorPrimary);
+    fill: var(--colorPrimary);
 }
 
 svg:hover {
@@ -118,13 +206,36 @@ svg:hover {
 
 .nav_iconos i {
     margin-right: 0.5rem;
-    color: var(--colorSecondary);
+    color: var(--colorPrimary);
+    color: var(--colorPrimary);
     font-size: 1.25rem;
 }
 
 .nav_iconos i:hover {
-    color: var(--colorPrimary);
+    transform: scale(1.4);
+    /* Agrandar el icono al 120% de su tamaño original */
+    transition: transform 0.3s ease-in-out;
+    /* Animación suave */
 }
+
+/* .counter {
+    background-color: var(--colorComplementaryPrimary);
+    border-radius: 50%;
+    width: 40%;
+    height: 40%;
+    position: relative;
+    top: -18px;
+    right: 0;
+    left: 15px;
+    text-align: center;
+}
+
+
+.cart-counter{
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--colorPrimary);
+} */
 
 .expandirInput:hover input {
     width: 60%;
@@ -137,7 +248,7 @@ svg:hover {
     margin-top: 0.3rem;
     border-radius: 2rem;
     margin-right: -0.8rem;
-    right: 5.5rem;
+    right: 23%;
     padding: 0 0rem 0rem 1.2rem;
     transition: all .7s ease;
 }
@@ -191,15 +302,13 @@ svg:hover {
     color: var(--colorPrimary);
     transition: .7s;
     position: absolute;
-    margin-top: -1.5rem;
     margin-left: 0.2rem;
 }
 
-.tema .luna{
+ .luna {
     position: absolute;
-    margin-top: -3.3rem;
+    margin-top: 0.2rem;
     margin-left: 0.2rem;
-    color: var(--colorPrimary);
     opacity: 0;
 }
 
@@ -230,53 +339,46 @@ svg:hover {
     transition: left .5s ease;
 }
 
-.oscuro .sol {
-    opacity: 0;
-}
-
-.oscuro .luna {
-    opacity: 1;
-    transition: .7s;
-    color: var(--colorSecondary);
-}
-
-.oscuro .switch {
-    left: calc(100% - 0.9rem);
-}
-
-.oscuro nav {
-    background-color: var(--colorTertiary);
-}
-
-.oscuro .sideBar {
-    background-color: var(--colorPrimary);
-}
-
-.oscuro .toggle-switch {
-    background-color: var(--colorPrimary);
-}
 
 .cuadro-pequeno {
-    display: none;
+    display: block;
     position: absolute;
     background-color: var(--colorTertiary);
-    min-width: 60px;
-    height: 5rem;
-    margin-left: -4rem;
+    overflow: hidden;
+    width: 60px;
+    right: 5%;
+    margin-top: 0.5rem;
     border-radius: 1rem;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     padding: 12px 16px;
-    z-index: 1;
-  }
-  .tema.seleccionado .cuadro-pequeno {
-    display: block;
+    z-index: 3;
+    opacity: 0;
+    transition: min-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
 }
 
-/* *TABLET */
-@media screen and (min-width: 768px) {
+.tema.seleccionado .cuadro-pequeno {
+    min-height: 5rem;
+    opacity: 1;
+}
 
+.menuTema{
+    margin-top: 0.8rem;
+}
+
+
+/* *TABLET */
+@media screen and (min-width: 767px) {
     .logo-nav {
         margin-left: 40%;
+    }
+
+    .counter {
+        width: 40%;
+        height: 40%;
+        position: relative;
+        top: -18px;
+        right: 0;
+        left: 15px;
     }
 
     .sideBar {
@@ -285,6 +387,10 @@ svg:hover {
 
     .expandirInput:hover input {
         width: 40%;
+    }
+
+    .inputBuscar {
+        right: 13.5%;
     }
 
 }
@@ -300,6 +406,24 @@ svg:hover {
     .logo-nav img {
         width: 10rem;
     }
+
+    /* .counter {
+        background-color: var(--colorComplementaryPrimary);
+        border-radius: 50%;
+        width: 50%;
+        height: 50%;
+        position: relative;
+        top: -18px;
+        right: 0;
+        left: 0;
+        text-align: center;
+    }
+    
+    .cart-counter{
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--colorPrimary);
+    } */
 
     .menu-boton {
         display: none;
@@ -320,34 +444,49 @@ svg:hover {
     nav ul {
         width: 60%;
         margin-left: 8.5%;
-
     }
 
     nav li {
         padding: 0.8rem;
     }
 
-    nav li:hover {
-        height: 0.8rem;
-        border-radius: 3rem;
-        background-color: var(--colorPrimary);
+    nav a {
+        color: var(--colorPrimary);
     }
 
-    nav a:hover {
+    nav li:hover a{
+        background-color: var(--colorPrimary);
         color: var(--colorTertiary);
+        line-height: 1rem;
     }
 
     .nav_iconos {
-        margin-right: 0%;
+        margin-right: -4%;
     }
 
     .nav_iconos i {
         margin-right: 0.8rem;
     }
 
+    .counter {
+        top: -8px;
+        right: 3px;
+    }
+
+    .counter {
+        top: -8px;
+        right: 16px;
+    }
+
+    .counter p {
+        padding: 1px;
+        margin: 0;
+        font-size: 12px;
+    }
+
     .fa-search {
         position: absolute;
-        margin-left: 2%;
+        margin-left: 1%;
     }
 
     .expandirInput:hover input {
@@ -355,13 +494,14 @@ svg:hover {
     }
 
     .inputBuscar {
-        margin-top: -0.8rem;
-        right: 9%;
+        margin-top: -1.5%;
+        right: 12%;
     }
 }
 
 /* *DESKTOP 1280*/
 @media screen and (min-width: 1280px) {
+    
     .nav_iconos i {
         margin-right: 1.8rem;
     }
@@ -376,18 +516,52 @@ svg:hover {
 
     .inputBuscar {
         margin-top: -1.2%;
-        right: 10%;
+        right: 13.5%;
     }
 }
 
-/* *DESKTOP 1280*/
+/* *DESKTOP 1366*/
+@media screen and (min-width: 1366px) {
+    
+    .logo-nav img {
+        width: 12rem;
+    }
+    
+}
+
+/* *DESKTOP 1920*/
 @media screen and (min-width: 1920px) {
+
+    .logo-nav img {
+        width: 14rem;
+    }
+
     .nav_iconos i {
         margin-right: 3.5rem;
     }
 
     .inputBuscar {
         margin-top: -0.8%;
-        right: 13.3rem;
+        right: 15%;
     }
+
+    .counter {
+        top: -8px;
+        right: 3px;
+    }
+
+    .counter {
+        top: -8px;
+        right: 16px;
+        width: 20px;
+        height: 20px;
+    }
+
+    .counter p {
+        padding: 1px;
+        margin: 0;
+        font-size: 0.8rem;
+    }
+
+    
 }

@@ -1,18 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
 
 <body>
     <header class="header_contenedor">
 
         <nav class="header_nav">
 
-            <a href="../../app/panel.html" class="logo-nav"><img src="../../assets/img/logoMobile.png" alt="Logo"></a>
+            <a href="../../app/panel.html" class="logo-nav"><img src="../../assets/img/logoMobile.png" alt="Logo" class="logo_claro">
+                <img src="../../assets/img/Logo_oscuro.png" class="logo_oscuro"></a>
 
             <ul class="sideBar">
                 <li class="close-boton" onclick=esconderSideBar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg"
@@ -24,7 +17,7 @@
                 <li><a href="../../index.html">Inicio</a></li>
                 <li><a href="../../pages/sobreNosotros.html">Nosotros</a></li>
                 <li><a href="../../pages/productos.html">Productos</a></li>
-                <li><a href="../../index.html">Personalizar torta</a></li>
+                <li><a href="../../pages/personalizar.html">Personalizar torta</a></li>
                 <li><a href="../../pages/contacto.html">Contacto</a></li>
             </ul>
 
@@ -32,7 +25,7 @@
                 <li class="esconderEnMobile"><a href="../../index.html">Inicio</a></li>
                 <li class="esconderEnMobile"><a href="../../pages/sobreNosotros.html">Nosotros</a></li>
                 <li class="esconderEnMobile"><a href="../../pages/productos.html">Productos</a></li>
-                <li class="esconderEnMobile"><a href="../../index.html">Personalizar torta</a></li>
+                <li class="esconderEnMobile"><a href="../../pages/personalizar.html">Personalizar torta</a></li>
                 <li class="esconderEnMobile"><a href="../../pages/contacto.html">Contacto</a></li>
                 <li class="menu-boton" onclick=mostrarSideBar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 -960 960 960">
@@ -48,21 +41,33 @@
             <div class="nav_iconos">
 
                 <div class="nav-icon">
-                    <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <a href="../../pages/carrito.html"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <div class="counter">
+                        <p class="cart-counter">0</p>
+                    </div>
                 </div>
                 <div class="nav-icon">
                     <a href="../../pages/inicioDeSesion.html"><i class="fa fa-user"></i></a>
                 </div>
+                <div class="tema" onclick="mostrarOpciones()">
+                    <i class="fa-solid fa-ellipsis-vertical menuTema"></i>
+                    <div class="cuadro-pequeno">
+                        <a href="#"><i class="fa-solid fa-sun sol"></i></a>
+                        <i class="fa-solid fa-moon luna"></i>
+                        <div class="toggle-switch" onclick="toggleModoOscuro()">
+                            <span class="switch"></span>
+                        </div>
+                    </div>
+                </div>
             </div>
-
+            <div class="onda-top"></div>
         </nav>
-        
-        <section class="container-banner">
-            <div class="banner"></div>
+
+        <section class="container-onda">
+            <div class="onda"></div>
         </section>
 
+        <script src="../services/modal.js"></script>
+
     </header>
-
 </body>
-
-</html>

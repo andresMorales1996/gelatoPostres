@@ -1,16 +1,49 @@
 @import url('../../css/styles.css');
 
-/** MOBILE **/
+/* *MOBILE */
+
+/* *TEMA OSCURO */
+.contactOscuro {
+    display: none;
+}
+
+.oscuro .content-img img {
+    opacity: 0;
+}
+
+.oscuro .content-img {
+    width: 100%;
+    height: 23vh;
+    background-image: url(../assets/img/bannerContactoOscuro.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 1;
+}
+
+.oscuro label {
+    color: var(--colorPrimary);
+}
+
+.oscuro label {
+    color: var(--colorPrimary);
+}
+
+/* *TEMA CLARO */
 .container-main {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
 }
 
 .container-form {
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    width: 100%;
     min-height: 80vh;
+    overflow: hidden;
 }
 
 .content-titulo {
@@ -18,13 +51,15 @@
     width: 50%;
     right: 0;
     margin-top: 2%;
-    margin-right: 5%;
+    margin-right: 10%;
 }
 
-.content-titulo  h1 {
+.titulo-contacto{
+    text-align: center;
+    font-family: var(--fontTitle);
+    font-size: 4rem;
+    margin: 20px;
     color: var(--colorPrimary);
-    font-family: var(--fontSubtitle);
-    font-size: 1.5rem;
 }
 
 .content-foto {
@@ -36,6 +71,7 @@
 .content-foto img {
     width: 100%;
 }
+
 
 .content-redes {
     display: flex;
@@ -75,6 +111,8 @@
     justify-content: space-around;
     align-items: center;
     padding-top: 8%;
+    padding-bottom: 2rem;
+    margin: 50px;
 }
 
 form {
@@ -93,10 +131,10 @@ form {
     top: 0px;
     left: 0px;
     padding: 0 20px;
-    border: 1px solid var(--colorPrimary);
     border-radius: 2rem;
     z-index: 1;
     font-size: 16px;
+    padding: 20px 70px 20px 10px;
 }
 
 .input::placeholder,
@@ -108,6 +146,7 @@ textarea::placeholder {
 
 .input,
 textarea {
+    background-color: var(--colorTertiary);
     color: var(--colorComplementarySecondary);
     font-family: var(--fontBody);
     font-weight: 300;
@@ -123,7 +162,6 @@ textarea:focus::placeholder {
 textarea {
     width: 100%;
     height: 8rem;
-    border: 1px solid var(--colorPrimary);
     border-radius: 2rem;
     resize: none;
 }
@@ -139,23 +177,34 @@ textarea::placeholder {
 }
 
 .submitBtn {
-    display: block;
-    width: 60%;
-    margin: 0 auto;
-    margin-top: 25%;
-    padding: 1rem 0;
-    border-radius: 2rem;
+    font-weight: bold;
+    width: 100%;
+    height: 40px;
+    background: var(--colorPrimary);
     border: 1px solid var(--colorPrimary);
-    background-color: var(--colorPrimary);
-    color: var(--colorComplementaryPrimary);
-    font-size: 16px;
+    outline: none;
+    border-radius: 40px;
     cursor: pointer;
+    font-size: 17px;
+    margin-top: 6rem;
+    color: var(--colorComplementaryPrimary);
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .submitBtn:hover {
-    border: 1px solid var(--colorPrimary);
-    background-color: var(--colorComplementaryPrimary);
+    background: var(--colorTertiary);
     color: var(--colorPrimary);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .8);
+}
+
+.submitBtn:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .2);
+}
+
+.submitBtn:hover::before {
+    transform: translate(-50%, -50%) scale(1);
 }
 
 label {
@@ -210,9 +259,18 @@ label {
 }
 
 /* *TABLET */
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
+
+    /* *TEMA OSCURO TABLET */
+    .oscuro .container-form {
+        width: 85vw;
+        height: 100%;
+        background-image: url(../assets/img/bannerContactoOscuro.jpg);
+        opacity: 1;
+    }
+
     .container-main {
-        width: 100vw;
+        width: 100%;
         min-height: 90vh;
     }
 
@@ -221,7 +279,8 @@ label {
         width: 85vw;
         height: 100%;
         padding: 20% 0 5% 0;
-        border: 1px solid var(--colorPrimary);
+        /* border: 1px solid var(--colorPrimary); */
+        box-shadow: 1px 1px 15px 1px var(--colorSecondary);
         border-radius: 2rem;
         background-image: url(../assets/img/bannerContacto.jpg);
         background-repeat: no-repeat;
@@ -241,8 +300,8 @@ label {
         margin-right: 13%;
     }
 
-    .content-titulo h1 {
-        font-size: 1.3rem;        
+    .titulo-contacto {
+        margin-top: -1.5rem;
     }
 
     .content-img {
@@ -268,20 +327,17 @@ label {
 
     .input {
         background: var(--colorComplementaryPrimary);
-        border: 1px solid var(--colorPrimary);
         backdrop-filter: blur(15px);
     }
 
     textarea {
-        height: 9rem;
+        height: 7rem;
         background: var(--colorComplementaryPrimary);
-        border: 1px solid var(--colorPrimary);
     }
 
     .submitBtn {
-        width: 40%;
-        margin-top: 30%;
-        max-width: 10;
+        width: 100%;
+        margin-top: 6rem;
     }
 
     .toast {
@@ -334,45 +390,47 @@ label {
 
 /* *DESKTOP 1024 */
 @media screen and (min-width: 1024px) {
-    .container-main {
-        width: 100%;
-        min-height: 100vh;
-    }
 
-    .container-form {
+    /* *TEMA OSCURO DESKTOP */
+    .container-form,
+    .oscuro .container-form {
         position: relative;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: center;
         align-items: center;
-        width: 90vw;
-        height: 110vh;
-        padding: 5% 0 0 0; 
-        border: 1px solid var(--colorPrimary);
+        width: 80vw;
+        height: 50vh;
+        min-height: 73vh;
+        padding: 5% 0 0 0;
         margin: 0 auto;
         background: url(/assets/img/bannerContacto.jpg);
         background-size: cover;
         background-position: left;
     }
 
-    .container-form {
-        display: flex;
-        flex-direction: row;
+    .oscuro .container-form {
+        background-image: url(../assets/img/bannerContactoOscuro.jpg);
+        opacity: 1;
+    }
+
+    /* *TEMA CLARO DESKTOP 1024px*/
+    .container-main {
+        min-height: 80vh;
     }
 
     .content-titulo {
-        width: 40%;
+        width: 50%;
         min-height: 10rem;
         right: 0;
         top: 0;
-        margin-top: 5%;
+        margin-top: 3%;
         margin-right: 5%;
-        text-align: start;
+        text-align: center;
     }
 
-    .content-titulo h1 {
-        width: 100%;
-        font-size: 1.5rem;
+    .titulo-contacto {
+        font-size: 6rem;
     }
 
     label {
@@ -381,26 +439,25 @@ label {
         display: flex;
         margin-left: 20%;
         min-width: 16rem !important;
-        font-size: 0.9rem;
+        font-size: 0.6rem;
+        font-weight: 300;
         color: var(--colorComplementaryPrimary);
     }
 
     .inputContainer {
+        height: 1.5rem;
         width: 32vw;
-        margin-bottom: 2rem;
+        margin-bottom: 1.4rem;
     }
 
     .input {
         background: var(--colorComplementaryPrimary);
-        border: 1px solid var(--colorPrimary);
-        margin-top: -6rem !important;
+        top: -5rem;
     }
 
     textarea {
         background: var(--colorComplementaryPrimary);
-        border: 1px solid var(--colorPrimary);
         padding: 20px;
-        margin-top: -1rem;
     }
 
     .content-foto {
@@ -415,9 +472,9 @@ label {
     }
 
     .content-datos {
-        height: 100vh;
-        margin-top: -10rem;
-        margin-left: -2.5rem;
+        width: 100%;
+        height: 50vh;
+        margin-top: -6rem;
     }
 
     .content-img img {
@@ -426,34 +483,33 @@ label {
     }
 
     .content-redes {
+        width: 40%;
+        height: 18vh;
         position: absolute;
         flex-direction: column;
-        bottom: 0;
-        left: 0;
-        margin-bottom: 4.5%;
-        margin-left: -16%;
+        bottom: 10%;
+        left: -55%;
+        border-radius: 0.5rem;
     }
 
     .content-redes .icon {
         display: flex;
         flex-direction: row;
+        margin-left: -16rem;
     }
 
     .icon i {
         min-width: 2rem;
-        background-color: var(--colorComplementaryPrimary);
-        color: var(--colorPrimary);
     }
 
     .icon {
-        margin-bottom: 0.5rem;
+        margin-bottom: -0.5rem;
     }
 
     .submitBtn {
         position: absolute;
-        width: 20%;
+        width: 40%;
         margin-top: 5rem;
-        margin-left: 8%;
     }
 
     .toast {
@@ -502,12 +558,71 @@ label {
             opacity: 0;
         }
     }
+}
 
-    @media screen and (min-width: 1920px) {
-        .content-titulo h1 {
-            width: 100%;
-            font-size: 2.5rem;
-        }
+@media screen and (min-width: 1280px) {
+    .container-main {
+        min-height: 90vh;
     }
 
+    .container-form{
+        height: 100vh;
+    }
+
+    label {
+        font-size: 0.8rem;
+    }
+
+    .inputContainer {
+        margin-bottom: 2rem;
+    }
+
+    .titulo-contacto {
+        font-size: 6rem;
+    }
+
+    .submitBtn {
+        font-size: 20px;
+    }
+
+    /* TEMA OSCURO */
+    .oscuro .container-form{
+        height: 100vh;
+        }
+} 
+
+@media screen and (min-width: 1920px) {
+
+    .container-form{
+        height: 50vh;
+    }
+
+    .oscuro .content-redes {
+        width: 40%;
+        height: 22%;
+        margin-bottom: 3%;
+        margin-left: -3%;
+    }
+
+    .oscuro label {
+        font-size: 1rem;
+    }
+
+    .oscuro .inputContainer {
+        margin-bottom: 4rem;
+        margin-top: -1rem;
+    }
+
+    .oscuro .input {
+        height: 3.5rem;
+    }
+
+    .oscuro textarea {
+        height: 9rem;
+    }
+
+    .oscuro .submitBtn {
+        height: 4rem;
+        margin-top: 7rem;
+    }
 }

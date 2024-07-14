@@ -25,8 +25,8 @@
 .container-titulo {
     text-align: center;
     font-family: var(--fontTitle);
-    font-size: 25px;
-    color: var(--colorSextary);
+    font-size: 2.75rem;
+    color: var(--colorPrimary);
 }
 
 .form-file-action input {
@@ -149,26 +149,22 @@
 }
 
 .content-boton .btn {
+    font-weight: bold;
     width: 200px;
     height: 40px;
-    margin-top: -80px;
     background: var(--colorPrimary);
-    border: none;
+    border: 1px solid var(--colorPrimary);
     outline: none;
     border-radius: 40px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, .2);
     cursor: pointer;
     font-size: 17px;
-    color: var(--colorComplementarySecondary);
+    color: var(--colorComplementaryPrimary);
     transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, .8);
 }
 
 .content-boton .btn:hover {
-    background: var(--colorSecondary);
-    color: var(--colorComplementarySecondary);
+    background: var(--colorTertiary);
+    color: var(--colorPrimary);
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, .8);
 }
@@ -184,8 +180,8 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 300%;
-    height: 300%;
+    width: 250%;
+    height: 250%;
     background: rgba(255, 255, 255, 0.15);
     transform: translate(-50%, -50%) scale(0);
     border-radius: 50%;
@@ -241,6 +237,11 @@
 
     }
 
+    .container-titulo {
+        font-size: 3rem;
+    }
+    
+
     .container-figuras {
         display: block;
         display: flex;
@@ -275,8 +276,8 @@
         width: 400px;
         height: 600px;
         position: relative;
-        border-radius: 40% 40% 0 0;
-        box-shadow: 0 20px 1020px rgba(245, 91, 217, 0.7);
+        border-radius: 150% 150%;
+        box-shadow: 0px 5px 70px 0px var(--colorAccentPrimary);
 
     }
 
@@ -284,8 +285,7 @@
         width: 400px;
         height: 600px;
         object-fit: cover;
-        border-radius: 40% 40% 0 0;
-
+        border-radius: 150% 150%;
     }
 
     .img-pequeña {
@@ -301,6 +301,5 @@
         height: 250px;
         object-fit: cover;
         border-radius: 50%;
-
     }
 }
