@@ -4,18 +4,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const subtotalElement = document.getElementById("subtotal");
     const totalElement = document.getElementById("total");
 
-    const carritoUnificado = carrito.reduce((acc, producto) => {
-        const productoExistente = acc.find(item => item.id === producto.id);
+    const carritoUnificado = carrito.reduce((acumulador, producto) => {
+        const productoExistente = acumulador.find(item => item.id === producto.id);
         if (productoExistente) {
             productoExistente.cantidad += producto.cantidad;
             productoExistente.precioTotal += producto.precio * producto.cantidad;
         } else {
-            acc.push({
+            acumulador.push({
                 ...producto,
                 precioTotal: producto.precio * producto.cantidad
             });
         }
-        return acc;
+        return acumulador;
     }, []);
 
     if (carritoUnificado.length > 0) {
