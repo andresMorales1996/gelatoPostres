@@ -4,11 +4,21 @@ const scripts = {
     "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
   ],
   "panel": [
-    "../components/navApp/navApp.js"
+    "../components/navApp/navApp.js",
+    "../components/modulosApp/modulosApp.js"
   ],
   "productosApp": [
     "../components/navApp/navApp.js",
     "../js/productosApp.js"
+  ],
+  "modulosApp": [
+    "../../components/navApp/navApp.js",
+  ],
+  "listaApp": [
+    "../../../components/navApp/navApp.js",
+  ],
+  "crudApp": [
+    "../../../components/navApp/navApp.js",
   ],
 };
 
@@ -41,4 +51,4 @@ async function cargarScripts(...pages) {
   }
 }
 
-cargarScripts();
+cargarScripts("librerias");
