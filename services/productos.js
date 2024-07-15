@@ -13,23 +13,25 @@ async function obtenerDatos() {
 
 async function mostrarProductos() {
     try {
-        const productos = await obtenerDatos();
+        const productos = await getProducts();
+        console.log("productos --> " , productos)
 
         productos.forEach(producto => {
             let contenedor;
-            switch (producto.tipo){
-                case "Tortas tradicionales":
+            switch (producto.ID_categoria){
+                case "1":
                     contenedor = document.getElementById("tTradicionales");
                     break;
-                case "Tortas frías":
+                case "3":
                     contenedor = document.getElementById("tFrias");
                     break;
-                case "Postres":
+                case "4":
                     contenedor = document.getElementById("postres-container");
                     break;
             }
 
             if (contenedor) {
+                console.log("existe")
                 let pPrecio = parseFloat(producto.opciones[0].precio).toFixed(3);
                 const productoDiv = document.createElement('div');
                 productoDiv.classList.add('producto');
