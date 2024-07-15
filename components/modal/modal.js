@@ -1,5 +1,4 @@
 const productos = [];
-
 async function obtenerProductos() {
     try {
         const response = await fetch('../services/data.json');
@@ -60,7 +59,7 @@ function productoModal(producto) {
     descripcion.textContent = producto.descripcion;
     descripcion.classList.add("descripcion-modal");
     cerrar.textContent = "X";
-    image.src = producto.imagen || "http://127.0.0.1:5500/assets/img/img-modal.jpg"; // cambiar esta parte !!IMPORTANT
+    image.src = producto.imagen || "../../assets/img-modal.jpg"; 
     image.title = producto.nombre;
     image.classList.add("image_modal");
     div_info.classList.add("info_modal");

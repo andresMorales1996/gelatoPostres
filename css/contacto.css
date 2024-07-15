@@ -15,7 +15,6 @@
     width: 100%;
     height: 23vh;
     background-image: url(../assets/img/bannerContactoOscuro.jpg);
-    border-radius: 40px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -38,11 +37,6 @@
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
 }
-
-.content-img img{
-    border-radius: 40px;
-}
-
 
 .container-form {
     display: flex;
@@ -184,7 +178,7 @@ textarea::placeholder {
 
 .submitBtn {
     font-weight: bold;
-    width: 200px;
+    width: 100%;
     height: 40px;
     background: var(--colorPrimary);
     border: 1px solid var(--colorPrimary);
@@ -192,8 +186,7 @@ textarea::placeholder {
     border-radius: 40px;
     cursor: pointer;
     font-size: 17px;
-    margin-top: 8rem;
-    margin-left: 25%;
+    margin-top: 6rem;
     color: var(--colorComplementaryPrimary);
     transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -208,19 +201,6 @@ textarea::placeholder {
 .submitBtn:active {
     transform: translateY(0);
     box-shadow: 0 4px 15px rgba(0, 0, 0, .2);
-}
-
-.submitBtn::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 250%;
-    height: 250%;
-    background: rgba(255, 255, 255, 0.15);
-    transform: translate(-50%, -50%) scale(0);
-    border-radius: 50%;
-
 }
 
 .submitBtn:hover::before {
@@ -290,6 +270,7 @@ label {
     }
 
     .container-main {
+        width: 100%;
         min-height: 90vh;
     }
 
@@ -355,9 +336,8 @@ label {
     }
 
     .submitBtn {
-        width: 40%;
-        margin-top: 30%;
-        max-width: 10;
+        width: 100%;
+        margin-top: 6rem;
     }
 
     .toast {
@@ -528,9 +508,8 @@ label {
 
     .submitBtn {
         position: absolute;
-        width: 20%;
+        width: 40%;
         margin-top: 5rem;
-        margin-left: 10%;
     }
 
     .toast {
@@ -612,7 +591,11 @@ label {
         }
 } 
 
-@media screen and (min-width: 1921px) {
+@media screen and (min-width: 1920px) {
+
+    .container-form{
+        height: 50vh;
+    }
 
     .oscuro .content-redes {
         width: 40%;

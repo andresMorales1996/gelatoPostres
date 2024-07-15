@@ -5,11 +5,11 @@ const swiper_banners = new Swiper('.swiper-banners', {
     el: '.swiper-pagination',
     clickable: true,
   },  
-  // autoplay: {
-  //   delay: 10000,
-  //   disableOnInteraction: false,
-  // },
-  speed: 1000
+  autoplay: {
+    delay: 9000,
+    disableOnInteraction: false,
+  },
+  speed: 2000
 });
 
 const swiper_testimonio = new Swiper('.swiper-testimonio', {
