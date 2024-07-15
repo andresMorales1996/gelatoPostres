@@ -2,7 +2,9 @@
 const scripts = {
   "inicio": [
     "../components/nav/nav.js",
-    "../components/whatsapp/whatsapp.js",  
+    "../components/banner/banner.js",
+    "../components/whatsapp/whatsapp.js",
+    "../components/modal/modal.js",
   ],
   "nosotros": [
     "../components/nav/nav.js",
@@ -17,6 +19,7 @@ const scripts = {
     "../components/nav/nav.js",
     "../components/producto/producto.js",
     "../components/whatsapp/whatsapp.js",
+    "../components/modal/modal.js",
   ],
   "registro": [
     "../components/nav/nav.js",

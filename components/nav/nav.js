@@ -46,7 +46,7 @@ function ocultarLogo(event) {
 
 function mostrarOpciones() {
   var tema = document.querySelector(".tema");
-  var cuadroPequeno = tema.querySelector(".cuadro-pequeno");
+  // var cuadroPequeno = tema.querySelector(".cuadro-pequeno");
 
   if (tema.classList.contains("seleccionado")) {
     tema.classList.remove("seleccionado");
