@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     const porcionesTableBody = document.querySelector("#porcionesTabla tbody");
   
-    function obtenerPorciones() {
+    function getAllPorciones() {
       fetch("http://localhost:8080/allPorciones")
         .then(response => response.json())
         .then(data => {
@@ -25,16 +25,16 @@ document.addEventListener("DOMContentLoaded", function() {
             botonActualizar.className = "boton-actualizar";
             botonActualizar.addEventListener("click", function() {
               // Lógica para actualizar el porcion
-              actualizarporcion(porcion.id_porcion);
+              updateporcion(porcion.id_porcion);
             });
             cellOpciones.appendChild(botonActualizar);
   
             const botonEliminar = document.createElement("button");
             botonEliminar.textContent = "Eliminar";
-            botonEliminar.className = "boton-eliminar";
+            botonEliminar.className = "boton-delete";
             botonEliminar.addEventListener("click", function() {
-              // Lógica para eliminar el porcion
-              eliminarporcion(porcion.id_porcion);
+              // Lógica para delete el porcion
+              deleteporcion(porcion.id_porcion);
             });
             cellOpciones.appendChild(botonEliminar);
   
@@ -42,18 +42,18 @@ document.addEventListener("DOMContentLoaded", function() {
             porcionesTableBody.appendChild(row);
           });
         })
-        .catch(error => console.error("Error al obtener los porciones:", error));
+        .catch(error => console.error("Error al treaer todas las porciones:", error));
     }
   
-    obtenerporciones();
+    getAllporciones();
   
-    function actualizarporcion(id) {
+    function updateporcion(id) {
       // Lógica para actualizar el porcion con el id proporcionado
       console.log(`Actualizar porcion con ID: ${id}`);
     }
   
-    function eliminarporcion(id) {
-      // Lógica para eliminar el porcion con el id proporcionado
+    function deleteporcion(id) {
+      // Lógica para delete el porcion con el id proporcionado
       console.log(`Eliminar porcion con ID: ${id}`);
     }
   });

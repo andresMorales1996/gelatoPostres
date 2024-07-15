@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Direccion de entregas - Lista</title>
+    <link rel="stylesheet" href="../../css/stylesApp.css" />
+    <script src="../../index.js"></script>
+    <script src="../../js/scriptsApp.js"></script>
+</head>
+
+<body>
+
+    <div id="navApp"></div>
+
+    <main class="container-modulos">
+
+        <div class="modulos-titulo">
+            <h2>Direccion de entregas</h2>
+        </div>
+
+        <div class="botonesApp">
+            <a href="../../index.html" target="_blank"><button class="boton-web">Sitio web</button></a>
+            <a href="../panel.html"><button class="boton-modulos">Módulos</button></a>
+            <a href="./registro-productos.html"><button class="boton-agregar">Agregar</button></a>
+        </div>
+
+        <div class="tabla-productos" id="direccionEntregasTabla">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Direccion de entrega</th>
+                        <th>#Usuario</th>
+                        <th>Opciones</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+    </main>
+
+    <script>
+        cargarScripts("listaApp");
+    </script>
+    <script src="./api-direccionEntregas.js"></script>
+
+</body>
+
+</html>
