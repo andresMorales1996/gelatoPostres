@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
                   const row = document.createElement("tr");
 
                   const cellId = document.createElement("td");
-                  cellId.textContent = categoria.ID_categoria;
+                  cellId.textContent = categoria.id_categoria;
                   row.appendChild(cellId);
 
                   const cellNombre = document.createElement("td");
