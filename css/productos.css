@@ -161,6 +161,7 @@
     color: var(--colorPrimary);
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, .8);
+    font-weight: 700;
 }
 
 .boton-modulo:active {    
@@ -175,8 +176,6 @@
     left: 50%;
     width: 250%;
     height: 250%;
-    background: rgba(255, 255, 255, 0.15);
-    transform: translate(-50%, -50%) scale(0);
     border-radius: 50%;
 }
 
