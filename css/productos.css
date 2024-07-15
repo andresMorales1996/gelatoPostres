@@ -1,8 +1,11 @@
 @import url('../css/styles.css');
 
 /** MOBILE **/
+
+
 .container-main {
     padding-bottom: 3rem;
+    overflow: hidden;
 }
 
 .contenedor-filtros {
