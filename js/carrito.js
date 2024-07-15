@@ -114,6 +114,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
     aside.appendChild(totalDiv);
 
     const pagarBtn = createElement('button', 'pagar-btn', 'Ir a Pagar');
+    pagarBtn.addEventListener('click', () => {
+        localStorage.setItem("carrito", JSON.stringify(carrito));
+        window.location.href = "../../pages/pagos.html";
+    });
     aside.appendChild(pagarBtn);
    
 

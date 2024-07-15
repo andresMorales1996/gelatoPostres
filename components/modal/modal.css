@@ -35,7 +35,19 @@
 
 #content_modal {
     position: relative;
-    width: 85%;
+    width: 80%;
+}
+
+#informacion_modal > div:nth-child(1){
+    border-radius: 10px 10px 0 0;
+}
+
+#informacion_modal > div:nth-child(2){
+    border-radius: 0 0 10px 10px;
+}
+
+.footer-modal > p {
+    border-radius: 0 0 10px 0;
 }
 
 .cerrar-modal {
@@ -79,6 +91,7 @@
 .image_modal{
     width: 100%;
     height: auto;
+    margin: 0 auto;
 }
 
 .info_modal {
@@ -88,7 +101,7 @@
 .info_modal h2{
     margin-bottom: 10px;
     color: var(--colorSecondary);
-    font-size: 1.5em;
+    font-size: 1.3em;
     letter-spacing: 1px;
 }
 
@@ -159,15 +172,42 @@
 }
 
 #alerta-producto-agregado {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+    position: fixed;
+    bottom: 10px;
+    left: 50%; 
+    transform: translateX(-50%);
     background-color: var(--colorQuaternary); 
-    padding: 1em 0;
-    text-align: center;
+    padding: 0.8em; 
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000; 
+    display: flex;
+    align-items: center;
+    justify-content: space-around; 
+    width: 90%; 
+    max-width: 300px; 
 }
 
+#alerta-producto-agregado p {
+    margin: 0; 
+    font-size: 14px; 
+}
+
+#alerta-producto-agregado button {
+    background-color: var(--colorPrimary); 
+    color: white; 
+    border: none;
+    padding: 0.8em 1em;
+    margin: 0 5px;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+}
+
+#alerta-producto-agregado button:hover {
+    background-color: var(--colorSecondary); 
+}
 
 .footer-modal div p {
    width: 40%;
@@ -214,6 +254,12 @@
     .footer-modal > p{
         border-radius: 0 0 10px 0;
     }
+
+    #alerta-producto-agregado {
+        bottom: 20px; 
+        width: auto; 
+        max-width: 400px; 
+    }
     
 }
 
@@ -230,7 +276,7 @@
         background-color: var(--colorComplementaryPrimary);
     }
 
-     #informacion_modal > div:nth-child(2){
+    #informacion_modal > div:nth-child(2){
     border-radius: 0 10px 10px 0;
     }
 
@@ -252,11 +298,26 @@
     .cerrar-modal{
         border-radius: 0 10px 0 10px;
     }
+
+    .info_modal h2{
+        font-size: 1.5rem;
+    }
+
+    #alerta-producto-agregado {
+        bottom: 20px; 
+        width: auto; 
+        max-width: 400px; 
+    }
+
 }
 
 @media (min-width: 1620px) {
     #content_modal {
         position: relative;
         width: 55%;
+    }
+
+    #alerta-producto-agregado {
+        max-width: 500px; 
     }
 }

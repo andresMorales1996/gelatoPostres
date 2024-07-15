@@ -1,4 +1,4 @@
-@import url('../../css/styles.css');
+@import url('../css/styles.css');
 
 /** Mobile **/
 
@@ -45,7 +45,7 @@
     color: var(--colorComplementarySecondary);
 }
 
-.content-img {
+.content-img-nosotros{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -105,7 +105,7 @@
         max-width: 50%;
     }
 
-    .content-img {
+    .content-img-nosotros {
         margin-top: 50px;
     }
 
@@ -132,7 +132,7 @@
         padding-right: 40px;
     }
 
-    .content-img{
+    .content-img-nosotros {
         gap: 20px;
     }
 
