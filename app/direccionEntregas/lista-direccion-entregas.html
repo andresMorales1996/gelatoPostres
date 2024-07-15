@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rellenos - Lista</title>
+    <title>Direccion de entregas - Lista</title>
     <link rel="stylesheet" href="../../css/stylesApp.css" />
     <script src="../../index.js"></script>
     <script src="../../js/scriptsApp.js"></script>
@@ -17,7 +17,7 @@
     <main class="container-modulos">
 
         <div class="modulos-titulo">
-            <h2>Rellenos</h2>
+            <h2>Direccion de entregas</h2>
         </div>
 
         <div class="botonesApp">
@@ -26,12 +26,13 @@
             <a href="./registro-productos.html"><button class="boton-agregar">Agregar</button></a>
         </div>
 
-        <div class="tabla-productos" id="categoriasTabla">
+        <div class="tabla-productos" id="direccionEntregasTabla">
             <table>
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Nombre de categoría</th>
+                        <th>Direccion de entrega</th>
+                        <th>#Usuario</th>
                         <th>Opciones</th>
                     </tr>
                 </thead>
@@ -44,7 +45,7 @@
     <script>
         cargarScripts("listaApp");
     </script>
-    <script src="./api-categorias.js"></script>
+    <script src="./api-direccionEntregas.js"></script>
 
 </body>
 
