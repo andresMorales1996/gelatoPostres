@@ -3,11 +3,6 @@
 /* *MOBILE */
 
 /* *TEMA OSCURO */
-
-.contenedor_panel{
-    max-width: 1400px;
-}
-
 body.tema-oscuro {
     --colorPrimary: #1D0038;
     --colorSecondary: #604D9E;
@@ -81,10 +76,6 @@ body.tema-oscuro .iconos-tema .fa-moon {
 
 
 /* *TEMA CLARO */
-
-.contenedor_panel{
-    max-width: 1400px;
-}
 
 .onda::before {
     content: '';
@@ -312,59 +303,11 @@ body.tema-oscuro .iconos-tema .fa-moon {
     height: 0.5rem;
 }
 
-.logo_oscurop{
-    display: none;
-}
-
-.logo_clarop{
-    display: flex;
-}
-
-.logo-panel img{
-    /* position: absolute;
+.logo-panel img {
+    position: absolute;
     width: 10rem;
     top: -2.5rem;
-    right: 7rem; */
-    width: 10rem;
-    margin-top: -2.5rem;
-    margin-right: 7rem;
-}
-
-.buscar-panel {
-    margin-top: -34%;
-}
-
-.buscar-panel input {
-    position: absolute;
-    width: 0;
-    height: 2rem;
-    border-radius: 1rem;
-    top: 0.9rem;
-    right: 3%;
-    border: 1px solid var(--colorPrimary);
-    transition: all .7s ease;
-    padding: 0 1rem;
-}
-
-.buscar-panel:hover input {
-    width: 65%;
-}
-
-.iconoBuscar {
-    position: absolute;
-    margin-top: 37%;
-    right: 2%;
-    line-height: 50px;
-    width: 3rem;
-    height: 3rem;
-    text-align: center;
-    background-color: var(--colorComplementaryPrimary);
-    border: 1px solid var(--colorPrimary);
-    z-index: 1;
-}
-
-.iconoBuscar:hover {
-    transform: rotate(-360deg);
+    right: 7rem;
 }
 
 .sidebar-panel.expandirMenu {
@@ -391,26 +334,7 @@ a {
         width: 50%;
     }
 
-    .logo-panel img {
-        width: 25%;  
-        right: 30%;     
-    }
-
-    .buscar-panel input {
-        margin-top: 2%;
-    }
-
-    .buscar-panel:hover input {
-        width: 50%;
-    }
-
-    .tema-oscuro .logo_oscurop{
-        display: flex;
-        width: 29%;
-        position: absolute;
-        top: -3.8rem;
-        right: 13.49rem;
-    }
+    
 
 }
 
@@ -422,20 +346,11 @@ a {
     }
 
     .logo-panel img {
-        align-content: center;
-        margin-top: -4%;
+        top: -4%;
         width: 15%;
-        margin-right: 40%;
+        right: 40%;
     }
 
-    .tema-oscuro .logo_oscurop {
-        display: flex;
-        width: 10.85rem;
-        position: absolute;
-        top: -2.8rem;
-        right: 25.09rem;
-    }
-    
     .sidebar-panel.expandirMenu {
         width: 25%;
     }
@@ -444,10 +359,5 @@ a {
 @media screen and (min-width: 1920px) { 
     .sidebar-panel.expandirMenu {
         width: 18%;
-    }
-
-    .iconos-tema{
-        margin-top: -95px;
-        max-height: 700px;
     }
 }
