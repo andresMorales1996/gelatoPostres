@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 const productosTableBody = document.querySelector("#productosTabla tbody");
-  function obtenerProductos() {
+  function getAllProductos() {
    fetch("http://localhost:8080/productos/v1/allProductos")
       .then(response => response.json())
       .then(data => {
@@ -71,7 +71,7 @@ const productosTableBody = document.querySelector("#productosTabla tbody");
   .catch(error => console.error("Error al obtener los productos:", error));
 }
 
-obtenerProductos();
+getAllProductos();
 
 function actualizarProducto(id) {
     // Lógica para actualizar el rol con el id proporcionado
