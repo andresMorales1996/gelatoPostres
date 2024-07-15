@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+// logica del calendario
 document.addEventListener('DOMContentLoaded', (event) => {
     const dateInput = document.getElementById('fechaEntrega');
     const today = new Date();
