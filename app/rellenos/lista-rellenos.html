@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rellenos - Lista</title>
+    <link rel="stylesheet" href="../../css/stylesApp.css" />
+    <script src="../../index.js"></script>
+    <script src="../../js/scriptsApp.js"></script>
+</head>
+
+<body>
+
+    <div id="navApp"></div>
+
+    <main class="container-modulos">
+
+        <div class="modulos-titulo">
+            <h2>Rellenos</h2>
+        </div>
+
+        <div class="botonesApp">
+            <a href="../../index.html" target="_blank"><button class="boton-web">Sitio web</button></a>
+            <a href="../panel.html"><button class="boton-modulos">Módulos</button></a>
+            <a href="./registro-productos.html"><button class="boton-agregar">Agregar</button></a>
+        </div>
+
+        <div class="tabla-rellenos" id="rellenosTabla">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID relleno</th>
+                        <th>nombre relleno</th>
+                        <th>precio relleno</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+    </main>
+
+    <script>
+        cargarScripts("listaApp");
+    </script>
+    <script src="./api-roles.js"></script>
+
+</body>
+
+</html>

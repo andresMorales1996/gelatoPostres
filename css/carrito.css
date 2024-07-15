@@ -36,6 +36,16 @@ section {
     max-height: 400px;
     overflow-y: auto;
     margin: 20px;
+    padding-top: 1rem;
+}
+
+.empty-cart {
+    background-color: #f0f0f0;
+    padding: 1rem 3rem;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Estilos para el scroll */
