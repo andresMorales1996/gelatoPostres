@@ -1,32 +1,50 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const rellenosTableBody = document.querySelector("#rellenosTabla tbody");
+  const personalizarTableBody = document.querySelector("#personalizarTabla tbody");
 
-  function allRellenos() {
-    fetch("http://localhost:8080/rellenos/v1/allRellenos")
+  function allPersonalizar() {
+    fetch("http://localhost:8080/personalizar/v1/allPersonalizar")
       .then((response) => response.json())
       .then((data) => {
-        rellenosTableBody.innerHTML = "";
+        personalizarTableBody.innerHTML = "";
 
-        data.forEach((relleno) => {
+        data.forEach((personaliza) => {
           const row = document.createElement("tr");
 
           const cellId = document.createElement("td");
-          cellId.textContent = relleno.id_relleno;
+          cellId.textContent = personaliza.id_personaliza;
           row.appendChild(cellId);
 
-          const cellRelleno = document.createElement("td");
-          cellRelleno.textContent = relleno.nombre_relleno;
-          row.appendChild(cellRelleno);
+          const cellPersonaliza = document.createElement("td");
+          cellPersonaliza.textContent = personaliza.nombre_personaliza;
+          row.appendChild(cellPersonaliza);
 
           const cellPrecio = document.createElement("td");
-          cellPrecio.textContent = relleno.precio_relleno;
+          cellPrecio.textContent = personaliza.precio_personaliza;
           row.appendChild(cellPrecio);
 
-          rellenosTableBody.appendChild(row);
+          const cellOpciones = document.createElement("td");
+
+          const botonActualizar = document.createElement("button");
+          botonActualizar.classList.add("btn", "btn-actualizar");
+          botonActualizar.innerHTML = '<i class="fas fa-edit"></i>';
+          botonActualizar.addEventListener("click", function() {
+          });
+
+          const botonEliminar = document.createElement("button");
+          botonEliminar.classList.add("btn", "btn-eliminar");
+          botonEliminar.innerHTML = '<i class="fas fa-trash-alt"></i>';
+          botonEliminar.addEventListener("click", function() {
+          });
+
+          cellOpciones.appendChild(botonActualizar);
+          cellOpciones.appendChild(botonEliminar);
+          row.appendChild(cellOpciones);
+
+          personalizarTableBody.appendChild(row);
         });
       })
-      .catch((error) => console.error("Error al obtener los rellenos:", error));
+      .catch((error) => console.error("Error al obtener los personalizar:", error));
   }
 
-  allRellenos();
+  allPersonalizar();
 });

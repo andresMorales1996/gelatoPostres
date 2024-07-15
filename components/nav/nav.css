@@ -296,6 +296,7 @@ svg:hover {
 .tema {
     position: relative;
     display: inline-block;
+    margin-top: -0.2rem;
 }
 
 .tema:hover {

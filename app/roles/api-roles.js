@@ -21,24 +21,21 @@ document.addEventListener("DOMContentLoaded", function() {
           const cellOpciones = document.createElement("td");
 
           const botonActualizar = document.createElement("button");
-          botonActualizar.textContent = "Actualizar";
-          botonActualizar.className = "boton-actualizar";
+          botonActualizar.classList.add("btn", "btn-actualizar");
+          botonActualizar.innerHTML = '<i class="fas fa-edit"></i>';
           botonActualizar.addEventListener("click", function() {
-            // Lógica para actualizar el rol
-            actualizarRol(rol.id_rol);
           });
-          cellOpciones.appendChild(botonActualizar);
 
           const botonEliminar = document.createElement("button");
-          botonEliminar.textContent = "Eliminar";
-          botonEliminar.className = "boton-eliminar";
+          botonEliminar.classList.add("btn", "btn-eliminar");
+          botonEliminar.innerHTML = '<i class="fas fa-trash-alt"></i>';
           botonEliminar.addEventListener("click", function() {
-            // Lógica para eliminar el rol
-            eliminarRol(rol.id_rol);
           });
-          cellOpciones.appendChild(botonEliminar);
 
+          cellOpciones.appendChild(botonActualizar);
+          cellOpciones.appendChild(botonEliminar);
           row.appendChild(cellOpciones);
+
           rolesTableBody.appendChild(row);
         });
       })
