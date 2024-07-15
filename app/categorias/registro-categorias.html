@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorias - Registro</title>
+    <link rel="stylesheet" href="../../css/stylesApp.css" />
+    <script src="../../index.js"></script>
+    <script src="../../js/scriptsApp.js"></script>
+</head>
+
+<body>
+
+    <div id="navApp"></div>
+
+    <main class="container-modulos">
+
+        <div class="modulos-titulo">
+            <h2>Agregar</h2>
+        </div>
+
+        <div class="botonesRegistro">
+            <div>
+            <a href="../panel.html"><button class="boton-modulos">Módulos</button></a>
+            </div>
+            <div>
+            <a href="./lista-categorias.html"><button class="boton-agregar">Categorias</button></a>
+            </div>
+        </div>
+
+        <!-- *FORMULARIO PRODUCTOS -->
+        <div class="container-form d-flex justify-content-center flex-column col-md-7">
+            <div class="row">
+
+                <div class="form-group col-md-6 mb-3">
+                    <label for="nombre">ID categoria</label>
+                    <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre producto">
+                </div>
+
+                <div class="form-group col-md-6 mb-3">
+                    <label for="tipo">Categoria</label>
+                    <select name="tipo" id="tipo" class="form-control" placeholder="Tipo">
+                        <option value="" disabled selected>Seleccionar</option>
+                        <option value="Tortas tradicionales">Tortas tradicionales</option>
+                        <option value="Tortas frias">Tortas frias</option>
+                        <option value="Postres">Postres</option>
+                        <option value="Desayunos">Desayunos</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-md-12 mb-3">
+                    <label for="descripcion">Descripción</label>
+                    <textarea type="text" name="descripcion" id="descripcion" class="form-control"
+                        placeholder="Descripción del producto" rows="5"></textarea>
+                </div>
+
+                <div class="col-lg-12 mt-5">
+                    <button class="btn btn-success" id="botonAgregar" onclick="agregarDatos()">Agregar</button>
+                    <button class="btn btn-primary" id="botonModificar">Actualizar</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <script>
+        cargarScripts("crudApp");
+    </script>
+
+</body>
+
+</html>
