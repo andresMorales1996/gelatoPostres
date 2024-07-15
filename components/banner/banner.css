@@ -15,7 +15,7 @@
 }
 
 /** Modo oscuro **/
-.oscuro .banner-principal {
+.oscuro .bg-banners {
   background: linear-gradient(
     0deg,
     var(--colorSecondary) 10%,
@@ -23,7 +23,9 @@
   );
 }
 
-.oscuro .banner-content p {
+.oscuro .banner-content p,
+.oscuro .banner-content-2 p,
+.oscuro .banner-content-3 p {
   color: aliceblue;
 }
 
