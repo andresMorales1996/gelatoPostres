@@ -34,18 +34,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         totalDiv.querySelector('p').textContent = `Total: $${calcularTotalCarrito()}`;
     };
 
-    const mostrarMensajeCarritoVacio = () => {
-        if (carrito.length === 0) {
-            const emptyCartMessage = createElement('div', 'empty-cart', 'El carrito está vacío...');
-            mainContainer.appendChild(emptyCartMessage);
-        } else {
-            const emptyCartMessage = document.querySelector('.empty-cart');
-            if (emptyCartMessage) {
-                emptyCartMessage.remove();
-            }
-        }
-    };
-
     const eliminarProductoDelCarrito = (id) => {
         // Eliminar producto del carrito
         const index = carrito.findIndex(producto => producto.id === id);
@@ -57,14 +45,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
             if (productoDiv) {
                 productoDiv.remove();
             }
-            // Actualizar total del carrito y mostrar mensaje si está vacío
+            // Actualizar total del carrito
             actualizarTotalCarrito();
-            mostrarMensajeCarritoVacio();
         }
     };
-
-    // Mostrar mensaje si el carrito está vacío al cargar la página
-    mostrarMensajeCarritoVacio();
 
     carrito.forEach(productoCarrito => {
         // Crear un contenedor para cada producto
@@ -116,12 +100,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         // Añadir event listener para eliminar producto
         trashIcon.addEventListener('click', () => eliminarProductoDelCarrito(productoCarrito.id));
-
+        
         // Añadir event listener para cambiar el icono del corazón
         heartIcon.addEventListener('click', () => {
             heartIcon.src = heartIcon.src.includes('heart-solid.svg') ? '../assets/svg/heart-red.svg' : '../assets/svg/heart-solid.svg';
         });
     });
+
 
     // Crear y agregar elementos a aside
     const totalDiv = createElement('div', 'total-div');
@@ -134,6 +119,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         window.location.href = "../../pages/pagos.html";
     });
     aside.appendChild(pagarBtn);
+   
 
     const payMetodsDiv = createElement('div', 'pay-metods-div');
     payMetodsDiv.appendChild(createElement('p', '', 'Pagar con:'));
