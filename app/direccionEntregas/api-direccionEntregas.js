@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     const direccionEntregasTableBody = document.querySelector("#direccionEntregasTabla tbody");
   
-    function getAllDireccionEntregas() {
+    function allDireccionEntregas() {
       fetch("http://localhost:8080/direccionEntregas/v1/allDireccionEntregas")
         .then(response => response.json())
         .then(data => {
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function() {
         .catch(error => console.error("Error al obtener la direccion de entrega:", error));
     }
   
-   getAllDireccionEntregas();
+    allDireccionEntregas();
   
     function updateDireccionEntrega(id) {
       // Lógica para actualizar el direccionEntregas con el id prodireccionEntregasado
