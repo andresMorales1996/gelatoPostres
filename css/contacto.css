@@ -176,6 +176,7 @@ textarea::placeholder {
     font-size: 16px;
 }
 
+/* Estilos para el botón */
 .submitBtn {
     font-weight: bold;
     width: 100%;
@@ -189,20 +190,40 @@ textarea::placeholder {
     margin-top: 6rem;
     color: var(--colorComplementaryPrimary);
     transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block; 
+    text-align: center; 
+    line-height: 40px; 
+    overflow: hidden;
 }
 
 .submitBtn:hover {
     background: var(--colorTertiary);
     color: var(--colorPrimary);
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, .8);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
 }
 
 .submitBtn:active {
     transform: translateY(0);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, .2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
+<<<<<<< HEAD
+/* Añadir efectos de onda en el botón */
+.submitBtn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 250%;
+    height: 250%;
+    background: rgba(255, 255, 255, 0.15);
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+}
+
+=======
+>>>>>>> 1e6c692176e2d33957d302e0870186d952cb318c
 .submitBtn:hover::before {
     transform: translate(-50%, -50%) scale(1);
 }
