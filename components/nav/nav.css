@@ -437,6 +437,7 @@ svg:hover {
 
     nav {
         width: 100%;
+        height: 10vh;
         display: flex;
         justify-content: space-between;
     }
@@ -531,6 +532,10 @@ svg:hover {
 
 /* *DESKTOP 1920*/
 @media screen and (min-width: 1920px) {
+
+    nav{
+        height: 8vh;
+    }
 
     .logo-nav img {
         width: 14rem;
