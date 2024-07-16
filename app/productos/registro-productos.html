@@ -32,20 +32,23 @@
                 </div>
                 <div class="form-group col-md-6 mb-3">
                     <label for="categoria">Categoría</label>
-                    <select name="categoria.id" id="categoria" class="form-control" placeholder="Tipo">
+                    <select name="id_categoria" id="categoria" class="form-control">
                         <option value="" disabled selected>Seleccionar</option>
+                        <!-- Opciones de categorías se pueden cargar dinámicamente -->
                     </select>
                 </div>
                 <div class="form-group col-md-6 mb-3">
                     <label for="relleno">Relleno</label>
-                    <select name="relleno.id" id="relleno" class="form-control" placeholder="Relleno">
+                    <select name="id_relleno" id="relleno" class="form-control">
                         <option value="" disabled selected>Seleccionar</option>
+                        <!-- Opciones de rellenos se pueden cargar dinámicamente -->
                     </select>
                 </div>
                 <div class="form-group col-md-6 mb-3">
                     <label for="porcion">Porciones</label>
-                    <select name="porcion.id" id="porcion" class="form-control" placeholder="Porciones">
+                    <select name="id_porcion" id="porcion" class="form-control">
                         <option value="" disabled selected>Seleccionar</option>
+                        <!-- Opciones de porciones se pueden cargar dinámicamente -->
                     </select>
                 </div>
                 <div class="form-group col-md-6 mb-3">
@@ -54,7 +57,7 @@
                 </div>
                 <div class="form-group col-md-6 mb-3">
                     <label for="estado_producto">Disponibilidad</label>
-                    <select name="estado_producto" id="estado_producto" class="form-control" placeholder="Disponibilidad">
+                    <select name="estado_producto" id="estado_producto" class="form-control">
                         <option value="" disabled selected>Seleccionar</option>
                         <option value="true">Disponible</option>
                         <option value="false">Agotado</option>
@@ -62,7 +65,7 @@
                 </div>
                 <div class="form-group col-md-12 mb-3">
                     <label for="descripcion_producto">Descripción</label>
-                    <textarea type="text" name="descripcion_producto" id="descripcion_producto" class="form-control" placeholder="Descripción del producto" rows="5"></textarea>
+                    <textarea name="descripcion_producto" id="descripcion_producto" class="form-control" placeholder="Descripción del producto" rows="5"></textarea>
                 </div>
                 <div class="form-group col-md-6 mb-3">
                     <label for="imagen_producto">Imagen</label>
@@ -75,13 +78,6 @@
             </div>
         </form>
     </main>
-
-    <script>
-        cargarScripts("listaApp");
-        
-    </script>
-    <script src="./api-productos.js"></script>
-
+    <script src="api-productos.js"></script>
 </body>
-
 </html>

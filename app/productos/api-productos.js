@@ -30,7 +30,9 @@ document.addEventListener("DOMContentLoaded", function () {
           row.appendChild(cellEstado);
 
           const cellImagen = document.createElement("td");
-          cellImagen.textContent = producto.imagen_producto;
+          const imagen = new Image();
+          imagen.src = `data:image/jpeg;base64,${producto.imagen_producto}`;
+          cellImagen.appendChild(imagen);
           row.appendChild(cellImagen);
 
           const cellPrecio = document.createElement("td");
@@ -134,23 +136,29 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-  // Enviar formulario para crear un nuevo producto
-  createProductoForm.addEventListener("submit", function (event) {
-    event.preventDefault();
-    const formData = new FormData(this);
+  document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("createProductoForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+        const formData = new FormData(this);
+        console.log(formData); 
 
-    fetch("http://localhost:8080/productos/v1/createProducto", {
-        method: "POST",
-        body: formData,
-    })
-    .then((response) => response.json())
-    .then((data) => {
-        console.log("Success:", data);
-        getAllProductos(); // Refrescar la lista de productos después de crear uno nuevo
-    })
-    .catch((error) => {
-        console.error("Error:", error);
+        fetch("http://localhost:8080/productos/v1/createProducto", {
+            method: "POST",
+            body: formData,
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error en la solicitud: ' + response.status);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Success:', data);
+            alert('Producto creado exitosamente');
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Error al crear el producto: ' + error.message);
+        });
     });
-});
-
 });
