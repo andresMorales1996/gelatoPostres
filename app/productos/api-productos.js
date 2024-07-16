@@ -30,11 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
           row.appendChild(cellEstado);
 
           const cellImagen = document.createElement("td");
-          const img = document.createElement("img");
-          img.src = "data:image/png;base64," + producto.imagen_producto; // Aquí concatenamos el prefijo para datos de imagen base64
-          img.alt = producto.nombre_producto; // Puedes ajustar el alt según necesites
-          img.style.maxWidth = "100px"; // Ajusta el tamaño de la imagen según tus necesidades
-          cellImagen.appendChild(img);
+          cellImagen.textContent = producto.imagen_producto;
           row.appendChild(cellImagen);
 
           const cellPrecio = document.createElement("td");
@@ -142,21 +138,19 @@ document.addEventListener("DOMContentLoaded", function () {
   createProductoForm.addEventListener("submit", function (event) {
     event.preventDefault();
     const formData = new FormData(this);
-    const data = Object.fromEntries(formData.entries());
+
     fetch("http://localhost:8080/productos/v1/createProducto", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
+        method: "POST",
+        body: formData,
     })
-      .then((response) => response.json())
-      .then((data) => {
+    .then((response) => response.json())
+    .then((data) => {
         console.log("Success:", data);
         getAllProductos(); // Refrescar la lista de productos después de crear uno nuevo
-      })
-      .catch((error) => {
+    })
+    .catch((error) => {
         console.error("Error:", error);
-      });
-  });
+    });
+});
+
 });
