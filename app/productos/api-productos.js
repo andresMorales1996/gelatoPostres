@@ -136,7 +136,8 @@ document.addEventListener("DOMContentLoaded", function () {
         });
       }
     });
-  });
+
+  // Enviar formulario para crear un nuevo producto
   document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("createProductoForm").addEventListener("submit", function (event) {
         event.preventDefault();
@@ -162,4 +163,5 @@ document.addEventListener("DOMContentLoaded", function () {
             alert('Error al crear el producto: ' + error.message);
         });
     });
+});
 });
