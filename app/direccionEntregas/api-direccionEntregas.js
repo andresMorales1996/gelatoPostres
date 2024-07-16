@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const direccionEntregasTableBody = document.querySelector("#direccionEntregasTabla tbody");
   
     function allDireccionEntregas() {
-      fetch("http://localhost:8080/direccionEntregas/v1/allDireccionEntregas")
+      fetch("http://192.168.0.17:8080/direccionEntregas/v1/allDireccionEntregas")
         .then(response => response.json())
         .then(data => {
           direccionEntregasTableBody.innerHTML = "";

@@ -290,7 +290,6 @@ body.tema-oscuro .iconos-tema .fa-moon {
 }
 
 .iconos-tema .fa-moon:hover {
-    color: var(--colorTertiary);
     scale: 1;
 }
 

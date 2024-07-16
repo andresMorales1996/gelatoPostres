@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const coberturasTableBody = document.querySelector("#coberturasTabla tbody");
 
   function allcoberturas() {
-    fetch("http://localhost:8080/coberturas/v1/allCoberturas")
+    fetch("http://192.168.0.17:8080/coberturas/v1/allCoberturas")
       .then((response) => response.json())
       .then((data) => {
         coberturasTableBody.innerHTML = "";

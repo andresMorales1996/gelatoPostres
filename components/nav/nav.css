@@ -384,11 +384,11 @@ svg:hover {
     }
 
     .toggle-switch{
-        top: 2.7rem;
+        top: 2.3rem;
     }
 
     .tema .luna {
-        margin-top: -2.3rem;
+        margin-top: -2rem;
     }
 
 }
@@ -497,13 +497,7 @@ svg:hover {
         right: 12%;
     }
 
-    .toggle-switch{
-        top: 3rem;
-    }
 
-    .tema .luna {
-        margin-top: -2.6rem;
-    }
 }
 
 /* *DESKTOP 1280*/
