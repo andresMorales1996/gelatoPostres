@@ -365,6 +365,11 @@
 
 /** Desktop de 1920px **/
 @media screen and (min-width: 1920px) {
+
+  .swiper-banners{
+    height: 60vh;
+  }
+
   .contenedor-banner {
     display: flex;
     justify-content: space-between;
