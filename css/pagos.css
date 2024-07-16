@@ -114,8 +114,15 @@
 .campo label{
     display: block;
     font-size: 0.8em;
-    color: #666;
+    color: var( --colorComplementaryTertiary);
 }
+
+/* .oscuro .campo label{
+    display: block;
+    font-size: 0.8em;
+    color: #666;
+} */
+
 
 .campo span{
     font-size: 1.3rem;
@@ -202,7 +209,6 @@ padding:15px 10px;
     left: 50%;
     width: 200%;
     height: 200%;
-    background: rgba(255, 255, 255, 0.15);
     transform: translate(-50%, -50%) scale(0);
     border-radius: 50%;
 }
@@ -252,7 +258,6 @@ padding:15px 10px;
     left: 50%;
     width: 200%;
     height: 200%;
-    background: rgba(255, 255, 255, 0.15);
     transform: translate(-50%, -50%) scale(0);
     border-radius: 50%;
 }

@@ -39,6 +39,22 @@ textarea {
 }
 
 
+.agregar {
+  margin: auto;
+}
+
+.agregar label {
+  min-width: 100%;
+}
+
+.botonesRegistro .btn-ag {
+  width: 10rem;
+}
+
+.titulo_img label {
+  margin-left: 4rem;
+}
+
 .btn-success {
   position: absolute;
   font-weight: bold;

@@ -7,7 +7,7 @@
     opacity: 0;
 }
 
-.oscuro .luna {
+.oscuro .tema .luna {
     opacity: 1;
     transition: .7s;
     color: var(--colorPrimary);
@@ -293,7 +293,8 @@ svg:hover {
 .tema {
     position: relative;
     display: inline-block;
-    margin-top: -0.2rem;
+    margin-top: -2rem;
+    margin-left: 2rem;
 }
 
 .tema:hover {
@@ -301,17 +302,19 @@ svg:hover {
 }
 
 .tema .sol {
+    font-size: 1rem;
     color: var(--colorPrimary);
     transition: .7s;
     position: absolute;
-    margin-left: 0.1rem;
-    margin-top: 1.5rem;
+    margin-left: -3rem;
 }
 
-.luna {
+.tema .luna {
+    font-size: 1rem;
     position: absolute;
-    margin-top: 0.2rem;
-    margin-left: 0.3rem;
+    margin-top: -2.8rem;
+    margin-left: -2rem;
+    transform: rotate(220deg);
     opacity: 0;
 }
 
@@ -340,28 +343,6 @@ svg:hover {
     transform: translateY(-50%);
     background-color: var(--colorComplementaryPrimary);
     transition: left .5s ease;
-}
-
-
-.cuadro-pequeno {
-    display: block;
-    position: absolute;
-    background-color: var(--colorTertiary);
-    overflow: hidden;
-    width: 60px;
-    right: 5%;
-    margin-top: 0.5rem;
-    border-radius: 1rem;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    padding: 12px 16px;
-    z-index: 3;
-    opacity: 0;
-    transition: min-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
-}
-
-.tema.seleccionado .cuadro-pequeno {
-    min-height: 5rem;
-    opacity: 1;
 }
 
 .menuTema{

@@ -20,6 +20,18 @@ const scripts = {
   "crudApp": [
     "../../../components/navApp/navApp.js",
   ],
+
+  "saboresListasApp": [
+    "../../../components/navApp/navApp.js",
+  ],
+
+  "rellenosListasApp": [
+    "../../../components/navApp/navApp.js",
+  ],
+
+  "pPersonalizarListasApp": [
+    "../../../components/navApp/navApp.js",
+  ]
 };
 
 // *FUNCIÓN CARGAR SCRIPTS DE COMPONENTES

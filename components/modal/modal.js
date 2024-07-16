@@ -279,7 +279,7 @@ function AgregarProductoCarrito(id, nombre, imagen) {
   let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
   // Agregar el nuevo producto al carrito
-  carrito.push(productoCarrito);
+  carrito.unshift(productoCarrito);
 
   // Almacenar el carrito actualizado en localStorage
   localStorage.setItem("carrito", JSON.stringify(carrito));

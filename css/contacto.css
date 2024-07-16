@@ -19,6 +19,7 @@
     background-size: cover;
     background-position: center;
     opacity: 1;
+    border-radius: 40px;
 }
 
 .oscuro label {

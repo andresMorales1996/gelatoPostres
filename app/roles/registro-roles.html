@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roles - Registro</title>
+    <link rel="stylesheet" href="../../css/stylesApp.css" />
+    <script src="../../index.js"></script>
+    <script src="../../js/scriptsApp.js"></script>
+    <script src="../../js/registro-productos.js"></script>
+</head>
+<body>
+    <div id="navApp"></div>
+    <main class="container-modulos">
+        <div class="modulos-titulo">
+            <h2>Agregar</h2>
+        </div>
+        <div class="botonesRegistro">
+            <div>
+                  <a href="../panel.html"><button class="boton-modulos">Módulos</button></a>
+            </div>
+            <div>
+                <a href="./lista-roles.html"><button class="boton-agregar">Roles</button></a>
+            </div>
+        </div>
+        <!-- *FORMULARIO ROLES -->
+        <form id="createRolesForm" class="container-form d-flex justify-content-center flex-column col-md-7">
+            <div class="row">
+                <div class="form-group col-md-6 mb-3 agregar">
+                    <label for="nombre_roles">Nombre de roles</label>
+                    <input type="text" name="nombre_roles" id="nombre_roles" class="form-control" placeholder="Nombre">
+                </div>
+                <div class="col-lg-12 mt-5">
+                    <button type="submit" class="btn btn-success" id="botonAgregar">Agregar</button>
+                    <button type="button" class="btn btn-primary" id="botonModificar">Actualizar</button>
+                </div>
+            </div>
+        </form>
+    </main>
+
+    <script>
+        cargarScripts("listaApp");
+        
+    </script>
+    <script src="./api-productos.js"></script>
+
+</body>
+
+</html>

@@ -32,6 +32,7 @@ section {
     display: flex;
     align-self: flex-start;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
     max-width: 600px;
     max-height: 620px;
@@ -65,9 +66,19 @@ section {
     scrollbar-color: var(--colorPrimary) #f1f1f1; 
 }
 
+.empty-cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 370px;
+    padding: 1.5rem 1rem;
+    border-radius: 10px;
+    background-color: var(--colorQuaternary);
+}
+
 .inner-container {
     display: flex;
-    margin: 1rem;
+    margin: 0.08rem;
     border-bottom: 1px solid black;
 }
 
@@ -353,6 +364,11 @@ section {
 
 /* *DESKTOP 1024 */
 @media screen and (min-width: 1024px) {
+
+
+    .empty-cart {
+        width: 500px;
+    }
 
     .details-div {
         width: 13rem;
