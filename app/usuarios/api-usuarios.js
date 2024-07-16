@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const usuariosTableBody = document.querySelector("#usuariosTabla tbody");
 
-  function allUsuarios() {
+  function getAllUsuarios() {
     fetch("http://localhost:8080/usuarios/v1/allUsuarios")
       .then((response) => response.json())
       .then((data) => {
@@ -18,9 +18,25 @@ document.addEventListener("DOMContentLoaded", function () {
           cellNombre.textContent = usuario.nombre_usuario;
           row.appendChild(cellNombre);
 
-          const cellPrecio = document.createElement("td");
-          cellPrecio.textContent = usuario.precio_usuario;
-          row.appendChild(cellPrecio);
+          const cellGenero = document.createElement("td");
+          cellGenero.textContent = usuario.genero_usuario;
+          row.appendChild(cellGenero);
+
+          const cellTelefono = document.createElement("td");
+          cellTelefono.textContent = usuario.telefono_usuario;
+          row.appendChild(cellTelefono);
+
+          const cellEmail = document.createElement("td");
+          cellEmail.textContent = usuario.email_usuario;
+          row.appendChild(cellEmail);
+
+          const cellContrasena = document.createElement("td");
+          cellContrasena.textContent = usuario.contrasena_usuario;
+          row.appendChild(cellContrasena);
+
+          const cellImagen = document.createElement("td");
+          cellImagen.textContent = usuario.imagen_usuario;
+          row.appendChild(cellImagen);
 
           const cellOpciones = document.createElement("td");
 
@@ -46,5 +62,5 @@ document.addEventListener("DOMContentLoaded", function () {
       .catch((error) => console.error("Error al obtener los usuarios:", error));
   }
 
-  allUsuarios();
+  getAllUsuarios();
 });

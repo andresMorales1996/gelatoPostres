@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const rolesTableBody = document.querySelector("#rolesTabla tbody");
 
   function obtenerRoles() {
-    fetch("http://localhost:8080/api/rol")
+    fetch("http://localhost:8080/roles/v1/allRoles")
       .then(response => response.json())
       .then(data => {
         rolesTableBody.innerHTML = "";
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
           row.appendChild(cellId);
 
           const cellRol = document.createElement("td");
-          cellRol.textContent = rol.rol;
+          cellRol.textContent = rol.nombre_rol;
           row.appendChild(cellRol);
 
           const cellOpciones = document.createElement("td");
