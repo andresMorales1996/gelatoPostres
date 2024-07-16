@@ -1,29 +1,50 @@
-document.addEventListener("DOMContentLoaded", function() {
-  const categoriasTableBody = document.querySelector("#categoriasTabla tbody");
+document.addEventListener("DOMContentLoaded", function () {
+  const coberturasTableBody = document.querySelector("#coberturasTabla tbody");
 
+  function allcoberturas() {
+    fetch("http://localhost:8080/coberturas/v1/allCoberturas")
+      .then((response) => response.json())
+      .then((data) => {
+        coberturasTableBody.innerHTML = "";
 
-  function allCategorias() {
-      fetch("http://localhost:8080/categorias/v1/allCategorias")
-          .then(response => response.json())
-          .then(data => {
-            categoriasTableBody.innerHTML = "";
+        data.forEach((cobertura) => {
+          const row = document.createElement("tr");
 
-              data.forEach(categoria => {
-                  const row = document.createElement("tr");
+          const cellId = document.createElement("td");
+          cellId.textContent = cobertura.id_cobertura;
+          row.appendChild(cellId);
 
-                  const cellId = document.createElement("td");
-                  cellId.textContent = categoria.id_categoria;
-                  row.appendChild(cellId);
+          const cellNombre = document.createElement("td");
+          cellNombre.textContent = cobertura.nombre_cobertura;
+          row.appendChild(cellNombre);
 
-                  const cellNombre = document.createElement("td");
-                  cellNombre.textContent = categoria.nombre_categoria;
-                  row.appendChild(cellNombre);
+          const cellPrecio = document.createElement("td");
+          cellPrecio.textContent = cobertura.precio_cobertura;
+          row.appendChild(cellPrecio);
 
-                  categoriasTableBody.appendChild(row);
-              });
-          })
-          .catch(error => console.error("Error al obtener las categorias:", error));
+          const cellOpciones = document.createElement("td");
+
+          const botonActualizar = document.createElement("button");
+          botonActualizar.classList.add("btn", "btn-actualizar");
+          botonActualizar.innerHTML = '<i class="fas fa-edit"></i>';
+          botonActualizar.addEventListener("click", function () {});
+
+          const botonEliminar = document.createElement("button");
+          botonEliminar.classList.add("btn", "btn-eliminar");
+          botonEliminar.innerHTML = '<i class="fas fa-trash-alt"></i>';
+          botonEliminar.addEventListener("click", function () {});
+
+          cellOpciones.appendChild(botonActualizar);
+          cellOpciones.appendChild(botonEliminar);
+          row.appendChild(cellOpciones);
+
+          coberturasTableBody.appendChild(row);
+        });
+      })
+      .catch((error) =>
+        console.error("Error al obtener las coberturas:", error)
+      );
   }
 
-  allCategorias();
+  allcoberturas();
 });

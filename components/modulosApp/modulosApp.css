@@ -78,6 +78,8 @@ body.tema-oscuro .inputBuscar {
     scale: 1.1;
     transition: 0.4s;
     cursor: pointer;
+    box-shadow: 3px 2px 5px 2px var(--colorPrimary);
+    background-color: var(--colorTertiary);
 }
 
 .modulos-panel i {

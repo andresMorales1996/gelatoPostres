@@ -191,7 +191,6 @@ textarea {
   content: '';
   position: absolute;
   top: 50%;
-  /* left: 50%; */
   width: 250%;
   height: 250%;
   background: rgba(255, 255, 255, 0.15);
@@ -204,90 +203,30 @@ textarea {
   transform: translate(-50%, -50%) scale(1);
 }
 
-.btn-primary {
-  position: absolute;
-  font-weight: bold;
-  width: 200px !important;
-  height: 40px;
-  background: var(--colorPrimary);
-  border: 1px solid var(--colorPrimary);
-  outline: none;
-  border-radius: 40px;
-  cursor: pointer;
-  font-size: 17px;
-  margin-top: -2.5rem;
-  color: var(--colorComplementaryPrimary);
-  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.btn-primary:hover {
-  background: var(--colorTertiary);
-  color: var(--colorPrimary);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, .8);
-}
-
-.btn-primary:active {
-  transform: translateY(0);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, .2);
-}
-
-.btn-primary::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  /* left: 50%; */
-  width: 250%;
-  height: 250%;
-  background: rgba(255, 255, 255, 0.15);
-  transform: translate(-50%, -50%) scale(0);
-  border-radius: 50%;
-
-}
-
-.btn-primary:hover::before {
-  transform: translate(-50%, -50%) scale(1);
-}
-
-.btn-primary {
-  width: 33%;
-  margin-top: -2.5rem;
-  border: 2px solid var(--colorQuinary) !important;
-  background-color: var(--colorQuinary) !important;
-  border-radius: 2rem !important;
-  margin-bottom: 1.5rem;
-}
-
-.btn-primary:hover {
-  background-color: var(--colorComplementaryPrimary) !important;
-  color: var(--colorQuinary) !important;
-  border-radius: 2rem !important;
-}
-
-.btn-warning {
-  border: none !important;
-  background: none !important;
-}
-
-.btn-warning i {
-  margin-top: -2rem !important;
-  border: none !important;
-  background: none !important;
-  color: var(--colorQuinary) !important;
+.btn-actualizar {
   font-size: 1.5rem;
+  color: var(--colorQuinary);
+  border: none;
 }
 
-.btn-danger {
-  border: none !important;
-  background: none !important;
+.btn-actualizar:hover {
+  scale: 1.1;
+  transition: 0.3s;
+  color: var(--colorQuinary);
+  border: none;
 }
 
-.btn-danger i {
-  margin-top: -2rem;
-  border: none !important;
-  background: none !important;
-  color: var(--colorSextary) !important;
+.btn-eliminar {
   font-size: 1.5rem;
+  color: var(--colorSextary);
+  border: none;
+}
+
+.btn-eliminar:hover {
+  scale: 1.1;
+  transition: 0.3s;
+  color: var(--colorSextary);
+  border: none;
 }
 
 .table-responsive {

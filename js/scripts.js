@@ -34,6 +34,10 @@ const scripts = {
     "../components/nav/nav.js",
     "../components/whatsapp/whatsapp.js",
   ],
+  "pagos": [
+    "../components/nav/nav.js",
+    "../components/whatsapp/whatsapp.js",
+  ],
 };
 
 // *FUNCIÓN CARGAR SCRIPTS DE COMPONENTES

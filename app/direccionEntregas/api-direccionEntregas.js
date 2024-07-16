@@ -23,26 +23,23 @@ document.addEventListener("DOMContentLoaded", function() {
             row.appendChild(cellIdUsuario);
   
             const cellOpciones = document.createElement("td");
-  
+
             const botonActualizar = document.createElement("button");
-            botonActualizar.textContent = "Actualizar";
-            botonActualizar.className = "boton-actualizar";
+            botonActualizar.classList.add("btn", "btn-actualizar");
+            botonActualizar.innerHTML = '<i class="fas fa-edit"></i>';
             botonActualizar.addEventListener("click", function() {
-              // Lógica para actualizar el direccionEntregas
-              updateDireccionEntrega(direccionEntregas.id_direccionEntrega);
             });
-            cellOpciones.appendChild(botonActualizar);
-  
+
             const botonEliminar = document.createElement("button");
-            botonEliminar.textContent = "Eliminar";
-            botonEliminar.className = "boton-eliminar";
+            botonEliminar.classList.add("btn", "btn-eliminar");
+            botonEliminar.innerHTML = '<i class="fas fa-trash-alt"></i>';
             botonEliminar.addEventListener("click", function() {
-              // Lógica para eliminar la direccion de entregas
-              deleteDireccionEntrega(direccionEntregas.id_direccionEntrega);
             });
+
+            cellOpciones.appendChild(botonActualizar);
             cellOpciones.appendChild(botonEliminar);
-  
             row.appendChild(cellOpciones);
+  
             direccionEntregasTableBody.appendChild(row);
           });
         })

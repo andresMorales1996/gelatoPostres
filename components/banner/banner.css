@@ -2,8 +2,8 @@
 
 .swiper-banners {
   position: relative;
-  height: 50vh;
-  bottom: 50px;
+  height: 60vh;
+  bottom: 40px;
   overflow: hidden;
 }
 
@@ -52,8 +52,8 @@
 .bg-banners {
   background: linear-gradient(
     0deg,
-    rgba(247, 154, 178, 1) 10%,
-    rgba(255, 216, 227, 1) 100%
+    var(--colorSecondary) 10%,
+    var(--colorTertiary) 100%
   );
 }
 

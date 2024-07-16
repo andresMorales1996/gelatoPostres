@@ -1,53 +1,66 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const toppingsTableBody = document.querySelector("#toppingsTabla tbody");
+  const usuariosTableBody = document.querySelector("#usuariosTabla tbody");
 
-  function allToppings() {
-    fetch("http://localhost:8080/toppings/v1/allToppings")
+  function getAllUsuarios() {
+    fetch("http://localhost:8080/usuarios/v1/allUsuarios")
       .then((response) => response.json())
       .then((data) => {
-        toppingsTableBody.innerHTML = "";
+        usuariosTableBody.innerHTML = "";
 
-        data.forEach((topping) => {
+        data.forEach((usuario) => {
           const row = document.createElement("tr");
 
           const cellId = document.createElement("td");
-          cellId.textContent = topping.id_topping;
+          cellId.textContent = usuario.id_usuario;
           row.appendChild(cellId);
 
           const cellNombre = document.createElement("td");
-          cellNombre.textContent = topping.nombre_topping;
+          cellNombre.textContent = usuario.nombre_usuario;
           row.appendChild(cellNombre);
 
-          const cellPrecio = document.createElement("td");
-          cellPrecio.textContent = topping.precio_topping;
-          row.appendChild(cellPrecio);
+          const cellGenero = document.createElement("td");
+          cellGenero.textContent = usuario.genero_usuario;
+          row.appendChild(cellGenero);
+
+          const cellTelefono = document.createElement("td");
+          cellTelefono.textContent = usuario.telefono_usuario;
+          row.appendChild(cellTelefono);
+
+          const cellEmail = document.createElement("td");
+          cellEmail.textContent = usuario.email_usuario;
+          row.appendChild(cellEmail);
+
+          const cellContrasena = document.createElement("td");
+          cellContrasena.textContent = usuario.contrasena_usuario;
+          row.appendChild(cellContrasena);
+
+          const cellImagen = document.createElement("td");
+          cellImagen.textContent = usuario.imagen_usuario;
+          row.appendChild(cellImagen);
 
           const cellOpciones = document.createElement("td");
 
           const botonActualizar = document.createElement("button");
-          botonActualizar.textContent = "Actualizar";
-          botonActualizar.className = "boton-actualizar";
-          botonActualizar.addEventListener("click", function () {
-            // Lógica para actualizar el direccionEntregas
-            updateDireccionEntrega(direccionEntregas.id_direccionEntrega);
+          botonActualizar.classList.add("btn", "btn-actualizar");
+          botonActualizar.innerHTML = '<i class="fas fa-edit"></i>';
+          botonActualizar.addEventListener("click", function() {
           });
-          cellOpciones.appendChild(botonActualizar);
 
           const botonEliminar = document.createElement("button");
-          botonEliminar.textContent = "Eliminar";
-          botonEliminar.className = "boton-eliminar";
-          botonEliminar.addEventListener("click", function () {
-            // Lógica para eliminar la direccion de entregas
-            deleteDireccionEntrega(direccionEntregas.id_direccionEntrega);
+          botonEliminar.classList.add("btn", "btn-eliminar");
+          botonEliminar.innerHTML = '<i class="fas fa-trash-alt"></i>';
+          botonEliminar.addEventListener("click", function() {
           });
-          cellOpciones.appendChild(botonEliminar);
 
+          cellOpciones.appendChild(botonActualizar);
+          cellOpciones.appendChild(botonEliminar);
           row.appendChild(cellOpciones);
-          toppingsTableBody.appendChild(row);
+          
+          usuariosTableBody.appendChild(row);
         });
       })
-      .catch((error) => console.error("Error al obtener los toppings:", error));
+      .catch((error) => console.error("Error al obtener los usuarios:", error));
   }
 
-  allToppings();
+  getAllUsuarios();
 });
