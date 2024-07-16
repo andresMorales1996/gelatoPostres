@@ -43,9 +43,6 @@
 
 .oscuro .logo_oscuro{
     display: flex;
-    width: 13.5rem;
-    margin-top: -0.3rem;
-    margin-left: -30%;
 }
 
 
@@ -68,13 +65,13 @@
 }
 
 .logo-nav {
-    width: 3rem;
+    width: 2rem;
     margin-left: 24%;
 }
 
 .logo-nav img {
     width: 12rem;
-    margin-top: 0.3rem;
+    margin-top: -0.3rem;
 }
 
 nav {
@@ -531,7 +528,7 @@ svg:hover {
 @media screen and (min-width: 1366px) {
     
     .logo-nav img {
-        width: 12rem;
+        width: 11.2rem;
     }
     
 }

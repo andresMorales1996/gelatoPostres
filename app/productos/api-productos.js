@@ -25,7 +25,9 @@ document.addEventListener("DOMContentLoaded", function () {
           row.appendChild(cellEstado);
 
           const cellImagen = document.createElement("td");
-          cellImagen.textContent = producto.imagen_producto;
+          const imagen = new Image();
+          imagen.src = `data:image/jpeg;base64,${producto.imagen_producto}`;
+          cellImagen.appendChild(imagen);
           row.appendChild(cellImagen);
 
           const cellPrecio = document.createElement("td");
@@ -119,20 +121,29 @@ fetch("http://localhost:8080/porciones/v1/allPorciones")
     });
   });
 
-document.getElementById("createProductoForm").addEventListener("submit", function (event) {
-    event.preventDefault();
-    const formData = new FormData(this);
-    // const data = Object.fromEntries(formData.entries());
-    fetch("http://localhost:8080/productos/v1/createProducto", {
-      method: "POST",
-      body: formData
+  document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("createProductoForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+        const formData = new FormData(this);
+        console.log(formData); 
 
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Success:", data);
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-  });
+        fetch("http://localhost:8080/productos/v1/createProducto", {
+            method: "POST",
+            body: formData,
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error en la solicitud: ' + response.status);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Success:', data);
+            alert('Producto creado exitosamente');
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Error al crear el producto: ' + error.message);
+        });
+    });
+});
