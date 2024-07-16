@@ -1,5 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
   const productosTableBody = document.querySelector("#productosTabla tbody");
+  const categoriaSelect = document.getElementById("categoria");
+  const rellenoSelect = document.getElementById("relleno");
+  const porcionSelect = document.getElementById("porcion");
+  const createProductoForm = document.getElementById("createProductoForm");
+
   function getAllProductos() {
     fetch("http://localhost:8080/productos/v1/allProductos")
       .then((response) => response.json())
@@ -25,7 +30,11 @@ document.addEventListener("DOMContentLoaded", function () {
           row.appendChild(cellEstado);
 
           const cellImagen = document.createElement("td");
-          cellImagen.textContent = producto.imagen_producto;
+          const img = document.createElement("img");
+          img.src = "data:image/png;base64," + producto.imagen_producto; // Aquí concatenamos el prefijo para datos de imagen base64
+          img.alt = producto.nombre_producto; // Puedes ajustar el alt según necesites
+          img.style.maxWidth = "100px"; // Ajusta el tamaño de la imagen según tus necesidades
+          cellImagen.appendChild(img);
           row.appendChild(cellImagen);
 
           const cellPrecio = document.createElement("td");
@@ -33,15 +42,15 @@ document.addEventListener("DOMContentLoaded", function () {
           row.appendChild(cellPrecio);
 
           const cellCategoria = document.createElement("td");
-          cellCategoria.textContent = producto.categoria.nombre_categoria;
+          cellCategoria.textContent = producto.categoria ? producto.categoria.nombre_categoria : 'N/A';
           row.appendChild(cellCategoria);
 
           const cellRelleno = document.createElement("td");
-          cellRelleno.textContent = producto.relleno.nombre_relleno;
+          cellRelleno.textContent = producto.relleno ? producto.relleno.nombre_relleno : 'N/A';
           row.appendChild(cellRelleno);
 
           const cellPorcion = document.createElement("td");
-          cellPorcion.textContent = producto.porcion.nombre_porcion;
+          cellPorcion.textContent = producto.porcion ? producto.porcion.nombre_porcion : 'N/A';
           row.appendChild(cellPorcion);
 
           const cellOpciones = document.createElement("td");
@@ -50,12 +59,14 @@ document.addEventListener("DOMContentLoaded", function () {
           botonActualizar.classList.add("btn", "btn-actualizar");
           botonActualizar.innerHTML = '<i class="fas fa-edit"></i>';
           botonActualizar.addEventListener("click", function() {
+            actualizarProducto(producto.id_producto);
           });
 
           const botonEliminar = document.createElement("button");
           botonEliminar.classList.add("btn", "btn-eliminar");
           botonEliminar.innerHTML = '<i class="fas fa-trash-alt"></i>';
           botonEliminar.addEventListener("click", function() {
+            eliminarProducto(producto.id_producto);
           });
 
           cellOpciones.appendChild(botonActualizar);
@@ -72,54 +83,63 @@ document.addEventListener("DOMContentLoaded", function () {
 
   getAllProductos();
 
+  // Función para actualizar producto (debes implementar lógica)
   function actualizarProducto(id) {
-    // Lógica para actualizar el rol con el id proporcionado
     console.log(`Actualizar producto con ID: ${id}`);
   }
 
+  // Función para eliminar producto (debes implementar lógica)
   function eliminarProducto(id) {
-    // Lógica para eliminar el producto con el id proporcionado
     console.log(`Eliminar producto con ID: ${id}`);
   }
-});
 
-fetch("http://localhost:8080/categorias/v1/allCategorias")
-  .then((response) => response.json())
-  .then((data) => {
-    const categoriaSelect = document.getElementById("categoria");
-    data.forEach((categoria) => {
-      const option = document.createElement("option");
-      option.value = categoria.id_categoria;
-      option.textContent = categoria.nombre_categoria;
-      categoriaSelect.appendChild(option);
+  // Cargar categorías desde el servidor
+  fetch("http://localhost:8080/categorias/v1/allCategorias")
+    .then((response) => response.json())
+    .then((data) => {
+      if (categoriaSelect) {
+        categoriaSelect.innerHTML = "";
+        data.forEach((categoria) => {
+          const option = document.createElement("option");
+          option.value = categoria.id_categoria;
+          option.textContent = categoria.nombre_categoria;
+          categoriaSelect.appendChild(option);
+        });
+      }
     });
-  });
 
-fetch("http://localhost:8080/rellenos/v1/allRellenos")
-  .then((response) => response.json())
-  .then((data) => {
-    const rellenoSelect = document.getElementById("relleno");
-    data.forEach((relleno) => {
-      const option = document.createElement("option");
-      option.value = relleno.id_relleno;
-      option.textContent = relleno.nombre_relleno;
-      rellenoSelect.appendChild(option);
+  // Cargar rellenos desde el servidor
+  fetch("http://localhost:8080/rellenos/v1/allRellenos")
+    .then((response) => response.json())
+    .then((data) => {
+      if (rellenoSelect) {
+        rellenoSelect.innerHTML = "";
+        data.forEach((relleno) => {
+          const option = document.createElement("option");
+          option.value = relleno.id_relleno;
+          option.textContent = relleno.nombre_relleno;
+          rellenoSelect.appendChild(option);
+        });
+      }
     });
-  });
 
-fetch("http://localhost:8080/porciones/v1/allPorciones")
-  .then((response) => response.json())
-  .then((data) => {
-    const porcionSelect = document.getElementById("porcion");
-    data.forEach((porcion) => {
-      const option = document.createElement("option");
-      option.value = porcion.id_porcion;
-      option.textContent = porcion.nombre_porcion;
-      porcionSelect.appendChild(option);
+  // Cargar porciones desde el servidor
+  fetch("http://localhost:8080/porciones/v1/allPorciones")
+    .then((response) => response.json())
+    .then((data) => {
+      if (porcionSelect) {
+        porcionSelect.innerHTML = "";
+        data.forEach((porcion) => {
+          const option = document.createElement("option");
+          option.value = porcion.id_porcion;
+          option.textContent = porcion.nombre_porcion;
+          porcionSelect.appendChild(option);
+        });
+      }
     });
-  });
 
-document.getElementById("createProductoForm").addEventListener("submit", function (event) {
+  // Enviar formulario para crear un nuevo producto
+  createProductoForm.addEventListener("submit", function (event) {
     event.preventDefault();
     const formData = new FormData(this);
     const data = Object.fromEntries(formData.entries());
@@ -133,8 +153,10 @@ document.getElementById("createProductoForm").addEventListener("submit", functio
       .then((response) => response.json())
       .then((data) => {
         console.log("Success:", data);
+        getAllProductos(); // Refrescar la lista de productos después de crear uno nuevo
       })
       .catch((error) => {
         console.error("Error:", error);
       });
   });
+});
