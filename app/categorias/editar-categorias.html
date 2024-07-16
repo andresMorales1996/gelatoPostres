@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Categoría</title>
+    <link rel="stylesheet" href="../../css/stylesApp.css">
+    <script src="../../index.js"></script>
+    <script src="../../js/scriptsApp.js"></script>
+</head>
+<body>
+    <div id="navApp"></div>
+
+    <main class="container-modulos">
+        
+        <div class="modulos-titulo">
+            <h2>Editar</h2>
+        </div>
+
+        <!-- *FORMULARIO CATEGORIAS -->
+        <form id="editarCategoriaForm" class="container-form d-flex justify-content-center flex-column col-md-7">
+            <div class="row">
+                <div class="form-group col-md-6 mb-3 agregar" >
+                    <label for="nombre_categoria">Nombre de categoría</label>
+                    <input type="text" name="nombre_categoria" id="nombre_categoria" class="form-control" placeholder="Nombre categoría">
+                </div>
+                <div class="col-lg-12 mt-5">
+                    <button type="button" class="btn btn-primary" id="botonActualizar">Actualizar</button>
+                </div>                
+            </div>
+        </form>
+    </main>
+
+    <script>
+        cargarScripts("listaApp");
+        
+    </script>
+    <script src="./api-categorias.js"></script>
+
+</body>
+
+</html>
