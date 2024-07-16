@@ -1,32 +1,46 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const rellenosTableBody = document.querySelector("#rellenosTabla tbody");
+  const metodosPagosTableBody = document.querySelector("#metodoPagosTabla tbody");
 
-  function allRellenos() {
-    fetch("http://localhost:8080/rellenos/v1/allRellenos")
+  function allmetodosPago() {
+    fetch("http://localhost:8080/metodoPagos/v1/allMetodoPagos")
       .then((response) => response.json())
       .then((data) => {
-        rellenosTableBody.innerHTML = "";
+        metodosPagosTableBody.innerHTML = "";
 
-        data.forEach((relleno) => {
+        data.forEach((metodoPagos) => {
           const row = document.createElement("tr");
 
           const cellId = document.createElement("td");
-          cellId.textContent = relleno.id_relleno;
+          cellId.textContent = metodoPagos.id_metodo_pago;
           row.appendChild(cellId);
 
-          const cellRelleno = document.createElement("td");
-          cellRelleno.textContent = relleno.nombre_relleno;
-          row.appendChild(cellRelleno);
+          const cellmetodosPago = document.createElement("td");
+          cellmetodosPago.textContent = metodoPagos.nombre_metodo_pago;
+          row.appendChild(cellmetodosPago);
 
-          const cellPrecio = document.createElement("td");
-          cellPrecio.textContent = relleno.precio_relleno;
-          row.appendChild(cellPrecio);
+          const cellOpciones = document.createElement("td");
 
-          rellenosTableBody.appendChild(row);
+          const botonActualizar = document.createElement("button");
+          botonActualizar.classList.add("btn", "btn-actualizar");
+          botonActualizar.innerHTML = '<i class="fas fa-edit"></i>';
+          botonActualizar.addEventListener("click", function() {
+          });
+
+          const botonEliminar = document.createElement("button");
+          botonEliminar.classList.add("btn", "btn-eliminar");
+          botonEliminar.innerHTML = '<i class="fas fa-trash-alt"></i>';
+          botonEliminar.addEventListener("click", function() {
+          });
+
+          cellOpciones.appendChild(botonActualizar);
+          cellOpciones.appendChild(botonEliminar);
+          row.appendChild(cellOpciones);
+
+          metodosPagosTableBody.appendChild(row);
         });
       })
-      .catch((error) => console.error("Error al obtener los rellenos:", error));
+      .catch((error) => console.error("Error al obtener los metodosPagos:", error));
   }
 
-  allRellenos();
+  allmetodosPago();
 });

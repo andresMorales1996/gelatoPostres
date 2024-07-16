@@ -1,32 +1,50 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const rellenosTableBody = document.querySelector("#rellenosTabla tbody");
+  const glaseadosTableBody = document.querySelector("#glaseadosTabla tbody");
 
-  function allRellenos() {
-    fetch("http://localhost:8080/rellenos/v1/allRellenos")
+  function allGlaseados() {
+    fetch("http://localhost:8080/glaseados/v1/allGlaseados")
       .then((response) => response.json())
       .then((data) => {
-        rellenosTableBody.innerHTML = "";
+        glaseadosTableBody.innerHTML = "";
 
-        data.forEach((relleno) => {
+        data.forEach((glaseado) => {
           const row = document.createElement("tr");
 
           const cellId = document.createElement("td");
-          cellId.textContent = relleno.id_relleno;
+          cellId.textContent = glaseado.id_glaseado;
           row.appendChild(cellId);
 
-          const cellRelleno = document.createElement("td");
-          cellRelleno.textContent = relleno.nombre_relleno;
-          row.appendChild(cellRelleno);
+          const cellGlaseado = document.createElement("td");
+          cellGlaseado.textContent = glaseado.nombre_glaseado;
+          row.appendChild(cellGlaseado);
 
           const cellPrecio = document.createElement("td");
-          cellPrecio.textContent = relleno.precio_relleno;
+          cellPrecio.textContent = glaseado.precio_glaseado;
           row.appendChild(cellPrecio);
 
-          rellenosTableBody.appendChild(row);
+          const cellOpciones = document.createElement("td");
+
+          const botonActualizar = document.createElement("button");
+          botonActualizar.classList.add("btn", "btn-actualizar");
+          botonActualizar.innerHTML = '<i class="fas fa-edit"></i>';
+          botonActualizar.addEventListener("click", function() {
+          });
+
+          const botonEliminar = document.createElement("button");
+          botonEliminar.classList.add("btn", "btn-eliminar");
+          botonEliminar.innerHTML = '<i class="fas fa-trash-alt"></i>';
+          botonEliminar.addEventListener("click", function() {
+          });
+
+          cellOpciones.appendChild(botonActualizar);
+          cellOpciones.appendChild(botonEliminar);
+          row.appendChild(cellOpciones);
+
+          glaseadosTableBody.appendChild(row);
         });
       })
-      .catch((error) => console.error("Error al obtener los rellenos:", error));
+      .catch((error) => console.error("Error al obtener los glaseados:", error));
   }
 
-  allRellenos();
+  allGlaseados();
 });
