@@ -40,3 +40,17 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
+// logica del calendario
+document.addEventListener('DOMContentLoaded', (event) => {
+    const dateInput = document.getElementById('fechaEntrega');
+    const today = new Date();
+    const minDate = new Date(today);
+    minDate.setDate(today.getDate() + 3);  // Añadir 3 días hábiles
+    const dd = String(minDate.getDate()).padStart(2, '0');
+    const mm = String(minDate.getMonth() + 1).padStart(2, '0'); // Enero es 0!
+    const yyyy = minDate.getFullYear();
+    
+    const formattedDate = `${yyyy}-${mm}-${dd}`;
+    dateInput.min = formattedDate;
+});

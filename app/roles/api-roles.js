@@ -54,3 +54,23 @@ document.addEventListener("DOMContentLoaded", function() {
     console.log(`Eliminar rol con ID: ${id}`);
   }
 });
+
+document.getElementById("createRolesForm").addEventListener("submit", function (event) {
+  event.preventDefault();
+  const formData = new FormData(this);
+  const data = Object.fromEntries(formData.entries());
+  fetch("http://localhost:8080/Roles/v1/createRol", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("Success:", data);
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+});

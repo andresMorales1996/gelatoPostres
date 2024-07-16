@@ -1,25 +1,25 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const rellenosTableBody = document.querySelector("#rellenosTabla tbody");
+  const pedidoDetallesTableBody = document.querySelector("#pedidoDetallesTabla tbody");
 
-  function allRellenos() {
-    fetch("http://localhost:8080/rellenos/v1/allRellenos")
+  function allPedidoDetalles() {
+    fetch("http://localhost:8080/pedidoDetalles/v1/allPedidoDetalles")
       .then((response) => response.json())
       .then((data) => {
-        rellenosTableBody.innerHTML = "";
+        pedidoDetallesTableBody.innerHTML = "";
 
-        data.forEach((relleno) => {
+        data.forEach((pedidoDetalle) => {
           const row = document.createElement("tr");
 
           const cellId = document.createElement("td");
-          cellId.textContent = relleno.id_relleno;
+          cellId.textContent = pedidoDetalle.id_pedidoDetalle;
           row.appendChild(cellId);
 
-          const cellRelleno = document.createElement("td");
-          cellRelleno.textContent = relleno.nombre_relleno;
-          row.appendChild(cellRelleno);
+          const cellPedidoDetalle = document.createElement("td");
+          cellPedidoDetalle.textContent = pedidoDetalle.nombre_pedidoDetalle;
+          row.appendChild(cellPedidoDetalle);
 
           const cellPrecio = document.createElement("td");
-          cellPrecio.textContent = relleno.precio_relleno;
+          cellPrecio.textContent = pedidoDetalle.precio_pedidoDetalle;
           row.appendChild(cellPrecio);
 
           const cellOpciones = document.createElement("td");
@@ -40,11 +40,31 @@ document.addEventListener("DOMContentLoaded", function () {
           cellOpciones.appendChild(botonEliminar);
           row.appendChild(cellOpciones);
 
-          rellenosTableBody.appendChild(row);
+          pedidoDetallesTableBody.appendChild(row);
         });
       })
-      .catch((error) => console.error("Error al obtener los rellenos:", error));
+      .catch((error) => console.error("Error al obtener los pedidoDetalles:", error));
   }
 
-  allRellenos();
+  allPedidoDetalles();
+});
+
+document.getElementById("createPedidoDetallesForm").addEventListener("submit", function (event) {
+  event.preventDefault();
+  const formData = new FormData(this);
+  const data = Object.fromEntries(formData.entries());
+  fetch("http://localhost:8080/pedidoDetalles/v1/createPedidoDetalles", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("Success:", data);
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
 });

@@ -44,17 +44,6 @@ function ocultarLogo(event) {
   }
 }
 
-function mostrarOpciones() {
-  var tema = document.querySelector(".tema");
-  // var cuadroPequeno = tema.querySelector(".cuadro-pequeno");
-
-  if (tema.classList.contains("seleccionado")) {
-    tema.classList.remove("seleccionado");
-  } else {
-    tema.classList.add("seleccionado");
-  }
-}
-
 function toggleModoOscuro() {
   var tema = document.querySelector(".tema");
   tema.classList.remove("seleccionado");
