@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
           cellOpciones.appendChild(botonActualizar);
           cellOpciones.appendChild(botonEliminar);
           row.appendChild(cellOpciones);
-
+          
           productosTableBody.appendChild(row);
         });
       })
@@ -120,6 +120,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
       }
     });
+    
 
   // Cargar porciones desde el servidor
   fetch("http://localhost:8080/porciones/v1/allPorciones")
@@ -135,8 +136,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
       }
     });
-
-  // Enviar formulario para crear un nuevo producto
+  });
   document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("createProductoForm").addEventListener("submit", function (event) {
         event.preventDefault();
@@ -162,5 +162,4 @@ document.addEventListener("DOMContentLoaded", function () {
             alert('Error al crear el producto: ' + error.message);
         });
     });
-});
 });

@@ -68,3 +68,95 @@ document.getElementById("createCoberturaForm").addEventListener("submit", functi
       console.error("Error:", error);
     });
 });
+
+// MÉTODO AGREGAR CATEGORÍA
+document.getElementById("createCoberturaForm").addEventListener("submit", function (event) {
+  event.preventDefault();
+  const formData = new FormData(this);
+  const data = Object.fromEntries(formData.entries());
+  fetch("http://localhost:8080/coberturas/v1/createCobertura", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("No se pudo crear la cobertura.");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      window.location.href = "./lista-coberturas.html";
+    })
+    .catch((error) => {
+      alert(
+        "No se pudo crear la cobertura. Por favor, inténtelo nuevamente."
+      );
+    });
+});
+
+// MÉTODO ELIMINAR CATEGORÍA
+function deleteCobertura(idCobertura) {
+fetch(
+  `http://localhost:8080/coberturas/v1/deleteCobertura/${idCobertura}`,
+  {
+    method: "DELETE",
+  }
+)
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error("No se pudo eliminar la cobertura.");
+    }
+    getAllCoberturas();
+  })
+  .catch((error) =>
+    console.error("Error al eliminar la cobertura:", error)
+  );
+}
+
+// MÉTODO ACTUALIZAR CATEGORÍA
+function updateCobertura(idCobertura, nombreCobertura) {
+window.location.href = `./editar-coberturas.html?id=${idCobertura}&nombre=${encodeURIComponent(
+  nombreCobertura
+)}`;
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+updateCobertura();
+
+function updateCobertura() {
+const urlParams = new URLSearchParams(window.location.search);
+const idCobertura = urlParams.get("id");
+const nombreCobertura = urlParams.get("nombre");
+
+document.getElementById("nombre_cobertura").value = nombreCobertura;
+
+document
+  .getElementById("botonActualizar")
+  .addEventListener("click", function () {
+    const nuevoNombre = document.getElementById("nombre_cobertura").value;
+
+    fetch(
+      `http://localhost:8080/coberturas/v1/updateCobertura/${idCobertura}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ nombre_cobertura: nuevoNombre }),
+      }
+    )
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("No se pudo actualizar la cobertura.");
+        }
+        window.location.href = "./lista-coberturas.html";
+      })
+      .catch((error) =>
+        console.error("Error al actualizar la cobertura:", error)
+      );
+  });
+}
+});

@@ -108,6 +108,7 @@ textarea {
   border: 1px solid var(--colorPrimary);
   outline: none;
   border-radius: 40px;
+  margin-left: -6rem;
   cursor: pointer;
   font-size: 17px;
   margin-top: -2.5rem;

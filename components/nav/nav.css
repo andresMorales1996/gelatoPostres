@@ -15,6 +15,7 @@
 
 .oscuro .luna:hover {
     transform: scale(1);
+    transform: rotate(220deg);
 }
 
 .oscuro .switch {
@@ -66,7 +67,7 @@
 
 .logo-nav {
     width: 2rem;
-    margin-left: 24%;
+    margin-left: 22%;
 }
 
 .logo-nav img {
@@ -249,7 +250,7 @@ svg:hover {
     margin-top: 0.3rem;
     border-radius: 2rem;
     margin-right: -0.8rem;
-    right: 23%;
+    right: 28%;
     padding: 0 0rem 0rem 1.2rem;
     transition: all .7s ease;
 }
@@ -306,14 +307,19 @@ svg:hover {
     color: var(--colorPrimary);
     transition: .7s;
     position: absolute;
-    margin-left: -3rem;
+    margin-left: -2rem;
+    margin-top: 0.1rem;
+}
+
+.tema .sol:hover {
+    transform: scale(1);
 }
 
 .tema .luna {
     font-size: 1rem;
     position: absolute;
-    margin-top: -2.8rem;
-    margin-left: -2rem;
+    margin-top: -2rem;
+    margin-left: -1.3rem;
     transform: rotate(220deg);
     opacity: 0;
 }
@@ -326,8 +332,8 @@ svg:hover {
     position: absolute;
     width: 2rem;
     height: 1rem;
-    right: 1rem;
-    top: 3rem;
+    right: 0.2rem;
+    top: 2.3rem;
     border-radius: 1rem;
     background-color: var(--colorPrimary);
 }
@@ -374,7 +380,15 @@ svg:hover {
     }
 
     .inputBuscar {
-        right: 13.5%;
+        right: 16%;
+    }
+
+    .toggle-switch{
+        top: 2.7rem;
+    }
+
+    .tema .luna {
+        margin-top: -2.3rem;
     }
 
 }
@@ -444,7 +458,7 @@ svg:hover {
         color: var(--colorTertiary);
         line-height: 1rem;
     }
-
+    
     .nav_iconos {
         margin-right: -4%;
     }
@@ -481,6 +495,14 @@ svg:hover {
     .inputBuscar {
         margin-top: -1.5%;
         right: 12%;
+    }
+
+    .toggle-switch{
+        top: 3rem;
+    }
+
+    .tema .luna {
+        margin-top: -2.6rem;
     }
 }
 
@@ -531,7 +553,7 @@ svg:hover {
 
     .inputBuscar {
         margin-top: -0.8%;
-        right: 15%;
+        right: 14.5%;
     }
 
     .counter {
