@@ -1,0 +1,70 @@
+@import url("../../css/styles.css");
+
+.oscuro .review-card{
+    background-color: var(--colorSextenary);
+}
+
+.reviews {
+    width: 100%;
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    justify-content: center;
+    padding: 0 40px 80px 40px;
+}
+
+.review-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.review-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.review-card img {
+    display: block;
+    margin: auto;
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    margin-top: 10px;
+}
+
+.review-content {
+    padding: 15px;
+    text-align: center;
+}
+
+.review-content h3 {
+    font-size: 1em;
+    margin: 10px 0 5px 0;
+    color: var(--colorPrimary);
+}
+
+.review-content p {
+    color: #777;
+    font-size: 0.9em;
+    margin: 5px 0;
+    font-family: var(--fontBody);
+}
+
+.stars {
+    color: var(--colorSecondary);
+    font-size: 1.2em;
+    margin: 10px 0; 
+}
+
+.stars i {
+    margin: 0 2px; 
+}
+
+@media (max-width: 600px) {
+    .reviews {
+        grid-template-columns: 1fr; 
+    }
+}

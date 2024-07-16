@@ -1,5 +1,10 @@
 @import url("../css/styles.css");
 
+
+#productos{
+  overflow: hidden;
+}
+
 .productos h2 {
   text-align: center;
   font-size: 3.5rem;
@@ -16,9 +21,6 @@
   margin-bottom: 40px;
 }
 
-.tm-widget {
-  padding: 0 0 50px 0 !important;
-}
 
 /**galeria**/
 .galeria {
